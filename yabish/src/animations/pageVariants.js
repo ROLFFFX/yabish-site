@@ -6,14 +6,14 @@ export const pageVariants = {
   animate: {
     clipPath: "circle(150% at 50% 50%)", // Expand to cover the screen
     transition: {
-      duration: 1,
+      duration: 0.8,
       ease: "easeInOut",
     },
   },
   exit: {
     clipPath: "circle(0% at 50% 0%)", // Shrinks back to the top
     transition: {
-      duration: 1,
+      duration: 1.2,
       ease: "easeInOut",
     },
   },

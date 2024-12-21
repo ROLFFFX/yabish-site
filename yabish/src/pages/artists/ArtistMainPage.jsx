@@ -1,87 +1,77 @@
 import { Box, Button, Typography } from "@mui/material";
-import { useGLTF } from "@react-three/drei";
-import { Canvas, useFrame } from "@react-three/fiber";
 import { motion } from "framer-motion";
-import React, { useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React from "react";
 import YABISHLogo from "../..//assets/YABISHlogo.png";
-import { pageVariants } from "../../animations/pageVariants";
 
-/**
- * Model Component with Animation
- */
-function Model() {
-  const { scene } = useGLTF("/models/yabish3d.glb");
-  const modelRef = useRef();
-  const [direction, setDirection] = useState(1);
-  const leftMaxAngle = -Math.PI / 18; // 10 degrees to the left
-  const rightMaxAngle = Math.PI / 4; // 45 degrees to the right
-  const baseSpeed = 0.007; // Base rotation speed
-
-  useFrame(() => {
-    if (modelRef.current) {
-      modelRef.current.rotation.y += baseSpeed * direction;
-
-      if (
-        (direction === 1 && modelRef.current.rotation.y > rightMaxAngle) ||
-        (direction === -1 && modelRef.current.rotation.y < leftMaxAngle)
-      ) {
-        setDirection(-direction);
-      }
-    }
-  });
-
-  scene.traverse((child) => {
-    if (child.isMesh) {
-      child.material.color.set("#ffffff"); // White model
-      child.material.roughness = 0.486;
-      child.material.metalness = 0;
-    }
-  });
-
-  return <primitive ref={modelRef} object={scene} position={[0, 0.2, 0]} />;
-}
-
-/**
- * HomePage Component
- */
-export default function HomePage() {
-  const navigate = useNavigate();
+export default function ArtistMainPage() {
   return (
-    <motion.div
-      variants={pageVariants}
-      initial="initial"
-      animate="animate"
-      exit="exit"
+    <Box
       style={{
         height: "100vh",
         backgroundColor: "black",
-        position: "relative",
-        overflow: "hidden",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "column", // Align buttons in a column
+        gap: "1rem", // Add space between buttons
       }}
     >
-      {/* Fullscreen Canvas */}
-      <Box
+      <TopLeft></TopLeft>
+      <Button
+        variant="text"
         sx={{
-          height: "100vh",
-          width: "100vw",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          position: "relative",
+          backgroundColor: "black",
+          color: "white",
+          fontFamily: "Koulen, sans-serif",
+          fontSize: "80px",
+          "&:hover": {
+            backgroundColor: "black",
+            color: "white",
+          },
         }}
       >
-        <Canvas
-          style={{ height: "100%", width: "100%" }}
-          camera={{ position: [0, 0, 2], fov: 50 }}
+        99 GOD
+      </Button>
+      <Button
+        variant="text"
+        sx={{
+          backgroundColor: "black",
+          color: "white",
+          fontFamily: "Koulen, sans-serif",
+          fontSize: "80px",
+          "&:hover": {
+            backgroundColor: "black",
+            color: "white",
+          },
+        }}
+      >
+        YAKA
+      </Button>
+      {/* footer text */}
+      <Box
+        sx={{
+          position: "absolute",
+          bottom: "2%",
+          textAlign: "center",
+        }}
+      >
+        <Typography
+          sx={{
+            color: "white",
+            fontFamily: "Koulen, sans-serif",
+            fontSize: "16px",
+          }}
         >
-          <ambientLight intensity={0.5} />
-          <directionalLight position={[5, 10, 5]} intensity={8} />
-          <Model />
-        </Canvas>
+          © YABISH 2024
+        </Typography>
       </Box>
+    </Box>
+  );
+}
 
-      {/* Top-Left Box */}
+function TopLeft() {
+  return (
+    <>
       <Box
         sx={{
           position: "absolute",
@@ -128,6 +118,7 @@ export default function HomePage() {
                   color: "#ff0000",
                 },
                 userSelect: "none",
+                textDecoration: "underline",
               }}
             >
               Artists
@@ -204,6 +195,6 @@ export default function HomePage() {
           INSTAGRAM
         </Typography>
       </Button>
-    </motion.div>
+    </>
   );
 }

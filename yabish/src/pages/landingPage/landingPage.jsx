@@ -12,7 +12,7 @@ function Model() {
   const [direction, setDirection] = useState(1);
   const leftMaxAngle = -Math.PI / 18;
   const rightMaxAngle = Math.PI / 4;
-  const baseSpeed = 0.008;
+  const baseSpeed = 0.007;
 
   useFrame(() => {
     if (modelRef.current) {
@@ -94,8 +94,8 @@ export default function LandingPage() {
           style={{ height: "90%" }}
           camera={{ position: [0, 0, 2], fov: 50 }}
         >
-          <ambientLight />
-          <directionalLight position={[5, 10, 5]} intensity={1} />
+          <ambientLight intensity={0.5} />
+          <directionalLight position={[5, 10, 5]} intensity={8} />
           <Model />
           {/* <OrbitControls target={[0, 0, 0]} /> */}
         </Canvas>

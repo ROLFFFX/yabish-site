@@ -8,17 +8,33 @@ import {
 import { AnimatePresence } from "framer-motion";
 import LandingPage from "./pages/landingPage/landingPage";
 import HomePage from "./pages/homePage/homePage";
+import ArtistMainPage from "./pages/artists/ArtistMainPage";
 
 function App() {
   const location = useLocation();
 
+  // Define the transition routes
+  const transitionRoutes = ["/", "/home"];
+
+  const isTransitionRoute = transitionRoutes.includes(location.pathname);
+
   return (
-    <AnimatePresence mode="wait">
-      <Routes location={location} key={location.pathname}>
-        <Route path="/" element={<LandingPage />} />
-        <Route path="/home" element={<HomePage />} />
-      </Routes>
-    </AnimatePresence>
+    <>
+      {/* Transition-enabled Routes */}
+      {isTransitionRoute ? (
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/home" element={<HomePage />} />
+          </Routes>
+        </AnimatePresence>
+      ) : (
+        // Non-transition Routes
+        <Routes>
+          <Route path="/artist" element={<ArtistMainPage />} />
+        </Routes>
+      )}
+    </>
   );
 }
 
