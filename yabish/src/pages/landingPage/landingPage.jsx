@@ -3,6 +3,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Box, Button, Typography } from "@mui/material";
 import { useGLTF, OrbitControls } from "@react-three/drei";
 import { useFont } from "../../hooks/useFont";
+import { useNavigate } from "react-router-dom";
 
 /**
   This model component defines the model being displayed on canvas, specifically the ANIMATION, here are several
@@ -69,6 +70,7 @@ function Model() {
 }
 
 export default function LandingPage() {
+  const navigate = useNavigate();
   return (
     <Box
       // border={1}
@@ -102,6 +104,7 @@ export default function LandingPage() {
           boxShadow: "none",
           border: "none",
         }}
+        onClick={() => navigate("/home")}
       >
         <Typography
           sx={{

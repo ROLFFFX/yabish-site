@@ -16,9 +16,11 @@
     "@react-three/drei": "^9.120.4",
     "@react-three/fiber": "^8.17.10",
     "audit": "^0.0.6",
+    "framer-motion": "^11.15.0",
     "npm": "^11.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router-dom": "^7.1.0",
     "three": "^0.171.0"
   },
   "devDependencies": {
