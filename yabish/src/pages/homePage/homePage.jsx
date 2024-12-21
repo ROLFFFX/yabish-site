@@ -1,54 +1,28 @@
 import React, { useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Box } from "@mui/material";
-import { useGLTF, OrbitControls } from "@react-three/drei";
+import { OrbitControls, useGLTF } from "@react-three/drei";
+import { motion } from "framer-motion";
+import { pageVariants } from "../../animations/pageVariants";
 
 /**
- * Model Component: Loads the 3D model, applies Blender-inspired material settings, and adds rotation animation.
+ * Model Component with Animation
  */
 function Model() {
   const { scene } = useGLTF("/models/yabish3d.glb");
   const modelRef = useRef();
   const [direction, setDirection] = useState(1);
-  const leftMaxAngle = -Math.PI / 18;
-  const rightMaxAngle = Math.PI / 4;
-  const baseSpeed = 0.008;
-  const minSpeed = 0.004;
+  const leftMaxAngle = -Math.PI / 18; // 10 degrees to the left
+  const rightMaxAngle = Math.PI / 4; // 45 degrees to the right
+  const baseSpeed = 0.008; // Base rotation speed
+
   useFrame(() => {
     if (modelRef.current) {
-      const currentAngle = modelRef.current.rotation.y;
-      const easingZone = Math.PI / 36; // ~5 degrees
-      let speedMultiplier = baseSpeed;
+      modelRef.current.rotation.y += baseSpeed * direction;
+
       if (
-        (direction === 1 && currentAngle > rightMaxAngle - easingZone) ||
-        (direction === -1 && currentAngle < leftMaxAngle + easingZone)
-      ) {
-        const distanceToEdge =
-          direction === 1
-            ? rightMaxAngle - currentAngle
-            : currentAngle - leftMaxAngle;
-        speedMultiplier = Math.max(
-          minSpeed,
-          baseSpeed * (distanceToEdge / easingZone)
-        );
-      }
-      if (
-        (direction === 1 && currentAngle < leftMaxAngle + easingZone) ||
-        (direction === -1 && currentAngle > rightMaxAngle - easingZone)
-      ) {
-        const distanceFromEdge =
-          direction === 1
-            ? currentAngle - leftMaxAngle
-            : rightMaxAngle - currentAngle;
-        speedMultiplier = Math.min(
-          baseSpeed,
-          minSpeed + (baseSpeed - minSpeed) * (distanceFromEdge / easingZone)
-        );
-      }
-      modelRef.current.rotation.y += speedMultiplier * direction;
-      if (
-        (direction === 1 && currentAngle > rightMaxAngle) ||
-        (direction === -1 && currentAngle < leftMaxAngle)
+        (direction === 1 && modelRef.current.rotation.y > rightMaxAngle) ||
+        (direction === -1 && modelRef.current.rotation.y < leftMaxAngle)
       ) {
         setDirection(-direction);
       }
@@ -57,10 +31,9 @@ function Model() {
 
   scene.traverse((child) => {
     if (child.isMesh) {
-      child.material.color.set("#ffffff");
+      child.material.color.set("#ffffff"); // White model
       child.material.roughness = 0.486;
       child.material.metalness = 0;
-      child.material.needsUpdate = true;
     }
   });
 
@@ -68,34 +41,37 @@ function Model() {
 }
 
 /**
- * HomePage Component: Renders the 3D model with a black background and animated rotation.
+ * HomePage Component
  */
 export default function HomePage() {
   return (
-    <Box
-      sx={{
-        height: "100vh",
-        width: "100vw",
-        backgroundColor: "black",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        margin: 0,
-        padding: 0,
-        overflow: "hidden",
-      }}
+    <motion.div
+      variants={pageVariants}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      style={{ height: "100vh", backgroundColor: "black" }} // Black background
     >
-      <Canvas
-        style={{
-          height: "90%",
-          width: "100%",
+      <Box
+        sx={{
+          height: "100vh",
+          width: "100vw",
+          backgroundColor: "black",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
         }}
-        camera={{ position: [0, 0, 2], fov: 50 }}
       >
-        <ambientLight intensity={1} />{" "}
-        <directionalLight position={[5, 10, 5]} intensity={1.5} /> <Model />
-        <OrbitControls target={[0, 0, 0]} />
-      </Canvas>
-    </Box>
+        <Canvas
+          style={{ height: "100%", width: "100%" }}
+          camera={{ position: [0, 0, 2], fov: 50 }}
+        >
+          <ambientLight intensity={1} />
+          <directionalLight position={[5, 10, 5]} intensity={1.5} />
+          <Model />
+          {/* <OrbitControls target={[0, 0, 0]} /> */}
+        </Canvas>
+      </Box>
+    </motion.div>
   );
 }
