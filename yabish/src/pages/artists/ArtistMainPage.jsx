@@ -2,6 +2,7 @@ import { Box, Button, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import React from "react";
 import YABISHLogo from "../..//assets/YABISHlogo.png";
+import { useNavigate } from "react-router-dom";
 
 export default function ArtistMainPage() {
   return (
@@ -70,6 +71,7 @@ export default function ArtistMainPage() {
 }
 
 function TopLeft() {
+  const navigate = useNavigate();
   return (
     <>
       <Box
@@ -142,7 +144,12 @@ function TopLeft() {
             </Typography>
           </motion.div>
           {/* about route */}
-          <motion.div whileHover={{ scale: 1.1 }}>
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            onClick={() => {
+              navigate("/about");
+            }}
+          >
             <Typography
               sx={{
                 color: "white",

@@ -9,6 +9,7 @@ import { AnimatePresence } from "framer-motion";
 import LandingPage from "./pages/landingPage/landingPage";
 import HomePage from "./pages/homePage/homePage";
 import ArtistMainPage from "./pages/artists/ArtistMainPage";
+import AboutPage from "./pages/about/AboutPage";
 
 function App() {
   const location = useLocation();
@@ -32,6 +33,7 @@ function App() {
         // Non-transition Routes
         <Routes>
           <Route path="/artist" element={<ArtistMainPage />} />
+          <Route path="/about" element={<AboutPage />} />
         </Routes>
       )}
     </>

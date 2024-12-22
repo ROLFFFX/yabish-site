@@ -1,87 +1,95 @@
 import { Box, Button, Typography } from "@mui/material";
-import { useGLTF } from "@react-three/drei";
-import { Canvas, useFrame } from "@react-three/fiber";
 import { motion } from "framer-motion";
-import React, { useRef, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import React from "react";
 import YABISHLogo from "../..//assets/YABISHlogo.png";
-import { pageVariants } from "../../animations/pageVariants";
+import { useNavigate } from "react-router-dom";
 
-/**
- * Model Component with Animation
- */
-function Model() {
-  const { scene } = useGLTF("/models/yabish3d.glb");
-  const modelRef = useRef();
-  const [direction, setDirection] = useState(1);
-  const leftMaxAngle = -Math.PI / 18; // 10 degrees to the left
-  const rightMaxAngle = Math.PI / 4; // 45 degrees to the right
-  const baseSpeed = 0.007; // Base rotation speed
-
-  useFrame(() => {
-    if (modelRef.current) {
-      modelRef.current.rotation.y += baseSpeed * direction;
-
-      if (
-        (direction === 1 && modelRef.current.rotation.y > rightMaxAngle) ||
-        (direction === -1 && modelRef.current.rotation.y < leftMaxAngle)
-      ) {
-        setDirection(-direction);
-      }
-    }
-  });
-
-  scene.traverse((child) => {
-    if (child.isMesh) {
-      child.material.color.set("#ffffff"); // White model
-      child.material.roughness = 0.486;
-      child.material.metalness = 0;
-    }
-  });
-
-  return <primitive ref={modelRef} object={scene} position={[0, 0.2, 0]} />;
-}
-
-/**
- * HomePage Component
- */
-export default function HomePage() {
-  const navigate = useNavigate();
+export default function AboutPage() {
   return (
-    <motion.div
-      variants={pageVariants}
-      initial="initial"
-      animate="animate"
-      exit="exit"
+    <Box
       style={{
         height: "100vh",
         backgroundColor: "black",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
         position: "relative",
-        overflow: "hidden",
       }}
     >
-      {/* Fullscreen Canvas */}
+      <TopLeft></TopLeft>
       <Box
         sx={{
-          height: "100vh",
-          width: "100vw",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          position: "relative",
+          height: "70%", // Box height
+          width: "55%", // Box width
+          backgroundColor: "black", // Slightly transparent background
+          overflowY: "auto", // Scrollable vertically
+          overflowX: "hidden", // No horizontal scrolling
+          padding: "1rem", // Add padding inside the box
+          color: "white", // Text color
         }}
       >
-        <Canvas
-          style={{ height: "100%", width: "100%" }}
-          camera={{ position: [0, 0, 2], fov: 50 }}
+        <Typography
+          sx={{
+            fontFamily: "Noto Sans SC, sans-serif",
+            fontSize: "18px",
+          }}
         >
-          <ambientLight intensity={0.5} />
-          <directionalLight position={[5, 10, 5]} intensity={8} />
-          <Model />
-        </Canvas>
+          <span style={{ fontFamily: "Koulen, sas-serif" }}>YaBish</span>
+          是一家充满活力的音乐厂牌，专注于推广艺人进行在地化发展，合作艺人包括
+          <span style={{ fontFamily: "Koulen, sas-serif" }}>99 God</span>和
+          <span style={{ fontFamily: "Koulen, sas-serif" }}>Yaka</span>
+          。我们致力于帮助全球潜力无限的地赏与地下艺人获得更多关注。
+          音乐的力量在于连接不同文化，通过跨越地域的艺术表达，打造无界限的创意共同体。
+          <br />
+          <br />
+        </Typography>
+        <Typography
+          sx={{
+            fontFamily: "Koulen, sans-serif",
+            fontSize: "20px",
+          }}
+        >
+          YaBish is a dynamic music label dedicated to promoting artists'
+          localization, working with talents like 99 God and Yaka. We strive to
+          help both mainstream and underground artists worldwide gain more
+          recognition. The power of music lies in connecting diverse cultures,
+          creating a boundless creative community through cross-regional
+          artistic expression. <br />
+          <br />
+          <br />
+          CONTACT <br />
+          Artist Booking/Management: yabish.prod@gmail.com <br />
+          <br />
+          FOLLOW ME <br />
+          YABISH
+        </Typography>
       </Box>
+      {/* footer text */}
+      <Box
+        sx={{
+          position: "absolute",
+          bottom: "2%",
+          textAlign: "center",
+        }}
+      >
+        <Typography
+          sx={{
+            color: "white",
+            fontFamily: "Koulen, sans-serif",
+            fontSize: "16px",
+          }}
+        >
+          © YABISH 2024
+        </Typography>
+      </Box>
+    </Box>
+  );
+}
 
-      {/* Top-Left Box */}
+function TopLeft() {
+  const navigate = useNavigate();
+  return (
+    <>
       <Box
         sx={{
           position: "absolute",
@@ -151,12 +159,7 @@ export default function HomePage() {
             </Typography>
           </motion.div>
           {/* about route */}
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-            onClick={() => {
-              navigate("/about");
-            }}
-          >
+          <motion.div whileHover={{ scale: 1.1 }}>
             <Typography
               sx={{
                 color: "white",
@@ -167,6 +170,7 @@ export default function HomePage() {
                   color: "#ff0000",
                   userSelect: "none",
                 },
+                textDecoration: "underline",
               }}
             >
               About
@@ -209,6 +213,6 @@ export default function HomePage() {
           INSTAGRAM
         </Typography>
       </Button>
-    </motion.div>
+    </>
   );
 }
