@@ -92,7 +92,8 @@ function TopLeft() {
           style={{
             width: "10%",
             height: "auto",
-            marginBottom: "0.5rem",
+            marginBottom: "2rem",
+            marginLeft: -25,
           }}
         />
         <Box

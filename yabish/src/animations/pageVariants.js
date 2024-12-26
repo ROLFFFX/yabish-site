@@ -1,22 +1,22 @@
 export const pageVariants = {
   // 1. Expanding Circle Transition (Default)
-  initial: {
-    clipPath: "circle(0% at 50% 100%)", // Start as a small circle at the bottom
-  },
-  animate: {
-    clipPath: "circle(150% at 50% 50%)", // Expand to cover the screen
-    transition: {
-      duration: 0.8,
-      ease: "easeInOut",
-    },
-  },
-  exit: {
-    clipPath: "circle(0% at 50% 0%)", // Shrinks back to the top
-    transition: {
-      duration: 1.2,
-      ease: "easeInOut",
-    },
-  },
+  // initial: {
+  //   clipPath: "circle(0% at 50% 100%)", // Start as a small circle at the bottom
+  // },
+  // animate: {
+  //   clipPath: "circle(150% at 50% 50%)", // Expand to cover the screen
+  //   transition: {
+  //     duration: 0.8,
+  //     ease: "easeInOut",
+  //   },
+  // },
+  // exit: {
+  //   clipPath: "circle(0% at 50% 0%)", // Shrinks back to the top
+  //   transition: {
+  //     duration: 1.2,
+  //     ease: "easeInOut",
+  //   },
+  // },
   //-------------------------------------------------------------------------------------
   // 2.  Wipe Transition (Diagonal)
   // initial: {
