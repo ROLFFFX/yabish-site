@@ -119,7 +119,7 @@ export default function LandingPage() {
               sx={{
                 fontSize: "40px",
                 color: isBlackBackground ? "white" : "black",
-                fontFamily: "Koulen, sans-serif",
+                fontFamily: "Anton, sans-serif",
               }}
             >
               ENTER

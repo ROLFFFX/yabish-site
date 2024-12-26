@@ -30,14 +30,14 @@ export default function AboutPage() {
       >
         <Typography
           sx={{
-            fontFamily: "Noto Sans SC, sans-serif",
+            fontFamily: "Glow Sans SC Compressed Regular, sans-serif",
             fontSize: "18px",
           }}
         >
           <span style={{ fontFamily: "Koulen, sas-serif" }}>YaBish</span>
           是一家充满活力的音乐厂牌，专注于推广艺人进行在地化发展，合作艺人包括
-          <span style={{ fontFamily: "Koulen, sas-serif" }}>99 God</span>和
-          <span style={{ fontFamily: "Koulen, sas-serif" }}>Yaka</span>
+          <span style={{ fontFamily: "Antonio, sas-serif" }}>99 God</span>和
+          <span style={{ fontFamily: "Antonio, sas-serif" }}>Yaka</span>
           。我们致力于帮助全球潜力无限的地赏与地下艺人获得更多关注。
           音乐的力量在于连接不同文化，通过跨越地域的艺术表达，打造无界限的创意共同体。
           <br />
@@ -45,7 +45,7 @@ export default function AboutPage() {
         </Typography>
         <Typography
           sx={{
-            fontFamily: "Koulen, sans-serif",
+            fontFamily: "Antonio, sans-serif",
             fontSize: "20px",
           }}
         >
@@ -108,7 +108,8 @@ function TopLeft() {
           style={{
             width: "10%",
             height: "auto",
-            marginBottom: "0.5rem",
+            marginBottom: "2.5rem",
+            marginLeft: -25,
           }}
         />
         <Box

@@ -6,6 +6,7 @@ import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import YABISHLogo from "../..//assets/YABISHlogo.png";
 import { pageVariants } from "../../animations/pageVariants";
+import "./homePageStyle.css";
 
 /**
  * Model Component with Animation
@@ -122,7 +123,7 @@ export default function HomePage() {
             <Typography
               sx={{
                 color: "white",
-                fontFamily: "Koulen, sans-serif",
+                fontFamily: "Anton, sans-serif",
                 fontSize: "30px",
                 transition: "color 0.3s ease-in-out",
                 "&:hover": {
@@ -130,6 +131,7 @@ export default function HomePage() {
                 },
                 userSelect: "none",
               }}
+              className="text-effect"
             >
               Artists
             </Typography>
@@ -139,7 +141,7 @@ export default function HomePage() {
             <Typography
               sx={{
                 color: "white",
-                fontFamily: "Koulen, sans-serif",
+                fontFamily: "Anton, sans-serif",
                 fontSize: "30px",
                 transition: "color 0.3s ease-in-out",
                 "&:hover": {
@@ -161,7 +163,7 @@ export default function HomePage() {
             <Typography
               sx={{
                 color: "white",
-                fontFamily: "Koulen, sans-serif",
+                fontFamily: "Anton, sans-serif",
                 fontSize: "30px",
                 transition: "color 0.3s ease-in-out",
                 "&:hover": {
@@ -183,7 +185,6 @@ export default function HomePage() {
           left: "2%",
           color: "white",
           padding: "0.5rem 1rem",
-          fontFamily: "Koulen, sans-serif",
           fontSize: "20px",
           borderRadius: "5px",
           borderColor: "white",
@@ -196,7 +197,7 @@ export default function HomePage() {
         <Typography
           sx={{
             color: "white",
-            fontFamily: "Koulen, sans-serif",
+            fontFamily: "Anton, sans-serif",
             fontSize: "20px",
             transition: "color 0.2s ease-in-out",
             "&:hover": {

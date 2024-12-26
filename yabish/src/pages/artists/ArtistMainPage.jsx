@@ -1,8 +1,9 @@
 import { Box, Button, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import React from "react";
-import YABISHLogo from "../..//assets/YABISHlogo.png";
+import YABISHLogo from "../../assets/YABISHlogo.png";
 import { useNavigate } from "react-router-dom";
+
 
 export default function ArtistMainPage() {
   return (
