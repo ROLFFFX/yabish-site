@@ -10,6 +10,8 @@ import LandingPage from "./pages/landingPage/landingPage";
 import HomePage from "./pages/homePage/homePage";
 import ArtistMainPage from "./pages/artists/ArtistMainPage";
 import AboutPage from "./pages/about/AboutPage";
+import Test from "./pages/Test";
+import GodPage from "./pages/artists/GodPage";
 
 function App() {
   const location = useLocation();
@@ -34,6 +36,8 @@ function App() {
         <Routes>
           <Route path="/artist" element={<ArtistMainPage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/test" element={<Test />} />
+          <Route path="/99god" element={<GodPage />} />
         </Routes>
       )}
     </>

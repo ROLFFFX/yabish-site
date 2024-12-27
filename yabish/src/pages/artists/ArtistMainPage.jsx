@@ -1,208 +1,243 @@
+import React, { useState, useEffect } from "react";
 import { Box, Button, Typography } from "@mui/material";
 import { motion } from "framer-motion";
-import React from "react";
-import YABISHLogo from "../../assets/YABISHlogo.png";
 import { useNavigate } from "react-router-dom";
+import YABISHLogo from "../../assets/YABISHlogo.png";
+import yakabgvid from "../../assets/pics/yakabgvid.webm";
+import godbgvid from "../../assets/pics/99godbgvid.webm";
 
 export default function ArtistMainPage() {
+  const [activeVideo, setActiveVideo] = useState("");
+  const [videoKey, setVideoKey] = useState(0);
+
+  useEffect(() => {
+    setVideoKey((prevKey) => prevKey + 1);
+  }, [activeVideo]);
+
   return (
     <Box
-      style={{
+      sx={{
         height: "100vh",
+        width: "100vw",
         backgroundColor: "black",
+        position: "relative",
+        overflow: "hidden",
         display: "flex",
-        justifyContent: "center",
+        flexDirection: "column",
         alignItems: "center",
-        flexDirection: "column", // Align buttons in a column
-        gap: "1rem", // Add space between buttons
+        justifyContent: "center",
       }}
     >
-      <TopLeft></TopLeft>
-      <Button
-        variant="text"
-        sx={{
-          backgroundColor: "black",
-          color: "white",
-          fontFamily: "Anton, sans-serif",
-          fontSize: "80px",
-          "&:hover": {
-            backgroundColor: "black",
-            color: "white",
-          },
-        }}
-      >
-        99 GOD
-      </Button>
-      <Button
-        variant="text"
-        sx={{
-          backgroundColor: "black",
-          color: "white",
-          fontFamily: "Anton, sans-serif",
-          fontSize: "80px",
-          "&:hover": {
-            backgroundColor: "black",
-            color: "white",
-          },
-        }}
-      >
-        YAKA
-      </Button>
-      {/* footer text */}
+      {/* Video Background Container */}
       <Box
         sx={{
-          position: "absolute",
-          bottom: "2%",
-          textAlign: "center",
+          position: "fixed", // Changed from absolute to fixed
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          width: "100vw",
+          height: "100vh",
+          zIndex: 1, // Changed from -1 to ensure video is above background but below content
+          opacity: activeVideo ? 1 : 0,
+          transition: "opacity 0.3s ease-in-out",
         }}
       >
-        <Typography
+        {activeVideo && (
+          <video
+            key={videoKey}
+            src={activeVideo}
+            autoPlay
+            muted
+            loop
+            playsInline
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
+          />
+        )}
+      </Box>
+
+      {/* Content Container */}
+      <Box
+        sx={{
+          position: "relative",
+          zIndex: 2,
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <TopLeft />
+
+        {/* 99 GOD Button */}
+        <Box
           sx={{
-            color: "white",
-            fontFamily: "Anton, sans-serif",
-            fontSize: "16px",
+            position: "relative",
+            width: "fit-content",
+            mb: 2, // Added margin bottom for spacing
+          }}
+          onMouseEnter={() => setActiveVideo(godbgvid)}
+          onMouseLeave={() => setActiveVideo("")}
+        >
+          <Button
+            variant="text"
+            sx={{
+              backgroundColor: "transparent",
+              color: "white",
+              fontFamily: "Anton, sans-serif",
+              fontSize: { xs: "40px", md: "80px" }, // Responsive font size
+              "&:hover": {
+                backgroundColor: "transparent",
+                color: "red",
+              },
+            }}
+          >
+            99 GOD
+          </Button>
+        </Box>
+
+        {/* YAKA Button */}
+        <Box
+          sx={{
+            position: "relative",
+            width: "fit-content",
+          }}
+          onMouseEnter={() => setActiveVideo(yakabgvid)}
+          onMouseLeave={() => setActiveVideo("")}
+        >
+          <Button
+            variant="text"
+            sx={{
+              backgroundColor: "transparent",
+              color: "white",
+              fontFamily: "Anton, sans-serif",
+              fontSize: { xs: "40px", md: "80px" }, // Responsive font size
+              "&:hover": {
+                backgroundColor: "transparent",
+                color: "red",
+              },
+            }}
+          >
+            YAKA
+          </Button>
+        </Box>
+
+        {/* Footer */}
+        <Box
+          sx={{
+            position: "absolute",
+            bottom: "2%",
+            textAlign: "center",
           }}
         >
-          © YABISH 2024
-        </Typography>
+          <Typography
+            sx={{
+              color: "white",
+              fontFamily: "Anton, sans-serif",
+              fontSize: "16px",
+            }}
+          >
+            © YABISH 2024
+          </Typography>
+        </Box>
       </Box>
     </Box>
   );
 }
 
+// TopLeft component remains unchanged
 function TopLeft() {
   const navigate = useNavigate();
   return (
-    <>
+    <Box
+      sx={{
+        position: "absolute",
+        top: "2%",
+        left: "2%",
+        zIndex: 2,
+        padding: "1rem",
+      }}
+    >
+      <img
+        src={YABISHLogo}
+        alt="YABISH Logo"
+        style={{
+          width: "10%",
+          height: "auto",
+          marginBottom: "2rem",
+          marginLeft: -25,
+        }}
+      />
       <Box
         sx={{
-          position: "absolute",
-          top: "2%",
-          left: "2%",
-          height: "30%",
-          backgroundColor: "transparent",
-          zIndex: 2000,
-          padding: "1rem",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "flex-start",
+          width: "100%",
         }}
       >
-        {/* Logo img */}
-        <img
-          src={YABISHLogo}
-          alt="YABISH Logo"
-          style={{
-            width: "10%",
-            height: "auto",
-            marginBottom: "2rem",
-            marginLeft: -25,
-          }}
-        />
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "flex-start",
-            width: "100%",
-          }}
+        <motion.div
+          whileHover={{ scale: 1.1 }}
+          onClick={() => navigate("/artist")}
         >
-          {/* Artists Router */}
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-            onClick={() => {
-              navigate("/artist");
+          <Typography
+            sx={{
+              color: "white",
+              fontFamily: "Anton, sans-serif",
+              fontSize: "30px",
+              transition: "color 0.3s ease-in-out",
+              "&:hover": {
+                color: "#ff0000",
+              },
+              userSelect: "none",
+              textDecoration: "underline",
             }}
           >
-            <Typography
-              sx={{
-                color: "white",
-                fontFamily: "Anton, sans-serif",
-                fontSize: "30px",
-                transition: "color 0.3s ease-in-out",
-                "&:hover": {
-                  color: "#ff0000",
-                },
-                userSelect: "none",
-                textDecoration: "underline",
-              }}
-            >
-              Artists
-            </Typography>
-          </motion.div>
-          {/* Events Route */}
-          <motion.div whileHover={{ scale: 1.1 }}>
-            <Typography
-              sx={{
-                color: "white",
-                fontFamily: "Anton, sans-serif",
-                fontSize: "30px",
-                transition: "color 0.3s ease-in-out",
-                "&:hover": {
-                  color: "#ff0000",
-                },
-                userSelect: "none",
-              }}
-            >
-              Events
-            </Typography>
-          </motion.div>
-          {/* about route */}
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-            onClick={() => {
-              navigate("/about");
+            Artists
+          </Typography>
+        </motion.div>
+        <motion.div whileHover={{ scale: 1.1 }}>
+          <Typography
+            sx={{
+              color: "white",
+              fontFamily: "Anton, sans-serif",
+              fontSize: "30px",
+              transition: "color 0.3s ease-in-out",
+              "&:hover": {
+                color: "#ff0000",
+              },
+              userSelect: "none",
             }}
           >
-            <Typography
-              sx={{
-                color: "white",
-                fontFamily: "Anton, sans-serif",
-                fontSize: "30px",
-                transition: "color 0.3s ease-in-out",
-                "&:hover": {
-                  color: "#ff0000",
-                  userSelect: "none",
-                },
-              }}
-            >
-              About
-            </Typography>
-          </motion.div>
-        </Box>
+            Events
+          </Typography>
+        </motion.div>
+        <motion.div
+          whileHover={{ scale: 1.1 }}
+          onClick={() => navigate("/about")}
+        >
+          <Typography
+            sx={{
+              color: "white",
+              fontFamily: "Anton, sans-serif",
+              fontSize: "30px",
+              transition: "color 0.3s ease-in-out",
+              "&:hover": {
+                color: "#ff0000",
+              },
+              userSelect: "none",
+            }}
+          >
+            About
+          </Typography>
+        </motion.div>
       </Box>
-      <Button
-        variant="outlined"
-        sx={{
-          position: "absolute",
-          bottom: "2%",
-          left: "2%",
-          color: "white",
-          padding: "0.5rem 1rem",
-          fontFamily: "Anton, sans-serif",
-          fontSize: "20px",
-          borderRadius: "5px",
-          borderColor: "white",
-          "&:hover": {
-            backgroundColor: "black",
-            borderColor: "#ff0000",
-          },
-        }}
-      >
-        <Typography
-          sx={{
-            color: "white",
-            fontFamily: "Anton, sans-serif",
-            fontSize: "20px",
-            transition: "color 0.2s ease-in-out",
-            "&:hover": {
-              color: "#ff0000",
-            },
-          }}
-          onClick={() =>
-            window.open("https://www.instagram.com/yabishunion/", "_blank")
-          }
-        >
-          INSTAGRAM
-        </Typography>
-      </Button>
-    </>
+    </Box>
   );
 }

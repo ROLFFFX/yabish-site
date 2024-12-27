@@ -44,6 +44,8 @@ function Model() {
 
 export default function HomePage() {
   const navigate = useNavigate();
+  const text = "ARTISTS"; // Text to display
+  const [hoveredIndex, setHoveredIndex] = useState(null);
   return (
     <motion.div
       variants={pageVariants}
@@ -109,68 +111,14 @@ export default function HomePage() {
             width: "100%",
           }}
         >
-          {/* Artists Router */}
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-            onClick={() => {
-              navigate("/artist");
-            }}
-          >
-            <Typography
-              sx={{
-                color: "white",
-                fontFamily: "Anton, sans-serif",
-                fontSize: "30px",
-                transition: "color 0.3s ease-in-out",
-                "&:hover": {
-                  color: "#ff0000",
-                },
-                userSelect: "none",
-              }}
-              className="text-effect"
-            >
-              Artists
-            </Typography>
-          </motion.div>
+          {/* Artists Route */}
+          <HoverableText text="ARTISTS" route="/artist" />
+
           {/* Events Route */}
-          <motion.div whileHover={{ scale: 1.1 }}>
-            <Typography
-              sx={{
-                color: "white",
-                fontFamily: "Anton, sans-serif",
-                fontSize: "30px",
-                transition: "color 0.3s ease-in-out",
-                "&:hover": {
-                  color: "#ff0000",
-                },
-                userSelect: "none",
-              }}
-            >
-              Events
-            </Typography>
-          </motion.div>
+          <HoverableText text="EVENTS" route="/events" />
+
           {/* About Route */}
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-            onClick={() => {
-              navigate("/about");
-            }}
-          >
-            <Typography
-              sx={{
-                color: "white",
-                fontFamily: "Anton, sans-serif",
-                fontSize: "30px",
-                transition: "color 0.3s ease-in-out",
-                "&:hover": {
-                  color: "#ff0000",
-                },
-                userSelect: "none",
-              }}
-            >
-              About
-            </Typography>
-          </motion.div>
+          <HoverableText text="ABOUT" route="/about" />
         </Box>
       </Box>
 
@@ -191,6 +139,9 @@ export default function HomePage() {
             borderColor: "#ff0000",
           },
         }}
+        onClick={() =>
+          window.open("https://www.instagram.com/yabishunion/", "_blank")
+        }
       >
         <Typography
           sx={{
@@ -202,13 +153,64 @@ export default function HomePage() {
               color: "#ff0000",
             },
           }}
-          onClick={() =>
-            window.open("https://www.instagram.com/yabishunion/", "_blank")
-          }
         >
           INSTAGRAM
         </Typography>
       </Button>
     </motion.div>
+  );
+}
+
+function HoverableText({ text, route }) {
+  const navigate = useNavigate();
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+
+  return (
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        marginBottom: "1rem", // Add spacing between routes
+      }}
+    >
+      {text.split("").map((char, index) => (
+        <motion.span
+          key={index}
+          onMouseEnter={() => setHoveredIndex(index)}
+          onMouseLeave={() => setHoveredIndex(null)}
+          animate={
+            hoveredIndex === index
+              ? { scaleX: 1.2 }
+              : hoveredIndex !== null &&
+                (hoveredIndex === index - 1 || hoveredIndex === index + 1)
+              ? { scaleX: 1.1 }
+              : { scaleX: 1 }
+          }
+          transition={{ duration: 0.2, ease: "easeInOut" }}
+          style={{
+            display: "inline-block",
+            cursor: "pointer",
+            margin: "0 1.5px",
+          }}
+          onClick={() => navigate(route)}
+        >
+          <Typography
+            sx={{
+              fontFamily: "Anton, sans-serif",
+              fontSize: "30px",
+              color: "white",
+              transition: "color 0.3s ease-in-out",
+              "&:hover": {
+                color: "#ff0000",
+              },
+              userSelect: "none",
+            }}
+          >
+            {char}
+          </Typography>
+        </motion.span>
+      ))}
+    </Box>
   );
 }
