@@ -4,7 +4,6 @@ import React from "react";
 import YABISHLogo from "../../assets/YABISHlogo.png";
 import { useNavigate } from "react-router-dom";
 
-
 export default function ArtistMainPage() {
   return (
     <Box
@@ -24,7 +23,7 @@ export default function ArtistMainPage() {
         sx={{
           backgroundColor: "black",
           color: "white",
-          fontFamily: "Koulen, sans-serif",
+          fontFamily: "Anton, sans-serif",
           fontSize: "80px",
           "&:hover": {
             backgroundColor: "black",
@@ -39,7 +38,7 @@ export default function ArtistMainPage() {
         sx={{
           backgroundColor: "black",
           color: "white",
-          fontFamily: "Koulen, sans-serif",
+          fontFamily: "Anton, sans-serif",
           fontSize: "80px",
           "&:hover": {
             backgroundColor: "black",
@@ -60,7 +59,7 @@ export default function ArtistMainPage() {
         <Typography
           sx={{
             color: "white",
-            fontFamily: "Koulen, sans-serif",
+            fontFamily: "Anton, sans-serif",
             fontSize: "16px",
           }}
         >
@@ -115,7 +114,7 @@ function TopLeft() {
             <Typography
               sx={{
                 color: "white",
-                fontFamily: "Koulen, sans-serif",
+                fontFamily: "Anton, sans-serif",
                 fontSize: "30px",
                 transition: "color 0.3s ease-in-out",
                 "&:hover": {
@@ -133,7 +132,7 @@ function TopLeft() {
             <Typography
               sx={{
                 color: "white",
-                fontFamily: "Koulen, sans-serif",
+                fontFamily: "Anton, sans-serif",
                 fontSize: "30px",
                 transition: "color 0.3s ease-in-out",
                 "&:hover": {
@@ -155,7 +154,7 @@ function TopLeft() {
             <Typography
               sx={{
                 color: "white",
-                fontFamily: "Koulen, sans-serif",
+                fontFamily: "Anton, sans-serif",
                 fontSize: "30px",
                 transition: "color 0.3s ease-in-out",
                 "&:hover": {
@@ -177,7 +176,7 @@ function TopLeft() {
           left: "2%",
           color: "white",
           padding: "0.5rem 1rem",
-          fontFamily: "Koulen, sans-serif",
+          fontFamily: "Anton, sans-serif",
           fontSize: "20px",
           borderRadius: "5px",
           borderColor: "white",
@@ -190,7 +189,7 @@ function TopLeft() {
         <Typography
           sx={{
             color: "white",
-            fontFamily: "Koulen, sans-serif",
+            fontFamily: "Anton, sans-serif",
             fontSize: "20px",
             transition: "color 0.2s ease-in-out",
             "&:hover": {

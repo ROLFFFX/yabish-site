@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { pageVariants } from "../../animations/pageVariants";
 
-function Model({ isWhite, fadeOut }) {
+function Model({ isWhite, fadeOut, fadeIn }) {
   const { scene } = useGLTF("/models/yabish3d.glb");
   const modelRef = useRef();
   const [direction, setDirection] = useState(1);
@@ -26,7 +26,20 @@ function Model({ isWhite, fadeOut }) {
       }
     }
 
-    // Handle fade-out effect
+    // Apply fade-in effect
+    if (fadeIn && modelRef.current) {
+      modelRef.current.traverse((child) => {
+        if (child.isMesh) {
+          child.material.opacity = Math.min(
+            1,
+            child.material.opacity + 0.02 // Gradually increase opacity
+          );
+          child.material.transparent = true;
+        }
+      });
+    }
+
+    // Apply fade-out effect
     if (fadeOut && modelRef.current) {
       modelRef.current.traverse((child) => {
         if (child.isMesh) {
@@ -34,7 +47,7 @@ function Model({ isWhite, fadeOut }) {
             0,
             child.material.opacity - 0.02 // Gradually decrease opacity
           );
-          child.material.transparent = true; // Ensure transparency
+          child.material.transparent = true;
         }
       });
     }
@@ -45,7 +58,10 @@ function Model({ isWhite, fadeOut }) {
       child.material.color.set(isWhite ? "#FFFFFF" : "#000000");
       child.material.roughness = 0.486;
       child.material.metalness = 0;
-      child.material.opacity = fadeOut ? 1 : child.material.opacity;
+
+      // Set opacity based on fadeIn or fadeOut state
+      child.material.opacity = fadeIn || fadeOut ? 0 : 1;
+      child.material.transparent = fadeIn || fadeOut;
     }
   });
 
@@ -63,12 +79,12 @@ export default function LandingPage() {
     setShowButton(false); // Hide the button
     setIsBlackBackground(true); // Switch to black background
 
-    // Trigger the shake effect shortly after button disappears
+    // Trigger the shake effect
     setTimeout(() => {
       setTriggerShake(true);
     }, 50);
 
-    // Trigger the fade-out effect after the shake
+    // Trigger the fade-out effect
     setTimeout(() => {
       setFadeOutModel(true);
     }, 500);
@@ -76,7 +92,7 @@ export default function LandingPage() {
     // Navigate to /home after fade-out
     setTimeout(() => {
       navigate("/home");
-    }, 1500);
+    }, 500);
   };
 
   return (
@@ -144,12 +160,16 @@ export default function LandingPage() {
         }}
       >
         <Canvas
-          style={{ height: "100%", width: "100%" }} // Ensure full screen
+          style={{ height: "100%", width: "100%" }}
           camera={{ position: [0, 0, 2], fov: 50 }}
         >
           <ambientLight intensity={0.5} />
           <directionalLight position={[5, 10, 5]} intensity={8} />
-          <Model isWhite={isBlackBackground} fadeOut={fadeOutModel} />
+          <Model
+            isWhite={isBlackBackground}
+            fadeOut={fadeOutModel}
+            fadeIn={!isBlackBackground}
+          />
         </Canvas>
       </motion.div>
     </motion.div>

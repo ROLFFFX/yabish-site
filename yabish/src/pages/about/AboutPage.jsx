@@ -30,11 +30,13 @@ export default function AboutPage() {
       >
         <Typography
           sx={{
-            fontFamily: "Glow Sans SC Compressed Regular, sans-serif",
-            fontSize: "18px",
+            fontFamily: "Glow Sans SC Compressed, sans-serif",
+            fontSize: "20px",
           }}
         >
-          <span style={{ fontFamily: "Koulen, sas-serif" }}>YaBish</span>
+          <span style={{ fontFamily: "Glow Sans SC Compressed, sas-serif" }}>
+            YaBish
+          </span>
           是一家充满活力的音乐厂牌，专注于推广艺人进行在地化发展，合作艺人包括
           <span style={{ fontFamily: "Antonio, sas-serif" }}>99 God</span>和
           <span style={{ fontFamily: "Antonio, sas-serif" }}>Yaka</span>
@@ -75,7 +77,7 @@ export default function AboutPage() {
         <Typography
           sx={{
             color: "white",
-            fontFamily: "Koulen, sans-serif",
+            fontFamily: "Anton, sans-serif",
             fontSize: "16px",
           }}
         >
@@ -130,7 +132,7 @@ function TopLeft() {
             <Typography
               sx={{
                 color: "white",
-                fontFamily: "Koulen, sans-serif",
+                fontFamily: "Anton, sans-serif",
                 fontSize: "30px",
                 transition: "color 0.3s ease-in-out",
                 "&:hover": {
@@ -147,7 +149,7 @@ function TopLeft() {
             <Typography
               sx={{
                 color: "white",
-                fontFamily: "Koulen, sans-serif",
+                fontFamily: "Anton, sans-serif",
                 fontSize: "30px",
                 transition: "color 0.3s ease-in-out",
                 "&:hover": {
@@ -164,7 +166,7 @@ function TopLeft() {
             <Typography
               sx={{
                 color: "white",
-                fontFamily: "Koulen, sans-serif",
+                fontFamily: "Anton, sans-serif",
                 fontSize: "30px",
                 transition: "color 0.3s ease-in-out",
                 "&:hover": {
@@ -187,7 +189,7 @@ function TopLeft() {
           left: "2%",
           color: "white",
           padding: "0.5rem 1rem",
-          fontFamily: "Koulen, sans-serif",
+          fontFamily: "Anton, sans-serif",
           fontSize: "20px",
           borderRadius: "5px",
           borderColor: "white",
@@ -200,7 +202,7 @@ function TopLeft() {
         <Typography
           sx={{
             color: "white",
-            fontFamily: "Koulen, sans-serif",
+            fontFamily: "Anton, sans-serif",
             fontSize: "20px",
             transition: "color 0.2s ease-in-out",
             "&:hover": {

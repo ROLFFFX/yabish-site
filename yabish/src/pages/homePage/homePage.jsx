@@ -1,23 +1,20 @@
+import React, { useRef, useState } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { Box, Button, Typography } from "@mui/material";
 import { useGLTF } from "@react-three/drei";
-import { Canvas, useFrame } from "@react-three/fiber";
 import { motion } from "framer-motion";
-import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import YABISHLogo from "../..//assets/YABISHlogo.png";
 import { pageVariants } from "../../animations/pageVariants";
 import "./homePageStyle.css";
 
-/**
- * Model Component with Animation
- */
 function Model() {
   const { scene } = useGLTF("/models/yabish3d.glb");
   const modelRef = useRef();
   const [direction, setDirection] = useState(1);
   const leftMaxAngle = -Math.PI / 18; // 10 degrees to the left
   const rightMaxAngle = Math.PI / 4; // 45 degrees to the right
-  const baseSpeed = 0.007; // Base rotation speed
+  const baseSpeed = 0.007;
 
   useFrame(() => {
     if (modelRef.current) {
@@ -37,15 +34,14 @@ function Model() {
       child.material.color.set("#ffffff"); // White model
       child.material.roughness = 0.486;
       child.material.metalness = 0;
+      child.material.opacity = 1; // Ensure full visibility
+      child.material.transparent = false;
     }
   });
 
   return <primitive ref={modelRef} object={scene} position={[0, 0.2, 0]} />;
 }
 
-/**
- * HomePage Component
- */
 export default function HomePage() {
   const navigate = useNavigate();
   return (
@@ -153,7 +149,7 @@ export default function HomePage() {
               Events
             </Typography>
           </motion.div>
-          {/* about route */}
+          {/* About Route */}
           <motion.div
             whileHover={{ scale: 1.1 }}
             onClick={() => {
@@ -168,8 +164,8 @@ export default function HomePage() {
                 transition: "color 0.3s ease-in-out",
                 "&:hover": {
                   color: "#ff0000",
-                  userSelect: "none",
                 },
+                userSelect: "none",
               }}
             >
               About
@@ -177,6 +173,8 @@ export default function HomePage() {
           </motion.div>
         </Box>
       </Box>
+
+      {/* Bottom-Left Button */}
       <Button
         variant="outlined"
         sx={{
