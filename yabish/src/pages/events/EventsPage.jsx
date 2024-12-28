@@ -1,10 +1,14 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Box, Button, Typography, useMediaQuery } from "@mui/material";
 import { motion } from "framer-motion";
 import React from "react";
 import YABISHLogo from "../..//assets/YABISHlogo.png";
+import Image1 from "../../assets/pics/99godtour.jpg"; // Replace with your image path
+import Image2 from "../../assets/pics/raindogsposter.jpg"; // Replace with your image path
 import { useNavigate } from "react-router-dom";
 
 export default function EventsPage() {
+  const isMobile = useMediaQuery("(max-width:1100px)"); // Check if the viewport width is below 600px
+
   return (
     <Box
       style={{
@@ -16,7 +20,135 @@ export default function EventsPage() {
         position: "relative",
       }}
     >
-      <TopLeft></TopLeft>
+      <TopLeft />
+      {/* Conditional Rendering for Layout */}
+      {isMobile ? (
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "flex-start",
+            alignItems: "center",
+            position: "absolute",
+            left: "0",
+            width: "100%",
+            height: "100%",
+            overflowY: "auto",
+            padding: "2rem 0",
+          }}
+        >
+          {/* First Image */}
+          <img
+            src={Image1}
+            alt="Image 1"
+            style={{
+              width: "40%",
+              height: "auto",
+              marginBottom: "5%",
+            }}
+          />
+          <Typography
+            sx={{
+              color: "white",
+              marginBottom: "10%",
+              fontFamily: "Anton, sans-serif",
+              fontSize: "24px",
+            }}
+          >
+            99 GOD 2024 TOUR
+          </Typography>
+          {/* Second Image */}
+          <img
+            src={Image2}
+            alt="Image 2"
+            style={{
+              width: "40%",
+              height: "auto",
+              marginBottom: "5%",
+            }}
+          />
+          <Typography
+            sx={{
+              color: "white",
+              marginBottom: "10%",
+              fontFamily: "Anton, sans-serif",
+              fontSize: "24px",
+            }}
+          >
+            COMING!!!YaBish Presents.01
+          </Typography>
+        </Box>
+      ) : (
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: "5rem", // Space between the images
+            position: "absolute",
+            top: "50%", // Center vertically
+            transform: "translateY(-50%)",
+            height: "100%",
+          }}
+        >
+          {/* First Image */}
+          <Box
+            style={{
+              width: "auto",
+              height: "60%",
+            }}
+          >
+            <img
+              src={Image1}
+              alt="Image 1"
+              style={{
+                width: "100%",
+                height: "100%",
+                marginBottom: "5%",
+              }}
+            />
+            <Typography
+              sx={{
+                color: "white",
+                marginBottom: "10%",
+                fontFamily: "Anton, sans-serif",
+                fontSize: "24px",
+                textAlign: "center",
+              }}
+            >
+              99 GOD 2024 TOUR
+            </Typography>
+          </Box>
+          <Box
+            style={{
+              width: "auto",
+              height: "60%",
+            }}
+          >
+            {/* Second Image */}
+            <img
+              style={{
+                width: "auto",
+                height: "100%",
+                marginBottom: "5%",
+              }}
+              src={Image2}
+              alt="Image 2"
+            />
+            <Typography
+              sx={{
+                color: "white",
+                marginBottom: "10%",
+                fontFamily: "Anton, sans-serif",
+                fontSize: "24px",
+                textAlign: "center",
+              }}
+            >
+              COMING!!!YaBish Presents.01
+            </Typography>
+          </Box>
+        </Box>
+      )}
     </Box>
   );
 }
@@ -95,7 +227,7 @@ function TopLeft() {
               Events
             </Typography>
           </motion.div>
-          {/* about route */}
+          {/* About Route */}
           <motion.div
             whileHover={{ scale: 1.1 }}
             onClick={() => {
@@ -110,8 +242,8 @@ function TopLeft() {
                 transition: "color 0.3s ease-in-out",
                 "&:hover": {
                   color: "#ff0000",
-                  userSelect: "none",
                 },
+                userSelect: "none",
               }}
             >
               About
@@ -141,7 +273,7 @@ function TopLeft() {
           sx={{
             color: "white",
             fontFamily: "Anton, sans-serif",
-            fontSize: "20px",
+            fontSize: "16px",
             transition: "color 0.2s ease-in-out",
             "&:hover": {
               color: "#ff0000",

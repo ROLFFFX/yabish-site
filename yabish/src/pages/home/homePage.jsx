@@ -107,7 +107,7 @@ export default function HomePage() {
           sx={{
             color: "white",
             fontFamily: "Anton, sans-serif",
-            fontSize: "20px",
+            fontSize: "16px",
             transition: "color 0.2s ease-in-out",
             "&:hover": {
               color: "#ff0000",

@@ -159,7 +159,7 @@ export default function ArtistMainPage() {
             sx={{
               color: "white",
               fontFamily: "Anton, sans-serif",
-              fontSize: "20px",
+              fontSize: "16px",
               transition: "color 0.2s ease-in-out",
               "&:hover": {
                 color: "#ff0000",
@@ -201,7 +201,9 @@ function TopLeft() {
         position: "absolute",
         top: "2%",
         left: "2%",
-        zIndex: 2,
+        height: "30%",
+        backgroundColor: "transparent",
+        zIndex: 2000,
         padding: "1rem",
       }}
     >
@@ -211,7 +213,7 @@ function TopLeft() {
         style={{
           width: "10%",
           height: "auto",
-          marginBottom: "2rem",
+          marginBottom: "2.5rem",
           marginLeft: -25,
         }}
       />
