@@ -4,7 +4,7 @@ import React from "react";
 import YABISHLogo from "../..//assets/YABISHlogo.png";
 import { useNavigate } from "react-router-dom";
 
-export default function AboutPage() {
+export default function EventsPage() {
   return (
     <Box
       style={{
@@ -17,73 +17,6 @@ export default function AboutPage() {
       }}
     >
       <TopLeft></TopLeft>
-      <Box
-        sx={{
-          height: "70%", // Box height
-          width: "55%", // Box width
-          backgroundColor: "black", // Slightly transparent background
-          overflowY: "auto", // Scrollable vertically
-          overflowX: "hidden", // No horizontal scrolling
-          padding: "1rem", // Add padding inside the box
-          color: "white", // Text color
-        }}
-      >
-        <Typography
-          sx={{
-            fontFamily: "Glow Sans SC Compressed, sans-serif",
-            fontSize: "20px",
-          }}
-        >
-          <span style={{ fontFamily: "Glow Sans SC Compressed, sas-serif" }}>
-            YaBish
-          </span>
-          是一家充满活力的音乐厂牌，专注于推广艺人进行在地化发展，合作艺人包括
-          <span style={{ fontFamily: "Antonio, sas-serif" }}>99 God</span>和
-          <span style={{ fontFamily: "Antonio, sas-serif" }}>Yaka</span>
-          。我们致力于帮助全球潜力无限的地赏与地下艺人获得更多关注。
-          音乐的力量在于连接不同文化，通过跨越地域的艺术表达，打造无界限的创意共同体。
-          <br />
-          <br />
-        </Typography>
-        <Typography
-          sx={{
-            fontFamily: "Antonio, sans-serif",
-            fontSize: "20px",
-          }}
-        >
-          YaBish is a dynamic music label dedicated to promoting artists'
-          localization, working with talents like 99 God and Yaka. We strive to
-          help both mainstream and underground artists worldwide gain more
-          recognition. The power of music lies in connecting diverse cultures,
-          creating a boundless creative community through cross-regional
-          artistic expression. <br />
-          <br />
-          <br />
-          CONTACT <br />
-          Artist Booking/Management: yabish.prod@gmail.com <br />
-          <br />
-          FOLLOW ME <br />
-          YABISH
-        </Typography>
-      </Box>
-      {/* footer text */}
-      <Box
-        sx={{
-          position: "absolute",
-          bottom: "2%",
-          textAlign: "center",
-        }}
-      >
-        <Typography
-          sx={{
-            color: "white",
-            fontFamily: "Anton, sans-serif",
-            fontSize: "16px",
-          }}
-        >
-          © YABISH 2024
-        </Typography>
-      </Box>
     </Box>
   );
 }
@@ -145,12 +78,7 @@ function TopLeft() {
             </Typography>
           </motion.div>
           {/* Events Route */}
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-            onClick={() => {
-              navigate("/events");
-            }}
-          >
+          <motion.div whileHover={{ scale: 1.1 }}>
             <Typography
               sx={{
                 color: "white",
@@ -161,13 +89,19 @@ function TopLeft() {
                   color: "#ff0000",
                 },
                 userSelect: "none",
+                textDecoration: "underline",
               }}
             >
               Events
             </Typography>
           </motion.div>
           {/* about route */}
-          <motion.div whileHover={{ scale: 1.1 }}>
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            onClick={() => {
+              navigate("/about");
+            }}
+          >
             <Typography
               sx={{
                 color: "white",
@@ -178,7 +112,6 @@ function TopLeft() {
                   color: "#ff0000",
                   userSelect: "none",
                 },
-                textDecoration: "underline",
               }}
             >
               About

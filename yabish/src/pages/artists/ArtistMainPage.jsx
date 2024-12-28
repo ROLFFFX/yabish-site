@@ -9,7 +9,7 @@ import godbgvid from "../../assets/pics/99godbgvid.webm";
 export default function ArtistMainPage() {
   const [activeVideo, setActiveVideo] = useState("");
   const [videoKey, setVideoKey] = useState(0);
-
+  const navigate = useNavigate();
   useEffect(() => {
     setVideoKey((prevKey) => prevKey + 1);
   }, [activeVideo]);
@@ -96,6 +96,10 @@ export default function ArtistMainPage() {
                 backgroundColor: "transparent",
                 color: "red",
               },
+              zIndex: 100,
+            }}
+            onClick={() => {
+              navigate("/99god");
             }}
           >
             99 GOD
@@ -123,11 +127,48 @@ export default function ArtistMainPage() {
                 color: "red",
               },
             }}
+            onClick={() => {
+              navigate("/yaka");
+            }}
           >
             YAKA
           </Button>
         </Box>
-
+        {/* Bottom-Left Button */}
+        <Button
+          variant="outlined"
+          sx={{
+            position: "absolute",
+            bottom: "2%",
+            left: "2%",
+            color: "white",
+            padding: "0.5rem 1rem",
+            fontSize: "20px",
+            borderRadius: "5px",
+            borderColor: "white",
+            "&:hover": {
+              backgroundColor: "black",
+              borderColor: "#ff0000",
+            },
+          }}
+          onClick={() =>
+            window.open("https://www.instagram.com/yabishunion/", "_blank")
+          }
+        >
+          <Typography
+            sx={{
+              color: "white",
+              fontFamily: "Anton, sans-serif",
+              fontSize: "20px",
+              transition: "color 0.2s ease-in-out",
+              "&:hover": {
+                color: "#ff0000",
+              },
+            }}
+          >
+            INSTAGRAM
+          </Typography>
+        </Button>
         {/* Footer */}
         <Box
           sx={{
@@ -202,7 +243,12 @@ function TopLeft() {
             Artists
           </Typography>
         </motion.div>
-        <motion.div whileHover={{ scale: 1.1 }}>
+        <motion.div
+          whileHover={{ scale: 1.1 }}
+          onClick={() => {
+            navigate("/events");
+          }}
+        >
           <Typography
             sx={{
               color: "white",

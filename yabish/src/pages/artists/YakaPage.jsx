@@ -3,10 +3,10 @@ import { motion } from "framer-motion";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import YABISHLogo from "../../assets/YABISHlogo.png";
-import godBgImage from "../../assets/pics/99godbg.webp";
+import yakabg from "../../assets/pics/yakabg.webp";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 
-export default function GodPage() {
+export default function YakaPage() {
   const navigate = useNavigate();
   return (
     <Box
@@ -14,9 +14,9 @@ export default function GodPage() {
         height: "100vh",
         width: "100vw",
         backgroundColor: "black",
-        backgroundImage: `url(${godBgImage})`,
+        backgroundImage: `url(${yakabg})`,
         backgroundSize: "cover",
-        backgroundPosition: "center 30%",
+        backgroundPosition: "center 40%",
         position: "relative",
         overflow: "hidden",
         display: "flex",
@@ -82,7 +82,7 @@ export default function GodPage() {
               textAlign: "center",
             }}
           >
-            99GOD
+            YAKA
           </Typography>
 
           {/* Buttons Section */}
@@ -95,19 +95,26 @@ export default function GodPage() {
             }}
           >
             {[
-              { text: "Youtube", url: "https://www.youtube.com/@99god19" },
+              { text: "Youtube", url: "https://www.youtube.com/@yaka2047" },
               {
                 text: "Apple music",
-                url: "https://music.apple.com/cn/artist/99-god/1530452342",
+                url: "https://music.apple.com/cn/artist/yaka/1519813408",
               },
-              { text: "Instagram", url: "https://www.instagram.com/_99god_/" },
+              {
+                text: "Instagram",
+                url: "https://www.instagram.com/yakayakayaka___/",
+              },
               {
                 text: "Spotify",
-                url: "https://open.spotify.com/artist/1fSNmkI8lKMFVMU2Y4hpgi?si=thjriNdTQfGEDfLL9y5_AA",
+                url: "https://open.spotify.com/artist/4fODbCHhX4Q2ro3O5CyrSA?si=rmEL7sYIQuKzqZlGELBveg",
               },
               {
                 text: "WangYiYun",
-                url: "https://music.163.com/#/artist?id=31511662",
+                url: "https://music.163.com/#/artist?id=32992079",
+              },
+              {
+                text: "tiktok",
+                url: "https://www.tiktok.com/@yakayakayaka___",
               },
             ].map((item, index) => (
               <Button
@@ -146,34 +153,50 @@ export default function GodPage() {
               fontSize: "18px",
             }}
           >
-            Hailing from Shanghai, 99 God is an anomaly of sorts: his
-            distinctively deep and gritty vocal delivery hypnotizes listeners
-            over a signature new school Trap sound; while laid-back, raspy
-            melodic lines floating over Neo-soul-influenced-beats display
-            significant depth in his long-time music venture in the heart of
-            Hip-Hop: Brooklyn, New York. <br />
+            Artist, producer, and multi-disciplinary creative from Shanghai,
+            Yaka began to emerge in the underground music scenes of both China
+            and America this year with his signature style: Jungle Rage. At just
+            21 years old, Yaka's musical journey began in the Atlanta Hip-Hop
+            scene. Immersed in the musical environment, he grew up with
+            extensive experience in Hip-Hop production and performance early on.
+            In 2022, Yaka returned to his hometown and moved between cities such
+            as Shanghai and Chengdu, engaging in the mainstream music industry
+            as an in-house producer, while remaining active in the underground.
+            Yaka’s experiences performing in clubs and party venues further led
+            him to the unique energy: combining the spirit of Trap from Atlanta,
+            the rhythms from Jungle, Techno, and Tribal rave music, and sampling
+            melodies from East-Asian classic folk songs, ultimately forming
+            Jungle Rage:
             <br />
-            As one of the most successful independent artists from China, 99 God
-            took off a career right after his first single - “UFO” - in 2021.
-            Since then, the 99 God phenomenon roamed the Chinese Internet,
-            generating a whopping 400,000 followers on the streaming platform
-            NetEase Music. <br />
             <br />
-            2023 marked 99’s new chapter, while a two-year-old single - “Bodega”
-            - blew up in Japan overnight through social media, and eventually
-            charted #1 on Japan’s viral hot 100s, racking up 2.6 million streams
-            and over 200 thousand monthly listeners on Spotify in 2023.
-            Following up, 99 joined forces with Riot Games to produce the
-            leading track for Valorant’s first Chinese agent release -
-            "Renegade", solidifying his momentum abroad; the collaboration ends
-            up Billboard-nominated under the "Best music supervision in a
-            trailer - video game & interactive" award. <br />
+            <span
+              style={{
+                display: "block", // Make the span block-level to apply width
+                width: "80%",
+                margin: "0 auto", // Center-align the block within the parent
+              }}
+            >
+              Jungle represents the UK breakbeat dance music Yaka grew
+              accustomed to as a DJ, also representing the original music
+              rhythms from various East Asian jungle tribes that he samples;
+              Rage represents the branch of Trap music style that emerged in
+              Atlanta while Yaka lived there - a similar energy he brings to the
+              crowd on the dance floor during his performances.
+            </span>
             <br />
-            Over three years of consistent hit releases made 99 God one of East
-            Asia’s most memorable voices in rap music, while it also prepared
-            him the ability to creating unique moments for an audience on the
-            global stage.The 2024 mini tour added a dazzling chapter to 99 God's
-            already sizzling music career.
+            In 2023, Yaka gained more recognition in the industry: in Shanghai,
+            he participated in the “Rap of China” TV show as a music producer
+            and commentator; produced music for famous Chinese rapper GAI and
+            the Chinese launch of the video game, "Valorant", for Riot Games;
+            and formed a creative collective with 99 God whilst they
+            participated in stadium-sized performances at the Changzhou
+            Innersect Music Festival. In early 2024, Yaka moved to Brooklyn, New
+            York to collaboratively work on creative projects and performed
+            there. In February, he released a full-length album “¡2busy4u!
+            Jungle Rage *LP,” critically acclaimed by some Chinese domestic
+            music/sub-culture media outlets as the best-produced underground
+            album of 2024 so far, contributing his influence on and off stage to
+            the Hip-Hop/club music culture in Asia.
           </Typography>
           <Typography
             sx={{
@@ -183,22 +206,27 @@ export default function GodPage() {
             }}
           >
             <br />
-            来自上海，现居美国纽约，结合标志性的磁性嗓音和new school
-            Trap风格，他的说唱作品给听众带来独特体验。常年居住布鲁克林深耕音乐的经历也给了99的音乐一层Neo-soul
-            影响，丰富的节奏与laid-back的旋律融于一体。
-            <br />
-            <br /> 99
-            God在国内成功的独立音乐人生涯始于他在2021年推出的首支单曲《UFO》。作品发布后，99
-            God开始在互联网上现象级地爆火，让他在短短两年中就在网易云音乐上收获了40万粉丝。
+            Yaka 在今年以其标志性的Jungle
+            Rage风格开始在中美两国的地下音乐场景崭露头角。年仅21岁，Yaka的音乐生涯始于他在亚特兰大时参与的当地嘻哈音乐场景。从小的耳濡目染使他早早的获得了充分的制作和演出经验。22年辍学之后，Yaka回到家乡，辗转于上海、成都等城市，从事过主流音乐产业中的编曲制作，同时以不同身份活跃于地下音乐场景。在俱乐部派对演出的经历也让Yaka进一步发掘出属于自己的音乐能量：结合了来自亚特兰大的Trap精神，生长于Jungle、Techno、Tribal等俱乐部的锐舞土壤，再采样本土文化中的华语金曲旋律，最终形成了Jungle
+            Rage：
             <br />
             <br />
-            2023年标志着99
-            God的新篇章。99两年前的单曲《Bodega》在日本社交媒体上一夜走红，2023年10月登上了日本热门播放榜单的第一名，在Spotify上获得了260万次播放，并吸引了20万多名月度听众。随后他与拳头游戏合作，为《瓦洛兰特--无畏契约》登陆国服的首位中国游戏角色制作了主打曲《Renegade》。本曲在Spotify和YouTube上再次冲上热门榜，均获得百万级的播放量，巩固了99在海外的势头。这首合作也出现在拳头游戏的预告片中，拿到了美国知名杂志Billboard公告牌的提名，奖项为“年度最佳预告片音乐监制--游戏与交互媒体”。
+            <span
+              style={{
+                display: "block", // Make the span block-level to apply width
+                width: "80%",
+                margin: "0 auto", // Center-align the block within the parent
+              }}
+            >
+              Jungle即丛林--代表源自英国牙买加移民文化的碎拍舞曲、也代表Yaka采样的各种丛林部落中的原生音乐节奏型；
+              Rage即狂热--这是一种在亚特兰大新兴起的Trap音乐风格分支、也代表Yaka演出时为舞池中参与者们带来与众不同的能量。
+            </span>
             <br />
-            <br />
-            三年来，99
-            God持续推出热单，帮助他成为来自东亚最具特色的歌手之一。同时，不断成长的个人能力也为他在全球平台上创造辉煌做好了准备。2024年，99
-            God的首个个人巡演「九十九」为他炙手可热的音乐生涯增添了璀璨的一页。
+            2023年，Yaka获得了更多来自主流音乐圈内的赏识：在上海《中文说唱巅峰对决》现场录制了音乐制作的评审；为国内知名说唱歌手GAI与拳头游戏出品的《Valorant无畏契约》登陆国服担任音乐制作；与99
+            God组建创意团队，并以艺人的身份参加了常州 Innersect
+            音乐节上体育场规模的演出，为他在国内打开了众多合作机会的窗口。2024年初，Yaka和团队移居纽约布鲁克林共同制作多个创意项目，并在当地举办演出；年初发布的个人专辑《¡2busy4u!
+            Jungle Rage
+            *LP》也被众多国内乐评与亚文化自媒体誉为2024迄今为止的地下年度最佳制作专辑，致力于为亚洲的嘻哈/俱乐部音乐文化做出台前与台后的贡献。
           </Typography>
         </Box>
 

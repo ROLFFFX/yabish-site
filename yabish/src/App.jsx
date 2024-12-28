@@ -6,12 +6,14 @@ import {
   useLocation,
 } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
-import LandingPage from "./pages/landingPage/landingPage";
-import HomePage from "./pages/homePage/homePage";
+import LandingPage from "./pages/landing/landingPage";
+import HomePage from "./pages/home/homePage";
 import ArtistMainPage from "./pages/artists/ArtistMainPage";
 import AboutPage from "./pages/about/AboutPage";
 import Test from "./pages/Test";
 import GodPage from "./pages/artists/GodPage";
+import YakaPage from "./pages/artists/YakaPage";
+import EventsPage from "./pages/events/EventsPage";
 
 function App() {
   const location = useLocation();
@@ -38,6 +40,8 @@ function App() {
           <Route path="/about" element={<AboutPage />} />
           <Route path="/test" element={<Test />} />
           <Route path="/99god" element={<GodPage />} />
+          <Route path="/yaka" element={<YakaPage />} />
+          <Route path="/events" element={<EventsPage />} />
         </Routes>
       )}
     </>
