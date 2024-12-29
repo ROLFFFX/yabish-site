@@ -2,13 +2,13 @@ import { Box, Button, Typography, useMediaQuery } from "@mui/material";
 import { motion } from "framer-motion";
 import React from "react";
 import YABISHLogo from "../..//assets/YABISHlogo.png";
-import Image1 from "../../assets/pics/99godtour.jpg"; // Replace with your image path
-import Image2 from "../../assets/pics/raindogsposter.jpg"; // Replace with your image path
+import GodTourPic from "../../assets/pics/99godtour.jpg"; // Replace with your image path
+import RainDogsPic from "../../assets/pics/raindogsposter.jpg"; // Replace with your image path
 import { useNavigate } from "react-router-dom";
 
 export default function EventsPage() {
   const isMobile = useMediaQuery("(max-width:1100px)"); // Check if the viewport width is below 600px
-
+  const navigate = useNavigate();
   return (
     <Box
       style={{
@@ -38,15 +38,22 @@ export default function EventsPage() {
           }}
         >
           {/* First Image */}
-          <img
-            src={Image1}
-            alt="Image 1"
-            style={{
-              width: "40%",
-              height: "auto",
-              marginBottom: "5%",
+          <Box
+            onClick={() => {
+              navigate("/99godtour");
             }}
-          />
+            sx={{ display: "flex", justifyContent: "center" }}
+          >
+            <img
+              src={GodTourPic}
+              alt="99 God Tour"
+              style={{
+                width: "40%",
+                height: "auto",
+                marginBottom: "5%",
+              }}
+            />
+          </Box>
           <Typography
             sx={{
               color: "white",
@@ -54,19 +61,30 @@ export default function EventsPage() {
               fontFamily: "Anton, sans-serif",
               fontSize: "24px",
             }}
+            onClick={() => {
+              navigate("/99godtour");
+            }}
           >
             99 GOD 2024 TOUR
           </Typography>
+
           {/* Second Image */}
-          <img
-            src={Image2}
-            alt="Image 2"
-            style={{
-              width: "40%",
-              height: "auto",
-              marginBottom: "5%",
+          <Box
+            onClick={() => {
+              navigate("/raindogstour");
             }}
-          />
+            sx={{ display: "flex", justifyContent: "center" }}
+          >
+            <img
+              src={RainDogsPic}
+              alt="Rain Dogs Tour"
+              style={{
+                width: "40%",
+                height: "auto",
+                marginBottom: "5%",
+              }}
+            />
+          </Box>
           <Typography
             sx={{
               color: "white",
@@ -84,23 +102,27 @@ export default function EventsPage() {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            gap: "5rem", // Space between the images
+            gap: "5rem",
             position: "absolute",
-            top: "50%", // Center vertically
+            top: "50%",
             transform: "translateY(-50%)",
             height: "100%",
           }}
         >
           {/* First Image */}
-          <Box
+          <motion.div
             style={{
               width: "auto",
               height: "60%",
             }}
+            whileHover={{ scale: 1.1 }}
+            onClick={() => {
+              navigate("/99godtour");
+            }}
           >
             <img
-              src={Image1}
-              alt="Image 1"
+              src={GodTourPic}
+              alt="99 God Tour"
               style={{
                 width: "100%",
                 height: "100%",
@@ -118,11 +140,15 @@ export default function EventsPage() {
             >
               99 GOD 2024 TOUR
             </Typography>
-          </Box>
-          <Box
+          </motion.div>
+          <motion.div
             style={{
               width: "auto",
               height: "60%",
+            }}
+            whileHover={{ scale: 1.1 }}
+            onClick={() => {
+              navigate("/raindogstour");
             }}
           >
             {/* Second Image */}
@@ -132,8 +158,8 @@ export default function EventsPage() {
                 height: "100%",
                 marginBottom: "5%",
               }}
-              src={Image2}
-              alt="Image 2"
+              src={RainDogsPic}
+              alt="Rain Dogs Tour"
             />
             <Typography
               sx={{
@@ -146,7 +172,7 @@ export default function EventsPage() {
             >
               COMING!!!YaBish Presents.01
             </Typography>
-          </Box>
+          </motion.div>
         </Box>
       )}
     </Box>

@@ -14,6 +14,8 @@ import Test from "./pages/Test";
 import GodPage from "./pages/artists/GodPage";
 import YakaPage from "./pages/artists/YakaPage";
 import EventsPage from "./pages/events/EventsPage";
+import GodTour from "./pages/events/GodTour";
+import RainDogsTour from "./pages/events/RainDogsTour";
 
 function App() {
   const location = useLocation();
@@ -42,6 +44,8 @@ function App() {
           <Route path="/99god" element={<GodPage />} />
           <Route path="/yaka" element={<YakaPage />} />
           <Route path="/events" element={<EventsPage />} />
+          <Route path="/99godtour" element={<GodTour />} />
+          <Route path="/raindogstour" element={<RainDogsTour />} />
         </Routes>
       )}
     </>
