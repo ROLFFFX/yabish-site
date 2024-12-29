@@ -1,10 +1,20 @@
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import { Box, Button, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Slider from "react-slick";
 import YABISHLogo from "../../assets/YABISHlogo.png";
 import godBgImage from "../../assets/pics/99godbg.webp";
-import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import Image1 from "../../assets/pics/godpage/01.jpg";
+import Image2 from "../../assets/pics/godpage/02.jpg";
+import Image3 from "../../assets/pics/godpage/03.jpg";
+import Image4 from "../../assets/pics/godpage/04.jpg";
+// import Image5 from "../../assets/pics/godpage/05.JPG";
+// import Image6 from "../../assets/pics/godpage/06.JPG";
+// import Image7 from "../../assets/pics/godpage/07.JPG";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export default function GodPage() {
   const navigate = useNavigate();
@@ -137,6 +147,7 @@ export default function GodPage() {
             height: "100%",
             overflowY: "auto",
             padding: "1rem",
+            zIndex: 10,
           }}
         >
           <Typography
@@ -200,6 +211,9 @@ export default function GodPage() {
             God持续推出热单，帮助他成为来自东亚最具特色的歌手之一。同时，不断成长的个人能力也为他在全球平台上创造辉煌做好了准备。2024年，99
             God的首个个人巡演「九十九」为他炙手可热的音乐生涯增添了璀璨的一页。
           </Typography>
+          <Box padding={2}>
+            <GodPics />
+          </Box>
         </Box>
 
         {/* Footer Section */}
@@ -318,5 +332,38 @@ function TopLeft() {
         </motion.div>
       </Box>
     </Box>
+  );
+}
+
+function GodPics() {
+  const settings = {
+    className: "center",
+    centerMode: true,
+    infinite: true,
+    slidesToShow: 3,
+    speed: 400,
+  };
+  const images = [Image1, Image2, Image3, Image4];
+  return (
+    <div
+      className="slider-container"
+      style={{ width: "100%", margin: "0 auto" }}
+    >
+      <Slider {...settings}>
+        {images.map((image, index) => (
+          <div key={index}>
+            <img
+              src={image}
+              alt={`Slide ${index + 1}`}
+              style={{
+                width: "100%",
+                height: "auto",
+                borderRadius: "10px",
+              }}
+            />
+          </div>
+        ))}
+      </Slider>
+    </div>
   );
 }
