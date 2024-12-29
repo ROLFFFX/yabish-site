@@ -115,9 +115,9 @@ export default function RainDogsTour() {
             EP 是⼀⾸合成器重⾦属、哥特⻛格的⾳乐，于 2021
             年发⾏，在地下⾳乐界⼴受好评。 Rain Dogs
             是⼀⽀难以捉摸的乐队，他们罕⻅的现场表演以其令⼈难以忘怀的情绪和氛围⽽闻名，其声⾳让⼈想起
-            Suicide 和 Depeche Mode。2024 年，他们发⾏了三⾸新单曲：《Nights are
-            Lonely》、《More than Desire》和《Disintegrate》，这些单曲来⾃即将于
-            2025 年发⾏的专辑。
+            Suicide 和 Depeche Mode。2024 年，他们发⾏了三⾸新单曲：Nights are
+            Lonely, More than Desire和Disintegrate，这些单曲来⾃即将于 2025
+            年发⾏的专辑。
             <br />
             <br />
           </Typography>
@@ -139,6 +139,10 @@ export default function RainDogsTour() {
             More than Desire, and Disintegrate, from an upcoming album which is
             set to be released in 2025.
             <br />
+            <br />
+            HANGZHOU <br />
+            SHANGHAI <br />
+            CHENGDU
           </Typography>
           <Box sx={{ display: "flex", justifyContent: "center" }} padding={4}>
             <iframe
@@ -221,7 +225,6 @@ function TopLeft() {
                 color: "#ff0000",
               },
               userSelect: "none",
-              textDecoration: "underline",
             }}
           >
             Artists
@@ -243,6 +246,7 @@ function TopLeft() {
                 color: "#ff0000",
               },
               userSelect: "none",
+              textDecoration: "underline",
             }}
           >
             Events

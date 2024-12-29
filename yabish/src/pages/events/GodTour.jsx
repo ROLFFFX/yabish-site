@@ -220,7 +220,6 @@ function TopLeft() {
                 color: "#ff0000",
               },
               userSelect: "none",
-              textDecoration: "underline",
             }}
           >
             Artists
@@ -242,6 +241,7 @@ function TopLeft() {
                 color: "#ff0000",
               },
               userSelect: "none",
+              textDecoration: "underline",
             }}
           >
             Events
