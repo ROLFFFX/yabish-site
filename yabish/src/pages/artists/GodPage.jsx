@@ -6,13 +6,13 @@ import { useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 import YABISHLogo from "../../assets/YABISHlogo.png";
 import godBgImage from "../../assets/pics/99godbg.webp";
-import Image1 from "../../assets/pics/godpage/01.jpg";
-import Image2 from "../../assets/pics/godpage/02.jpg";
-import Image3 from "../../assets/pics/godpage/03.jpg";
-import Image4 from "../../assets/pics/godpage/04.jpg";
-// import Image5 from "../../assets/pics/godpage/05.JPG";
-// import Image6 from "../../assets/pics/godpage/06.JPG";
-// import Image7 from "../../assets/pics/godpage/07.JPG";
+import Image1 from "../../assets/pics/godpage/01.webp";
+import Image2 from "../../assets/pics/godpage/02.webp";
+import Image3 from "../../assets/pics/godpage/03.webp";
+import Image4 from "../../assets/pics/godpage/04.webp";
+import Image5 from "../../assets/pics/godpage/05.webp";
+import Image6 from "../../assets/pics/godpage/06.webp";
+import Image7 from "../../assets/pics/godpage/07.webp";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
@@ -335,19 +335,37 @@ function TopLeft() {
   );
 }
 
+
+  // For image carousel
+
+function shuffleArray(array) {
+  return array.sort(() => Math.random() - 0.5);
+}
+
 function GodPics() {
   const settings = {
     className: "center",
     centerMode: true,
     infinite: true,
+    centerPadding: "60px",
     slidesToShow: 3,
     speed: 400,
   };
-  const images = [Image1, Image2, Image3, Image4];
+
+  const images = shuffleArray([
+    Image1,
+    Image2,
+    Image3,
+    Image4,
+    Image5,
+    Image6,
+    Image7,
+  ]);
+
   return (
     <div
       className="slider-container"
-      style={{ width: "100%", margin: "0 auto" }}
+      style={{ width: "100%", margin: "0 auto", padding: "1rem 0" }}
     >
       <Slider {...settings}>
         {images.map((image, index) => (
@@ -357,8 +375,10 @@ function GodPics() {
               alt={`Slide ${index + 1}`}
               style={{
                 width: "100%",
-                height: "auto",
+                height: "300px", // Set a fixed height
+                objectFit: "cover", // Ensure images are cropped to fill the height
                 borderRadius: "10px",
+                padding: "10px", // Add padding between slides
               }}
             />
           </div>

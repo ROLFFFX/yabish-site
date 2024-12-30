@@ -1,10 +1,22 @@
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import { Box, Button, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
 import YABISHLogo from "../../assets/YABISHlogo.png";
-import godBgImage from "../../assets/pics/99godbg.webp";
-import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import Image1 from "../../assets/pics/raindogs-events/01.webp";
+import Image2 from "../../assets/pics/raindogs-events/02.webp";
+import Image3 from "../../assets/pics/raindogs-events/03.webp";
+import Image4 from "../../assets/pics/raindogs-events/04.webp";
+import Image5 from "../../assets/pics/raindogs-events/05.webp";
+import Image6 from "../../assets/pics/raindogs-events/06.webp";
+import Image7 from "../../assets/pics/raindogs-events/07.webp";
+import Image8 from "../../assets/pics/raindogs-events/08.webp";
+import Image9 from "../../assets/pics/raindogs-events/09.webp";
+import Image10 from "../../assets/pics/raindogs-events/10.webp";
 
 export default function GodTour() {
   const navigate = useNavigate();
@@ -150,6 +162,9 @@ export default function GodTour() {
             career. As his fanbase continues to grow, 99 God is steadily rising
             as a shining star on the global music stage.
           </Typography>
+          <Box padding={2}>
+            <RainDogsPics />
+          </Box>
         </Box>
 
         {/* Footer Section */}
@@ -268,5 +283,58 @@ function TopLeft() {
         </motion.div>
       </Box>
     </Box>
+  );
+}
+
+function shuffleArray(array) {
+  return array.sort(() => Math.random() - 0.5);
+}
+
+function RainDogsPics() {
+  const settings = {
+    className: "center",
+    centerMode: true,
+    infinite: true,
+    centerPadding: "60px",
+    slidesToShow: 3,
+    speed: 400,
+  };
+
+  const images = shuffleArray([
+    Image1,
+    Image2,
+    Image3,
+    Image4,
+    Image5,
+    Image6,
+    Image7,
+    Image8,
+    Image9,
+    Image10,
+  ]);
+
+  return (
+    <div
+      className="slider-container"
+      style={{ width: "100%", margin: "0 auto", padding: "1rem 0" }}
+    >
+      <Slider {...settings}>
+        {images.map((image, index) => (
+          <div key={index}>
+            <img
+              src={image}
+              alt={`Slide ${index + 1}`}
+              style={{
+                width: "100%",
+                height: "300px", // Set a fixed height
+                objectFit: "cover", // Ensure images are cropped to fill the height
+                borderRadius: "10px",
+                padding: "10px", // Add padding between slides
+              }}
+            />
+          </div>
+        ))}
+      </Slider>
+    </div>
   );
 }
