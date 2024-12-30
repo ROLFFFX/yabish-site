@@ -5,16 +5,33 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 import YABISHLogo from "../../assets/YABISHlogo.png";
-import godBgImage from "../../assets/pics/99godbg.webp";
-import Image1 from "../../assets/pics/godpage/01.webp";
-import Image2 from "../../assets/pics/godpage/02.webp";
-import Image3 from "../../assets/pics/godpage/03.webp";
-import Image4 from "../../assets/pics/godpage/04.webp";
-import Image5 from "../../assets/pics/godpage/05.webp";
-import Image6 from "../../assets/pics/godpage/06.webp";
-import Image7 from "../../assets/pics/godpage/07.webp";
+// import godBgImage from "../../assets/pics/99godbg.webp";
+// import Image1 from "../../assets/pics/godpage/01.webp";
+// import Image2 from "../../assets/pics/godpage/02.webp";
+// import Image3 from "../../assets/pics/godpage/03.webp";
+// import Image4 from "../../assets/pics/godpage/04.webp";
+// import Image5 from "../../assets/pics/godpage/05.webp";
+// import Image6 from "../../assets/pics/godpage/06.webp";
+// import Image7 from "../../assets/pics/godpage/07.webp";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+const godBgImage =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/f78c74d3-5d2d-4010-dcff-ab015c463000/public";
+
+const Image1 =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/462aef0a-9382-4dfd-1672-cfd4da578b00/public";
+const Image2 =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/4d078758-e626-4b8e-72d7-d77ac5f95400/public";
+const Image3 =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/61869b68-9966-411b-262d-f177c61f2400/public";
+const Image4 =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/ce115e64-71f6-4954-db1d-c7aa97f9ea00/public";
+const Image5 =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/eebc5280-a249-4098-aa83-f105ad405100/public";
+const Image6 =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/43eb7849-f340-48ae-b8a0-9b224ed0d600/public";
+const Image7 =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/363821e1-694c-409a-0189-512ac81d5f00/public";
 
 export default function GodPage() {
   const navigate = useNavigate();

@@ -2,10 +2,14 @@ import { Box, Button, Typography, useMediaQuery } from "@mui/material";
 import { motion } from "framer-motion";
 import React from "react";
 import YABISHLogo from "../..//assets/YABISHlogo.png";
-import GodTourPic from "../../assets/pics/99godtour.webp";
-import RainDogsPic from "../../assets/pics/raindogsposter.webp";
+// import GodTourPic from "../../assets/pics/99godtour.webp";
+// import RainDogsPic from "../../assets/pics/raindogsposter.webp";
 import { useNavigate } from "react-router-dom";
 import bgvideo from "../../assets/bgvideo.webm";
+const RainDogsPic =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/14f11ff8-6966-4462-dd13-738b701e3800/public";
+const GodTourPic =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/e248982e-9632-439c-e315-a0d77d712f00/public";
 
 export default function EventsPage() {
   const isMobile = useMediaQuery("(max-width:1100px)");

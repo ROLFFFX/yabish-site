@@ -3,8 +3,29 @@ import { motion } from "framer-motion";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import YABISHLogo from "../../assets/YABISHlogo.png";
-import yakabg from "../../assets/pics/yakabg.webp";
+// import yakabg from "../../assets/pics/yakabg.webp";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+// import Image1 from "../../assets/pics/yakapage/01.webp";
+// import Image2 from "../../assets/pics/yakapage/02.webp";
+// import Image4 from "../../assets/pics/yakapage/04.webp";
+// import Image5 from "../../assets/pics/yakapage/05.webp";
+// import Image6 from "../../assets/pics/yakapage/06.webp";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+
+const yakabg =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/c82c466f-6202-4717-24db-409afc75cb00/public";
+const Image1 =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/8cfd66f3-8962-40a2-b7b6-f1af5696d300/public";
+const Image2 =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/84b30ee5-1770-4bf9-3a8f-f23ea22b3f00/public";
+const Image4 =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/bd0b29d3-2bd4-4921-e347-e99e0d036000/public";
+const Image5 =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/74cbe2b9-190a-41ea-8667-dcca854c4000/public";
+const Image6 =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/08c72ca0-4dee-418f-2ad9-33943a22da00/public";
 
 export default function YakaPage() {
   const navigate = useNavigate();
@@ -228,6 +249,9 @@ export default function YakaPage() {
             Jungle Rage
             *LP》也被众多国内乐评与亚文化自媒体誉为2024迄今为止的地下年度最佳制作专辑，致力于为亚洲的嘻哈/俱乐部音乐文化做出台前与台后的贡献。
           </Typography>
+          <Box padding={2}>
+            <YakaPicCarousel />
+          </Box>
         </Box>
 
         {/* Footer Section */}
@@ -346,5 +370,48 @@ function TopLeft() {
         </motion.div>
       </Box>
     </Box>
+  );
+}
+
+// For image carousel
+
+function shuffleArray(array) {
+  return array.sort(() => Math.random() - 0.5);
+}
+
+function YakaPicCarousel() {
+  const settings = {
+    className: "center",
+    centerMode: true,
+    infinite: true,
+    centerPadding: "120px",
+    slidesToShow: 3,
+    speed: 400,
+  };
+
+  const images = shuffleArray([Image1, Image2, Image4, Image5, Image6]);
+  return (
+    <div
+      className="slider-container"
+      style={{ width: "100%", margin: "0 auto", padding: "1rem 0" }}
+    >
+      <Slider {...settings}>
+        {images.map((image, index) => (
+          <div key={index}>
+            <img
+              src={image}
+              alt={`Slide ${index + 1}`}
+              style={{
+                width: "100%",
+                height: "300px", // Set a fixed height
+                objectFit: "cover", // Ensure images are cropped to fill the height
+                borderRadius: "10px",
+                padding: "10px", // Add padding between slides
+              }}
+            />
+          </div>
+        ))}
+      </Slider>
+    </div>
   );
 }

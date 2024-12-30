@@ -7,16 +7,20 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import YABISHLogo from "../../assets/YABISHlogo.png";
-import Image1 from "../../assets/pics/raindogs-events/01.webp";
-import Image2 from "../../assets/pics/raindogs-events/02.webp";
-import Image3 from "../../assets/pics/raindogs-events/03.webp";
-import Image4 from "../../assets/pics/raindogs-events/04.webp";
-import Image5 from "../../assets/pics/raindogs-events/05.webp";
-import Image6 from "../../assets/pics/raindogs-events/06.webp";
-import Image7 from "../../assets/pics/raindogs-events/07.webp";
-import Image8 from "../../assets/pics/raindogs-events/08.webp";
-import Image9 from "../../assets/pics/raindogs-events/09.webp";
-import Image10 from "../../assets/pics/raindogs-events/10.webp";
+// import Image1 from "../../assets/pics/raindogs-events/01.webp";
+// import Image2 from "../../assets/pics/raindogs-events/02.webp";
+// import Image3 from "../../assets/pics/raindogs-events/03.webp";
+// import Image4 from "../../assets/pics/raindogs-events/04.webp";
+
+const Image1 =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/111af31e-5035-4446-ed27-06ff83617900/public";
+const Image2 =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/b8403940-2317-4313-bfce-2eb2ebc66500/public";
+const Image3 =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/83f2235c-41f3-43dd-8d60-a3c440882400/public";
+const Image4 =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/fc163129-8d06-465b-4291-63abbbe25400/public";
+
 import bgvideo from "../../assets/bgvideo.webm";
 
 export default function GodTour() {
@@ -317,18 +321,7 @@ function RainDogsPics() {
     speed: 400,
   };
 
-  const images = shuffleArray([
-    Image1,
-    Image2,
-    Image3,
-    Image4,
-    Image5,
-    Image6,
-    Image7,
-    Image8,
-    Image9,
-    Image10,
-  ]);
+  const images = shuffleArray([Image1, Image2, Image3, Image4]);
 
   return (
     <div
