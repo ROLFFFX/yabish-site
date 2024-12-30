@@ -1,10 +1,10 @@
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import { Box, Button, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import YABISHLogo from "../../assets/YABISHlogo.png";
-import godBgImage from "../../assets/pics/99godbg.webp";
-import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import bgvideo from "../../assets/bgvideo.webm";
 
 export default function RainDogsTour() {
   const navigate = useNavigate();
@@ -21,6 +21,22 @@ export default function RainDogsTour() {
         alignItems: "center",
       }}
     >
+      <video
+        src={bgvideo}
+        autoPlay
+        muted
+        loop
+        playsInline
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          zIndex: 1,
+        }}
+      />
       <Box
         sx={{
           position: "absolute",
@@ -57,7 +73,7 @@ export default function RainDogsTour() {
         >
           {/* Back Button */}
           <Button
-            onClick={() => navigate("/home")}
+            onClick={() => navigate("/events")}
             sx={{
               position: "absolute",
               left: 0,

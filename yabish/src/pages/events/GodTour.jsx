@@ -17,6 +17,7 @@ import Image7 from "../../assets/pics/raindogs-events/07.webp";
 import Image8 from "../../assets/pics/raindogs-events/08.webp";
 import Image9 from "../../assets/pics/raindogs-events/09.webp";
 import Image10 from "../../assets/pics/raindogs-events/10.webp";
+import bgvideo from "../../assets/bgvideo.webm";
 
 export default function GodTour() {
   const navigate = useNavigate();
@@ -33,6 +34,22 @@ export default function GodTour() {
         alignItems: "center",
       }}
     >
+      <video
+        src={bgvideo}
+        autoPlay
+        muted
+        loop
+        playsInline
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          zIndex: 1,
+        }}
+      />
       <Box
         sx={{
           position: "absolute",
@@ -69,7 +86,7 @@ export default function GodTour() {
         >
           {/* Back Button */}
           <Button
-            onClick={() => navigate("/home")}
+            onClick={() => navigate("/events")}
             sx={{
               position: "absolute",
               left: 0,

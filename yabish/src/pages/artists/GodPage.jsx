@@ -70,7 +70,7 @@ export default function GodPage() {
         >
           {/* Back Button */}
           <Button
-            onClick={() => navigate("/home")}
+            onClick={() => navigate("/artist")}
             sx={{
               position: "absolute",
               left: 0,
@@ -335,8 +335,7 @@ function TopLeft() {
   );
 }
 
-
-  // For image carousel
+// For image carousel
 
 function shuffleArray(array) {
   return array.sort(() => Math.random() - 0.5);

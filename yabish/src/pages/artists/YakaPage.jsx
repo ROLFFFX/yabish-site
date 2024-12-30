@@ -60,7 +60,7 @@ export default function YakaPage() {
         >
           {/* Back Button */}
           <Button
-            onClick={() => navigate("/home")}
+            onClick={() => navigate("/artist")}
             sx={{
               position: "absolute",
               left: 0,

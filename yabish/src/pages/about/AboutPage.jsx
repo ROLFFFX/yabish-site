@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import React from "react";
 import YABISHLogo from "../..//assets/YABISHlogo.png";
 import { useNavigate } from "react-router-dom";
+import bgvideo from "../../assets/bgvideo.webm";
 
 export default function AboutPage() {
   return (
@@ -16,16 +17,33 @@ export default function AboutPage() {
         position: "relative",
       }}
     >
+      <video
+        src={bgvideo}
+        autoPlay
+        muted
+        loop
+        playsInline
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          zIndex: 1,
+        }}
+      />
       <TopLeft></TopLeft>
       <Box
         sx={{
           height: "70%", // Box height
           width: "55%", // Box width
-          backgroundColor: "black", // Slightly transparent background
+          backgroundColor: "transparent", // Slightly transparent background
           overflowY: "auto", // Scrollable vertically
           overflowX: "hidden", // No horizontal scrolling
           padding: "1rem", // Add padding inside the box
           color: "white", // Text color
+          zIndex: 2,
         }}
       >
         <Typography

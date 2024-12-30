@@ -2,12 +2,13 @@ import { Box, Button, Typography, useMediaQuery } from "@mui/material";
 import { motion } from "framer-motion";
 import React from "react";
 import YABISHLogo from "../..//assets/YABISHlogo.png";
-import GodTourPic from "../../assets/pics/99godtour.jpg"; // Replace with your image path
-import RainDogsPic from "../../assets/pics/raindogsposter.jpg"; // Replace with your image path
+import GodTourPic from "../../assets/pics/99godtour.webp";
+import RainDogsPic from "../../assets/pics/raindogsposter.webp";
 import { useNavigate } from "react-router-dom";
+import bgvideo from "../../assets/bgvideo.webm";
 
 export default function EventsPage() {
-  const isMobile = useMediaQuery("(max-width:1100px)"); // Check if the viewport width is below 600px
+  const isMobile = useMediaQuery("(max-width:1100px)");
   const navigate = useNavigate();
   return (
     <Box
@@ -20,6 +21,22 @@ export default function EventsPage() {
         position: "relative",
       }}
     >
+      <video
+        src={bgvideo}
+        autoPlay
+        muted
+        loop
+        playsInline
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          zIndex: 1,
+        }}
+      />
       <TopLeft />
       {/* Conditional Rendering for Layout */}
       {isMobile ? (
@@ -35,6 +52,7 @@ export default function EventsPage() {
             height: "100%",
             overflowY: "auto",
             padding: "2rem 0",
+            zIndex: 20,
           }}
         >
           {/* First Image */}
@@ -42,7 +60,7 @@ export default function EventsPage() {
             onClick={() => {
               navigate("/99godtour");
             }}
-            sx={{ display: "flex", justifyContent: "center" }}
+            sx={{ display: "flex", justifyContent: "center", zIndex: 20 }}
           >
             <img
               src={GodTourPic}
@@ -73,7 +91,7 @@ export default function EventsPage() {
             onClick={() => {
               navigate("/raindogstour");
             }}
-            sx={{ display: "flex", justifyContent: "center" }}
+            sx={{ display: "flex", justifyContent: "center", zIndex: 20 }}
           >
             <img
               src={RainDogsPic}
@@ -107,6 +125,7 @@ export default function EventsPage() {
             top: "50%",
             transform: "translateY(-50%)",
             height: "100%",
+            zIndex: 20,
           }}
         >
           {/* First Image */}
