@@ -9,7 +9,7 @@ import { pageVariants } from "../../animations/pageVariants";
 import "./homePageStyle.css";
 
 function Model() {
-  const { scene } = useGLTF("/models/yabish3d.glb");
+  const { scene } = useGLTF("/models/yabish3d-compressed.glb");
   const modelRef = useRef();
   const [direction, setDirection] = useState(1);
   const leftMaxAngle = -Math.PI / 18; // 10 degrees to the left

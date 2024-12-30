@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { pageVariants } from "../../animations/pageVariants";
 
 function Model({ isWhite, fadeOut, fadeIn }) {
-  const { scene } = useGLTF("/models/yabish3d.glb");
+  const { scene } = useGLTF("/models/yabish3d-compressed.glb");
   const modelRef = useRef();
   const [direction, setDirection] = useState(1);
   const leftMaxAngle = -Math.PI / 18;
