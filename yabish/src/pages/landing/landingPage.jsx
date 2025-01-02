@@ -6,9 +6,10 @@ import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { pageVariants } from "../../animations/pageVariants";
 
-function Model({ isWhite, fadeOut, fadeIn }) {
+function Model({ isWhite, fadeOut }) {
   const { scene } = useGLTF("/models/yabish3d-compressed.glb");
   const modelRef = useRef();
+  const [fadeInCompleted, setFadeInCompleted] = useState(false); // Track if fade-in is completed
   const [direction, setDirection] = useState(1);
   const leftMaxAngle = -Math.PI / 18;
   const rightMaxAngle = Math.PI / 4;
@@ -26,17 +27,25 @@ function Model({ isWhite, fadeOut, fadeIn }) {
       }
     }
 
-    // Apply fade-in effect
-    if (fadeIn && modelRef.current) {
+    // Apply fade-in effect only on the first load
+    if (!fadeInCompleted && modelRef.current) {
+      let allMeshesAtMaxOpacity = true;
       modelRef.current.traverse((child) => {
         if (child.isMesh) {
-          child.material.opacity = Math.min(
-            1,
-            child.material.opacity + 0.02 // Gradually increase opacity
-          );
-          child.material.transparent = true;
+          if (child.material.opacity < 1) {
+            child.material.opacity = Math.min(
+              1,
+              child.material.opacity + 0.02 // Gradually increase opacity
+            );
+            child.material.transparent = true;
+            allMeshesAtMaxOpacity = false;
+          }
         }
       });
+
+      if (allMeshesAtMaxOpacity) {
+        setFadeInCompleted(true); // Mark fade-in as completed
+      }
     }
 
     // Apply fade-out effect
@@ -53,15 +62,21 @@ function Model({ isWhite, fadeOut, fadeIn }) {
     }
   });
 
+  // Set model material properties
   scene.traverse((child) => {
     if (child.isMesh) {
       child.material.color.set(isWhite ? "#FFFFFF" : "#000000");
       child.material.roughness = 0.486;
       child.material.metalness = 0;
 
-      // Set opacity based on fadeIn or fadeOut state
-      child.material.opacity = fadeIn || fadeOut ? 0 : 1;
-      child.material.transparent = fadeIn || fadeOut;
+      // Set initial opacity based on fade-in state
+      if (!fadeInCompleted) {
+        child.material.opacity = 0;
+        child.material.transparent = true;
+      } else {
+        child.material.opacity = 1;
+        child.material.transparent = false;
+      }
     }
   });
 
@@ -161,7 +176,7 @@ export default function LandingPage() {
       >
         <Canvas
           style={{ height: "100%", width: "100%" }}
-          camera={{ position: [0, 0, 2], fov: 50 }}
+          camera={{ position: [1, 0, 2], fov: 50 }}
         >
           <ambientLight intensity={0.5} />
           <directionalLight position={[5, 10, 5]} intensity={8} />

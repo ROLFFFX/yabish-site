@@ -84,6 +84,8 @@ export default function ArtistMainPage() {
           }}
           onMouseEnter={() => setActiveVideo(godbgvid)}
           onMouseLeave={() => setActiveVideo("")}
+          // border={1}
+          // borderColor={"white"}
         >
           <Button
             variant="text"
