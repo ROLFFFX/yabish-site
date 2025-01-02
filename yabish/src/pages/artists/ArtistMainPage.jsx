@@ -80,7 +80,6 @@ export default function ArtistMainPage() {
           sx={{
             position: "relative",
             width: "fit-content",
-            p: 10,
           }}
           onMouseEnter={() => setActiveVideo(godbgvid)}
           onMouseLeave={() => setActiveVideo("")}
@@ -113,7 +112,6 @@ export default function ArtistMainPage() {
           sx={{
             position: "relative",
             width: "fit-content",
-            p: 10,
           }}
           onMouseEnter={() => setActiveVideo(yakabgvid)}
           onMouseLeave={() => setActiveVideo("")}
