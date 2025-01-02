@@ -192,10 +192,13 @@ function TopLeft() {
         src={YABISHLogo}
         alt="YABISH Logo"
         style={{
-          width: "10%",
+          width: "150px",
           height: "auto",
-          marginBottom: "2rem",
+          marginBottom: "1rem",
           marginLeft: -25,
+        }}
+        onClick={() => {
+          navigate("/home");
         }}
       />
       <Box

@@ -122,16 +122,21 @@ function TopLeft() {
         }}
       >
         {/* Logo img */}
-        <img
-          src={YABISHLogo}
-          alt="YABISH Logo"
-          style={{
-            width: "10%",
-            height: "auto",
-            marginBottom: "2.5rem",
-            marginLeft: -25,
-          }}
-        />
+        <motion.div whileHover={{ scale: 1.1 }}>
+          <img
+            src={YABISHLogo}
+            alt="YABISH Logo"
+            style={{
+              width: "150px",
+              height: "auto",
+              marginBottom: "1rem",
+              marginLeft: -25,
+            }}
+            onClick={() => {
+              navigate("/home");
+            }}
+          />
+        </motion.div>
         <Box
           sx={{
             display: "flex",
