@@ -1,6 +1,6 @@
 import { Box, Button, Typography } from "@mui/material";
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import YABISHLogo from "../../assets/YABISHlogo.png";
 // import yakabg from "../../assets/pics/yakabg.webp";
@@ -116,22 +116,23 @@ export default function YakaPage() {
             }}
           >
             {[
-              { text: "Youtube", url: "https://www.youtube.com/@yaka2047" },
-              {
-                text: "Apple music",
-                url: "https://music.apple.com/cn/artist/yaka/1519813408",
-              },
-              {
-                text: "Instagram",
-                url: "https://www.instagram.com/yakayakayaka___/",
-              },
               {
                 text: "Spotify",
                 url: "https://open.spotify.com/artist/4fODbCHhX4Q2ro3O5CyrSA?si=rmEL7sYIQuKzqZlGELBveg",
               },
               {
+                text: "Apple Music",
+                url: "https://music.apple.com/cn/artist/yaka/1519813408",
+              },
+              { text: "Youtube", url: "https://www.youtube.com/@yaka2047" },
+
+              {
                 text: "WangYiYun",
                 url: "https://music.163.com/#/artist?id=32992079",
+              },
+              {
+                text: "Instagram",
+                url: "https://www.instagram.com/yakayakayaka___/",
               },
               {
                 text: "tiktok",
@@ -147,6 +148,10 @@ export default function YakaPage() {
                   borderColor: "white",
                   fontFamily: "Anton, sans-serif",
                   fontSize: "14px",
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                  maxWidth: "6rem",
                   "&:hover": {
                     borderColor: "red",
                     color: "red",
@@ -383,24 +388,58 @@ function TopLeft() {
 function shuffleArray(array) {
   return array.sort(() => Math.random() - 0.5);
 }
-
 function YakaPicCarousel() {
+  const sliderRef = useRef(null); // Create a ref for the slider
+  const containerRef = useRef(null); // Create a ref for the container div
+
   const settings = {
     className: "center",
-    centerMode: true,
-    infinite: true,
+    centerMode: false,
+    infinite: false,
     centerPadding: "120px",
     slidesToShow: 3,
     speed: 400,
   };
 
   const images = shuffleArray([Image1, Image2, Image4, Image5, Image6]);
+
+  // Handle horizontal scrolling to control the carousel
+  useEffect(() => {
+    const container = containerRef.current;
+
+    const handleScroll = (e) => {
+      e.preventDefault();
+      const delta = e.deltaY || e.detail || e.wheelDelta;
+      if (delta > 0) {
+        sliderRef.current.slickNext(); // Scroll down moves to the next slide
+      } else {
+        sliderRef.current.slickPrev(); // Scroll up moves to the previous slide
+      }
+    };
+
+    if (container) {
+      container.addEventListener("wheel", handleScroll, { passive: false });
+    }
+
+    return () => {
+      if (container) {
+        container.removeEventListener("wheel", handleScroll);
+      }
+    };
+  }, []);
+
   return (
     <div
+      ref={containerRef} // Reference the container for scrolling control
       className="slider-container"
-      style={{ width: "100%", margin: "0 auto", padding: "1rem 0" }}
+      style={{
+        width: "100%",
+        margin: "0 auto",
+        padding: "1rem 0",
+        // overflow: "hidden", // Prevent default scrolling
+      }}
     >
-      <Slider {...settings}>
+      <Slider {...settings} ref={sliderRef}>
         {images.map((image, index) => (
           <div key={index}>
             <img
@@ -408,10 +447,10 @@ function YakaPicCarousel() {
               alt={`Slide ${index + 1}`}
               style={{
                 width: "100%",
-                height: "300px", // Set a fixed height
-                objectFit: "cover", // Ensure images are cropped to fill the height
+                height: "400px",
+                objectFit: "cover",
                 borderRadius: "10px",
-                padding: "10px", // Add padding between slides
+                padding: "10px",
               }}
             />
           </div>

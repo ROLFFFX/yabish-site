@@ -222,9 +222,10 @@ function TopLeft() {
           borderRadius: "5px",
           borderColor: "white",
           "&:hover": {
-            backgroundColor: "black",
+            backgroundColor: "transparent",
             borderColor: "#ff0000",
           },
+          zIndex: 200,
         }}
       >
         <Typography

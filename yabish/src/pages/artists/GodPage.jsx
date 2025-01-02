@@ -1,7 +1,7 @@
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import { Box, Button, Typography } from "@mui/material";
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 import YABISHLogo from "../../assets/YABISHlogo.png";
@@ -45,7 +45,6 @@ export default function GodPage() {
         backgroundSize: "cover",
         backgroundPosition: "center 30%",
         position: "relative",
-        overflow: "hidden",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
@@ -109,7 +108,7 @@ export default function GodPage() {
               textAlign: "center",
             }}
           >
-            99GOD
+            99 GOD
           </Typography>
 
           {/* Buttons Section */}
@@ -122,20 +121,20 @@ export default function GodPage() {
             }}
           >
             {[
-              { text: "Youtube", url: "https://www.youtube.com/@99god19" },
-              {
-                text: "Apple music",
-                url: "https://music.apple.com/cn/artist/99-god/1530452342",
-              },
-              { text: "Instagram", url: "https://www.instagram.com/_99god_/" },
               {
                 text: "Spotify",
                 url: "https://open.spotify.com/artist/1fSNmkI8lKMFVMU2Y4hpgi?si=thjriNdTQfGEDfLL9y5_AA",
               },
               {
+                text: "Apple music",
+                url: "https://music.apple.com/cn/artist/99-god/1530452342",
+              },
+              { text: "Youtube", url: "https://www.youtube.com/@99god19" },
+              {
                 text: "WangYiYun",
                 url: "https://music.163.com/#/artist?id=31511662",
               },
+              { text: "Instagram", url: "https://www.instagram.com/_99god_/" },
             ].map((item, index) => (
               <Button
                 key={index}
@@ -364,11 +363,13 @@ function shuffleArray(array) {
 }
 
 function GodPics() {
+  const sliderRef = useRef(null); // Create a ref for the slider
+  const containerRef = useRef(null); // Create a ref for the container div
   const settings = {
     className: "center",
-    centerMode: true,
-    infinite: true,
-    centerPadding: "60px",
+    centerMode: false,
+    infinite: false,
+    centerPadding: "120px",
     slidesToShow: 3,
     speed: 400,
   };
@@ -382,13 +383,43 @@ function GodPics() {
     Image6,
     Image7,
   ]);
+  // Handle horizontal scrolling to control the carousel
+  useEffect(() => {
+    const container = containerRef.current;
+
+    const handleScroll = (e) => {
+      e.preventDefault();
+      const delta = e.deltaY || e.detail || e.wheelDelta;
+      if (delta > 0) {
+        sliderRef.current.slickNext(); // Scroll down moves to the next slide
+      } else {
+        sliderRef.current.slickPrev(); // Scroll up moves to the previous slide
+      }
+    };
+
+    if (container) {
+      container.addEventListener("wheel", handleScroll, { passive: false });
+    }
+
+    return () => {
+      if (container) {
+        container.removeEventListener("wheel", handleScroll);
+      }
+    };
+  }, []);
 
   return (
     <div
+      ref={containerRef} // Reference the container for scrolling control
       className="slider-container"
-      style={{ width: "100%", margin: "0 auto", padding: "1rem 0" }}
+      style={{
+        width: "100%",
+        margin: "0 auto",
+        padding: "1rem 0",
+        // overflow: "hidden", // Prevent default scrolling
+      }}
     >
-      <Slider {...settings}>
+      <Slider {...settings} ref={sliderRef}>
         {images.map((image, index) => (
           <div key={index}>
             <img
@@ -396,10 +427,10 @@ function GodPics() {
               alt={`Slide ${index + 1}`}
               style={{
                 width: "100%",
-                height: "300px", // Set a fixed height
-                objectFit: "cover", // Ensure images are cropped to fill the height
+                height: "400px",
+                objectFit: "cover",
                 borderRadius: "10px",
-                padding: "10px", // Add padding between slides
+                padding: "10px",
               }}
             />
           </div>

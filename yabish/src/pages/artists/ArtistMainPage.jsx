@@ -6,6 +6,7 @@ import YABISHLogo from "../../assets/YABISHlogo.png";
 import yakabgvid from "../../assets/pics/yakabgvid.webm";
 import godbgvid from "../../assets/pics/99godbgvid.webm";
 
+
 export default function ArtistMainPage() {
   const [activeVideo, setActiveVideo] = useState("");
   const [videoKey, setVideoKey] = useState(0);
@@ -13,6 +14,8 @@ export default function ArtistMainPage() {
   useEffect(() => {
     setVideoKey((prevKey) => prevKey + 1);
   }, [activeVideo]);
+
+
 
   return (
     <Box
@@ -81,9 +84,12 @@ export default function ArtistMainPage() {
             position: "relative",
             width: "fit-content",
             mb: 2, // Added margin bottom for spacing
+            padding: 10,
           }}
           onMouseEnter={() => setActiveVideo(godbgvid)}
           onMouseLeave={() => setActiveVideo("")}
+          // border={1}
+          // borderColor={"white"}
         >
           <Button
             variant="text"
@@ -114,6 +120,8 @@ export default function ArtistMainPage() {
           }}
           onMouseEnter={() => setActiveVideo(yakabgvid)}
           onMouseLeave={() => setActiveVideo("")}
+          // border={1}
+          // borderColor={"white"}
         >
           <Button
             variant="text"
@@ -294,3 +302,5 @@ function TopLeft() {
     </Box>
   );
 }
+
+

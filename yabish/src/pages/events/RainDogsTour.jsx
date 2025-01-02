@@ -1,10 +1,13 @@
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import { Box, Button, Typography } from "@mui/material";
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import YABISHLogo from "../../assets/YABISHlogo.png";
 import bgvideo from "../../assets/bgvideo.webm";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
 
 export default function RainDogsTour() {
   const navigate = useNavigate();
@@ -171,6 +174,9 @@ export default function RainDogsTour() {
               referrerPolicy="strict-origin-when-cross-origin"
             ></iframe>
           </Box>
+          <Box padding={2}>
+            <RainDogsPics />
+          </Box>
         </Box>
 
         {/* Footer Section */}
@@ -200,99 +206,229 @@ export default function RainDogsTour() {
 function TopLeft() {
   const navigate = useNavigate();
   return (
-    <Box
-      sx={{
-        position: "absolute",
-        top: "2%",
-        left: "2%",
-        zIndex: 2,
-        padding: "1rem",
-      }}
-    >
-      <motion.div whileHover={{ scale: 1.1 }}>
-        <img
-          src={YABISHLogo}
-          alt="YABISH Logo"
-          style={{
-            width: "150px",
-            height: "auto",
-            marginBottom: "1rem",
-            marginLeft: -25,
-          }}
-          onClick={() => {
-            navigate("/home");
-          }}
-        />
-      </motion.div>
+    <>
       <Box
         sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "flex-start",
-          width: "100%",
+          position: "absolute",
+          top: "2%",
+          left: "2%",
+          height: "30%",
+          backgroundColor: "transparent",
+          zIndex: 2000,
+          padding: "1rem",
         }}
       >
-        <motion.div
-          whileHover={{ scale: 1.1 }}
-          onClick={() => navigate("/artist")}
-        >
-          <Typography
-            sx={{
-              color: "white",
-              fontFamily: "Anton, sans-serif",
-              fontSize: "30px",
-              transition: "color 0.3s ease-in-out",
-              "&:hover": {
-                color: "#ff0000",
-              },
-              userSelect: "none",
+        {/* Logo img */}
+        <motion.div whileHover={{ scale: 1.1 }}>
+          <img
+            src={YABISHLogo}
+            alt="YABISH Logo"
+            style={{
+              width: "150px",
+              height: "auto",
+              marginBottom: "1rem",
+              marginLeft: -25,
             }}
-          >
-            Artists
-          </Typography>
+            onClick={() => {
+              navigate("/home");
+            }}
+          />
         </motion.div>
-        <motion.div
-          whileHover={{ scale: 1.1 }}
-          onClick={() => {
-            navigate("/events");
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "flex-start",
+            width: "100%",
           }}
         >
-          <Typography
-            sx={{
-              color: "white",
-              fontFamily: "Anton, sans-serif",
-              fontSize: "30px",
-              transition: "color 0.3s ease-in-out",
-              "&:hover": {
-                color: "#ff0000",
-              },
-              userSelect: "none",
-              textDecoration: "underline",
+          {/* Artists Router */}
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            onClick={() => {
+              navigate("/artist");
             }}
           >
-            Events
-          </Typography>
-        </motion.div>
-        <motion.div
-          whileHover={{ scale: 1.1 }}
-          onClick={() => navigate("/about")}
-        >
-          <Typography
-            sx={{
-              color: "white",
-              fontFamily: "Anton, sans-serif",
-              fontSize: "30px",
-              transition: "color 0.3s ease-in-out",
-              "&:hover": {
-                color: "#ff0000",
-              },
-              userSelect: "none",
+            <Typography
+              sx={{
+                color: "white",
+                fontFamily: "Anton, sans-serif",
+                fontSize: "30px",
+                transition: "color 0.3s ease-in-out",
+                "&:hover": {
+                  color: "#ff0000",
+                },
+                userSelect: "none",
+              }}
+            >
+              Artists
+            </Typography>
+          </motion.div>
+          {/* Events Route */}
+          <motion.div whileHover={{ scale: 1.1 }}>
+            <Typography
+              sx={{
+                color: "white",
+                fontFamily: "Anton, sans-serif",
+                fontSize: "30px",
+                transition: "color 0.3s ease-in-out",
+                "&:hover": {
+                  color: "#ff0000",
+                },
+                userSelect: "none",
+                textDecoration: "underline",
+              }}
+            >
+              Events
+            </Typography>
+          </motion.div>
+          {/* About Route */}
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            onClick={() => {
+              navigate("/about");
             }}
           >
-            About
-          </Typography>
-        </motion.div>
+            <Typography
+              sx={{
+                color: "white",
+                fontFamily: "Anton, sans-serif",
+                fontSize: "30px",
+                transition: "color 0.3s ease-in-out",
+                "&:hover": {
+                  color: "#ff0000",
+                },
+                userSelect: "none",
+              }}
+            >
+              About
+            </Typography>
+          </motion.div>
+        </Box>
       </Box>
-    </Box>
+      <Button
+        variant="outlined"
+        sx={{
+          position: "absolute",
+          bottom: "2%",
+          left: "2%",
+          color: "white",
+          padding: "0.5rem 1rem",
+          fontFamily: "Anton, sans-serif",
+          fontSize: "20px",
+          borderRadius: "5px",
+          borderColor: "white",
+          "&:hover": {
+            backgroundColor: "transparent",
+            borderColor: "#ff0000",
+          },
+          zIndex: 200,
+        }}
+      >
+        <Typography
+          sx={{
+            color: "white",
+            fontFamily: "Anton, sans-serif",
+            fontSize: "16px",
+            transition: "color 0.2s ease-in-out",
+            "&:hover": {
+              color: "#ff0000",
+            },
+          }}
+          onClick={() =>
+            window.open("https://www.instagram.com/yabishunion/", "_blank")
+          }
+        >
+          INSTAGRAM
+        </Typography>
+      </Button>
+    </>
+  );
+}
+
+const Image1 =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/8a7f06bd-e829-4e52-687b-f5914e5bb100/public";
+const Image2 =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/0df94c94-6a94-4277-0020-90c8bdea4700/public";
+const Image3 =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/00bcbcab-bb71-4f2b-e27b-6f32f984e500/public";
+const Image4 =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/cca96bef-18f4-429a-28a8-12ef08114b00/public";
+const Image5 =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/60191fd2-061e-4d77-1f95-3d3bfe698400/public";
+const Image6 =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/9f5b77b7-128d-457b-4de9-dfbb903c6d00/public";
+
+function shuffleArray(array) {
+  return array.sort(() => Math.random() - 0.5);
+}
+
+function RainDogsPics() {
+  const sliderRef = useRef(null); // Create a ref for the slider
+  const containerRef = useRef(null); // Create a ref for the container div
+  const settings = {
+    className: "center",
+    centerMode: false,
+    infinite: false,
+    centerPadding: "120px",
+    slidesToShow: 3,
+    speed: 400,
+  };
+
+  const images = shuffleArray([Image1, Image2, Image3, Image4, Image5, Image6]);
+  // Handle horizontal scrolling to control the carousel
+  useEffect(() => {
+    const container = containerRef.current;
+
+    const handleScroll = (e) => {
+      e.preventDefault();
+      const delta = e.deltaY || e.detail || e.wheelDelta;
+      if (delta > 0) {
+        sliderRef.current.slickNext(); // Scroll down moves to the next slide
+      } else {
+        sliderRef.current.slickPrev(); // Scroll up moves to the previous slide
+      }
+    };
+
+    if (container) {
+      container.addEventListener("wheel", handleScroll, { passive: false });
+    }
+
+    return () => {
+      if (container) {
+        container.removeEventListener("wheel", handleScroll);
+      }
+    };
+  }, []);
+
+  return (
+    <div
+      ref={containerRef} // Reference the container for scrolling control
+      className="slider-container"
+      style={{
+        width: "100%",
+        margin: "0 auto",
+        padding: "1rem 0",
+        // overflow: "hidden", // Prevent default scrolling
+      }}
+    >
+      <Slider {...settings} ref={sliderRef}>
+        {images.map((image, index) => (
+          <div key={index}>
+            <img
+              src={image}
+              alt={`Slide ${index + 1}`}
+              style={{
+                width: "100%",
+                height: "400px",
+                objectFit: "cover",
+                borderRadius: "10px",
+                padding: "10px",
+              }}
+            />
+          </div>
+        ))}
+      </Slider>
+    </div>
   );
 }
