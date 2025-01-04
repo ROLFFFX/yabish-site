@@ -33,11 +33,12 @@ const Image6 =
 const Image7 =
   "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/363821e1-694c-409a-0189-512ac81d5f00/public";
 
-import video1 from "../../assets/godvideo/godvideo1.webm";
-import video2 from "../../assets/godvideo/godvideo2.webm";
-import video3 from "../../assets/godvideo/godvideo3.webm";
-import video4 from "../../assets/godvideo/godvideo4.webm";
-import video5 from "../../assets/godvideo/godvideo5.webm";
+import video1 from "../../assets/godvideo/compressed_godvideo1.webm";
+import video2 from "../../assets/godvideo/compressed_godvideo2.webm";
+import video3 from "../../assets/godvideo/compressed_godvideo3.webm";
+import video4 from "../../assets/godvideo/compressed_godvideo4.webm";
+import video5 from "../../assets/godvideo/compressed_godvideo5.webm";
+import zIndex from "@mui/material/styles/zIndex";
 
 export default function GodPage() {
   const navigate = useNavigate();
@@ -233,8 +234,11 @@ export default function GodPage() {
             God持续推出热单，帮助他成为来自东亚最具特色的歌手之一。同时，不断成长的个人能力也为他在全球平台上创造辉煌做好了准备。2024年，99
             God的首个个人巡演「九十九」为他炙手可热的音乐生涯增添了璀璨的一页。
           </Typography>
-          <Box padding={2}>
+          <Box>
             <GodPics />
+          </Box>
+          <Box mt={"-2.5rem"} sx={{ zIndex: 2000 }}>
+            <GodVids />
           </Box>
         </Box>
 
@@ -392,7 +396,7 @@ function GodPics() {
     <div
       className="slider-container"
       style={{
-        width: "100%",
+        width: "95%",
         margin: "0 auto",
         padding: "1rem 0",
         // overflow: "hidden", // Prevent default scrolling
@@ -414,6 +418,32 @@ function GodPics() {
             />
           </div>
         ))}
+      </Slider>
+    </div>
+  );
+}
+
+function GodVids() {
+  const settings = {
+    className: "center",
+    centerMode: false,
+    infinite: false,
+    centerPadding: "120px",
+    slidesToShow: 3,
+    speed: 400,
+  };
+
+  return (
+    <div
+      className="slider-container"
+      style={{
+        width: "95%",
+        margin: "0 auto",
+        padding: "1rem 0",
+        // overflow: "hidden", // Prevent default scrolling
+      }}
+    >
+      <Slider {...settings}>
         <div key={6}>
           <video
             src={video1}

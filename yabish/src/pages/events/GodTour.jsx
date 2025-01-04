@@ -12,9 +12,9 @@ import YABISHLogo from "../../assets/YABISHlogo.png";
 // import Image3 from "../../assets/pics/raindogs-events/03.webp";
 // import Image4 from "../../assets/pics/raindogs-events/04.webp";
 
-import video1 from "../../assets/god_tour_video/godtourvideo1.webm";
-import video2 from "../../assets/god_tour_video/godtourvideo2.webm";
-import video3 from "../../assets/god_tour_video/godtourvideo3.webm";
+import video1 from "../../assets/god_tour_video/compressed_godtourvideo1.webm";
+import video2 from "../../assets/god_tour_video/compressed_godtourvideo2.webm";
+import video3 from "../../assets/god_tour_video/compressed_godtourvideo3.webm";
 
 const Image1 =
   "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/111af31e-5035-4446-ed27-06ff83617900/public";
@@ -187,8 +187,11 @@ export default function GodTour() {
             career. As his fanbase continues to grow, 99 God is steadily rising
             as a shining star on the global music stage.
           </Typography>
-          <Box padding={2}>
+          <Box>
             <GodTourPics />
+          </Box>
+          <Box mt={"-2.5rem"} sx={{ zIndex: 2000 }}>
+            <GodTourVids />
           </Box>
         </Box>
 
@@ -379,7 +382,7 @@ function GodTourPics() {
     <div
       className="slider-container"
       style={{
-        width: "100%",
+        width: "95%",
         margin: "0 auto",
         padding: "1rem 0",
         // overflow: "hidden", // Prevent default scrolling
@@ -401,6 +404,32 @@ function GodTourPics() {
             />
           </div>
         ))}
+      </Slider>
+    </div>
+  );
+}
+
+function GodTourVids() {
+  const settings = {
+    className: "center",
+    centerMode: false,
+    infinite: false,
+    centerPadding: "120px",
+    slidesToShow: 3,
+    speed: 400,
+  };
+
+  return (
+    <div
+      className="slider-container"
+      style={{
+        width: "95%",
+        margin: "0 auto",
+        padding: "1rem 0",
+        // overflow: "hidden", // Prevent default scrolling
+      }}
+    >
+      <Slider {...settings}>
         <div key={5}>
           <video
             src={video1}
