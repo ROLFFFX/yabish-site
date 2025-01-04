@@ -262,6 +262,42 @@ export default function YakaPage() {
             <YakaPicCarousel />
           </Box>
         </Box>
+        {/* Bottom-Left Button */}
+        <Button
+          variant="outlined"
+          sx={{
+            position: "absolute",
+            bottom: "2%",
+            left: "2%",
+            zIndex: 2000,
+            color: "white",
+            padding: "0.5rem 1rem",
+            fontSize: "20px",
+            borderRadius: "5px",
+            borderColor: "white",
+            "&:hover": {
+              backgroundColor: "black",
+              borderColor: "#ff0000",
+            },
+          }}
+          onClick={() =>
+            window.open("https://www.instagram.com/yabish.yabish/", "_blank")
+          }
+        >
+          <Typography
+            sx={{
+              color: "white",
+              fontFamily: "Anton, sans-serif",
+              fontSize: "16px",
+              transition: "color 0.2s ease-in-out",
+              "&:hover": {
+                color: "#ff0000",
+              },
+            }}
+          >
+            INSTAGRAM
+          </Typography>
+        </Button>
 
         {/* Footer Section */}
         <Box

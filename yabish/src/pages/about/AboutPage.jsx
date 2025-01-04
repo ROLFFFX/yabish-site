@@ -85,14 +85,12 @@ export default function AboutPage() {
           FOLLOW ME
         </Typography>
         <Button
-          variant="outlined"
+          variant="text"
           sx={{
             color: "white",
-            padding: "0.5rem 1rem",
             top: "1rem",
-            left: "-2%",
+            left: "-1%",
             fontFamily: "Anton, sans-serif",
-            fontSize: "18px",
             borderRadius: "5px",
             borderColor: "white",
             "&:hover": {
@@ -106,7 +104,7 @@ export default function AboutPage() {
             sx={{
               color: "white",
               fontFamily: "Anton, sans-serif",
-              fontSize: "16px",
+              textDecoration: "underline",
               transition: "color 0.2s ease-in-out",
               "&:hover": {
                 color: "#ff0000",
