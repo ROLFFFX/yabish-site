@@ -72,7 +72,7 @@ export default function HomePage() {
       >
         <Canvas
           style={{ height: "100%", width: "100%" }}
-          camera={{ position: [1, 0, 2], fov: 50 }}
+          camera={{ position: [1, 0, 3], fov: 50 }}
         >
           <ambientLight intensity={0.5} />
           <directionalLight position={[5, 10, 5]} intensity={8} />

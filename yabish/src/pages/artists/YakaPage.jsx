@@ -205,6 +205,8 @@ export default function YakaPage() {
               Jungle represents the UK breakbeat dance music Yaka grew
               accustomed to as a DJ, also representing the original music
               rhythms from various East Asian jungle tribes that he samples;
+              <br />
+              <br />
               Rage represents the branch of Trap music style that emerged in
               Atlanta while Yaka lived there - a similar energy he brings to the
               crowd on the dance floor during his performances.
@@ -245,6 +247,8 @@ export default function YakaPage() {
               }}
             >
               Jungle即丛林--代表源自英国牙买加移民文化的碎拍舞曲、也代表Yaka采样的各种丛林部落中的原生音乐节奏型；
+              <br />
+              <br />
               Rage即狂热--这是一种在亚特兰大新兴起的Trap音乐风格分支、也代表Yaka演出时为舞池中参与者们带来与众不同的能量。
             </span>
             <br />

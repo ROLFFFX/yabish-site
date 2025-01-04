@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Box, Button, Typography } from "@mui/material";
 import { useGLTF } from "@react-three/drei";
@@ -106,9 +106,24 @@ export default function LandingPage() {
 
     // Navigate to /home after fade-out
     setTimeout(() => {
-      navigate("/home");
+      navigate("/home", { replace: true });
     }, 500);
   };
+
+  useEffect(() => {
+    const handlePopState = (event) => {
+      // If the user tries to navigate back, replace the history state to stay on the current page
+      navigate("/home", { replace: true });
+    };
+
+    // Add event listener for back button
+    window.addEventListener("popstate", handlePopState);
+
+    return () => {
+      // Clean up the event listener on component unmount
+      window.removeEventListener("popstate", handlePopState);
+    };
+  }, [navigate]);
 
   return (
     <motion.div
@@ -176,7 +191,7 @@ export default function LandingPage() {
       >
         <Canvas
           style={{ height: "100%", width: "100%" }}
-          camera={{ position: [1, 0, 2], fov: 50 }}
+          camera={{ position: [1, 0, 3], fov: 50 }}
         >
           <ambientLight intensity={0.5} />
           <directionalLight position={[5, 10, 5]} intensity={8} />

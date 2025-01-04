@@ -49,7 +49,7 @@ export default function AboutPage() {
         <Typography
           sx={{
             fontFamily: "Glow Sans SC Compressed, sans-serif",
-            fontSize: "20px",
+            fontSize: "18px",
           }}
         >
           <span style={{ fontFamily: "Glow Sans SC Compressed, sas-serif" }}>
@@ -59,6 +59,7 @@ export default function AboutPage() {
           <span style={{ fontFamily: "Antonio, sas-serif" }}>99 God</span>和
           <span style={{ fontFamily: "Antonio, sas-serif" }}>Yaka</span>
           。我们致力于帮助全球潜力无限的地赏与地下艺人获得更多关注。
+          <br />
           音乐的力量在于连接不同文化，通过跨越地域的艺术表达，打造无界限的创意共同体。
           <br />
           <br />
@@ -66,15 +67,16 @@ export default function AboutPage() {
         <Typography
           sx={{
             fontFamily: "Antonio, sans-serif",
-            fontSize: "20px",
+            fontSize: "18px",
           }}
         >
           YaBish is a dynamic music label dedicated to promoting artists'
           localization, working with talents like 99 God and Yaka. We strive to
           help both mainstream and underground artists worldwide gain more
-          recognition. The power of music lies in connecting diverse cultures,
-          creating a boundless creative community through cross-regional
-          artistic expression. <br />
+          recognition. <br />
+          The power of music lies in connecting diverse cultures, creating a
+          boundless creative community through cross-regional artistic
+          expression. <br />
           <br />
           <br />
           CONTACT <br />
