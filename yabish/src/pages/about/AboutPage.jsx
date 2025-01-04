@@ -82,9 +82,43 @@ export default function AboutPage() {
           CONTACT <br />
           Artist Booking/Management: yabish.prod@gmail.com <br />
           <br />
-          FOLLOW ME <br />
-          YABISH
+          FOLLOW ME
         </Typography>
+        <Button
+          variant="outlined"
+          sx={{
+            color: "white",
+            padding: "0.5rem 1rem",
+            top: "1rem",
+            left: "-2%",
+            fontFamily: "Anton, sans-serif",
+            fontSize: "20px",
+            borderRadius: "5px",
+            borderColor: "white",
+            "&:hover": {
+              backgroundColor: "transparent",
+              borderColor: "#ff0000",
+            },
+            zIndex: 200,
+          }}
+        >
+          <Typography
+            sx={{
+              color: "white",
+              fontFamily: "Anton, sans-serif",
+              fontSize: "16px",
+              transition: "color 0.2s ease-in-out",
+              "&:hover": {
+                color: "#ff0000",
+              },
+            }}
+            onClick={() =>
+              window.open("https://www.instagram.com/yabishunion/", "_blank")
+            }
+          >
+            INSTAGRAM
+          </Typography>
+        </Button>
       </Box>
       {/* footer text */}
       <Box
@@ -129,10 +163,10 @@ function TopLeft() {
             src={YABISHLogo}
             alt="YABISH Logo"
             style={{
-              width: "150px",
+              width: "110px",
               height: "auto",
               marginBottom: "1rem",
-              marginLeft: -25,
+              marginLeft: -10,
             }}
             onClick={() => {
               navigate("/home");
@@ -211,42 +245,6 @@ function TopLeft() {
           </motion.div>
         </Box>
       </Box>
-      <Button
-        variant="outlined"
-        sx={{
-          position: "absolute",
-          bottom: "2%",
-          left: "2%",
-          color: "white",
-          padding: "0.5rem 1rem",
-          fontFamily: "Anton, sans-serif",
-          fontSize: "20px",
-          borderRadius: "5px",
-          borderColor: "white",
-          "&:hover": {
-            backgroundColor: "transparent",
-            borderColor: "#ff0000",
-          },
-          zIndex: 200,
-        }}
-      >
-        <Typography
-          sx={{
-            color: "white",
-            fontFamily: "Anton, sans-serif",
-            fontSize: "16px",
-            transition: "color 0.2s ease-in-out",
-            "&:hover": {
-              color: "#ff0000",
-            },
-          }}
-          onClick={() =>
-            window.open("https://www.instagram.com/yabishunion/", "_blank")
-          }
-        >
-          INSTAGRAM
-        </Typography>
-      </Button>
     </>
   );
 }

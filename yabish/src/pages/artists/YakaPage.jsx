@@ -304,10 +304,10 @@ function TopLeft() {
           src={YABISHLogo}
           alt="YABISH Logo"
           style={{
-            width: "150px",
+            width: "110px",
             height: "auto",
             marginBottom: "1rem",
-            marginLeft: -25,
+            marginLeft: -10,
           }}
           onClick={() => {
             navigate("/home");
