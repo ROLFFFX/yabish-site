@@ -12,6 +12,10 @@ import YABISHLogo from "../../assets/YABISHlogo.png";
 // import Image3 from "../../assets/pics/raindogs-events/03.webp";
 // import Image4 from "../../assets/pics/raindogs-events/04.webp";
 
+import video1 from "../../assets/god_tour_video/godtourvideo1.webm";
+import video2 from "../../assets/god_tour_video/godtourvideo2.webm";
+import video3 from "../../assets/god_tour_video/godtourvideo3.webm";
+
 const Image1 =
   "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/111af31e-5035-4446-ed27-06ff83617900/public";
 const Image2 =
@@ -397,6 +401,54 @@ function GodTourPics() {
             />
           </div>
         ))}
+        <div key={5}>
+          <video
+            src={video1}
+            autoPlay
+            muted
+            loop
+            playsInline
+            style={{
+              width: "100%",
+              height: "400px",
+              objectFit: "cover",
+              borderRadius: "10px",
+              padding: "10px",
+            }}
+          />
+        </div>
+        <div key={6}>
+          <video
+            src={video2}
+            autoPlay
+            muted
+            loop
+            playsInline
+            style={{
+              width: "100%",
+              height: "400px",
+              objectFit: "cover",
+              borderRadius: "10px",
+              padding: "10px",
+            }}
+          />
+        </div>
+        <div key={7}>
+          <video
+            src={video3}
+            autoPlay
+            muted
+            loop
+            playsInline
+            style={{
+              width: "100%",
+              height: "400px",
+              objectFit: "cover",
+              borderRadius: "10px",
+              padding: "10px",
+            }}
+          />
+        </div>
       </Slider>
     </div>
   );
