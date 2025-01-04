@@ -33,6 +33,12 @@ const Image6 =
 const Image7 =
   "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/363821e1-694c-409a-0189-512ac81d5f00/public";
 
+import video1 from "../../assets/godvideo/godvideo1.webm";
+import video2 from "../../assets/godvideo/godvideo2.webm";
+import video3 from "../../assets/godvideo/godvideo3.webm";
+import video4 from "../../assets/godvideo/godvideo4.webm";
+import video5 from "../../assets/godvideo/godvideo5.webm";
+
 export default function GodPage() {
   const navigate = useNavigate();
   return (
@@ -408,6 +414,86 @@ function GodPics() {
             />
           </div>
         ))}
+        <div key={6}>
+          <video
+            src={video1}
+            autoPlay
+            muted
+            loop
+            playsInline
+            style={{
+              width: "100%",
+              height: "400px",
+              objectFit: "cover",
+              borderRadius: "10px",
+              padding: "10px",
+            }}
+          />
+        </div>
+        <div key={7}>
+          <video
+            src={video2}
+            autoPlay
+            muted
+            loop
+            playsInline
+            style={{
+              width: "100%",
+              height: "400px",
+              objectFit: "cover",
+              borderRadius: "10px",
+              padding: "10px",
+            }}
+          />
+        </div>
+        <div key={8}>
+          <video
+            src={video3}
+            autoPlay
+            muted
+            loop
+            playsInline
+            style={{
+              width: "100%",
+              height: "400px",
+              objectFit: "cover",
+              borderRadius: "10px",
+              padding: "10px",
+            }}
+          />
+        </div>
+        <div key={9}>
+          <video
+            src={video4}
+            autoPlay
+            muted
+            loop
+            playsInline
+            style={{
+              width: "100%",
+              height: "400px",
+              objectFit: "cover",
+              borderRadius: "10px",
+              padding: "10px",
+            }}
+          />
+        </div>
+        <div key={10}>
+          <video
+            src={video5}
+            autoPlay
+            muted
+            loop
+            playsInline
+            style={{
+              width: "100%",
+              height: "400px",
+              objectFit: "cover",
+              borderRadius: "10px",
+              padding: "10px",
+            }}
+          />
+        </div>
       </Slider>
     </div>
   );
