@@ -113,7 +113,7 @@ export default function AboutPage() {
               },
             }}
             onClick={() =>
-              window.open("https://www.instagram.com/yabishunion/", "_blank")
+              window.open("https://www.instagram.com/yabish.yabish/", "_blank")
             }
           >
             INSTAGRAM
