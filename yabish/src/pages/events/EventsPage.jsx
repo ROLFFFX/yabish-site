@@ -70,7 +70,7 @@ export default function EventsPage() {
               src={GodTourPic}
               alt="99 God Tour"
               style={{
-                width: "40%",
+                width: "200px",
                 height: "auto",
                 marginBottom: "5%",
               }}
@@ -101,7 +101,7 @@ export default function EventsPage() {
               src={RainDogsPic}
               alt="Rain Dogs Tour"
               style={{
-                width: "40%",
+                width: "200px",
                 height: "auto",
                 marginBottom: "5%",
               }}
@@ -147,7 +147,7 @@ export default function EventsPage() {
               src={GodTourPic}
               alt="99 God Tour"
               style={{
-                width: "100%",
+                width: "auto",
                 height: "100%",
                 marginBottom: "5%",
               }}
