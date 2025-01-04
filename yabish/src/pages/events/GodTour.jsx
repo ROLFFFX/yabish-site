@@ -17,13 +17,22 @@ import video2 from "../../assets/god_tour_video/compressed_godtourvideo2.webm";
 import video3 from "../../assets/god_tour_video/compressed_godtourvideo3.webm";
 
 const Image1 =
-  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/111af31e-5035-4446-ed27-06ff83617900/public";
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/cc028117-5e85-43ee-6369-47f14b10b400/public";
 const Image2 =
-  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/b8403940-2317-4313-bfce-2eb2ebc66500/public";
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/3fef9a69-f322-4122-9a57-a8086a1ee700/public";
 const Image3 =
-  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/83f2235c-41f3-43dd-8d60-a3c440882400/public";
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/e66df46e-28a3-4d20-00b3-a3d193578300/public";
 const Image4 =
-  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/fc163129-8d06-465b-4291-63abbbe25400/public";
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/3b1c1e91-04c4-47e2-fb1f-e7a211887a00/public";
+
+const Image5 =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/48efd322-a573-4223-bc72-6e74be1db800/public";
+const Image6 =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/0e29f6c7-accf-4130-d0c0-82a211cdd900/public";
+const Image7 =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/f56d68f3-a3c1-4e50-7cdc-7356b9650f00/public";
+const Image8 =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/392b8d8c-5724-40e8-d892-0405ba3dd400/public";
 
 import bgvideo from "../../assets/bgvideo.webm";
 
@@ -186,6 +195,26 @@ export default function GodTour() {
             <br />
             这次巡演的成功不仅再次印证了他在国内音乐圈的影响力，更为他开辟了更多国际合作的可能。就如同他与拳头游戏合作的《Renegade》那样，这次巡演也成为了他职业生涯中一个值得铭记的里程碑。随着粉丝群体的不断壮大，99
             God正一步步走向全球舞台，成为音乐界一颗冉冉升起的新星。
+            <br />
+            <br />
+            上海ShanghaiMAO Livehouse08/04（GUEST-直火帮FEEZY）&08/09After Party
+            in@HUSH <br />
+            杭州酒球会08/11（GUEST-Dough Boy）
+            <br />
+            成都正火6号馆08/17（GUEST-Melo&MENGZI）&After Party in@PH_CHENGDU
+            <br />
+            深圳MAO Livehouse08/24（GUEST-B.C.W） <br />
+            广州MAO Livehouse08/2（GUEST-卡西恩Cacien）5&After Party in@CLUB29
+            <br />
+            台北THE WALL Livehouse08/29（GUEST-BCW&AsiaBoy禁药王）
+            <br />
+            <br />
+            统筹制作Production:North Nose Production <br />
+            巡演经理/制作统筹Tour Manager:宋越/毛毛 <br />
+            灯光工程师Lighting Engineer:阿彻/哲先 <br />
+            影像骑士Visual Jockey:Ludar@YaBish <br />
+            VJ制作Production:Kyra/Tage <br />
+            巡演助理Tour Assistant:Yaka@YaBish/Ludar@YaBish
           </Typography>
 
           <Box>
@@ -364,7 +393,8 @@ function TopLeft() {
 }
 
 function shuffleArray(array) {
-  return array.sort(() => Math.random() - 0.5);
+  return array;
+  // return array.sort(() => Math.random() - 0.5);
 }
 
 function GodTourPics() {
@@ -377,7 +407,16 @@ function GodTourPics() {
     speed: 400,
   };
 
-  const images = shuffleArray([Image1, Image2, Image3, Image4]);
+  const images = shuffleArray([
+    Image1,
+    Image2,
+    Image3,
+    Image4,
+    Image5,
+    Image6,
+    Image7,
+    Image8,
+  ]);
 
   return (
     <div
