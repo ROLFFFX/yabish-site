@@ -1,7 +1,7 @@
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import { Box, Button, Typography } from "@mui/material";
 import { motion } from "framer-motion";
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 import YABISHLogo from "../../assets/YABISHlogo.png";
@@ -13,8 +13,8 @@ import YABISHLogo from "../../assets/YABISHlogo.png";
 // import Image5 from "../../assets/pics/godpage/05.webp";
 // import Image6 from "../../assets/pics/godpage/06.webp";
 // import Image7 from "../../assets/pics/godpage/07.webp";
-import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
 const godBgImage =
   "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/f78c74d3-5d2d-4010-dcff-ab015c463000/public";
 
@@ -363,8 +363,6 @@ function shuffleArray(array) {
 }
 
 function GodPics() {
-  const sliderRef = useRef(null); // Create a ref for the slider
-  const containerRef = useRef(null); // Create a ref for the container div
   const settings = {
     className: "center",
     centerMode: false,
@@ -383,34 +381,9 @@ function GodPics() {
     Image6,
     Image7,
   ]);
-  // Handle horizontal scrolling to control the carousel
-  useEffect(() => {
-    const container = containerRef.current;
-
-    const handleScroll = (e) => {
-      e.preventDefault();
-      const delta = e.deltaY || e.detail || e.wheelDelta;
-      if (delta > 0) {
-        sliderRef.current.slickNext(); // Scroll down moves to the next slide
-      } else {
-        sliderRef.current.slickPrev(); // Scroll up moves to the previous slide
-      }
-    };
-
-    if (container) {
-      container.addEventListener("wheel", handleScroll, { passive: false });
-    }
-
-    return () => {
-      if (container) {
-        container.removeEventListener("wheel", handleScroll);
-      }
-    };
-  }, []);
 
   return (
     <div
-      ref={containerRef} // Reference the container for scrolling control
       className="slider-container"
       style={{
         width: "100%",
@@ -419,7 +392,7 @@ function GodPics() {
         // overflow: "hidden", // Prevent default scrolling
       }}
     >
-      <Slider {...settings} ref={sliderRef}>
+      <Slider {...settings}>
         {images.map((image, index) => (
           <div key={index}>
             <img

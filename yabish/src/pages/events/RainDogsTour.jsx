@@ -1,13 +1,13 @@
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import { Box, Button, Typography } from "@mui/material";
 import { motion } from "framer-motion";
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
-import YABISHLogo from "../../assets/YABISHlogo.png";
-import bgvideo from "../../assets/bgvideo.webm";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
+import YABISHLogo from "../../assets/YABISHlogo.png";
+import bgvideo from "../../assets/bgvideo.webm";
 
 export default function RainDogsTour() {
   const navigate = useNavigate();
@@ -364,8 +364,6 @@ function shuffleArray(array) {
 }
 
 function RainDogsPics() {
-  const sliderRef = useRef(null); // Create a ref for the slider
-  const containerRef = useRef(null); // Create a ref for the container div
   const settings = {
     className: "center",
     centerMode: false,
@@ -376,34 +374,9 @@ function RainDogsPics() {
   };
 
   const images = shuffleArray([Image1, Image2, Image3, Image4, Image5, Image6]);
-  // Handle horizontal scrolling to control the carousel
-  useEffect(() => {
-    const container = containerRef.current;
-
-    const handleScroll = (e) => {
-      e.preventDefault();
-      const delta = e.deltaY || e.detail || e.wheelDelta;
-      if (delta > 0) {
-        sliderRef.current.slickNext(); // Scroll down moves to the next slide
-      } else {
-        sliderRef.current.slickPrev(); // Scroll up moves to the previous slide
-      }
-    };
-
-    if (container) {
-      container.addEventListener("wheel", handleScroll, { passive: false });
-    }
-
-    return () => {
-      if (container) {
-        container.removeEventListener("wheel", handleScroll);
-      }
-    };
-  }, []);
 
   return (
     <div
-      ref={containerRef} // Reference the container for scrolling control
       className="slider-container"
       style={{
         width: "100%",
@@ -412,7 +385,7 @@ function RainDogsPics() {
         // overflow: "hidden", // Prevent default scrolling
       }}
     >
-      <Slider {...settings} ref={sliderRef}>
+      <Slider {...settings}>
         {images.map((image, index) => (
           <div key={index}>
             <img
