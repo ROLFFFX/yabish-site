@@ -126,23 +126,6 @@ export default function RainDogsTour() {
           <Typography
             sx={{
               color: "white",
-              fontFamily: "Glow Sans SC Compressed, sans-serif",
-              fontSize: "18px",
-            }}
-          >
-            Rain Dogs 是⼀⽀来⾃澳⼤利亚墨尔本的电⼦后朋克三⼈组。他们的⾸张同名
-            EP 是⼀⾸合成器重⾦属、哥特⻛格的⾳乐，于 2021
-            年发⾏，在地下⾳乐界⼴受好评。 Rain Dogs
-            是⼀⽀难以捉摸的乐队，他们罕⻅的现场表演以其令⼈难以忘怀的情绪和氛围⽽闻名，其声⾳让⼈想起
-            Suicide 和 Depeche Mode。2024 年，他们发⾏了三⾸新单曲：Nights are
-            Lonely, More than Desire和Disintegrate，这些单曲来⾃即将于 2025
-            年发⾏的专辑。
-            <br />
-            <br />
-          </Typography>
-          <Typography
-            sx={{
-              color: "white",
               fontFamily: "Antonio, sans-serif",
               fontSize: "18px",
             }}
@@ -162,7 +145,25 @@ export default function RainDogsTour() {
             HANGZHOU <br />
             SHANGHAI <br />
             CHENGDU
+            <br />
+            <br />
           </Typography>
+          <Typography
+            sx={{
+              color: "white",
+              fontFamily: "Glow Sans SC Compressed, sans-serif",
+              fontSize: "18px",
+            }}
+          >
+            Rain Dogs 是⼀⽀来⾃澳⼤利亚墨尔本的电⼦后朋克三⼈组。他们的⾸张同名
+            EP 是⼀⾸合成器重⾦属、哥特⻛格的⾳乐，于 2021
+            年发⾏，在地下⾳乐界⼴受好评。 Rain Dogs
+            是⼀⽀难以捉摸的乐队，他们罕⻅的现场表演以其令⼈难以忘怀的情绪和氛围⽽闻名，其声⾳让⼈想起
+            Suicide 和 Depeche Mode。2024 年，他们发⾏了三⾸新单曲：Nights are
+            Lonely, More than Desire和Disintegrate，这些单曲来⾃即将于 2025
+            年发⾏的专辑。
+          </Typography>
+
           <Box sx={{ display: "flex", justifyContent: "center" }} padding={4}>
             <iframe
               width="560"

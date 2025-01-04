@@ -135,29 +135,6 @@ export default function GodTour() {
           <Typography
             sx={{
               color: "white",
-              fontFamily: "Glow Sans SC Compressed, sans-serif",
-              fontSize: "18px",
-            }}
-          >
-            2024年，99
-            God的首个个人巡演为他炙手可热的音乐生涯增添了璀璨的一页。这场由North
-            Nose
-            Production主办、YaBish艺人经纪公司策划的巡演横跨六大城市，不仅吸引了大批粉丝，更将他的音乐魅力推向了新的高度。每一场演出都是一场视听盛宴，他标志性的深沉嗓音穿透力十足，与新潮节奏的完美结合，让观众沉浸在他的音乐世界中，久久无法忘怀。
-            <br />
-            <br />
-            巡演期间，99
-            God通过音乐讲述了他在纽约布鲁克林深耕多年的故事，将Neo-soul的柔和旋律与他充满力量的说唱相融合，打造出独特的音乐氛围。无论是在热情似火的舞台上，还是在幕后与粉丝的互动中，99
-            God都展现出了他作为一位音乐艺术家的成熟与自信。
-            <br />
-            <br />
-            这次巡演的成功不仅再次印证了他在国内音乐圈的影响力，更为他开辟了更多国际合作的可能。就如同他与拳头游戏合作的《Renegade》那样，这次巡演也成为了他职业生涯中一个值得铭记的里程碑。随着粉丝群体的不断壮大，99
-            God正一步步走向全球舞台，成为音乐界一颗冉冉升起的新星。
-            <br />
-            <br />
-          </Typography>
-          <Typography
-            sx={{
-              color: "white",
               fontFamily: "Antonio, sans-serif",
               fontSize: "18px",
             }}
@@ -186,7 +163,31 @@ export default function GodTour() {
             "Renegade," this tour has become a memorable milestone in his
             career. As his fanbase continues to grow, 99 God is steadily rising
             as a shining star on the global music stage.
+            <br />
+            <br />
           </Typography>
+          <Typography
+            sx={{
+              color: "white",
+              fontFamily: "Glow Sans SC Compressed, sans-serif",
+              fontSize: "18px",
+            }}
+          >
+            2024年，99
+            God的首个个人巡演为他炙手可热的音乐生涯增添了璀璨的一页。这场由North
+            Nose
+            Production主办、YaBish艺人经纪公司策划的巡演横跨六大城市，不仅吸引了大批粉丝，更将他的音乐魅力推向了新的高度。每一场演出都是一场视听盛宴，他标志性的深沉嗓音穿透力十足，与新潮节奏的完美结合，让观众沉浸在他的音乐世界中，久久无法忘怀。
+            <br />
+            <br />
+            巡演期间，99
+            God通过音乐讲述了他在纽约布鲁克林深耕多年的故事，将Neo-soul的柔和旋律与他充满力量的说唱相融合，打造出独特的音乐氛围。无论是在热情似火的舞台上，还是在幕后与粉丝的互动中，99
+            God都展现出了他作为一位音乐艺术家的成熟与自信。
+            <br />
+            <br />
+            这次巡演的成功不仅再次印证了他在国内音乐圈的影响力，更为他开辟了更多国际合作的可能。就如同他与拳头游戏合作的《Renegade》那样，这次巡演也成为了他职业生涯中一个值得铭记的里程碑。随着粉丝群体的不断壮大，99
+            God正一步步走向全球舞台，成为音乐界一颗冉冉升起的新星。
+          </Typography>
+
           <Box>
             <GodTourPics />
           </Box>
