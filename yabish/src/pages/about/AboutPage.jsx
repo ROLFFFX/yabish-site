@@ -92,7 +92,7 @@ export default function AboutPage() {
             top: "1rem",
             left: "-2%",
             fontFamily: "Anton, sans-serif",
-            fontSize: "20px",
+            fontSize: "18px",
             borderRadius: "5px",
             borderColor: "white",
             "&:hover": {
