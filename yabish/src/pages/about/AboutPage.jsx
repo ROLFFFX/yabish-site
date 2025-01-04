@@ -74,7 +74,7 @@ export default function AboutPage() {
           是一家充满活力的音乐厂牌，专注于推广艺人进行在地化发展，合作艺人包括
           <span style={{ fontFamily: "Antonio, sas-serif" }}>99 God</span>和
           <span style={{ fontFamily: "Antonio, sas-serif" }}>Yaka</span>
-          。我们致力于帮助全球潜力无限的地赏与地下艺人获得更多关注。
+          。我们致力于帮助全球潜力无限的地上与地下艺人获得更多关注。
           <br />
           音乐的力量在于连接不同文化，通过跨越地域的艺术表达，打造无界限的创意共同体。
         </Typography>
@@ -90,39 +90,24 @@ export default function AboutPage() {
           <br />
           FOLLOW ME
         </Typography>
-        <Button
-          variant="text"
+
+        <Typography
           sx={{
             color: "white",
-            top: "1rem",
-            left: "-1%",
             fontFamily: "Anton, sans-serif",
-            borderRadius: "5px",
-            borderColor: "white",
+            textDecoration: "underline",
+            transition: "color 0.2s ease-in-out",
+            fontSize: "16px",
             "&:hover": {
-              backgroundColor: "transparent",
-              borderColor: "#ff0000",
+              color: "#ff0000",
             },
-            zIndex: 200,
           }}
+          onClick={() =>
+            window.open("https://www.instagram.com/yabish.yabish/", "_blank")
+          }
         >
-          <Typography
-            sx={{
-              color: "white",
-              fontFamily: "Anton, sans-serif",
-              textDecoration: "underline",
-              transition: "color 0.2s ease-in-out",
-              "&:hover": {
-                color: "#ff0000",
-              },
-            }}
-            onClick={() =>
-              window.open("https://www.instagram.com/yabish.yabish/", "_blank")
-            }
-          >
-            INSTAGRAM
-          </Typography>
-        </Button>
+          INSTAGRAM
+        </Typography>
       </Box>
       {/* footer text */}
       <Box

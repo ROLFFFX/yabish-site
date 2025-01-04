@@ -261,6 +261,50 @@ export default function YakaPage() {
           <Box padding={2}>
             <YakaPicCarousel />
           </Box>
+          <Typography
+            sx={{
+              color: "white",
+              fontFamily: "Glow Sans SC Compressed, sans-serif",
+              fontSize: "18px",
+            }}
+          >
+            credit：Kove Quan
+            <br />
+            <br />
+          </Typography>
+          <Box
+            sx={{
+              display: "inline-flex",
+              gap: "0.5rem",
+            }}
+          >
+            <Typography
+              sx={{
+                color: "white",
+                fontFamily: "Glow Sans SC Compressed, sans-serif",
+                fontSize: "18px",
+              }}
+            >
+              Artist Booking/Management:
+            </Typography>
+            <Typography
+              sx={{
+                color: "white",
+                fontFamily: "Antonio, sans-serif",
+                textDecoration: "underline",
+                transition: "color 0.2s ease-in-out",
+                fontSize: "16px",
+                "&:hover": {
+                  color: "#ff0000",
+                },
+              }}
+              onClick={() =>
+                window.open("mailto:yabish.prod@gmail.com", "_blank")
+              }
+            >
+              yabish.prod@gmail.com
+            </Typography>
+          </Box>
         </Box>
         {/* Bottom-Left Button */}
         <Button
@@ -426,7 +470,8 @@ function TopLeft() {
 // For image carousel
 
 function shuffleArray(array) {
-  return array.sort(() => Math.random() - 0.5);
+  return array;
+  // return array.sort(() => Math.random() - 0.5);
 }
 function YakaPicCarousel() {
   const settings = {
@@ -438,7 +483,7 @@ function YakaPicCarousel() {
     speed: 400,
   };
 
-  const images = shuffleArray([Image1, Image2, Image4, Image5, Image6]);
+  const images = shuffleArray([Image1, yakabg, Image4, Image5, Image6]);
 
   return (
     <div

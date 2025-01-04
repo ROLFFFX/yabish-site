@@ -215,6 +215,7 @@ export default function GodTour() {
             影像骑士Visual Jockey:Ludar@YaBish <br />
             VJ制作Production:Kyra/Tage <br />
             巡演助理Tour Assistant:Yaka@YaBish/Ludar@YaBish
+            <br /> 巡演海报制作Tour Poster:JACKBOI
           </Typography>
 
           <Box>

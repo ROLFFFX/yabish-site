@@ -97,7 +97,8 @@ export default function RainDogsTour() {
               textAlign: "center",
             }}
           >
-            COMING!!!YaBish Presents.01 <br />
+            YaBish Presents.|2025 Rain Dogs CHINA TOUR
+            <br />
             2025YaBish
             <span style={{ fontFamily: "Glow Sans SC Compressed, sans-serif" }}>
               开年呈现
@@ -361,7 +362,8 @@ const Image6 =
   "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/9f5b77b7-128d-457b-4de9-dfbb903c6d00/public";
 
 function shuffleArray(array) {
-  return array.sort(() => Math.random() - 0.5);
+  return array;
+  // return array.sort(() => Math.random() - 0.5);
 }
 
 function RainDogsPics() {

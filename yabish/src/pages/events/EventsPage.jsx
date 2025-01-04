@@ -115,7 +115,7 @@ export default function EventsPage() {
               fontSize: "24px",
             }}
           >
-            COMING!!!YaBish Presents.01
+            YaBish Presents.|2025 Rain Dogs CHINA TOUR
           </Typography>
         </Box>
       ) : (
@@ -126,17 +126,19 @@ export default function EventsPage() {
             alignItems: "center",
             gap: "5rem",
             position: "absolute",
-            top: "50%",
-            transform: "translateY(-50%)",
-            height: "100%",
+            width: "100%", // Ensure full-width alignment
+            height: "60%", // Occupy full height of the viewport
+            top: "20%",
             zIndex: 20,
           }}
         >
-          {/* First Image */}
+          {/* First Image with Title */}
           <motion.div
             style={{
-              width: "auto",
-              height: "60%",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center", // Center-align image and title
+              height: "100%",
             }}
             whileHover={{ scale: 1.1 }}
             onClick={() => {
@@ -147,15 +149,15 @@ export default function EventsPage() {
               src={GodTourPic}
               alt="99 God Tour"
               style={{
+                top: "20%",
                 width: "auto",
-                height: "100%",
-                marginBottom: "5%",
+                height: "100%", // Adjust as needed for proper alignment
+                marginBottom: "1rem",
               }}
             />
             <Typography
               sx={{
                 color: "white",
-                marginBottom: "10%",
                 fontFamily: "Anton, sans-serif",
                 fontSize: "24px",
                 textAlign: "center",
@@ -164,22 +166,25 @@ export default function EventsPage() {
               99 GOD 2024 TOUR
             </Typography>
           </motion.div>
+
+          {/* Second Image with Title */}
           <motion.div
             style={{
-              width: "auto",
-              height: "60%",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center", // Center-align image and title
+              height: "100%",
             }}
             whileHover={{ scale: 1.1 }}
             onClick={() => {
               navigate("/raindogstour");
             }}
           >
-            {/* Second Image */}
             <img
               style={{
                 width: "auto",
-                height: "100%",
-                marginBottom: "5%",
+                height: "100%", // Adjust as needed for proper alignment
+                marginBottom: "1rem",
               }}
               src={RainDogsPic}
               alt="Rain Dogs Tour"
@@ -187,13 +192,12 @@ export default function EventsPage() {
             <Typography
               sx={{
                 color: "white",
-                marginBottom: "10%",
                 fontFamily: "Anton, sans-serif",
                 fontSize: "24px",
                 textAlign: "center",
               }}
             >
-              COMING!!!YaBish Presents.01
+              YaBish Presents.|2025 Rain Dogs CHINA TOUR
             </Typography>
           </motion.div>
         </Box>
