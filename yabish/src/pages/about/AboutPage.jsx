@@ -38,7 +38,7 @@ export default function AboutPage() {
             width: "95%", // Box width
             backgroundColor: "transparent", // Slightly transparent background
             overflowY: "auto", // Scrollable vertically
-            overflowX: "hidden", // No horizontal scrolling
+            overflowX: "auto", // No horizontal scrolling
             padding: "1rem", // Add padding inside the box
             color: "white", // Text color
             zIndex: 2,
@@ -106,6 +106,10 @@ export default function AboutPage() {
             }
           >
             INSTAGRAM
+            <br />
+            <br />
+            <br />
+            <br />
           </Typography>
         </Box>
         {/* footer text */}
