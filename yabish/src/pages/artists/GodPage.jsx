@@ -244,60 +244,64 @@ export default function GodPage() {
             <Box mt={"-2.5rem"} sx={{ zIndex: 2000 }}>
               <GodVidsMobile />
             </Box>
-            <Typography
-              sx={{
-                color: "white",
-                fontFamily: "Glow Sans SC Compressed, sans-serif",
-                fontSize: "18px",
-              }}
-            >
-              credit：Kove Quan, Tage
-              <br />
-              <br />
-              HYPEBEAST專訪 「說唱暗殺星」99
-              God：音樂的最終目標，是讓聽者感受到愉悅和吸引 Artist
-              <br />
+            <Box>
               <Typography
                 sx={{
                   color: "white",
-                  fontFamily: "Antonio, sans-serif",
-                  textDecoration: "underline",
-                  transition: "color 0.2s ease-in-out",
-                  fontSize: "16px",
-                  "&:hover": {
-                    color: "#ff0000",
-                  },
+                  fontFamily: "Glow Sans SC Compressed, sans-serif",
+                  fontSize: "18px",
                 }}
-                onClick={() =>
-                  window.open(
-                    "https://hypebeast.com/tw/2024/8/interview-with-99god",
-                    "_blank"
-                  )
-                }
               >
-                https://hypebeast.com/tw/2024/8/interview-with-99god
+                shot by：Kove Quan, Tage
+                <br />
+                <br />
+                HYPEBEAST專訪 「說唱暗殺星」99
+                God：音樂的最終目標，是讓聽者感受到愉悅和吸引 Artist
+                <br />
+                <Typography
+                  component="span" // Prevents line break by making it an inline element
+                  sx={{
+                    color: "white",
+                    fontFamily: "Antonio, sans-serif",
+                    textDecoration: "underline",
+                    transition: "color 0.2s ease-in-out",
+                    fontSize: "16px",
+                    "&:hover": {
+                      color: "#ff0000",
+                    },
+                  }}
+                  onClick={() =>
+                    window.open(
+                      "https://hypebeast.com/tw/2024/8/interview-with-99god",
+                      "_blank"
+                    )
+                  }
+                >
+                  https://hypebeast.com/tw/2024/8/interview-with-99god
+                </Typography>
+                <br />
+                <br />
+                Booking/Management:{" "}
+                <Typography
+                  component="span" // Prevents line break
+                  sx={{
+                    color: "white",
+                    fontFamily: "Antonio, sans-serif",
+                    textDecoration: "underline",
+                    transition: "color 0.2s ease-in-out",
+                    fontSize: "16px",
+                    "&:hover": {
+                      color: "#ff0000",
+                    },
+                  }}
+                  onClick={() =>
+                    window.open("mailto:yabish.prod@gmail.com", "_blank")
+                  }
+                >
+                  yabish.prod@gmail.com
+                </Typography>
               </Typography>
-              <br />
-              <br />
-              Booking/Management:{" "}
-            </Typography>
-            <Typography
-              sx={{
-                color: "white",
-                fontFamily: "Antonio, sans-serif",
-                textDecoration: "underline",
-                transition: "color 0.2s ease-in-out",
-                fontSize: "16px",
-                "&:hover": {
-                  color: "#ff0000",
-                },
-              }}
-              onClick={() =>
-                window.open("mailto:yabish.prod@gmail.com", "_blank")
-              }
-            >
-              yabish.prod@gmail.com
-            </Typography>
+            </Box>
           </Box>
 
           {/* Bottom-Left Button */}
@@ -561,60 +565,64 @@ export default function GodPage() {
           <Box mt={"-2.5rem"} sx={{ zIndex: 2000 }}>
             <GodVids />
           </Box>
-          <Typography
-            sx={{
-              color: "white",
-              fontFamily: "Glow Sans SC Compressed, sans-serif",
-              fontSize: "18px",
-            }}
-          >
-            credit：Kove Quan, Tage
-            <br />
-            <br />
-            HYPEBEAST專訪 「說唱暗殺星」99
-            God：音樂的最終目標，是讓聽者感受到愉悅和吸引 Artist
-            <br />
+          <Box>
             <Typography
               sx={{
                 color: "white",
-                fontFamily: "Antonio, sans-serif",
-                textDecoration: "underline",
-                transition: "color 0.2s ease-in-out",
-                fontSize: "16px",
-                "&:hover": {
-                  color: "#ff0000",
-                },
+                fontFamily: "Glow Sans SC Compressed, sans-serif",
+                fontSize: "18px",
               }}
-              onClick={() =>
-                window.open(
-                  "https://hypebeast.com/tw/2024/8/interview-with-99god",
-                  "_blank"
-                )
-              }
             >
-              https://hypebeast.com/tw/2024/8/interview-with-99god
+              shot by：Kove Quan, Tage
+              <br />
+              <br />
+              HYPEBEAST專訪 「說唱暗殺星」99
+              God：音樂的最終目標，是讓聽者感受到愉悅和吸引 Artist
+              <br />
+              <Typography
+                component="span" // Prevents line break by making it an inline element
+                sx={{
+                  color: "white",
+                  fontFamily: "Antonio, sans-serif",
+                  textDecoration: "underline",
+                  transition: "color 0.2s ease-in-out",
+                  fontSize: "16px",
+                  "&:hover": {
+                    color: "#ff0000",
+                  },
+                }}
+                onClick={() =>
+                  window.open(
+                    "https://hypebeast.com/tw/2024/8/interview-with-99god",
+                    "_blank"
+                  )
+                }
+              >
+                https://hypebeast.com/tw/2024/8/interview-with-99god
+              </Typography>
+              <br />
+              <br />
+              Booking/Management:{" "}
+              <Typography
+                component="span" // Prevents line break
+                sx={{
+                  color: "white",
+                  fontFamily: "Antonio, sans-serif",
+                  textDecoration: "underline",
+                  transition: "color 0.2s ease-in-out",
+                  fontSize: "16px",
+                  "&:hover": {
+                    color: "#ff0000",
+                  },
+                }}
+                onClick={() =>
+                  window.open("mailto:yabish.prod@gmail.com", "_blank")
+                }
+              >
+                yabish.prod@gmail.com
+              </Typography>
             </Typography>
-            <br />
-            <br />
-            Booking/Management:{" "}
-          </Typography>
-          <Typography
-            sx={{
-              color: "white",
-              fontFamily: "Antonio, sans-serif",
-              textDecoration: "underline",
-              transition: "color 0.2s ease-in-out",
-              fontSize: "16px",
-              "&:hover": {
-                color: "#ff0000",
-              },
-            }}
-            onClick={() =>
-              window.open("mailto:yabish.prod@gmail.com", "_blank")
-            }
-          >
-            yabish.prod@gmail.com
-          </Typography>
+          </Box>
         </Box>
 
         {/* Bottom-Left Button */}
@@ -912,8 +920,9 @@ function GodPicsMobile() {
               src={image}
               alt={`Slide ${index + 1}`}
               style={{
-                width: "100%",
-                height: "400px",
+                width: "auto",
+                height: "auto",
+                maxWidth: "100%",
                 objectFit: "cover",
                 borderRadius: "10px",
                 padding: "10px",
@@ -963,9 +972,9 @@ function GodPics() {
               src={image}
               alt={`Slide ${index + 1}`}
               style={{
-                width: "100%",
-                height: "400px",
-                objectFit: "cover",
+                width: "auto",
+                height: "auto",
+                maxWidth: "100%",
                 borderRadius: "10px",
                 padding: "10px",
               }}
@@ -1006,8 +1015,9 @@ function GodVidsMobile() {
             loop
             playsInline
             style={{
-              width: "100%",
-              height: "400px",
+              width: "auto",
+              height: "auto",
+              maxWidth: "100%",
               objectFit: "cover",
               borderRadius: "10px",
               padding: "10px",
@@ -1022,8 +1032,9 @@ function GodVidsMobile() {
             loop
             playsInline
             style={{
-              width: "100%",
-              height: "400px",
+              width: "auto",
+              height: "auto",
+              maxWidth: "100%",
               objectFit: "cover",
               borderRadius: "10px",
               padding: "10px",
@@ -1038,8 +1049,9 @@ function GodVidsMobile() {
             loop
             playsInline
             style={{
-              width: "100%",
-              height: "400px",
+              width: "auto",
+              height: "auto",
+              maxWidth: "100%",
               objectFit: "cover",
               borderRadius: "10px",
               padding: "10px",
@@ -1054,8 +1066,9 @@ function GodVidsMobile() {
             loop
             playsInline
             style={{
-              width: "100%",
-              height: "400px",
+              width: "auto",
+              height: "auto",
+              maxWidth: "100%",
               objectFit: "cover",
               borderRadius: "10px",
               padding: "10px",
@@ -1070,8 +1083,9 @@ function GodVidsMobile() {
             loop
             playsInline
             style={{
-              width: "100%",
-              height: "400px",
+              width: "auto",
+              height: "auto",
+              maxWidth: "100%",
               objectFit: "cover",
               borderRadius: "10px",
               padding: "10px",
@@ -1112,8 +1126,9 @@ function GodVids() {
             loop
             playsInline
             style={{
-              width: "100%",
-              height: "400px",
+              width: "auto",
+              height: "auto",
+              maxWidth: "100%",
               objectFit: "cover",
               borderRadius: "10px",
               padding: "10px",
@@ -1128,8 +1143,9 @@ function GodVids() {
             loop
             playsInline
             style={{
-              width: "100%",
-              height: "400px",
+              width: "auto",
+              height: "auto",
+              maxWidth: "100%",
               objectFit: "cover",
               borderRadius: "10px",
               padding: "10px",
@@ -1144,8 +1160,9 @@ function GodVids() {
             loop
             playsInline
             style={{
-              width: "100%",
-              height: "400px",
+              width: "auto",
+              height: "auto",
+              maxWidth: "100%",
               objectFit: "cover",
               borderRadius: "10px",
               padding: "10px",
@@ -1160,8 +1177,9 @@ function GodVids() {
             loop
             playsInline
             style={{
-              width: "100%",
-              height: "400px",
+              width: "auto",
+              height: "auto",
+              maxWidth: "100%",
               objectFit: "cover",
               borderRadius: "10px",
               padding: "10px",
@@ -1176,8 +1194,9 @@ function GodVids() {
             loop
             playsInline
             style={{
-              width: "100%",
-              height: "400px",
+              width: "auto",
+              height: "auto",
+              maxWidth: "100%",
               objectFit: "cover",
               borderRadius: "10px",
               padding: "10px",

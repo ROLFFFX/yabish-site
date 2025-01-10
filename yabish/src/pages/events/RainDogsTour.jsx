@@ -85,7 +85,7 @@ export default function RainDogsTour() {
                 textAlign: "center",
               }}
             >
-              YaBish Presents.|2025 Rain Dogs CHINA TOUR
+              YaBish Pres.「2025 Rain Dogs CHINA TOUR」
             </Typography>
           </Box>
           {/* Words Section */}
@@ -181,9 +181,11 @@ export default function RainDogsTour() {
               <br />
               An elusive band, Rain Dogs' rare live show is known for its
               haunting mood and atmosphere, producing a sound reminiscent of
-              Suicide and Depeche Mode. In 2024 they have released three new
-              singles: Nights are Lonely, More than Desire, and Disintegrate,
-              from an upcoming album which is set to be released in 2025.
+              Suicide and Depeche Mode.
+              <br />
+              <br /> In 2024 they have released three new singles: Nights are
+              Lonely, More than Desire, and Disintegrate, from an upcoming album
+              which is set to be released in 2025.
             </Typography>
             <Typography
               sx={{
@@ -227,11 +229,82 @@ export default function RainDogsTour() {
                 2025 Rain Dogs CHINA TOUR
               </span>{" "}
               <br />
-              02/21周五Fri（嘉宾GUEST：黑甜一枕） 杭州HANGZHOU·酒球会9club
               <br />
-              02/22周六Sat（嘉宾GUEST：UNTERWASSER在水下）
+              02/21周五Fri（嘉宾GUEST：
+              <Typography
+                component="span" // Prevents line break
+                sx={{
+                  color: "white",
+                  fontFamily: "Antonio, sans-serif",
+                  textDecoration: "underline",
+                  transition: "color 0.2s ease-in-out",
+                  fontSize: "16px",
+                  "&:hover": {
+                    color: "#ff0000",
+                  },
+                }}
+                onClick={() =>
+                  window.open(
+                    "https://open.spotify.com/artist/3Env07M1XTj7ntZxzavVq9?si=Ezx6RpsZQTOVwlW_facGSw",
+                    "_blank"
+                  )
+                }
+              >
+                黑甜一枕
+              </Typography>
+              ） <br />
+              杭州HANGZHOU·酒球会9club
               <br />
-              上海SHANGHAI·育音堂SpecTers 02/23周日Sun（嘉宾GUEST：Taiga）
+              <br />
+              02/22周六Sat（嘉宾GUEST：
+              <Typography
+                component="span" // Prevents line break
+                sx={{
+                  color: "white",
+                  fontFamily: "Antonio, sans-serif",
+                  textDecoration: "underline",
+                  transition: "color 0.2s ease-in-out",
+                  fontSize: "16px",
+                  "&:hover": {
+                    color: "#ff0000",
+                  },
+                }}
+                onClick={() =>
+                  window.open(
+                    "https://music.163.com/#/artist?id=52196524",
+                    "_blank"
+                  )
+                }
+              >
+                UNTERWASSER在水下
+              </Typography>
+              ）
+              <br />
+              上海SHANGHAI·育音堂SpecTers <br />
+              <br />
+              02/23周日Sun（嘉宾GUEST：
+              <Typography
+                component="span" // Prevents line break
+                sx={{
+                  color: "white",
+                  fontFamily: "Antonio, sans-serif",
+                  textDecoration: "underline",
+                  transition: "color 0.2s ease-in-out",
+                  fontSize: "16px",
+                  "&:hover": {
+                    color: "#ff0000",
+                  },
+                }}
+                onClick={() =>
+                  window.open(
+                    "https://open.spotify.com/artist/2HqXQTZQ92lpBQkFgUNRr7?si=z1uNAaARR_Secrl6aVvPSA",
+                    "_blank"
+                  )
+                }
+              >
+                Taiga
+              </Typography>
+              ）
               <br />
               成都CHENGDU·NUSPACE
             </Typography>
@@ -345,7 +418,7 @@ export default function RainDogsTour() {
               textAlign: "center",
             }}
           >
-            YaBish Presents.|2025 Rain Dogs CHINA TOUR
+            YaBish Pres.「2025 Rain Dogs CHINA TOUR」
           </Typography>
         </Box>
         {/* Words Section */}
@@ -440,9 +513,11 @@ export default function RainDogsTour() {
             <br />
             An elusive band, Rain Dogs' rare live show is known for its haunting
             mood and atmosphere, producing a sound reminiscent of Suicide and
-            Depeche Mode. In 2024 they have released three new singles: Nights
-            are Lonely, More than Desire, and Disintegrate, from an upcoming
-            album which is set to be released in 2025.
+            Depeche Mode.
+            <br />
+            <br /> In 2024 they have released three new singles: Nights are
+            Lonely, More than Desire, and Disintegrate, from an upcoming album
+            which is set to be released in 2025.
           </Typography>
           <Typography
             sx={{
@@ -485,11 +560,82 @@ export default function RainDogsTour() {
               2025 Rain Dogs CHINA TOUR
             </span>{" "}
             <br />
-            02/21周五Fri（嘉宾GUEST：黑甜一枕） 杭州HANGZHOU·酒球会9club
             <br />
-            02/22周六Sat（嘉宾GUEST：UNTERWASSER在水下）
+            02/21周五Fri（嘉宾GUEST：
+            <Typography
+              component="span" // Prevents line break
+              sx={{
+                color: "white",
+                fontFamily: "Antonio, sans-serif",
+                textDecoration: "underline",
+                transition: "color 0.2s ease-in-out",
+                fontSize: "16px",
+                "&:hover": {
+                  color: "#ff0000",
+                },
+              }}
+              onClick={() =>
+                window.open(
+                  "https://open.spotify.com/artist/3Env07M1XTj7ntZxzavVq9?si=Ezx6RpsZQTOVwlW_facGSw",
+                  "_blank"
+                )
+              }
+            >
+              黑甜一枕
+            </Typography>
+            ） <br />
+            杭州HANGZHOU·酒球会9club
             <br />
-            上海SHANGHAI·育音堂SpecTers 02/23周日Sun（嘉宾GUEST：Taiga）
+            <br />
+            02/22周六Sat（嘉宾GUEST：
+            <Typography
+              component="span" // Prevents line break
+              sx={{
+                color: "white",
+                fontFamily: "Antonio, sans-serif",
+                textDecoration: "underline",
+                transition: "color 0.2s ease-in-out",
+                fontSize: "16px",
+                "&:hover": {
+                  color: "#ff0000",
+                },
+              }}
+              onClick={() =>
+                window.open(
+                  "https://music.163.com/#/artist?id=52196524",
+                  "_blank"
+                )
+              }
+            >
+              UNTERWASSER在水下
+            </Typography>
+            ）
+            <br />
+            上海SHANGHAI·育音堂SpecTers <br />
+            <br />
+            02/23周日Sun（嘉宾GUEST：
+            <Typography
+              component="span" // Prevents line break
+              sx={{
+                color: "white",
+                fontFamily: "Antonio, sans-serif",
+                textDecoration: "underline",
+                transition: "color 0.2s ease-in-out",
+                fontSize: "16px",
+                "&:hover": {
+                  color: "#ff0000",
+                },
+              }}
+              onClick={() =>
+                window.open(
+                  "https://open.spotify.com/artist/2HqXQTZQ92lpBQkFgUNRr7?si=z1uNAaARR_Secrl6aVvPSA",
+                  "_blank"
+                )
+              }
+            >
+              Taiga
+            </Typography>
+            ）
             <br />
             成都CHENGDU·NUSPACE
           </Typography>

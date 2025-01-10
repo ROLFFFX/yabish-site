@@ -125,7 +125,7 @@ export default function EventsPage() {
               textAlign: "center",
             }}
           >
-            YaBish Presents | 2025 Rain Dogs CHINA TOUR
+            YaBish Pres.「2025 Rain Dogs CHINA TOUR」
           </Typography>
         </Box>
       ) : (
@@ -208,7 +208,7 @@ export default function EventsPage() {
                 textAlign: "center",
               }}
             >
-              YaBish Presents.|2025 Rain Dogs CHINA TOUR
+              YaBish Pres.「2025 Rain Dogs CHINA TOUR」
             </Typography>
           </motion.div>
         </Box>

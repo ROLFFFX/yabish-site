@@ -180,7 +180,21 @@ export default function GodTour() {
               这次巡演的成功不仅再次印证了他在国内音乐圈的影响力，更为他开辟了更多国际合作的可能。就如同他与拳头游戏合作的《Renegade》那样，这次巡演也成为了他职业生涯中一个值得铭记的里程碑。随着粉丝群体的不断壮大，99
               God正一步步走向全球舞台，成为音乐界一颗冉冉升起的新星。
               <br />
-              <br />
+            </Typography>
+
+            <Box>
+              <GodTourPicsMobile />
+            </Box>
+            <Box mt={"-2.5rem"} sx={{ zIndex: 2000 }}>
+              <GodTourVidsMobile />
+            </Box>
+            <Typography
+              sx={{
+                color: "white",
+                fontFamily: "Glow Sans SC Compressed, sans-serif",
+                fontSize: "16px",
+              }}
+            >
               上海ShanghaiMAO Livehouse08/04（GUEST-直火帮FEEZY）&08/09After
               Party in@HUSH <br />
               杭州酒球会08/11（GUEST-Dough Boy）
@@ -200,14 +214,9 @@ export default function GodTour() {
               VJ制作Production:Kyra/Tage <br />
               巡演助理Tour Assistant:Yaka@YaBish/Ludar@YaBish
               <br /> 巡演海报制作Tour Poster:JACKBOI
+              <br />
+              <br />
             </Typography>
-
-            <Box>
-              <GodTourPicsMobile />
-            </Box>
-            <Box mt={"-2.5rem"} sx={{ zIndex: 2000 }}>
-              <GodTourVidsMobile />
-            </Box>
           </Box>
 
           {/* Footer Section */}
@@ -377,7 +386,21 @@ export default function GodTour() {
             这次巡演的成功不仅再次印证了他在国内音乐圈的影响力，更为他开辟了更多国际合作的可能。就如同他与拳头游戏合作的《Renegade》那样，这次巡演也成为了他职业生涯中一个值得铭记的里程碑。随着粉丝群体的不断壮大，99
             God正一步步走向全球舞台，成为音乐界一颗冉冉升起的新星。
             <br />
-            <br />
+          </Typography>
+
+          <Box>
+            <GodTourPics />
+          </Box>
+          <Box mt={"-2.5rem"} sx={{ zIndex: 2000 }}>
+            <GodTourVids />
+          </Box>
+          <Typography
+            sx={{
+              color: "white",
+              fontFamily: "Glow Sans SC Compressed, sans-serif",
+              fontSize: "16px",
+            }}
+          >
             上海ShanghaiMAO Livehouse08/04（GUEST-直火帮FEEZY）&08/09After Party
             in@HUSH <br />
             杭州酒球会08/11（GUEST-Dough Boy）
@@ -398,13 +421,6 @@ export default function GodTour() {
             巡演助理Tour Assistant:Yaka@YaBish/Ludar@YaBish
             <br /> 巡演海报制作Tour Poster:JACKBOI
           </Typography>
-
-          <Box>
-            <GodTourPics />
-          </Box>
-          <Box mt={"-2.5rem"} sx={{ zIndex: 2000 }}>
-            <GodTourVids />
-          </Box>
         </Box>
 
         {/* Footer Section */}

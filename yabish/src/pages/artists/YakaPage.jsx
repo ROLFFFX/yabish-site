@@ -267,7 +267,7 @@ export default function YakaPage() {
                 fontSize: "18px",
               }}
             >
-              credit：Kove Quan
+              shot by：Kove Quan
               <br />
               <br />
             </Typography>
@@ -605,7 +605,7 @@ export default function YakaPage() {
               fontSize: "18px",
             }}
           >
-            credit：Kove Quan
+            shot by：Kove Quan
             <br />
             <br />
           </Typography>
@@ -816,9 +816,28 @@ function YakaPicCarousel() {
     className: "center",
     centerMode: false,
     infinite: false,
-    centerPadding: "120px",
-    slidesToShow: 3,
     speed: 400,
+    slidesToShow: 4,
+    responsive: [
+      {
+        breakpoint: 1600,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 1496,
+        settings: {
+          slidesToShow: 3.5,
+        },
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+    ],
   };
 
   const images = shuffleArray([Image1, yakabg, Image4, Image5, Image6]);
@@ -830,7 +849,6 @@ function YakaPicCarousel() {
         width: "100%",
         margin: "0 auto",
         padding: "1rem 0",
-        // overflow: "hidden", // Prevent default scrolling
       }}
     >
       <Slider {...settings}>
@@ -885,6 +903,7 @@ function YakaPicCarouselMobile() {
               style={{
                 width: "100%",
                 height: "400px",
+                maxWidth: "100%",
                 objectFit: "cover",
                 borderRadius: "10px",
                 padding: "10px",
