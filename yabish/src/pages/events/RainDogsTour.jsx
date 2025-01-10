@@ -203,6 +203,7 @@ export default function RainDogsTour() {
               fontSize: "18px",
             }}
           >
+            <br />
             Rain Dogs 是⼀⽀来⾃澳⼤利亚墨尔本的电⼦后朋克三⼈组。他们的⾸张同名
             EP 是⼀⾸合成器重⾦属、哥特⻛格的⾳乐，于 2021
             年发⾏，在地下⾳乐界⼴受好评。
