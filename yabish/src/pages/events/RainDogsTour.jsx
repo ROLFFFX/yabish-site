@@ -10,7 +10,7 @@ import YABISHLogo from "../../assets/YABISHlogo.png";
 import BGVideo from "../BGVideo";
 
 const rg_tour_poster =
-  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/2b0e2bae-d7d7-489d-4006-9773f6129e00/public";
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/eef1a360-fa7d-4701-7a32-93b5cf723400/public";
 
 export default function RainDogsTour() {
   const navigate = useNavigate();
