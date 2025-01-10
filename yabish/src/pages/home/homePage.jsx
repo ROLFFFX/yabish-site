@@ -1,12 +1,15 @@
-import React, { useRef, useState } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
 import { Box, Button, Typography } from "@mui/material";
 import { useGLTF } from "@react-three/drei";
+import { Canvas, useFrame } from "@react-three/fiber";
 import { motion } from "framer-motion";
+import React, { useEffect, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import YABISHLogo from "../..//assets/YABISHlogo.png";
 import { pageVariants } from "../../animations/pageVariants";
 import "./homePageStyle.css";
+
+const popup =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/e3ef12c5-2efb-4130-3913-d62d10a27900/public";
 
 function Model() {
   const { scene } = useGLTF("/models/yabish3d-compressed.glb");
@@ -46,6 +49,21 @@ export default function HomePage() {
   const navigate = useNavigate();
   const text = "ARTISTS"; // Text to display
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [position, setPosition] = useState({ top: "70%", right: "60%" });
+
+  const randomizePosition = () => {
+    const randomTop = Math.random() * 70;
+    const randomRight = Math.random() * 60;
+    setPosition({
+      top: `${randomTop}%`,
+      right: `${randomRight}%`,
+    });
+  };
+
+  useEffect(() => {
+    // Randomize position on mount
+    randomizePosition();
+  }, []);
   return (
     <motion.div
       variants={pageVariants}
@@ -78,6 +96,43 @@ export default function HomePage() {
           <directionalLight position={[5, 10, 5]} intensity={8} />
           <Model />
         </Canvas>
+      </Box>
+      {/* pop up window */}
+      {/* pop up window */}
+      <Box
+        sx={{
+          height: "100vh",
+          width: "100vw",
+          zIndex: 1000,
+          overflow: "hidden", // Ensures no visual clipping outside bounds
+        }}
+      >
+        <motion.div
+          whileHover={{ scale: 1.1 }}
+          transition={{ duration: 0.3, ease: "easeInOut" }}
+          style={{
+            position: "absolute",
+            top: position.top,
+            right: position.right,
+            width: "20%",
+            height: "auto",
+            zIndex: 1001,
+          }}
+          onClick={() => {
+            navigate("/raindogstour");
+          }}
+        >
+          <img
+            src={popup}
+            alt="rain dogs tour pop up"
+            style={{
+              display: "block",
+              width: "100%",
+              height: "auto",
+              transformOrigin: "center",
+            }}
+          />
+        </motion.div>
       </Box>
 
       <TopLeft />
