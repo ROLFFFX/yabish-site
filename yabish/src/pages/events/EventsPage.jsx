@@ -1,6 +1,6 @@
 import { Box, Button, Typography, useMediaQuery } from "@mui/material";
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import YABISHLogo from "../..//assets/YABISHlogo.png";
 // import GodTourPic from "../../assets/pics/99godtour.webp";
 // import RainDogsPic from "../../assets/pics/raindogsposter.webp";
@@ -13,8 +13,19 @@ const GodTourPic =
   "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/e248982e-9632-439c-e315-a0d77d712f00/public";
 
 export default function EventsPage() {
-  const isMobile = useMediaQuery("(max-width:1100px)");
+  const isMobile = useMediaQuery("(max-width:768px)");
   const navigate = useNavigate();
+  const [isOverflowing, setIsOverflowing] = useState(false);
+  const contentRef = useRef();
+  // Check if the content is overflowing
+  useEffect(() => {
+    if (contentRef.current) {
+      const isOverflow =
+        contentRef.current.scrollHeight > contentRef.current.clientHeight;
+      setIsOverflowing(isOverflow);
+    }
+  }, []);
+
   return (
     <Box
       style={{
@@ -29,18 +40,20 @@ export default function EventsPage() {
       <BGVideo />
       <TopLeft />
       {/* Conditional Rendering for Layout */}
+      {/* //######################################################### Mobile View */}
       {isMobile ? (
         <Box
+          ref={contentRef}
           sx={{
             display: "flex",
             flexDirection: "column",
-            justifyContent: "flex-start",
-            alignItems: "center",
+            justifyContent: isOverflowing ? "flex-start" : "center", // Adjust based on overflow
+            alignItems: "center", // Always center horizontally
             position: "absolute",
             left: "0",
             width: "100%",
             height: "100%",
-            overflowY: "auto",
+            overflowY: "auto", // Enable scrolling if needed
             padding: "2rem 0",
             zIndex: 20,
           }}
@@ -50,24 +63,30 @@ export default function EventsPage() {
             onClick={() => {
               navigate("/99godtour");
             }}
-            sx={{ display: "flex", justifyContent: "center", zIndex: 20 }}
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              marginBottom: "1rem",
+              zIndex: 20,
+            }}
           >
             <img
               src={GodTourPic}
               alt="99 God Tour"
               style={{
-                width: "200px",
+                width: "40%",
                 height: "auto",
-                marginBottom: "5%",
               }}
             />
           </Box>
           <Typography
             sx={{
               color: "white",
-              marginBottom: "10%",
+              marginBottom: "2rem",
               fontFamily: "Anton, sans-serif",
-              fontSize: "24px",
+              fontSize: "20px",
+              textAlign: "center",
             }}
             onClick={() => {
               navigate("/99godtour");
@@ -81,30 +100,36 @@ export default function EventsPage() {
             onClick={() => {
               navigate("/raindogstour");
             }}
-            sx={{ display: "flex", justifyContent: "center", zIndex: 20 }}
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              marginBottom: "1rem",
+              zIndex: 20,
+            }}
           >
             <img
               src={RainDogsPic}
               alt="Rain Dogs Tour"
               style={{
-                width: "200px",
+                width: "40%",
                 height: "auto",
-                marginBottom: "5%",
               }}
             />
           </Box>
           <Typography
             sx={{
               color: "white",
-              marginBottom: "10%",
               fontFamily: "Anton, sans-serif",
-              fontSize: "24px",
+              fontSize: "20px",
+              textAlign: "center",
             }}
           >
-            YaBish Presents.|2025 Rain Dogs CHINA TOUR
+            YaBish Presents | 2025 Rain Dogs CHINA TOUR
           </Typography>
         </Box>
       ) : (
+        // ######################################################### Desktop View
         <Box
           sx={{
             display: "flex",

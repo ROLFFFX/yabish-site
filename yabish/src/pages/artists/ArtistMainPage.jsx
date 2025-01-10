@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Box, Button, Typography } from "@mui/material";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
@@ -13,6 +13,78 @@ export default function ArtistMainPage() {
   useEffect(() => {
     setVideoKey((prevKey) => prevKey + 1);
   }, [activeVideo]);
+
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const [godTourClicked, setGodTourClicked] = useState(false);
+  const [yakaClicked, setYakaClicked] = useState(false);
+
+  const godTourTimeout = useRef(null);
+  const yakaTimeout = useRef(null);
+  const isNavigating = useRef(false);
+  const handleGodTourClick = () => {
+    // Clear Yaka timeout if it exists
+    if (yakaTimeout.current) {
+      clearTimeout(yakaTimeout.current);
+      yakaTimeout.current = null;
+    }
+
+    // Prevent navigation overlap
+    if (isNavigating.current) {
+      return;
+    }
+
+    if (!godTourClicked) {
+      setGodTourClicked(true);
+      setActiveVideo("godbgvid");
+
+      godTourTimeout.current = setTimeout(() => {
+        if (!isNavigating.current) {
+          isNavigating.current = true; // Set navigating state
+          navigate("/99god");
+        }
+      }, 5000);
+    } else {
+      navigate("/99god"); // Immediate navigation on second click
+    }
+  };
+
+  const handleYakaClick = () => {
+    // Clear God Tour timeout if it exists
+    if (godTourTimeout.current) {
+      clearTimeout(godTourTimeout.current);
+      godTourTimeout.current = null;
+    }
+
+    // Prevent navigation overlap
+    if (isNavigating.current) {
+      return;
+    }
+
+    if (!yakaClicked) {
+      setYakaClicked(true);
+      setActiveVideo("yakabgvid");
+
+      yakaTimeout.current = setTimeout(() => {
+        if (!isNavigating.current) {
+          isNavigating.current = true; // Set navigating state
+          navigate("/yaka");
+        }
+      }, 5000);
+    } else {
+      navigate("/yaka"); // Immediate navigation on second click
+    }
+  };
 
   return (
     <Box
@@ -76,67 +148,119 @@ export default function ArtistMainPage() {
         <TopLeft />
 
         {/* 99 GOD Button */}
-        <Box
-          sx={{
-            position: "relative",
-            width: "fit-content",
-          }}
-          onMouseEnter={() => setActiveVideo(godbgvid)}
-          onMouseLeave={() => setActiveVideo("")}
-          // border={1}
-          // borderColor={"white"}
-        >
-          <Button
-            variant="text"
+        {isMobile ? (
+          <Box
             sx={{
-              backgroundColor: "transparent",
-              color: "white",
-              fontFamily: "Anton, sans-serif",
-              fontSize: { xs: "40px", md: "80px" }, // Responsive font size
-              "&:hover": {
-                backgroundColor: "transparent",
-                color: "red",
-              },
-              zIndex: 100,
+              position: "relative",
+              width: "fit-content",
             }}
-            onClick={() => {
-              navigate("/99god");
-            }}
+            onClick={() => setActiveVideo(godbgvid)}
           >
-            99 GOD
-          </Button>
-        </Box>
+            <Button
+              variant="text"
+              sx={{
+                backgroundColor: "transparent",
+                color: "white",
+                fontFamily: "Anton, sans-serif",
+                fontSize: { xs: "40px", md: "80px" }, // Responsive font size
+                "&:hover": {
+                  backgroundColor: "transparent",
+                  color: "red",
+                },
+                zIndex: 100,
+              }}
+              onClick={handleGodTourClick}
+            >
+              99 GOD
+            </Button>
+          </Box>
+        ) : (
+          <Box
+            sx={{
+              position: "relative",
+              width: "fit-content",
+            }}
+            onMouseEnter={() => setActiveVideo(godbgvid)}
+            onMouseLeave={() => setActiveVideo("")}
+          >
+            <Button
+              variant="text"
+              sx={{
+                backgroundColor: "transparent",
+                color: "white",
+                fontFamily: "Anton, sans-serif",
+                fontSize: { xs: "40px", md: "80px" }, // Responsive font size
+                "&:hover": {
+                  backgroundColor: "transparent",
+                  color: "red",
+                },
+                zIndex: 100,
+              }}
+              onClick={() => {
+                navigate("/99god");
+              }}
+            >
+              99 GOD
+            </Button>
+          </Box>
+        )}
 
         {/* YAKA Button */}
-        <Box
-          sx={{
-            position: "relative",
-            width: "fit-content",
-          }}
-          onMouseEnter={() => setActiveVideo(yakabgvid)}
-          onMouseLeave={() => setActiveVideo("")}
-          // border={1}
-          // borderColor={"white"}
-        >
-          <Button
-            variant="text"
+        {isMobile ? (
+          <Box
             sx={{
-              backgroundColor: "transparent",
-              color: "white",
-              fontFamily: "Anton, sans-serif",
-              fontSize: { xs: "40px", md: "80px" }, // Responsive font size
-              "&:hover": {
-                backgroundColor: "transparent",
-                color: "red",
-              },
+              position: "relative",
+              width: "fit-content",
             }}
-            onClick={() => {
-              navigate("/yaka");
-            }}
+            onClick={() => setActiveVideo(yakabgvid)}
           >
-            YAKA
-          </Button>
-        </Box>
+            <Button
+              variant="text"
+              sx={{
+                backgroundColor: "transparent",
+                color: "white",
+                fontFamily: "Anton, sans-serif",
+                fontSize: { xs: "40px", md: "80px" }, // Responsive font size
+                "&:hover": {
+                  backgroundColor: "transparent",
+                  color: "red",
+                },
+              }}
+              onClick={handleYakaClick}
+            >
+              YAKA
+            </Button>
+          </Box>
+        ) : (
+          <Box
+            sx={{
+              position: "relative",
+              width: "fit-content",
+            }}
+            onMouseEnter={() => setActiveVideo(yakabgvid)}
+            onMouseLeave={() => setActiveVideo("")}
+          >
+            <Button
+              variant="text"
+              sx={{
+                backgroundColor: "transparent",
+                color: "white",
+                fontFamily: "Anton, sans-serif",
+                fontSize: { xs: "40px", md: "80px" }, // Responsive font size
+                "&:hover": {
+                  backgroundColor: "transparent",
+                  color: "red",
+                },
+              }}
+              onClick={() => {
+                navigate("/yaka");
+              }}
+            >
+              YAKA
+            </Button>
+          </Box>
+        )}
+
         {/* Bottom-Left Button */}
         <Button
           variant="outlined"

@@ -89,6 +89,18 @@ export default function LandingPage() {
   const [showButton, setShowButton] = useState(true);
   const [triggerShake, setTriggerShake] = useState(false);
   const [fadeOutModel, setFadeOutModel] = useState(false);
+  
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const handleEnterClick = () => {
     setShowButton(false); // Hide the button
@@ -175,33 +187,63 @@ export default function LandingPage() {
       )}
 
       {/* Model Box with Rotational Shake Effect */}
-      <motion.div
-        animate={
-          triggerShake
-            ? {
-                rotate: [0, -10, 10, -8, 8, -6, 6, -4, 4, 0],
-                transition: { duration: 0.5, ease: "easeInOut" },
-              }
-            : {}
-        }
-        style={{
-          height: "100vh",
-          width: "100vw",
-        }}
-      >
-        <Canvas
-          style={{ height: "100%", width: "100%" }}
-          camera={{ position: [1, 0, 3], fov: 50 }}
+      {isMobile ? (
+        <motion.div
+          animate={
+            triggerShake
+              ? {
+                  rotate: [0, -10, 10, -8, 8, -6, 6, -4, 4, 0],
+                  transition: { duration: 0.5, ease: "easeInOut" },
+                }
+              : {}
+          }
+          style={{
+            height: "100vh",
+            width: "100vw",
+          }}
         >
-          <ambientLight intensity={0.5} />
-          <directionalLight position={[5, 10, 5]} intensity={8} />
-          <Model
-            isWhite={isBlackBackground}
-            fadeOut={fadeOutModel}
-            fadeIn={!isBlackBackground}
-          />
-        </Canvas>
-      </motion.div>
+          <Canvas
+            style={{ height: "100%", width: "100%" }}
+            camera={{ position: [1, 0, 6], fov: 50 }}
+          >
+            <ambientLight intensity={0.5} />
+            <directionalLight position={[5, 10, 5]} intensity={8} />
+            <Model
+              isWhite={isBlackBackground}
+              fadeOut={fadeOutModel}
+              fadeIn={!isBlackBackground}
+            />
+          </Canvas>
+        </motion.div>
+      ) : (
+        <motion.div
+          animate={
+            triggerShake
+              ? {
+                  rotate: [0, -10, 10, -8, 8, -6, 6, -4, 4, 0],
+                  transition: { duration: 0.5, ease: "easeInOut" },
+                }
+              : {}
+          }
+          style={{
+            height: "100vh",
+            width: "100vw",
+          }}
+        >
+          <Canvas
+            style={{ height: "100%", width: "100%" }}
+            camera={{ position: [1, 0, 3], fov: 50 }}
+          >
+            <ambientLight intensity={0.5} />
+            <directionalLight position={[5, 10, 5]} intensity={8} />
+            <Model
+              isWhite={isBlackBackground}
+              fadeOut={fadeOutModel}
+              fadeIn={!isBlackBackground}
+            />
+          </Canvas>
+        </motion.div>
+      )}
     </motion.div>
   );
 }

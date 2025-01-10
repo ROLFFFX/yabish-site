@@ -60,10 +60,7 @@ function Model() {
 
 export default function HomePage() {
   const navigate = useNavigate();
-  const text = "ARTISTS"; // Text to display
-  const [hoveredIndex, setHoveredIndex] = useState(null);
   const [position, setPosition] = useState({ top: "100%", right: "100%" });
-
   const randomizePosition = () => {
     const randomTop = Math.random() * 70;
     const randomRight = Math.random() * 60;
@@ -73,9 +70,36 @@ export default function HomePage() {
     });
   };
 
+  const [mobilePosition, setIsMobilePosition] = useState({
+    top: "100%",
+    right: "100%",
+  });
+
+  const randomizeMobilePosition = () => {
+    const randomTop = 55 + Math.random() * 25;
+    const randomRight = Math.random() * 60;
+    setIsMobilePosition({
+      top: `${randomTop}%`,
+      right: `${randomRight}%`,
+    });
+  };
+
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   useEffect(() => {
     // Randomize position on mount
     randomizePosition();
+    randomizeMobilePosition();
   }, []);
   return (
     <motion.div
@@ -92,26 +116,48 @@ export default function HomePage() {
     >
       <PreloadBackgroundVideo />
       {/* Fullscreen Canvas */}
-      <Box
-        sx={{
-          height: "100vh",
-          width: "100vw",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          position: "relative",
-        }}
-      >
-        <Canvas
-          style={{ height: "100%", width: "100%" }}
-          camera={{ position: [1, 0, 3], fov: 50 }}
+      {isMobile ? (
+        <Box
+          sx={{
+            height: "100vh",
+            width: "100vw",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            position: "relative",
+          }}
         >
-          <ambientLight intensity={0.5} />
-          <directionalLight position={[5, 10, 5]} intensity={8} />
-          <Model />
-        </Canvas>
-      </Box>
-      {/* pop up window */}
+          <Canvas
+            style={{ height: "100%", width: "100%" }}
+            camera={{ position: [1, 0, 6], fov: 50 }}
+          >
+            <ambientLight intensity={0.5} />
+            <directionalLight position={[5, 10, 5]} intensity={8} />
+            <Model />
+          </Canvas>
+        </Box>
+      ) : (
+        <Box
+          sx={{
+            height: "100vh",
+            width: "100vw",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            position: "relative",
+          }}
+        >
+          <Canvas
+            style={{ height: "100%", width: "100%" }}
+            camera={{ position: [1, 0, 3], fov: 50 }}
+          >
+            <ambientLight intensity={0.5} />
+            <directionalLight position={[5, 10, 5]} intensity={8} />
+            <Model />
+          </Canvas>
+        </Box>
+      )}
+
       {/* pop up window */}
       <Box
         sx={{
@@ -121,32 +167,61 @@ export default function HomePage() {
           overflow: "hidden", // Ensures no visual clipping outside bounds
         }}
       >
-        <motion.div
-          whileHover={{ scale: 1.1 }}
-          transition={{ duration: 0.3, ease: "easeInOut" }}
-          style={{
-            position: "absolute",
-            top: position.top,
-            right: position.right,
-            width: "20%",
-            height: "auto",
-            zIndex: 1001,
-          }}
-          onClick={() => {
-            navigate("/raindogstour");
-          }}
-        >
-          <img
-            src={popup}
-            alt="rain dogs tour pop up"
+        {isMobile ? (
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
             style={{
-              display: "block",
-              width: "100%",
+              position: "absolute",
+              top: mobilePosition.top,
+              right: mobilePosition.right,
+              width: "40%",
               height: "auto",
-              transformOrigin: "center",
+              zIndex: 1001,
             }}
-          />
-        </motion.div>
+            onClick={() => {
+              navigate("/raindogstour");
+            }}
+          >
+            <img
+              src={popup}
+              alt="rain dogs tour pop up"
+              style={{
+                display: "block",
+                width: "100%",
+                height: "auto",
+                transformOrigin: "center",
+              }}
+            />
+          </motion.div>
+        ) : (
+          <motion.div
+            whileHover={{ scale: 1.1 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            style={{
+              position: "absolute",
+              top: position.top,
+              right: position.right,
+              width: "20%",
+              height: "auto",
+              zIndex: 1001,
+            }}
+            onClick={() => {
+              navigate("/raindogstour");
+            }}
+          >
+            <img
+              src={popup}
+              alt="rain dogs tour pop up"
+              style={{
+                display: "block",
+                width: "100%",
+                height: "auto",
+                transformOrigin: "center",
+              }}
+            />
+          </motion.div>
+        )}
       </Box>
 
       <TopLeft />
