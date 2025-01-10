@@ -9,6 +9,9 @@ import "slick-carousel/slick/slick.css";
 import YABISHLogo from "../../assets/YABISHlogo.png";
 import bgvideo from "../../assets/bgvideo.webm";
 
+const rg_tour_poster =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/2b0e2bae-d7d7-489d-4006-9773f6129e00/public";
+
 export default function RainDogsTour() {
   const navigate = useNavigate();
   return (
@@ -98,31 +101,81 @@ export default function RainDogsTour() {
             }}
           >
             YaBish Presents.|2025 Rain Dogs CHINA TOUR
-            <br />
-            2025YaBish
-            <span style={{ fontFamily: "Glow Sans SC Compressed, sans-serif" }}>
-              开年呈现
-            </span>
           </Typography>
         </Box>
-
         {/* Words Section */}
         <Box
           sx={{
             height: "100%",
             overflowY: "auto",
-            padding: "1rem",
           }}
         >
-          <Box padding={4}>
-            <iframe
-              src="https://open.spotify.com/embed/artist/12DUKVqy5ry0UYK6lJtAMO?utm_source=generator&theme=0"
-              width="100%"
-              height="152"
-              frameBorder="0"
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              loading="lazy"
-            ></iframe>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <img
+              src={rg_tour_poster}
+              alt="rain dogs tour poster"
+              style={{ width: "40%", height: "auto" }}
+            ></img>
+          </Box>
+          <Typography
+            sx={{
+              color: "white",
+              fontFamily: "Antonio, sans-serif",
+              fontSize: "18px",
+              textAlign: "center",
+            }}
+          >
+            {/* <br /> */}
+            Poster By Kyra Han
+          </Typography>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              gap: "1rem",
+              marginTop: "1rem",
+            }}
+          >
+            {[
+              {
+                text: "Spotify",
+                url: "https://open.spotify.com/artist/12DUKVqy5ry0UYK6lJtAMO?si=Rpj_cYgRSl2KS3DrpfNeEw",
+              },
+
+              { text: "Youtube", url: "https://www.youtube.com/@raindogs9971" },
+              {
+                text: "Instagram",
+                url: "https://www.instagram.com/raindogs._/",
+              },
+              {
+                text: "WangYiYun",
+                url: "https://music.163.com/#/artist?id=794144",
+              },
+            ].map((item, index) => (
+              <Button
+                key={index}
+                variant="outlined"
+                onClick={() => window.open(item.url, "_blank")}
+                sx={{
+                  color: "white",
+                  borderColor: "white",
+                  fontFamily: "Anton, sans-serif",
+                  fontSize: "14px",
+                  "&:hover": {
+                    borderColor: "red",
+                    color: "red",
+                  },
+                }}
+              >
+                {item.text}
+              </Button>
+            ))}
           </Box>
           <Typography
             sx={{
@@ -131,23 +184,17 @@ export default function RainDogsTour() {
               fontSize: "18px",
             }}
           >
+            <br />
             Rain Dogs are an electronic post punk trio from Melbourne,
             Australia. Their first self-titled EP, a synth heavy, gothic
-            production was released in 2021 to underground acclaim. An elusive
-            band, Rain Dogs' rare live show is known for its haunting mood and
-            atmosphere, producing a sound reminiscent of Suicide and Depeche
-            Mode. <br />
-            <br />
-            In 2024 they have released three new singles: Nights are Lonely,
-            More than Desire, and Disintegrate, from an upcoming album which is
-            set to be released in 2025.
+            production was released in 2021 to underground acclaim.
             <br />
             <br />
-            HANGZHOU <br />
-            SHANGHAI <br />
-            CHENGDU
-            <br />
-            <br />
+            An elusive band, Rain Dogs' rare live show is known for its haunting
+            mood and atmosphere, producing a sound reminiscent of Suicide and
+            Depeche Mode. In 2024 they have released three new singles: Nights
+            are Lonely, More than Desire, and Disintegrate, from an upcoming
+            album which is set to be released in 2025.
           </Typography>
           <Typography
             sx={{
@@ -158,14 +205,46 @@ export default function RainDogsTour() {
           >
             Rain Dogs 是⼀⽀来⾃澳⼤利亚墨尔本的电⼦后朋克三⼈组。他们的⾸张同名
             EP 是⼀⾸合成器重⾦属、哥特⻛格的⾳乐，于 2021
-            年发⾏，在地下⾳乐界⼴受好评。 Rain Dogs
+            年发⾏，在地下⾳乐界⼴受好评。
+            <br />
+            <br />
+            Rain Dogs
             是⼀⽀难以捉摸的乐队，他们罕⻅的现场表演以其令⼈难以忘怀的情绪和氛围⽽闻名，其声⾳让⼈想起
-            Suicide 和 Depeche Mode。2024 年，他们发⾏了三⾸新单曲：Nights are
-            Lonely, More than Desire和Disintegrate，这些单曲来⾃即将于 2025
-            年发⾏的专辑。
+            Suicide 和 Depeche Mode。 <br />
+            <br />
+            2024 年，他们发⾏了三⾸新单曲：《Nights are Lonely》、《More than
+            Desire》和《Disintegrate》，这些单曲来⾃即将于 2025 年发⾏的专辑。
           </Typography>
-
-          <Box sx={{ display: "flex", justifyContent: "center" }} padding={4}>
+          <Typography
+            sx={{
+              color: "white",
+              fontFamily: "Anton, sans-serif",
+              fontSize: "18px",
+            }}
+          >
+            <br />
+            购票Tickets
+          </Typography>
+          <Typography
+            sx={{
+              color: "white",
+              fontFamily: "Antonio, sans-serif",
+              fontSize: "18px",
+            }}
+          >
+            <span style={{ fontWeight: "bold" }}>
+              2025 Rain Dogs CHINA TOUR
+            </span>{" "}
+            <br />
+            02/21周五Fri（嘉宾GUEST：黑甜一枕） 杭州HANGZHOU·酒球会9club
+            <br />
+            02/22周六Sat（嘉宾GUEST：UNTERWASSER在水下）
+            <br />
+            上海SHANGHAI·育音堂SpecTers 02/23周日Sun（嘉宾GUEST：Taiga）
+            <br />
+            成都CHENGDU·NUSPACE
+          </Typography>
+          {/* <Box sx={{ display: "flex", justifyContent: "center" }} padding={4}>
             <iframe
               width="560"
               height="315"
@@ -178,7 +257,7 @@ export default function RainDogsTour() {
           </Box>
           <Box padding={2}>
             <RainDogsPics />
-          </Box>
+          </Box> */}
         </Box>
 
         {/* Footer Section */}
