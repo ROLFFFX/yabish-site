@@ -6,6 +6,7 @@ import YABISHLogo from "../..//assets/YABISHlogo.png";
 // import RainDogsPic from "../../assets/pics/raindogsposter.webp";
 import { useNavigate } from "react-router-dom";
 import bgvideo from "../../assets/bgvideo.webm";
+import BGVideo from "../BGVideo";
 const RainDogsPic =
   "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/14f11ff8-6966-4462-dd13-738b701e3800/public";
 const GodTourPic =
@@ -25,22 +26,7 @@ export default function EventsPage() {
         position: "relative",
       }}
     >
-      <video
-        src={bgvideo}
-        autoPlay
-        muted
-        loop
-        playsInline
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          zIndex: 1,
-        }}
-      />
+      <BGVideo />
       <TopLeft />
       {/* Conditional Rendering for Layout */}
       {isMobile ? (

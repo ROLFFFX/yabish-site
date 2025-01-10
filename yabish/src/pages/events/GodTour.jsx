@@ -15,6 +15,7 @@ import YABISHLogo from "../../assets/YABISHlogo.png";
 import video1 from "../../assets/god_tour_video/compressed_godtourvideo1.webm";
 import video2 from "../../assets/god_tour_video/compressed_godtourvideo2.webm";
 import video3 from "../../assets/god_tour_video/compressed_godtourvideo3.webm";
+import BGVideo from "../BGVideo";
 
 const Image1 =
   "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/cc028117-5e85-43ee-6369-47f14b10b400/public";
@@ -34,8 +35,6 @@ const Image7 =
 const Image8 =
   "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/392b8d8c-5724-40e8-d892-0405ba3dd400/public";
 
-import bgvideo from "../../assets/bgvideo.webm";
-
 export default function GodTour() {
   const navigate = useNavigate();
   return (
@@ -51,22 +50,7 @@ export default function GodTour() {
         alignItems: "center",
       }}
     >
-      <video
-        src={bgvideo}
-        autoPlay
-        muted
-        loop
-        playsInline
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          zIndex: 1,
-        }}
-      />
+      <BGVideo />
       <Box
         sx={{
           position: "absolute",

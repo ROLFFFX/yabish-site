@@ -2,11 +2,24 @@ import { Box, Button, Typography } from "@mui/material";
 import { useGLTF } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { motion } from "framer-motion";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import YABISHLogo from "../..//assets/YABISHlogo.png";
 import { pageVariants } from "../../animations/pageVariants";
 import "./homePageStyle.css";
+
+// image preload
+import bgvideo from "../../assets/bgvideo.webm";
+const PreloadBackgroundVideo = () => {
+  useMemo(() => {
+    const video = document.createElement("video");
+    video.src = bgvideo;
+    video.preload = "auto";
+    video.load();
+  }, []);
+
+  return null;
+};
 
 const popup =
   "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/e3ef12c5-2efb-4130-3913-d62d10a27900/public";
@@ -49,7 +62,7 @@ export default function HomePage() {
   const navigate = useNavigate();
   const text = "ARTISTS"; // Text to display
   const [hoveredIndex, setHoveredIndex] = useState(null);
-  const [position, setPosition] = useState({ top: "70%", right: "60%" });
+  const [position, setPosition] = useState({ top: "100%", right: "100%" });
 
   const randomizePosition = () => {
     const randomTop = Math.random() * 70;
@@ -77,6 +90,7 @@ export default function HomePage() {
         overflow: "hidden",
       }}
     >
+      <PreloadBackgroundVideo />
       {/* Fullscreen Canvas */}
       <Box
         sx={{

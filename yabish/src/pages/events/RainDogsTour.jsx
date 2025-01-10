@@ -7,7 +7,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import YABISHLogo from "../../assets/YABISHlogo.png";
-import bgvideo from "../../assets/bgvideo.webm";
+import BGVideo from "../BGVideo";
 
 const rg_tour_poster =
   "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/2b0e2bae-d7d7-489d-4006-9773f6129e00/public";
@@ -27,22 +27,7 @@ export default function RainDogsTour() {
         alignItems: "center",
       }}
     >
-      <video
-        src={bgvideo}
-        autoPlay
-        muted
-        loop
-        playsInline
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-          zIndex: 1,
-        }}
-      />
+      <BGVideo />
       <Box
         sx={{
           position: "absolute",
