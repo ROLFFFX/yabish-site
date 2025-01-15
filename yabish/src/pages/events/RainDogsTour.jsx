@@ -11,6 +11,8 @@ import BGVideo from "../BGVideo";
 
 const rg_tour_poster =
   "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/eef1a360-fa7d-4701-7a32-93b5cf723400/public";
+const rg_tour_ticket =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/2790fa6e-f4da-493a-1d21-b82dfdb2bc00/public";
 
 export default function RainDogsTour() {
   const navigate = useNavigate();
@@ -118,7 +120,7 @@ export default function RainDogsTour() {
               }}
             >
               {/* <br /> */}
-              Poster By Kyra Han
+              POSTER BY KYRA HAN
             </Typography>
             <Box
               sx={{
@@ -217,7 +219,16 @@ export default function RainDogsTour() {
             >
               <br />
               购票Tickets
+              <br />
+              <br />
             </Typography>
+            <Box sx={{ display: "flex", justifyContent: "center" }}>
+              <img
+                src={rg_tour_ticket}
+                alt="rg_tour_tickets"
+                width={"30%"}
+              ></img>
+            </Box>
             <Typography
               sx={{
                 color: "white",
@@ -226,6 +237,7 @@ export default function RainDogsTour() {
               }}
             >
               <span style={{ fontWeight: "bold" }}>
+                <br />
                 2025 Rain Dogs CHINA TOUR
               </span>{" "}
               <br />
@@ -450,7 +462,7 @@ export default function RainDogsTour() {
             }}
           >
             {/* <br /> */}
-            Poster By Kyra Han
+            POSTER BY KYRA HAN
           </Typography>
           <Box
             sx={{
@@ -548,7 +560,12 @@ export default function RainDogsTour() {
           >
             <br />
             购票Tickets
+            <br />
+            <br />
           </Typography>
+          <Box sx={{ display: "flex", justifyContent: "center" }}>
+            <img src={rg_tour_ticket} alt="rg_tour_tickets" width={"30%"}></img>
+          </Box>
           <Typography
             sx={{
               color: "white",
@@ -557,6 +574,7 @@ export default function RainDogsTour() {
             }}
           >
             <span style={{ fontWeight: "bold" }}>
+              <br />
               2025 Rain Dogs CHINA TOUR
             </span>{" "}
             <br />
