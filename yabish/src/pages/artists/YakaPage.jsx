@@ -116,6 +116,10 @@ export default function YakaPage() {
             >
               {[
                 {
+                  text: "Instagram",
+                  url: "https://www.instagram.com/yakayakayaka___/",
+                },
+                {
                   text: "Spotify",
                   url: "https://open.spotify.com/artist/4fODbCHhX4Q2ro3O5CyrSA?si=rmEL7sYIQuKzqZlGELBveg",
                 },
@@ -130,8 +134,8 @@ export default function YakaPage() {
                   url: "https://music.163.com/#/artist?id=32992079",
                 },
                 {
-                  text: "Instagram",
-                  url: "https://www.instagram.com/yakayakayaka___/",
+                  text: "QQMusic",
+                  url: "https://c6.y.qq.com/base/fcgi-bin/u?__=tqJG5DkWzGkH",
                 },
                 {
                   text: "tiktok",
@@ -454,6 +458,10 @@ export default function YakaPage() {
           >
             {[
               {
+                text: "Instagram",
+                url: "https://www.instagram.com/yakayakayaka___/",
+              },
+              {
                 text: "Spotify",
                 url: "https://open.spotify.com/artist/4fODbCHhX4Q2ro3O5CyrSA?si=rmEL7sYIQuKzqZlGELBveg",
               },
@@ -468,9 +476,10 @@ export default function YakaPage() {
                 url: "https://music.163.com/#/artist?id=32992079",
               },
               {
-                text: "Instagram",
-                url: "https://www.instagram.com/yakayakayaka___/",
+                text: "QQMusic",
+                url: "https://c6.y.qq.com/base/fcgi-bin/u?__=tqJG5DkWzGkH",
               },
+
               {
                 text: "tiktok",
                 url: "https://www.tiktok.com/@yakayakayaka___",

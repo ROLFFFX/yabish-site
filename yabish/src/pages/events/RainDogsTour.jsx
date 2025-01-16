@@ -68,7 +68,9 @@ export default function RainDogsTour() {
           {/* Title Section */}
           <Box
             sx={{
-              height: "40%",
+              height: {
+                xs: "60%",
+              },
               width: "calc(100% - 120px)",
               display: "flex",
               flexDirection: "column",
@@ -209,25 +211,42 @@ export default function RainDogsTour() {
               <br />
               2024 年，他们发⾏了三⾸新单曲：《Nights are Lonely》、《More than
               Desire》和《Disintegrate》，这些单曲来⾃即将于 2025 年发⾏的专辑。
-            </Typography>
-            <Typography
-              sx={{
-                color: "white",
-                fontFamily: "Anton, sans-serif",
-                fontSize: "18px",
-              }}
-            >
-              <br />
-              购票Tickets
               <br />
               <br />
             </Typography>
             <Box sx={{ display: "flex", justifyContent: "center" }}>
               <img
                 src={rg_tour_ticket}
-                alt="rg_tour_tickets"
+                alt="rain dogs tour ticket qr code"
                 width={"30%"}
               ></img>
+            </Box>
+            <Box sx={{ display: "flex", justifyContent: "center" }}>
+              <Box
+                onClick={() =>
+                  window.open(
+                    "https://wap.showstart.com/event/list?type=1&tag=44072&ssfrom=user-4197287",
+                    "_blank"
+                  )
+                }
+              >
+                <Typography
+                  component="span" // Prevents line break
+                  sx={{
+                    color: "#ff0000",
+                    fontFamily: "Antonio, sans-serif",
+                    textDecoration: "underline",
+                    transition: "color 0.2s ease-in-out",
+                    fontSize: "18px",
+                    "&:hover": {
+                      color: "#ff0000",
+                    },
+                  }}
+                >
+                  <br />
+                  购票链接/Purchase Tickets
+                </Typography>
+              </Box>
             </Box>
             <Typography
               sx={{
@@ -550,21 +569,43 @@ export default function RainDogsTour() {
             <br />
             2024 年，他们发⾏了三⾸新单曲：《Nights are Lonely》、《More than
             Desire》和《Disintegrate》，这些单曲来⾃即将于 2025 年发⾏的专辑。
-          </Typography>
-          <Typography
-            sx={{
-              color: "white",
-              fontFamily: "Anton, sans-serif",
-              fontSize: "18px",
-            }}
-          >
-            <br />
-            购票Tickets
             <br />
             <br />
           </Typography>
           <Box sx={{ display: "flex", justifyContent: "center" }}>
-            <img src={rg_tour_ticket} alt="rg_tour_tickets" width={"30%"}></img>
+            <img
+              src={rg_tour_ticket}
+              alt="rain dogs tour ticket qr code"
+              width={"15%"}
+            ></img>
+          </Box>
+          <Box sx={{ display: "flex", justifyContent: "center" }}>
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              onClick={() =>
+                window.open(
+                  "https://wap.showstart.com/event/list?type=1&tag=44072&ssfrom=user-4197287",
+                  "_blank"
+                )
+              }
+            >
+              <Typography
+                component="span" // Prevents line break
+                sx={{
+                  color: "#ff0000",
+                  fontFamily: "Antonio, sans-serif",
+                  textDecoration: "underline",
+                  transition: "color 0.2s ease-in-out",
+                  fontSize: "18px",
+                  "&:hover": {
+                    color: "#ff0000",
+                  },
+                }}
+              >
+                <br />
+                购票链接/Purchase Tickets
+              </Typography>
+            </motion.div>
           </Box>
           <Typography
             sx={{
@@ -856,7 +897,6 @@ function TopLeftMobile() {
         }}
       >
         {/* Logo img */}
-
         <img
           src={YABISHLogo}
           alt="YABISH Logo"

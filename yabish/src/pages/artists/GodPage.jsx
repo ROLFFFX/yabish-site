@@ -124,6 +124,10 @@ export default function GodPage() {
             >
               {[
                 {
+                  text: "Instagram",
+                  url: "https://www.instagram.com/_99god_/",
+                },
+                {
                   text: "Spotify",
                   url: "https://open.spotify.com/artist/1fSNmkI8lKMFVMU2Y4hpgi?si=thjriNdTQfGEDfLL9y5_AA",
                 },
@@ -140,8 +144,8 @@ export default function GodPage() {
                   url: "https://music.163.com/#/artist?id=31511662",
                 },
                 {
-                  text: "Instagram",
-                  url: "https://www.instagram.com/_99god_/",
+                  text: "QQMusic",
+                  url: "https://c6.y.qq.com/base/fcgi-bin/u?__=YAJ3eRkWzeOb",
                 },
               ].map((item, index) => (
                 <Button
@@ -451,6 +455,10 @@ export default function GodPage() {
           >
             {[
               {
+                text: "Instagram",
+                url: "https://www.instagram.com/_99god_/",
+              },
+              {
                 text: "Spotify",
                 url: "https://open.spotify.com/artist/1fSNmkI8lKMFVMU2Y4hpgi?si=thjriNdTQfGEDfLL9y5_AA",
               },
@@ -464,8 +472,8 @@ export default function GodPage() {
                 url: "https://music.163.com/#/artist?id=31511662",
               },
               {
-                text: "Instagram",
-                url: "https://www.instagram.com/_99god_/",
+                text: "QQMusic",
+                url: "https://c6.y.qq.com/base/fcgi-bin/u?__=YAJ3eRkWzeOb",
               },
             ].map((item, index) => (
               <Button
