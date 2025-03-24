@@ -21,9 +21,6 @@ const PreloadBackgroundVideo = () => {
   return null;
 };
 
-const popup =
-  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/e3ef12c5-2efb-4130-3913-d62d10a27900/public";
-
 function Model() {
   const { scene } = useGLTF("/models/yabish3d-compressed.glb");
   const modelRef = useRef();
@@ -95,17 +92,6 @@ export default function HomePage() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  const [showPopup, setShowPopup] = useState(false);
-
-  useEffect(() => {
-    // Randomize position on mount
-    randomizePosition();
-    randomizeMobilePosition();
-    const popupTimeout = setTimeout(() => {
-      setShowPopup(true);
-    }, 1500);
-    return () => clearTimeout(popupTimeout);
-  }, []);
 
   return (
     <motion.div
@@ -161,74 +147,6 @@ export default function HomePage() {
             <directionalLight position={[5, 10, 5]} intensity={8} />
             <Model />
           </Canvas>
-        </Box>
-      )}
-
-      {/* pop up window */}
-      {showPopup && (
-        <Box
-          sx={{
-            height: "100vh",
-            width: "100vw",
-            zIndex: 1000,
-            overflow: "hidden", // Ensures no visual clipping outside bounds
-          }}
-        >
-          {isMobile ? (
-            <motion.div
-              whileHover={{ scale: 1.1 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-              style={{
-                position: "absolute",
-                top: mobilePosition.top,
-                right: mobilePosition.right,
-                width: "40%",
-                height: "auto",
-                zIndex: 1001,
-              }}
-              onClick={() => {
-                navigate("/raindogstour");
-              }}
-            >
-              <img
-                src={popup}
-                alt="rain dogs tour pop up"
-                style={{
-                  display: "block",
-                  width: "100%",
-                  height: "auto",
-                  transformOrigin: "center",
-                }}
-              />
-            </motion.div>
-          ) : (
-            <motion.div
-              whileHover={{ scale: 1.1 }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-              style={{
-                position: "absolute",
-                top: position.top,
-                right: position.right,
-                width: "20%",
-                height: "auto",
-                zIndex: 1001,
-              }}
-              onClick={() => {
-                navigate("/raindogstour");
-              }}
-            >
-              <img
-                src={popup}
-                alt="rain dogs tour pop up"
-                style={{
-                  display: "block",
-                  width: "100%",
-                  height: "auto",
-                  transformOrigin: "center",
-                }}
-              />
-            </motion.div>
-          )}
         </Box>
       )}
 
