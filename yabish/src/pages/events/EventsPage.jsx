@@ -8,9 +8,9 @@ import { useNavigate } from "react-router-dom";
 import bgvideo from "../../assets/bgvideo.webm";
 import BGVideo from "../BGVideo";
 const RainDogsPic =
-  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/eef1a360-fa7d-4701-7a32-93b5cf723400/public";
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/91942590-319d-4e7a-debf-9b240813f100/public";
 const GodTourPic =
-  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/e248982e-9632-439c-e315-a0d77d712f00/public";
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/16225703-31e8-4874-3cfc-a904f5a12f00/public";
 
 export default function EventsPage() {
   const isMobile = useMediaQuery("(max-width:768px)");
@@ -162,7 +162,7 @@ export default function EventsPage() {
               style={{
                 top: "20%",
                 width: "auto",
-                height: "100%", // Adjust as needed for proper alignment
+                height: "75%", // Adjust as needed for proper alignment
                 marginBottom: "1rem",
               }}
             />
@@ -194,7 +194,7 @@ export default function EventsPage() {
             <img
               style={{
                 width: "auto",
-                height: "100%", // Adjust as needed for proper alignment
+                height: "75%", // Adjust as needed for proper alignment
                 marginBottom: "1rem",
               }}
               src={RainDogsPic}

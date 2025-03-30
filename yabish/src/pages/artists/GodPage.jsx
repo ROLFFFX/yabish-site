@@ -208,14 +208,17 @@ export default function GodPage() {
               in 2023. Following up, 99 joined forces with Riot Games to produce
               the leading track for Valorant’s first Chinese agent release -
               "Renegade", solidifying his momentum abroad; the collaboration
-              ends up Billboard-nominated under the "Best music supervision in a
-              trailer - video game & interactive" award. <br />
+              ended up Billboard-nominated under the "Best music supervision in
+              a trailer - video game & interactive" award. <br />
               <br />
               Over three years of consistent hit releases made 99 God one of
               East Asia’s most memorable voices in rap music, while it also
-              prepared him the ability to creating unique moments for an
-              audience on the global stage.The 2024 mini tour added a dazzling
-              chapter to 99 God's already sizzling music career.
+              prepared him the ability to create unique moments for an audience
+              on the global stage.The 2024 mini tour added a dazzling chapter to
+              99 God's already sizzling music career.
+              <br />
+              <br />
+              2025,THE TAPE IS COMIN!!!
             </Typography>
             <Typography
               sx={{
@@ -231,16 +234,20 @@ export default function GodPage() {
               <br />
               <br /> 99
               God在国内成功的独立音乐人生涯始于他在2021年推出的首支单曲《UFO》。作品发布后，99
-              God开始在互联网上现象级地爆火，让他在短短两年中就在网易云音乐上收获了40万粉丝。
+              God
+              开始在互联网上现象级地爆火，让他在短短两年中就在网易云音乐上收获了40万粉丝。
               <br />
               <br />
-              2023年标志着99
-              God的新篇章。99两年前的单曲《Bodega》在日本社交媒体上一夜走红，2023年10月登上了日本热门播放榜单的第一名，在Spotify上获得了260万次播放，并吸引了20万多名月度听众。随后他与拳头游戏合作，为《瓦洛兰特--无畏契约》登陆国服的首位中国游戏角色制作了主打曲《Renegade》。本曲在Spotify和YouTube上再次冲上热门榜，均获得百万级的播放量，巩固了99在海外的势头。这首合作也出现在拳头游戏的预告片中，拿到了美国知名杂志Billboard公告牌的提名，奖项为“年度最佳预告片音乐监制--游戏与交互媒体”。
+              2023年标志着99 God
+              的新篇章。99两年前的单曲《Bodega》在日本社交媒体上一夜走红，2023年10月登上了日本热门播放榜单的第一名，在Spotify上获得了260万次播放，并吸引了20万多名月度听众。随后他与拳头游戏合作，为《瓦洛兰特--无畏契约》登陆国服的首位中国游戏角色制作了主打曲《Renegade》。本曲在Spotify和YouTube上再次冲上热门榜，均获得百万级的播放量，巩固了99在海外的势头。这首合作也出现在拳头游戏的预告片中，拿到了美国知名杂志Billboard公告牌的提名，奖项为“年度最佳预告片音乐监制--游戏与交互媒体”。
               <br />
               <br />
               三年来，99
               God持续推出热单，帮助他成为来自东亚最具特色的歌手之一。同时，不断成长的个人能力也为他在全球平台上创造辉煌做好了准备。2024年，99
               God的首个个人巡演「九十九」为他炙手可热的音乐生涯增添了璀璨的一页。
+              <br />
+              <br />
+              2025更多精彩作品和惊喜正在路上~~
             </Typography>
             <Box>
               <GodPicsMobile />
@@ -258,9 +265,6 @@ export default function GodPage() {
               >
                 shot by：Kove Quan, Tage
                 <br />
-                <br />
-                HYPEBEAST專訪 「說唱暗殺星」99
-                God：音樂的最終目標，是讓聽者感受到愉悅和吸引 Artist
                 <br />
                 <Typography
                   component="span" // Prevents line break by making it an inline element
@@ -281,11 +285,34 @@ export default function GodPage() {
                     )
                   }
                 >
-                  https://hypebeast.com/tw/2024/8/interview-with-99god
+                  「說唱暗殺星」99 God：音樂的最終目標，是讓聽者感受到愉悅和吸引
                 </Typography>
                 <br />
                 <br />
-                Booking/Management:{" "}
+                <Typography
+                  component="span" // Prevents line break by making it an inline element
+                  sx={{
+                    color: "white",
+                    fontFamily: "Antonio, sans-serif",
+                    textDecoration: "underline",
+                    transition: "color 0.2s ease-in-out",
+                    fontSize: "16px",
+                    "&:hover": {
+                      color: "#ff0000",
+                    },
+                  }}
+                  onClick={() =>
+                    window.open(
+                      "https://realsound.jp/2023/08/post-1396434.html",
+                      "_blank"
+                    )
+                  }
+                >
+                  中国で活動するラッパー 99
+                  God、バイラル首位に　TikTokのユニークな引用投稿から広がった“思考を刺激するリリック
+                </Typography>
+                <br />
+                Artist Booking/Management:{" "}
                 <Typography
                   component="span" // Prevents line break
                   sx={{
@@ -532,15 +559,18 @@ export default function GodPage() {
             and over 200 thousand monthly listeners on Spotify in 2023.
             Following up, 99 joined forces with Riot Games to produce the
             leading track for Valorant’s first Chinese agent release -
-            "Renegade", solidifying his momentum abroad; the collaboration ends
+            "Renegade", solidifying his momentum abroad; the collaboration ended
             up Billboard-nominated under the "Best music supervision in a
             trailer - video game & interactive" award. <br />
             <br />
             Over three years of consistent hit releases made 99 God one of East
             Asia’s most memorable voices in rap music, while it also prepared
-            him the ability to creating unique moments for an audience on the
+            him the ability to create unique moments for an audience on the
             global stage.The 2024 mini tour added a dazzling chapter to 99 God's
             already sizzling music career.
+            <br />
+            <br />
+            2025,THE TAPE IS COMIN!!!
           </Typography>
           <Typography
             sx={{
@@ -556,16 +586,20 @@ export default function GodPage() {
             <br />
             <br /> 99
             God在国内成功的独立音乐人生涯始于他在2021年推出的首支单曲《UFO》。作品发布后，99
-            God开始在互联网上现象级地爆火，让他在短短两年中就在网易云音乐上收获了40万粉丝。
+            God
+            开始在互联网上现象级地爆火，让他在短短两年中就在网易云音乐上收获了40万粉丝。
             <br />
             <br />
-            2023年标志着99
-            God的新篇章。99两年前的单曲《Bodega》在日本社交媒体上一夜走红，2023年10月登上了日本热门播放榜单的第一名，在Spotify上获得了260万次播放，并吸引了20万多名月度听众。随后他与拳头游戏合作，为《瓦洛兰特--无畏契约》登陆国服的首位中国游戏角色制作了主打曲《Renegade》。本曲在Spotify和YouTube上再次冲上热门榜，均获得百万级的播放量，巩固了99在海外的势头。这首合作也出现在拳头游戏的预告片中，拿到了美国知名杂志Billboard公告牌的提名，奖项为“年度最佳预告片音乐监制--游戏与交互媒体”。
+            2023年标志着99 God
+            的新篇章。99两年前的单曲《Bodega》在日本社交媒体上一夜走红，2023年10月登上了日本热门播放榜单的第一名，在Spotify上获得了260万次播放，并吸引了20万多名月度听众。随后他与拳头游戏合作，为《瓦洛兰特--无畏契约》登陆国服的首位中国游戏角色制作了主打曲《Renegade》。本曲在Spotify和YouTube上再次冲上热门榜，均获得百万级的播放量，巩固了99在海外的势头。这首合作也出现在拳头游戏的预告片中，拿到了美国知名杂志Billboard公告牌的提名，奖项为“年度最佳预告片音乐监制--游戏与交互媒体”。
             <br />
             <br />
             三年来，99
             God持续推出热单，帮助他成为来自东亚最具特色的歌手之一。同时，不断成长的个人能力也为他在全球平台上创造辉煌做好了准备。2024年，99
             God的首个个人巡演「九十九」为他炙手可热的音乐生涯增添了璀璨的一页。
+            <br />
+            <br />
+            2025更多精彩作品和惊喜正在路上~~
           </Typography>
           <Box>
             <GodPics />
@@ -583,9 +617,6 @@ export default function GodPage() {
             >
               shot by：Kove Quan, Tage
               <br />
-              <br />
-              HYPEBEAST專訪 「說唱暗殺星」99
-              God：音樂的最終目標，是讓聽者感受到愉悅和吸引 Artist
               <br />
               <Typography
                 component="span" // Prevents line break by making it an inline element
@@ -606,11 +637,35 @@ export default function GodPage() {
                   )
                 }
               >
-                https://hypebeast.com/tw/2024/8/interview-with-99god
+                「說唱暗殺星」99 God：音樂的最終目標，是讓聽者感受到愉悅和吸引
               </Typography>
               <br />
               <br />
-              Booking/Management:{" "}
+              <Typography
+                component="span" // Prevents line break by making it an inline element
+                sx={{
+                  color: "white",
+                  fontFamily: "Antonio, sans-serif",
+                  textDecoration: "underline",
+                  transition: "color 0.2s ease-in-out",
+                  fontSize: "16px",
+                  "&:hover": {
+                    color: "#ff0000",
+                  },
+                }}
+                onClick={() =>
+                  window.open(
+                    "https://realsound.jp/2023/08/post-1396434.html",
+                    "_blank"
+                  )
+                }
+              >
+                中国で活動するラッパー 99
+                God、バイラル首位に　TikTokのユニークな引用投稿から広がった“思考を刺激するリリック
+              </Typography>
+              <br />
+              <br />
+              Artist Booking/Management:{" "}
               <Typography
                 component="span" // Prevents line break
                 sx={{
