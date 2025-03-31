@@ -5,7 +5,6 @@ import YABISHLogo from "../..//assets/YABISHlogo.png";
 // import GodTourPic from "../../assets/pics/99godtour.webp";
 // import RainDogsPic from "../../assets/pics/raindogsposter.webp";
 import { useNavigate } from "react-router-dom";
-import bgvideo from "../../assets/bgvideo.webm";
 import BGVideo from "../BGVideo";
 const RainDogsPic =
   "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/91942590-319d-4e7a-debf-9b240813f100/public";
@@ -80,7 +79,7 @@ export default function EventsPage() {
               }}
             />
           </Box>
-          <Typography
+          {/* <Typography
             sx={{
               color: "white",
               marginBottom: "2rem",
@@ -93,7 +92,7 @@ export default function EventsPage() {
             }}
           >
             99 GOD 2024 TOUR
-          </Typography>
+          </Typography> */}
 
           {/* Second Image */}
           <Box
@@ -117,7 +116,7 @@ export default function EventsPage() {
               }}
             />
           </Box>
-          <Typography
+          {/* <Typography
             sx={{
               color: "white",
               fontFamily: "Anton, sans-serif",
@@ -126,7 +125,7 @@ export default function EventsPage() {
             }}
           >
             YaBish Pres.「2025 Rain Dogs CHINA TOUR」
-          </Typography>
+          </Typography> */}
         </Box>
       ) : (
         // ######################################################### Desktop View
@@ -139,7 +138,7 @@ export default function EventsPage() {
             position: "absolute",
             width: "100%", // Ensure full-width alignment
             height: "60%", // Occupy full height of the viewport
-            top: "20%",
+            top: "30%",
             zIndex: 20,
           }}
         >
@@ -166,7 +165,7 @@ export default function EventsPage() {
                 marginBottom: "1rem",
               }}
             />
-            <Typography
+            {/* <Typography
               sx={{
                 color: "white",
                 fontFamily: "Anton, sans-serif",
@@ -175,7 +174,7 @@ export default function EventsPage() {
               }}
             >
               99 GOD 2024 TOUR
-            </Typography>
+            </Typography> */}
           </motion.div>
 
           {/* Second Image with Title */}
@@ -200,7 +199,7 @@ export default function EventsPage() {
               src={RainDogsPic}
               alt="Rain Dogs Tour"
             />
-            <Typography
+            {/* <Typography
               sx={{
                 color: "white",
                 fontFamily: "Anton, sans-serif",
@@ -209,7 +208,7 @@ export default function EventsPage() {
               }}
             >
               YaBish Pres.「2025 Rain Dogs CHINA TOUR」
-            </Typography>
+            </Typography> */}
           </motion.div>
         </Box>
       )}
