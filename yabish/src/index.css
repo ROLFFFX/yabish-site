@@ -10,5 +10,11 @@ body,
 #root {
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  overflow: hidden !important;
+  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
 }

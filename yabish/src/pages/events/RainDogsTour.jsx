@@ -40,6 +40,8 @@ export default function RainDogsTour() {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          scrollbarWidth: "none", // Firefox
+          msOverflowStyle: "none",
         }}
       >
         <BGVideo />
@@ -185,11 +187,17 @@ export default function RainDogsTour() {
               <br />
               An elusive band, Rain Dogs' rare live show is known for its
               haunting mood and atmosphere, producing a sound reminiscent of
-              Suicide and Depeche Mode.
+              Suicide and Depeche Mode. In 2024 they have released three new
+              singles: Nights are Lonely, More than Desire, and Disintegrate,
+              from an upcoming album which is set to be released in 2025.
               <br />
-              <br /> In 2024 they have released three new singles: Nights are
-              Lonely, More than Desire, and Disintegrate, from an upcoming album
-              which is set to be released in 2025.
+              <br /> At the beginning of the Year of the Snake in 2025, Rain
+              Dogs stepped onto the Chinese stage for the first time, bringing
+              their much-anticipated mini tour in China. From Shanghai to
+              hangzhou to Chengdu, this band from the southern hemisphere set
+              off a new year's music craze with live performances, inviting
+              Chinese music fans to experience their unique music charm
+              together.
             </Typography>
             <Typography
               sx={{
@@ -213,51 +221,26 @@ export default function RainDogsTour() {
               Desire》和《Disintegrate》，这些单曲来⾃即将于 2025 年发⾏的专辑。
               <br />
               <br />
+              在2025蛇年开年之时，Rain
+              Dogs首次踏上中国的舞台，带来他们令人期待的中国mini巡演。上海、杭州再到成都，这支来自南半球的乐队以现场演出引爆新年的音乐热潮，邀请了中国的乐迷一起感受他们音乐的独特魅力。
+              <br />
+              <br />
             </Typography>
+            {/* flag: tour pics box */}
             <Box sx={{ display: "flex", justifyContent: "center" }}>
-              <img
-                src={rg_tour_ticket}
-                alt="rain dogs tour ticket qr code"
-                width={"30%"}
-              ></img>
+              <RainDogsTourPicCarouselMobile />
             </Box>
-            <Box sx={{ display: "flex", justifyContent: "center" }}>
-              <Box
-                onClick={() =>
-                  window.open(
-                    "https://wap.showstart.com/event/list?type=1&tag=44072&ssfrom=user-4197287",
-                    "_blank"
-                  )
-                }
-              >
-                <Typography
-                  component="span" // Prevents line break
-                  sx={{
-                    color: "#ff0000",
-                    fontFamily: "Antonio, sans-serif",
-                    textDecoration: "underline",
-                    transition: "color 0.2s ease-in-out",
-                    fontSize: "18px",
-                    "&:hover": {
-                      color: "#ff0000",
-                    },
-                  }}
-                >
-                  <br />
-                  购票链接/Purchase Tickets
-                </Typography>
-              </Box>
-            </Box>
+
             <Typography
               sx={{
                 color: "white",
-                fontFamily: "Antonio, sans-serif",
-                fontSize: "18px",
+                fontFamily: "Glow Sans SC Compressed, sans-serif",
+                fontSize: "16px",
               }}
             >
               <span style={{ fontWeight: "bold" }}>
                 <br />
-                2025 Rain Dogs CHINA TOUR
+                2025 Rain Dogs CHINA TOUR:
               </span>{" "}
               <br />
               <br />
@@ -283,9 +266,7 @@ export default function RainDogsTour() {
               >
                 黑甜一枕
               </Typography>
-              ） <br />
-              杭州HANGZHOU·酒球会9club
-              <br />
+              ） 杭州HANGZHOU·酒球会9club
               <br />
               02/22周六Sat（嘉宾GUEST：
               <Typography
@@ -309,10 +290,7 @@ export default function RainDogsTour() {
               >
                 UNTERWASSER在水下
               </Typography>
-              ）
-              <br />
-              上海SHANGHAI·育音堂SpecTers <br />
-              <br />
+              ） 上海SHANGHAI·育音堂SpecTers <br />
               02/23周日Sun（嘉宾GUEST：
               <Typography
                 component="span" // Prevents line break
@@ -335,9 +313,37 @@ export default function RainDogsTour() {
               >
                 Taiga
               </Typography>
-              ）
+              ） 成都CHENGDU·NUSPACE
               <br />
-              成都CHENGDU·NUSPACE
+              <br />
+              统筹制作Production:YaBish <br />
+              巡演经理/制作统筹Tour Manager:Ludar@YaBish
+              <br />
+              成都场摄影师Photographer（CHENGDU）：平舟度川 <br />
+              巡演助理Tour Assistant:猪蛋挞 <br />
+              <br />
+              采访interview： <br />
+              <Typography
+                component="span" // Prevents line break
+                sx={{
+                  color: "white",
+                  fontFamily: "Antonio, sans-serif",
+                  textDecoration: "underline",
+                  transition: "color 0.2s ease-in-out",
+                  fontSize: "16px",
+                  "&:hover": {
+                    color: "#ff0000",
+                  },
+                }}
+                onClick={() =>
+                  window.open(
+                    "https://mp.weixin.qq.com/s/sPEiQFej57h8OF-sh9qDqQ",
+                    "_blank"
+                  )
+                }
+              >
+                Rain Dogs：在工业质感与浪漫张力之间，探索后朋克的无限可能
+              </Typography>
             </Typography>
             {/* <Box sx={{ display: "flex", justifyContent: "center" }} padding={4}>
             <iframe
@@ -389,6 +395,8 @@ export default function RainDogsTour() {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        scrollbarWidth: "none",
+        msOverflowStyle: "none",
       }}
     >
       <BGVideo />
@@ -544,11 +552,16 @@ export default function RainDogsTour() {
             <br />
             An elusive band, Rain Dogs' rare live show is known for its haunting
             mood and atmosphere, producing a sound reminiscent of Suicide and
-            Depeche Mode.
+            Depeche Mode. In 2024 they have released three new singles: Nights
+            are Lonely, More than Desire, and Disintegrate, from an upcoming
+            album which is set to be released in 2025.
             <br />
-            <br /> In 2024 they have released three new singles: Nights are
-            Lonely, More than Desire, and Disintegrate, from an upcoming album
-            which is set to be released in 2025.
+            <br /> At the beginning of the Year of the Snake in 2025, Rain Dogs
+            stepped onto the Chinese stage for the first time, bringing their
+            much-anticipated mini tour in China. From Shanghai to Hangzhou to
+            Chengdu, this band from the southern hemisphere set off a new year's
+            music craze with live performances, inviting Chinese music fans to
+            experience their unique music charm together.
           </Typography>
           <Typography
             sx={{
@@ -571,52 +584,26 @@ export default function RainDogsTour() {
             Desire》和《Disintegrate》，这些单曲来⾃即将于 2025 年发⾏的专辑。
             <br />
             <br />
+            在2025蛇年开年之时，Rain
+            Dogs首次踏上中国的舞台，带来他们令人期待的中国mini巡演。上海、杭州再到成都，这支来自南半球的乐队以现场演出引爆新年的音乐热潮，邀请了中国的乐迷一起感受他们音乐的独特魅力。
+            <br />
+            <br />
           </Typography>
+          {/* flag: raind dogs tour pics */}
           <Box sx={{ display: "flex", justifyContent: "center" }}>
-            <img
-              src={rg_tour_ticket}
-              alt="rain dogs tour ticket qr code"
-              width={"15%"}
-            ></img>
+            <RainDogsTourPicCarouselDesktop />
           </Box>
-          <Box sx={{ display: "flex", justifyContent: "center" }}>
-            <motion.div
-              whileHover={{ scale: 1.1 }}
-              onClick={() =>
-                window.open(
-                  "https://wap.showstart.com/event/list?type=1&tag=44072&ssfrom=user-4197287",
-                  "_blank"
-                )
-              }
-            >
-              <Typography
-                component="span" // Prevents line break
-                sx={{
-                  color: "#ff0000",
-                  fontFamily: "Antonio, sans-serif",
-                  textDecoration: "underline",
-                  transition: "color 0.2s ease-in-out",
-                  fontSize: "18px",
-                  "&:hover": {
-                    color: "#ff0000",
-                  },
-                }}
-              >
-                <br />
-                购票链接/Purchase Tickets
-              </Typography>
-            </motion.div>
-          </Box>
+
           <Typography
             sx={{
               color: "white",
-              fontFamily: "Antonio, sans-serif",
-              fontSize: "18px",
+              fontFamily: "Glow Sans SC Compressed, sans-serif",
+              fontSize: "16px",
             }}
           >
             <span style={{ fontWeight: "bold" }}>
               <br />
-              2025 Rain Dogs CHINA TOUR
+              2025 Rain Dogs CHINA TOUR:
             </span>{" "}
             <br />
             <br />
@@ -642,9 +629,7 @@ export default function RainDogsTour() {
             >
               黑甜一枕
             </Typography>
-            ） <br />
-            杭州HANGZHOU·酒球会9club
-            <br />
+            ） 杭州HANGZHOU·酒球会9club
             <br />
             02/22周六Sat（嘉宾GUEST：
             <Typography
@@ -668,10 +653,7 @@ export default function RainDogsTour() {
             >
               UNTERWASSER在水下
             </Typography>
-            ）
-            <br />
-            上海SHANGHAI·育音堂SpecTers <br />
-            <br />
+            ） 上海SHANGHAI·育音堂SpecTers <br />
             02/23周日Sun（嘉宾GUEST：
             <Typography
               component="span" // Prevents line break
@@ -694,9 +676,38 @@ export default function RainDogsTour() {
             >
               Taiga
             </Typography>
-            ）
+            ） 成都CHENGDU·NUSPACE
             <br />
-            成都CHENGDU·NUSPACE
+            <br />
+            统筹制作Production:YaBish <br />
+            巡演经理/制作统筹Tour Manager:Ludar@YaBish
+            <br />
+            成都场摄影师Photographer（CHENGDU）：平舟度川 <br />
+            巡演助理Tour Assistant:猪蛋挞
+            <br />
+            <br />
+            采访interview： <br />
+            <Typography
+              component="span" // Prevents line break
+              sx={{
+                color: "white",
+                fontFamily: "Antonio, sans-serif",
+                textDecoration: "underline",
+                transition: "color 0.2s ease-in-out",
+                fontSize: "16px",
+                "&:hover": {
+                  color: "#ff0000",
+                },
+              }}
+              onClick={() =>
+                window.open(
+                  "https://mp.weixin.qq.com/s/sPEiQFej57h8OF-sh9qDqQ",
+                  "_blank"
+                )
+              }
+            >
+              Rain Dogs：在工业质感与浪漫张力之间，探索后朋克的无限可能
+            </Typography>
           </Typography>
           {/* <Box sx={{ display: "flex", justifyContent: "center" }} padding={4}>
             <iframe
@@ -1026,22 +1037,51 @@ function TopLeftMobile() {
 }
 
 const Image1 =
-  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/8a7f06bd-e829-4e52-687b-f5914e5bb100/public";
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/514a36a8-1624-4048-a8ef-881ec4424700/public";
 const Image2 =
-  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/0df94c94-6a94-4277-0020-90c8bdea4700/public";
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/8dc99841-9e81-4296-c751-9f49ce214e00/public";
 const Image3 =
-  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/00bcbcab-bb71-4f2b-e27b-6f32f984e500/public";
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/b4541f0c-ec8a-4354-a2ae-55a26d11fc00/public";
 const Image4 =
-  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/cca96bef-18f4-429a-28a8-12ef08114b00/public";
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/4414477e-9d0a-477a-fb8b-737ec51b1100/public";
 const Image5 =
-  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/60191fd2-061e-4d77-1f95-3d3bfe698400/public";
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/d41b5bf8-4b5a-47dc-2a66-a06093a2cf00/public";
 const Image6 =
-  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/9f5b77b7-128d-457b-4de9-dfbb903c6d00/public";
-
-function shuffleArray(array) {
-  return array;
-  // return array.sort(() => Math.random() - 0.5);
-}
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/f2085ded-6ed5-4dcb-30b5-42fbd79b6200/public";
+const Image7 =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/febde934-54b4-4fa7-bf0d-462868b1f400/public";
+const Image8 =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/4b949df9-5aa1-4033-3646-c160974c9900/public";
+const Image9 =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/9205306a-2735-4345-86a9-7a14b2e9bf00/public";
+const Image10 =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/c031341e-61e6-4901-badb-7739e0cd5000/public";
+const Image11 =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/a13c6156-3209-4b23-9b3f-8f50762d7300/public";
+const Image12 =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/aff327bd-5f81-43b0-dbe6-11ec246f0700/public";
+const Image13 =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/4f93abf9-0743-4eda-63cb-426ae0642400/public";
+const Image14 =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/2f1ff168-2304-4655-973e-d067fd2f4500/public";
+const Image15 =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/c571f626-432f-4bf4-7537-efd13b2bd600/public";
+const Image16 =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/c373d5f9-d491-4150-d122-1b945f466300/public";
+const Image17 =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/5bb9576a-624e-4510-1eb7-c3503e6a4c00/public";
+const Image18 =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/e2192a45-42ea-4423-6420-8b629e3dd200/public";
+const Image19 =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/77fc5a9d-0cb0-4d21-ec03-a98c0289ff00/public";
+const Image20 =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/eff0f48d-cf03-4ecc-47ef-c56885ddea00/public";
+const Image21 =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/15923630-203f-4e33-4a77-2e6f7ec92300/public";
+const Image22 =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/a4aa904e-c99c-409b-d60d-2d4165121f00/public";
+const Image23 =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/f2c93fe5-537c-456b-68a2-6750412ffb00/public";
 
 function RainDogsPics() {
   const settings = {
@@ -1060,6 +1100,145 @@ function RainDogsPics() {
       className="slider-container"
       style={{
         width: "100%",
+        margin: "0 auto",
+        padding: "1rem 0",
+        // overflow: "hidden", // Prevent default scrolling
+      }}
+    >
+      <Slider {...settings}>
+        {images.map((image, index) => (
+          <div key={index}>
+            <img
+              src={image}
+              alt={`Slide ${index + 1}`}
+              style={{
+                width: "100%",
+                height: "400px",
+                objectFit: "cover",
+                borderRadius: "10px",
+                padding: "10px",
+              }}
+            />
+          </div>
+        ))}
+      </Slider>
+    </div>
+  );
+}
+
+function shuffleArray(array) {
+  return array;
+  // return array.sort(() => Math.random() - 0.5);
+}
+
+function RainDogsTourPicCarouselDesktop() {
+  const settings = {
+    className: "center",
+    centerMode: false,
+    infinite: false,
+    centerPadding: "120px",
+    slidesToShow: 3,
+    speed: 400,
+  };
+
+  const images = shuffleArray([
+    Image1,
+    Image2,
+    Image3,
+    Image4,
+    Image5,
+    Image6,
+    Image7,
+    Image8,
+    Image9,
+    Image10,
+    Image11,
+    Image12,
+    Image13,
+    Image14,
+    Image15,
+    Image16,
+    Image17,
+    Image18,
+    Image19,
+    Image20,
+    Image21,
+    Image22,
+    Image23,
+  ]);
+
+  return (
+    <div
+      className="slider-container"
+      style={{
+        width: "95%",
+        margin: "0 auto",
+        padding: "1rem 0",
+        // overflow: "hidden", // Prevent default scrolling
+      }}
+    >
+      <Slider {...settings}>
+        {images.map((image, index) => (
+          <div key={index}>
+            <img
+              src={image}
+              alt={`Slide ${index + 1}`}
+              style={{
+                width: "100%",
+                height: "400px",
+                objectFit: "cover",
+                borderRadius: "10px",
+                padding: "10px",
+              }}
+            />
+          </div>
+        ))}
+      </Slider>
+    </div>
+  );
+}
+
+function RainDogsTourPicCarouselMobile() {
+  const settings = {
+    className: "center",
+    centerMode: false,
+    infinite: false,
+    centerPadding: "120px",
+    slidesToShow: 1.5,
+    speed: 400,
+  };
+
+  const images = shuffleArray([
+    Image1,
+    Image2,
+    Image3,
+    Image4,
+    Image5,
+    Image6,
+    Image7,
+    Image8,
+    Image9,
+    Image10,
+    Image11,
+    Image12,
+    Image13,
+    Image14,
+    Image15,
+    Image16,
+    Image17,
+    Image18,
+    Image19,
+    Image20,
+    Image21,
+    Image22,
+    Image23,
+  ]);
+
+  return (
+    <div
+      className="slider-container"
+      style={{
+        width: "95%",
         margin: "0 auto",
         padding: "1rem 0",
         // overflow: "hidden", // Prevent default scrolling

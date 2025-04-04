@@ -271,6 +271,18 @@ export default function GodPage() {
                   sx={{
                     color: "white",
                     fontFamily: "Antonio, sans-serif",
+                    textDecoration: "bold",
+                    transition: "color 0.2s ease-in-out",
+                    fontSize: "16px",
+                  }}
+                >
+                  HYPEBEAST專訪:
+                </Typography>
+                <Typography
+                  component="span" // Prevents line break by making it an inline element
+                  sx={{
+                    color: "white",
+                    fontFamily: "Antonio, sans-serif",
                     textDecoration: "underline",
                     transition: "color 0.2s ease-in-out",
                     fontSize: "16px",
@@ -289,6 +301,17 @@ export default function GodPage() {
                 </Typography>
                 <br />
                 <br />
+                <Typography
+                  component="span" // Prevents line break by making it an inline element
+                  sx={{
+                    color: "white",
+                    fontFamily: "Antonio, sans-serif",
+                    textDecoration: "bold",
+                    transition: "color 0.2s ease-in-out",
+                  }}
+                >
+                  Real Sound报道:
+                </Typography>{" "}
                 <Typography
                   component="span" // Prevents line break by making it an inline element
                   sx={{
@@ -623,6 +646,18 @@ export default function GodPage() {
                 sx={{
                   color: "white",
                   fontFamily: "Antonio, sans-serif",
+                  textDecoration: "bold",
+                  transition: "color 0.2s ease-in-out",
+                  fontSize: "16px",
+                }}
+              >
+                HYPEBEAST專訪:
+              </Typography>
+              <Typography
+                component="span" // Prevents line break by making it an inline element
+                sx={{
+                  color: "white",
+                  fontFamily: "Antonio, sans-serif",
                   textDecoration: "underline",
                   transition: "color 0.2s ease-in-out",
                   fontSize: "16px",
@@ -641,6 +676,18 @@ export default function GodPage() {
               </Typography>
               <br />
               <br />
+              <Typography
+                component="span" // Prevents line break by making it an inline element
+                sx={{
+                  color: "white",
+                  fontFamily: "Antonio, sans-serif",
+                  textDecoration: "bold",
+                  transition: "color 0.2s ease-in-out",
+                  fontSize: "16px",
+                }}
+              >
+                RealSound报道:
+              </Typography>{" "}
               <Typography
                 component="span" // Prevents line break by making it an inline element
                 sx={{

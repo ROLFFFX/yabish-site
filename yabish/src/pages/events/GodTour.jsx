@@ -195,8 +195,8 @@ export default function GodTour() {
                 fontSize: "16px",
               }}
             >
-              上海ShanghaiMAO Livehouse08/04（GUEST-直火帮FEEZY）&08/09After
-              Party in@HUSH <br />
+              上海MAO Livehouse08/04（GUEST-直火帮FEEZY）&08/09After Party
+              in@HUSH <br />
               杭州酒球会08/11（GUEST-Dough Boy）
               <br />
               成都正火6号馆08/17（GUEST-Melo&MENGZI）&After Party in@PH_CHENGDU
@@ -401,8 +401,8 @@ export default function GodTour() {
               fontSize: "16px",
             }}
           >
-            上海ShanghaiMAO Livehouse08/04（GUEST-直火帮FEEZY）&08/09After Party
-            in@HUSH <br />
+            上海MAO Livehouse08/04（GUEST-直火帮FEEZY）&08/09After Party in@HUSH{" "}
+            <br />
             杭州酒球会08/11（GUEST-Dough Boy）
             <br />
             成都正火6号馆08/17（GUEST-Melo&MENGZI）&After Party in@PH_CHENGDU
