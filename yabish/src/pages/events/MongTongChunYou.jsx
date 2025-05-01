@@ -316,6 +316,7 @@ export default function MongTongChunYou() {
             <Box sx={{ mt: 3, mb: 3 }}>
               <video
                 controls
+                playsInline
                 poster="src/assets/mongtong_chunyou_video/mongtong_chunyou_video_poster.webp"
                 style={{ width: "100%", borderRadius: 8, display: "block" }}
               >
@@ -334,6 +335,7 @@ export default function MongTongChunYou() {
                   mt: 2,
                 }}
               >
+                现场视频回顾Recap <br />
                 拍摄剪辑shot/editing：张成飞/阿柔罕
               </Typography>
             </Box>
@@ -684,6 +686,7 @@ export default function MongTongChunYou() {
                 mt: 2,
               }}
             >
+              现场视频回顾Recap <br />
               拍摄剪辑shot/editing：张成飞/阿柔罕
             </Typography>
           </Box>

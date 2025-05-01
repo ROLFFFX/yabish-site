@@ -47,7 +47,7 @@ function App() {
           <Route path="/events" element={<EventsPage />} />
           <Route path="/99godtour" element={<GodTour />} />
           <Route path="/raindogstour" element={<RainDogsTour />} />
-          <Route path="/mongtong" element={<MongTongChunYou />} />
+          <Route path="/mongtongfest" element={<MongTongChunYou />} />
         </Routes>
       )}
     </>
