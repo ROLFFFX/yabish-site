@@ -320,6 +320,17 @@ export default function MongTongChunYou() {
                 <source src={mong_tong_chunyou_video} type="video/webm" />
                 Your browser does not support the video tag.
               </video>
+              <Typography
+                sx={{
+                  color: "white",
+                  fontFamily: "Glow Sans SC Compressed, sans-serif",
+                  fontSize: "16px",
+                  textAlign: "center",
+                  mt: 2,
+                }}
+              >
+                拍摄剪辑shot/editing：张成飞/阿柔罕
+              </Typography>
             </Box>
 
             <Typography
@@ -659,6 +670,17 @@ export default function MongTongChunYou() {
               <source src={mong_tong_chunyou_video} type="video/webm" />
               Your browser does not support the video tag.
             </video>
+            <Typography
+              sx={{
+                color: "white",
+                fontFamily: "Glow Sans SC Compressed, sans-serif",
+                fontSize: "16px",
+                textAlign: "center",
+                mt: 2,
+              }}
+            >
+              拍摄剪辑shot/editing：张成飞/阿柔罕
+            </Typography>
           </Box>
 
           <Typography
