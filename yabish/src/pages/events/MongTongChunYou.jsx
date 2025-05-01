@@ -317,7 +317,7 @@ export default function MongTongChunYou() {
               <video
                 controls
                 playsInline
-                poster="src/assets/mongtong_chunyou_video/mongtong_chunyou_video_poster.webp"
+                poster="https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/af39fd4a-aa80-412a-674b-c6d201b4ff00/public"
                 style={{ width: "100%", borderRadius: 8, display: "block" }}
               >
                 <source
