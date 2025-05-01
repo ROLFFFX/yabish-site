@@ -71,7 +71,7 @@ export default function EventsPage() {
           zIndex: 5,
           width: "100%",
           height: "100%",
-          overflow: "visible",
+          // overflow: "visible",
         }}
       >
         {isMobile ? (
@@ -97,7 +97,7 @@ export default function EventsPage() {
                   maxWidth: "450px",
                   position: "relative",
                   zIndex: 5,
-                  overflow: "visible",
+                  // overflow: "visible",
                 }}
               >
                 <motion.img
@@ -122,7 +122,7 @@ export default function EventsPage() {
             sx={{
               display: "flex",
               height: "100vh", // subtracting top nav height
-              overflow: "hidden", // prevent parent scroll
+              // overflow: "hidden", // prevent parent scroll
               paddingX: "18vw",
               scrollbarWidth: "none", // Firefox
               "&::-webkit-scrollbar": {

@@ -768,7 +768,6 @@ function GodTourPics() {
         width: "95%",
         margin: "0 auto",
         padding: "1rem 0",
-        // overflow: "hidden", // Prevent default scrolling
       }}
     >
       <Slider {...settings}>
