@@ -161,7 +161,7 @@ export default function EventsPage() {
                     }}
                   >
                     <motion.img
-                      whileHover={{ scale: 1.1 }}
+                      whileHover={{ scale: 0.95 }}
                       src={img.src}
                       alt={img.alt}
                       onClick={() => navigate(img.link)}
@@ -206,7 +206,7 @@ export default function EventsPage() {
                     }}
                   >
                     <motion.img
-                      whileHover={{ scale: 1.1 }}
+                      whileHover={{ scale: 0.95 }}
                       src={img.src}
                       alt={img.alt}
                       onClick={() => navigate(img.link)}
