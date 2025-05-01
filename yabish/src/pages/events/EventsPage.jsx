@@ -88,6 +88,7 @@ export default function EventsPage() {
               width: "100%",
             }}
           >
+            <Box sx={{ minHeight: "5vh", opacity: 0 }} />
             {events.map((img, index) => (
               <Box
                 key={index}
