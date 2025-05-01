@@ -9,7 +9,7 @@ import "slick-carousel/slick/slick.css";
 import YABISHLogo from "../../assets/YABISHlogo.png";
 import BGVideo from "../BGVideo";
 import mong_tong_chunyou_video from "/src/assets/mongtong_chunyou_video/mongtong_chunyou_video.webm";
-import mong_tong_chunyou_video_fallback from "/src/assets/mongtong_chunyou_video/mongtong_chunyou_video_fallback.webm";
+import mong_tong_chunyou_video_fallback from "/src/assets/mongtong_chunyou_video/mongtong_fallback.mp4";
 
 const chunyou_poster =
   "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/c8e4e580-bac1-4c60-23a5-f2ec2d19fc00/public";
