@@ -17,6 +17,7 @@ const BGVideo = () => {
         height: "100%",
         objectFit: "cover",
         zIndex: 1,
+        pointerEvents: "none",
       }}
     />
   );

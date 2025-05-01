@@ -10,6 +10,14 @@ const RainDogsPic =
   "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/91942590-319d-4e7a-debf-9b240813f100/public";
 const GodTourPic =
   "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/16225703-31e8-4874-3cfc-a904f5a12f00/public";
+const MongTongPic =
+  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/40f43fac-fb79-47a5-60a7-42538ec34500/public";
+
+const events = [
+  { src: MongTongPic, alt: "MongTong", link: "/mongtongfest" },
+  { src: RainDogsPic, alt: "RainDogs", link: "/raindogstour" },
+  { src: GodTourPic, alt: "GodTour", link: "/99godtour" },
+];
 
 export default function EventsPage() {
   const isMobile = useMediaQuery("(max-width:768px)");
@@ -27,191 +35,231 @@ export default function EventsPage() {
 
   return (
     <Box
-      style={{
-        height: "100vh",
+      sx={{
+        minHeight: "100vh",
+        width: "100vw",
         backgroundColor: "black",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
+        overflowY: "auto",
         position: "relative",
+        paddingBottom: "4rem",
       }}
     >
-      <BGVideo />
-      <TopLeft />
-      {/* Conditional Rendering for Layout */}
-      {/* //######################################################### Mobile View */}
-      {isMobile ? (
-        <Box
-          ref={contentRef}
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: isOverflowing ? "flex-start" : "center", // Adjust based on overflow
-            alignItems: "center", // Always center horizontally
-            position: "absolute",
-            left: "0",
-            width: "100%",
-            height: "100%",
-            overflowY: "auto", // Enable scrolling if needed
-            padding: "2rem 0",
-            zIndex: 20,
-          }}
-        >
-          {/* First Image */}
-          <Box
-            onClick={() => {
-              navigate("/99godtour");
-            }}
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              marginBottom: "1rem",
-              zIndex: 20,
-            }}
-          >
-            <img
-              src={GodTourPic}
-              alt="99 God Tour"
-              style={{
-                width: "40%",
-                height: "auto",
-              }}
-            />
-          </Box>
-          {/* <Typography
-            sx={{
-              color: "white",
-              marginBottom: "2rem",
-              fontFamily: "Anton, sans-serif",
-              fontSize: "20px",
-              textAlign: "center",
-            }}
-            onClick={() => {
-              navigate("/99godtour");
-            }}
-          >
-            99 GOD 2024 TOUR
-          </Typography> */}
+      {/* Background Video with z-index 0 */}
+      <Box
+        sx={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          zIndex: 0,
+        }}
+      >
+        <BGVideo />
+      </Box>
 
-          {/* Second Image */}
+      {/* Navigation in top left with explicit z-index */}
+      <Box sx={{ position: "relative", zIndex: 10 }}>
+        <TopLeft />
+      </Box>
+
+      {/* Content Container with higher z-index than background */}
+      <Box
+        ref={contentRef}
+        sx={{
+          position: "relative",
+          zIndex: 5,
+          width: "100%",
+          height: "100%",
+          overflow: "visible",
+        }}
+      >
+        {isMobile ? (
+          // 📱 Mobile view — 1 column flex layout
           <Box
-            onClick={() => {
-              navigate("/raindogstour");
-            }}
             sx={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              marginBottom: "1rem",
-              zIndex: 20,
-            }}
-          >
-            <img
-              src={RainDogsPic}
-              alt="Rain Dogs Tour"
-              style={{
-                width: "40%",
-                height: "auto",
-              }}
-            />
-          </Box>
-          {/* <Typography
-            sx={{
-              color: "white",
-              fontFamily: "Anton, sans-serif",
-              fontSize: "20px",
-              textAlign: "center",
-            }}
-          >
-            YaBish Pres.「2025 Rain Dogs CHINA TOUR」
-          </Typography> */}
-        </Box>
-      ) : (
-        // ######################################################### Desktop View
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            gap: "5rem",
-            position: "absolute",
-            width: "100%", // Ensure full-width alignment
-            height: "60%", // Occupy full height of the viewport
-            top: "30%",
-            zIndex: 20,
-          }}
-        >
-          {/* First Image with Title */}
-          <motion.div
-            style={{
               display: "flex",
               flexDirection: "column",
-              alignItems: "center", // Center-align image and title
-              height: "100%",
-            }}
-            whileHover={{ scale: 1.1 }}
-            onClick={() => {
-              navigate("/99godtour");
+              alignItems: "center",
+              padding: "1rem",
+              gap: "2rem",
+              overflowY: "auto",
+              maxHeight: "100dvh",
+              width: "100%",
             }}
           >
-            <img
-              src={GodTourPic}
-              alt="99 God Tour"
-              style={{
-                top: "20%",
-                width: "auto",
-                height: "75%", // Adjust as needed for proper alignment
-                marginBottom: "1rem",
-              }}
-            />
-            {/* <Typography
-              sx={{
-                color: "white",
-                fontFamily: "Anton, sans-serif",
-                fontSize: "24px",
-                textAlign: "center",
-              }}
-            >
-              99 GOD 2024 TOUR
-            </Typography> */}
-          </motion.div>
-
-          {/* Second Image with Title */}
-          <motion.div
-            style={{
+            {events.map((img, index) => (
+              <Box
+                key={index}
+                sx={{
+                  width: "45%",
+                  maxWidth: "450px",
+                  position: "relative",
+                  zIndex: 5,
+                  overflow: "visible",
+                }}
+              >
+                <motion.img
+                  whileHover={{ scale: 1.05 }}
+                  src={img.src}
+                  alt={img.alt}
+                  onClick={() => navigate(img.link)}
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    cursor: "pointer",
+                    display: "block",
+                    borderRadius: "4px",
+                  }}
+                />
+              </Box>
+            ))}
+          </Box>
+        ) : (
+          // 💻 Desktop view — 2 column grid layout
+          <Box
+            sx={{
               display: "flex",
-              flexDirection: "column",
-              alignItems: "center", // Center-align image and title
-              height: "100%",
-            }}
-            whileHover={{ scale: 1.1 }}
-            onClick={() => {
-              navigate("/raindogstour");
+              height: "100vh", // subtracting top nav height
+              overflow: "hidden", // prevent parent scroll
+              paddingX: "18vw",
+              scrollbarWidth: "none", // Firefox
+              "&::-webkit-scrollbar": {
+                display: "none", // Chrome/Safari
+              },
             }}
           >
-            <img
-              style={{
-                width: "auto",
-                height: "75%", // Adjust as needed for proper alignment
-                marginBottom: "1rem",
-              }}
-              src={RainDogsPic}
-              alt="Rain Dogs Tour"
-            />
-            {/* <Typography
+            {/* Left Column */}
+            <Box
               sx={{
-                color: "white",
-                fontFamily: "Anton, sans-serif",
-                fontSize: "24px",
-                textAlign: "center",
+                flex: 1,
+                overflowY: "auto",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "flex-end",
+                gap: "2rem",
+                paddingRight: "10%",
+                scrollbarWidth: "none", // Firefox
+                "&::-webkit-scrollbar": {
+                  display: "none", // Chrome/Safari
+                },
+                // overflow: "visible",
               }}
             >
-              YaBish Pres.「2025 Rain Dogs CHINA TOUR」
-            </Typography> */}
-          </motion.div>
-        </Box>
-      )}
+              <Box sx={{ minHeight: "30vh", opacity: 0 }} />
+
+              {events
+                .filter((_, i) => i % 2 === 0)
+                .map((img, index) => (
+                  <Box
+                    key={index}
+                    sx={{
+                      maxWidth: "350px",
+                      cursor: "pointer",
+                      overflow: "visible",
+                    }}
+                  >
+                    <motion.img
+                      whileHover={{ scale: 1.1 }}
+                      src={img.src}
+                      alt={img.alt}
+                      onClick={() => navigate(img.link)}
+                      style={{
+                        width: "100%",
+                        height: "auto",
+                        borderRadius: "4px",
+                      }}
+                    />
+                  </Box>
+                ))}
+              <Box sx={{ minHeight: "5vh", opacity: 0 }} />
+            </Box>
+
+            {/* Right Column */}
+            <Box
+              sx={{
+                flex: 1,
+                overflowY: "auto",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "flex-start",
+                gap: "2rem",
+                paddingLeft: "10%",
+                scrollbarWidth: "none", // Firefox
+                "&::-webkit-scrollbar": {
+                  display: "none", // Chrome/Safari
+                },
+                overflow: "visible",
+              }}
+            >
+              <Box sx={{ minHeight: "30vh", opacity: 0 }} />
+              {events
+                .filter((_, i) => i % 2 === 1)
+                .map((img, index) => (
+                  <Box
+                    key={index}
+                    sx={{
+                      maxWidth: "350px",
+                      cursor: "pointer",
+                      overflow: "visible",
+                    }}
+                  >
+                    <motion.img
+                      whileHover={{ scale: 1.1 }}
+                      src={img.src}
+                      alt={img.alt}
+                      onClick={() => navigate(img.link)}
+                      style={{
+                        width: "100%",
+                        height: "auto",
+                        borderRadius: "4px",
+                      }}
+                    />
+                  </Box>
+                ))}
+              {/* <Box sx={{ minHeight: "10vh", opacity: 0 }} /> */}
+            </Box>
+          </Box>
+        )}
+      </Box>
+
+      {/* Instagram Button with explicit z-index */}
+      <Button
+        variant="outlined"
+        sx={{
+          position: "fixed",
+          bottom: "2%",
+          left: "2%",
+          color: "white",
+          padding: "0.5rem 1rem",
+          fontFamily: "Anton, sans-serif",
+          fontSize: "20px",
+          borderRadius: "5px",
+          borderColor: "white",
+          "&:hover": {
+            backgroundColor: "transparent",
+            borderColor: "#ff0000",
+          },
+          zIndex: 10,
+        }}
+      >
+        <Typography
+          sx={{
+            color: "white",
+            fontFamily: "Anton, sans-serif",
+            fontSize: "16px",
+            transition: "color 0.2s ease-in-out",
+            "&:hover": {
+              color: "#ff0000",
+            },
+          }}
+          onClick={() =>
+            window.open("https://www.instagram.com/yabish.yabish/", "_blank")
+          }
+        >
+          INSTAGRAM
+        </Typography>
+      </Button>
     </Box>
   );
 }
