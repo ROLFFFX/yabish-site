@@ -115,7 +115,7 @@ export default function MongTongChunYou() {
               <img
                 src={chunyou_poster}
                 alt="rain dogs tour poster"
-                style={{ width: "80%", height: "auto" }}
+                style={{ width: "50%", height: "auto" }}
               ></img>
             </Box>
 
@@ -203,7 +203,7 @@ export default function MongTongChunYou() {
               <img
                 src={mong_tong_solo_poster}
                 alt="rain dogs tour poster"
-                style={{ width: "80%", height: "auto" }}
+                style={{ width: "60%", height: "auto" }}
               ></img>
             </Box>
 
@@ -316,11 +316,12 @@ export default function MongTongChunYou() {
             <Box sx={{ mt: 3, mb: 3 }}>
               <video
                 controls
+                poster="src/assets/mongtong_chunyou_video/mongtong_chunyou_video_poster.webp"
                 style={{ width: "100%", borderRadius: 8, display: "block" }}
               >
                 <source
                   src={mong_tong_chunyou_video_fallback}
-                  type="video/webm"
+                  type="video/mp4"
                 />
                 Your browser does not support the video tag.
               </video>
