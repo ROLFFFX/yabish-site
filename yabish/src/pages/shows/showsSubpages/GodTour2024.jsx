@@ -1,21 +1,17 @@
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import { Box, Button, Typography } from "@mui/material";
-import { motion } from "framer-motion";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
-import YABISHLogo from "../../assets/YABISHlogo.png";
-// import Image1 from "../../assets/pics/raindogs-events/01.webp";
-// import Image2 from "../../assets/pics/raindogs-events/02.webp";
-// import Image3 from "../../assets/pics/raindogs-events/03.webp";
-// import Image4 from "../../assets/pics/raindogs-events/04.webp";
+import TopLeft from "../../../utils/TopLeft";
+import TopLeftMobile from "../../../utils/TopLeftMobile";
 
-import video1 from "../../assets/god_tour_video/compressed_godtourvideo1.webm";
-import video2 from "../../assets/god_tour_video/compressed_godtourvideo2.webm";
-import video3 from "../../assets/god_tour_video/compressed_godtourvideo3.webm";
-import BGVideo from "../BGVideo";
+import video1 from "../../../assets/god_tour_video/compressed_godtourvideo1.webm";
+import video2 from "../../../assets/god_tour_video/compressed_godtourvideo2.webm";
+import video3 from "../../../assets/god_tour_video/compressed_godtourvideo3.webm";
+import BGVideo from "../../BGVideo";
 
 const Image1 =
   "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/cc028117-5e85-43ee-6369-47f14b10b400/public";
@@ -35,7 +31,7 @@ const Image7 =
 const Image8 =
   "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/392b8d8c-5724-40e8-d892-0405ba3dd400/public";
 
-export default function GodTour() {
+export default function GodTour2024() {
   const navigate = useNavigate();
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
@@ -293,7 +289,7 @@ export default function GodTour() {
         >
           {/* Back Button */}
           <Button
-            onClick={() => navigate("/events")}
+            onClick={() => navigate("/shows")}
             sx={{
               position: "absolute",
               left: 0,
@@ -444,294 +440,6 @@ export default function GodTour() {
         </Box>
       </Box>
     </Box>
-  );
-}
-
-function TopLeftMobile() {
-  const navigate = useNavigate();
-  return (
-    <>
-      <Box
-        sx={{
-          position: "absolute",
-          top: "2%",
-          left: "2%",
-          height: "30%",
-          backgroundColor: "transparent",
-          zIndex: 2000,
-          padding: "1rem",
-        }}
-      >
-        {/* Logo img */}
-
-        <img
-          src={YABISHLogo}
-          alt="YABISH Logo"
-          style={{
-            width: "110px",
-            height: "auto",
-            marginBottom: "1rem",
-            marginLeft: -10,
-          }}
-          onClick={() => {
-            navigate("/home");
-          }}
-        />
-
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "flex-start",
-            width: "100%",
-          }}
-        >
-          {/* Artists Router */}
-          <Box
-            onClick={() => {
-              navigate("/artist");
-            }}
-          >
-            <Typography
-              sx={{
-                color: "white",
-                fontFamily: "Anton, sans-serif",
-                fontSize: "30px",
-                transition: "color 0.3s ease-in-out",
-                "&:hover": {
-                  color: "#ff0000",
-                },
-                userSelect: "none",
-              }}
-            >
-              Artists
-            </Typography>
-          </Box>
-          {/* Events Route */}
-          <Box
-            onClick={() => {
-              navigate("/events");
-            }}
-          >
-            <Typography
-              sx={{
-                color: "white",
-                fontFamily: "Anton, sans-serif",
-                fontSize: "30px",
-                transition: "color 0.3s ease-in-out",
-                "&:hover": {
-                  color: "#ff0000",
-                },
-                userSelect: "none",
-                textDecoration: "underline",
-              }}
-            >
-              Events
-            </Typography>
-          </Box>
-          {/* About Route */}
-          <Box
-            onClick={() => {
-              navigate("/about");
-            }}
-          >
-            <Typography
-              sx={{
-                color: "white",
-                fontFamily: "Anton, sans-serif",
-                fontSize: "30px",
-                transition: "color 0.3s ease-in-out",
-                "&:hover": {
-                  color: "#ff0000",
-                },
-                userSelect: "none",
-              }}
-            >
-              About
-            </Typography>
-          </Box>
-        </Box>
-      </Box>
-      <Button
-        variant="outlined"
-        sx={{
-          position: "absolute",
-          bottom: "2%",
-          left: "2%",
-          color: "white",
-          padding: "0.5rem 1rem",
-          fontFamily: "Anton, sans-serif",
-          fontSize: "20px",
-          borderRadius: "5px",
-          borderColor: "white",
-          "&:hover": {
-            backgroundColor: "transparent",
-            borderColor: "#ff0000",
-          },
-          zIndex: 200,
-        }}
-      >
-        <Typography
-          sx={{
-            color: "white",
-            fontFamily: "Anton, sans-serif",
-            fontSize: "16px",
-            transition: "color 0.2s ease-in-out",
-            "&:hover": {
-              color: "#ff0000",
-            },
-          }}
-          onClick={() =>
-            window.open("https://www.instagram.com/yabish.yabish/", "_blank")
-          }
-        >
-          INSTAGRAM
-        </Typography>
-      </Button>
-    </>
-  );
-}
-
-function TopLeft() {
-  const navigate = useNavigate();
-  return (
-    <>
-      <Box
-        sx={{
-          position: "absolute",
-          top: "2%",
-          left: "2%",
-          height: "30%",
-          backgroundColor: "transparent",
-          zIndex: 2000,
-          padding: "1rem",
-        }}
-      >
-        {/* Logo img */}
-        <motion.div whileHover={{ scale: 1.1 }}>
-          <img
-            src={YABISHLogo}
-            alt="YABISH Logo"
-            style={{
-              width: "110px",
-              height: "auto",
-              marginBottom: "1rem",
-              marginLeft: -10,
-            }}
-            onClick={() => {
-              navigate("/home");
-            }}
-          />
-        </motion.div>
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "flex-start",
-            width: "100%",
-          }}
-        >
-          {/* Artists Router */}
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-            onClick={() => {
-              navigate("/artist");
-            }}
-          >
-            <Typography
-              sx={{
-                color: "white",
-                fontFamily: "Anton, sans-serif",
-                fontSize: "30px",
-                transition: "color 0.3s ease-in-out",
-                "&:hover": {
-                  color: "#ff0000",
-                },
-                userSelect: "none",
-              }}
-            >
-              Artists
-            </Typography>
-          </motion.div>
-          {/* Events Route */}
-          <motion.div whileHover={{ scale: 1.1 }}>
-            <Typography
-              sx={{
-                color: "white",
-                fontFamily: "Anton, sans-serif",
-                fontSize: "30px",
-                transition: "color 0.3s ease-in-out",
-                "&:hover": {
-                  color: "#ff0000",
-                },
-                userSelect: "none",
-                textDecoration: "underline",
-              }}
-            >
-              Events
-            </Typography>
-          </motion.div>
-          {/* About Route */}
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-            onClick={() => {
-              navigate("/about");
-            }}
-          >
-            <Typography
-              sx={{
-                color: "white",
-                fontFamily: "Anton, sans-serif",
-                fontSize: "30px",
-                transition: "color 0.3s ease-in-out",
-                "&:hover": {
-                  color: "#ff0000",
-                },
-                userSelect: "none",
-              }}
-            >
-              About
-            </Typography>
-          </motion.div>
-        </Box>
-      </Box>
-      <Button
-        variant="outlined"
-        sx={{
-          position: "absolute",
-          bottom: "2%",
-          left: "2%",
-          color: "white",
-          padding: "0.5rem 1rem",
-          fontFamily: "Anton, sans-serif",
-          fontSize: "20px",
-          borderRadius: "5px",
-          borderColor: "white",
-          "&:hover": {
-            backgroundColor: "transparent",
-            borderColor: "#ff0000",
-          },
-          zIndex: 200,
-        }}
-      >
-        <Typography
-          sx={{
-            color: "white",
-            fontFamily: "Anton, sans-serif",
-            fontSize: "16px",
-            transition: "color 0.2s ease-in-out",
-            "&:hover": {
-              color: "#ff0000",
-            },
-          }}
-          onClick={() =>
-            window.open("https://www.instagram.com/yabish.yabish/", "_blank")
-          }
-        >
-          INSTAGRAM
-        </Typography>
-      </Button>
-    </>
   );
 }
 

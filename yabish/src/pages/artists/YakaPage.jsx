@@ -7,6 +7,8 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
+import TopLeft from "../../utils/TopLeft";
+import TopLeftMobile from "../../utils/TopLeftMobile";
 
 const yakabg =
   "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/c82c466f-6202-4717-24db-409afc75cb00/public";
@@ -713,106 +715,6 @@ export default function YakaPage() {
   );
 }
 
-function TopLeft() {
-  const navigate = useNavigate();
-  return (
-    <Box
-      sx={{
-        position: "absolute",
-        top: "2%",
-        left: "2%",
-        zIndex: 2,
-        padding: "1rem",
-      }}
-    >
-      <motion.div whileHover={{ scale: 1.1 }}>
-        <img
-          src={YABISHLogo}
-          alt="YABISH Logo"
-          style={{
-            width: "110px",
-            height: "auto",
-            marginBottom: "1rem",
-            marginLeft: -10,
-          }}
-          onClick={() => {
-            navigate("/home");
-          }}
-        />
-      </motion.div>
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "flex-start",
-          width: "100%",
-        }}
-      >
-        <motion.div
-          whileHover={{ scale: 1.1 }}
-          onClick={() => navigate("/artist")}
-        >
-          <Typography
-            sx={{
-              color: "white",
-              fontFamily: "Anton, sans-serif",
-              fontSize: "30px",
-              transition: "color 0.3s ease-in-out",
-              "&:hover": {
-                color: "#ff0000",
-              },
-              userSelect: "none",
-              textDecoration: "underline",
-            }}
-          >
-            Artists
-          </Typography>
-        </motion.div>
-        <motion.div
-          whileHover={{ scale: 1.1 }}
-          onClick={() => {
-            navigate("/events");
-          }}
-        >
-          <Typography
-            sx={{
-              color: "white",
-              fontFamily: "Anton, sans-serif",
-              fontSize: "30px",
-              transition: "color 0.3s ease-in-out",
-              "&:hover": {
-                color: "#ff0000",
-              },
-              userSelect: "none",
-            }}
-          >
-            Events
-          </Typography>
-        </motion.div>
-        <motion.div
-          whileHover={{ scale: 1.1 }}
-          onClick={() => navigate("/about")}
-        >
-          <Typography
-            sx={{
-              color: "white",
-              fontFamily: "Anton, sans-serif",
-              fontSize: "30px",
-              transition: "color 0.3s ease-in-out",
-              "&:hover": {
-                color: "#ff0000",
-              },
-              userSelect: "none",
-            }}
-          >
-            About
-          </Typography>
-        </motion.div>
-      </Box>
-    </Box>
-  );
-}
-
 // For image carousel
 
 function shuffleArray(array) {
@@ -922,96 +824,5 @@ function YakaPicCarouselMobile() {
         ))}
       </Slider>
     </div>
-  );
-}
-
-function TopLeftMobile() {
-  const navigate = useNavigate();
-  return (
-    <Box
-      sx={{
-        position: "absolute",
-        top: "2%",
-        left: "2%",
-        zIndex: 2000,
-        padding: "1rem",
-      }}
-    >
-      <img
-        src={YABISHLogo}
-        alt="YABISH Logo"
-        style={{
-          width: "110px",
-          height: "auto",
-          marginBottom: "1rem",
-          marginLeft: -10,
-        }}
-        onClick={() => {
-          navigate("/home");
-        }}
-      />
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "flex-start",
-          width: "100%",
-        }}
-      >
-        <Box onClick={() => navigate("/artist")}>
-          <Typography
-            sx={{
-              color: "white",
-              fontFamily: "Anton, sans-serif",
-              fontSize: "30px",
-              transition: "color 0.3s ease-in-out",
-              "&:hover": {
-                color: "#ff0000",
-              },
-              userSelect: "none",
-              textDecoration: "underline",
-            }}
-          >
-            Artists
-          </Typography>
-        </Box>
-        <Box
-          onClick={() => {
-            navigate("/events");
-          }}
-        >
-          <Typography
-            sx={{
-              color: "white",
-              fontFamily: "Anton, sans-serif",
-              fontSize: "30px",
-              transition: "color 0.3s ease-in-out",
-              "&:hover": {
-                color: "#ff0000",
-              },
-              userSelect: "none",
-            }}
-          >
-            Events
-          </Typography>
-        </Box>
-        <Box onClick={() => navigate("/about")}>
-          <Typography
-            sx={{
-              color: "white",
-              fontFamily: "Anton, sans-serif",
-              fontSize: "30px",
-              transition: "color 0.3s ease-in-out",
-              "&:hover": {
-                color: "#ff0000",
-              },
-              userSelect: "none",
-            }}
-          >
-            About
-          </Typography>
-        </Box>
-      </Box>
-    </Box>
   );
 }

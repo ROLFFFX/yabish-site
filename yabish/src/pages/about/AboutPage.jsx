@@ -1,8 +1,6 @@
-import { Box, Button, Typography } from "@mui/material";
-import { motion } from "framer-motion";
-import React, { useEffect, useState } from "react";
-import YABISHLogo from "../..//assets/YABISHlogo.png";
-import { useNavigate } from "react-router-dom";
+import { Box, Typography } from "@mui/material";
+import { useEffect, useState } from "react";
+import TopLeft from "../../utils/TopLeft";
 import BGVideo from "../BGVideo";
 
 export default function AboutPage() {
@@ -100,6 +98,7 @@ export default function AboutPage() {
               "&:hover": {
                 color: "#ff0000",
               },
+              curosr: "pointer",
             }}
             onClick={() =>
               window.open("https://www.instagram.com/yabish.yabish/", "_blank")
@@ -214,6 +213,7 @@ export default function AboutPage() {
             "&:hover": {
               color: "#ff0000",
             },
+            cursor: "pointer",
           }}
           onClick={() =>
             window.open("https://www.instagram.com/yabish.yabish/", "_blank")
@@ -241,112 +241,5 @@ export default function AboutPage() {
         </Typography>
       </Box>
     </Box>
-  );
-}
-
-function TopLeft() {
-  const navigate = useNavigate();
-  return (
-    <>
-      <Box
-        sx={{
-          position: "absolute",
-          top: "2%",
-          left: "2%",
-          height: "30%",
-          backgroundColor: "transparent",
-          zIndex: 2000,
-          padding: "1rem",
-        }}
-      >
-        {/* Logo img */}
-        <motion.div whileHover={{ scale: 1.1 }}>
-          <img
-            src={YABISHLogo}
-            alt="YABISH Logo"
-            style={{
-              width: "110px",
-              height: "auto",
-              marginBottom: "1rem",
-              marginLeft: -10,
-            }}
-            onClick={() => {
-              navigate("/home");
-            }}
-          />
-        </motion.div>
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "flex-start",
-            width: "100%",
-          }}
-        >
-          {/* Artists Router */}
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-            onClick={() => {
-              navigate("/artist");
-            }}
-          >
-            <Typography
-              sx={{
-                color: "white",
-                fontFamily: "Anton, sans-serif",
-                fontSize: "30px",
-                transition: "color 0.3s ease-in-out",
-                "&:hover": {
-                  color: "#ff0000",
-                },
-                userSelect: "none",
-              }}
-            >
-              Artists
-            </Typography>
-          </motion.div>
-          {/* Events Route */}
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-            onClick={() => {
-              navigate("/events");
-            }}
-          >
-            <Typography
-              sx={{
-                color: "white",
-                fontFamily: "Anton, sans-serif",
-                fontSize: "30px",
-                transition: "color 0.3s ease-in-out",
-                "&:hover": {
-                  color: "#ff0000",
-                },
-                userSelect: "none",
-              }}
-            >
-              Events
-            </Typography>
-          </motion.div>
-          {/* about route */}
-          <motion.div whileHover={{ scale: 1.1 }}>
-            <Typography
-              sx={{
-                color: "white",
-                fontFamily: "Anton, sans-serif",
-                fontSize: "30px",
-                transition: "color 0.3s ease-in-out",
-                "&:hover": {
-                  color: "#ff0000",
-                  userSelect: "none",
-                },
-                textDecoration: "underline",
-              }}
-            >
-              About
-            </Typography>
-          </motion.div>
-        </Box>
-      </Box>
-    </>
   );
 }

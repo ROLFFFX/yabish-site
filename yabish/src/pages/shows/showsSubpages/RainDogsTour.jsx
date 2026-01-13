@@ -1,13 +1,13 @@
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import { Box, Button, Typography } from "@mui/material";
-import { motion } from "framer-motion";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
-import YABISHLogo from "../../assets/YABISHlogo.png";
-import BGVideo from "../BGVideo";
+import TopLeft from "../../../utils/TopLeft";
+import TopLeftMobile from "../../../utils/TopLeftMobile";
+import BGVideo from "../../BGVideo";
 
 const rg_tour_poster =
   "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/eef1a360-fa7d-4701-7a32-93b5cf723400/public";
@@ -166,6 +166,7 @@ export default function RainDogsTour() {
                       borderColor: "red",
                       color: "red",
                     },
+                    cursor: "pointer",
                   }}
                 >
                   {item.text}
@@ -256,6 +257,7 @@ export default function RainDogsTour() {
                   "&:hover": {
                     color: "#ff0000",
                   },
+                  cursor: "pointer",
                 }}
                 onClick={() =>
                   window.open(
@@ -280,6 +282,7 @@ export default function RainDogsTour() {
                   "&:hover": {
                     color: "#ff0000",
                   },
+                  cursor: "pointer",
                 }}
                 onClick={() =>
                   window.open(
@@ -303,6 +306,7 @@ export default function RainDogsTour() {
                   "&:hover": {
                     color: "#ff0000",
                   },
+                  cursor: "pointer",
                 }}
                 onClick={() =>
                   window.open(
@@ -334,6 +338,7 @@ export default function RainDogsTour() {
                   "&:hover": {
                     color: "#ff0000",
                   },
+                  cursor: "pointer",
                 }}
                 onClick={() =>
                   window.open(
@@ -436,7 +441,7 @@ export default function RainDogsTour() {
         >
           {/* Back Button */}
           <Button
-            onClick={() => navigate("/events")}
+            onClick={() => navigate("/shows")}
             sx={{
               position: "absolute",
               left: 0,
@@ -619,6 +624,7 @@ export default function RainDogsTour() {
                 "&:hover": {
                   color: "#ff0000",
                 },
+                cursor: "pointer",
               }}
               onClick={() =>
                 window.open(
@@ -643,6 +649,7 @@ export default function RainDogsTour() {
                 "&:hover": {
                   color: "#ff0000",
                 },
+                cursor: "pointer",
               }}
               onClick={() =>
                 window.open(
@@ -666,6 +673,7 @@ export default function RainDogsTour() {
                 "&:hover": {
                   color: "#ff0000",
                 },
+                cursor: "pointer",
               }}
               onClick={() =>
                 window.open(
@@ -698,6 +706,7 @@ export default function RainDogsTour() {
                 "&:hover": {
                   color: "#ff0000",
                 },
+                cursor: "pointer",
               }}
               onClick={() =>
                 window.open(
@@ -746,293 +755,6 @@ export default function RainDogsTour() {
         </Box>
       </Box>
     </Box>
-  );
-}
-
-function TopLeft() {
-  const navigate = useNavigate();
-  return (
-    <>
-      <Box
-        sx={{
-          position: "absolute",
-          top: "2%",
-          left: "2%",
-          height: "30%",
-          backgroundColor: "transparent",
-          zIndex: 2000,
-          padding: "1rem",
-        }}
-      >
-        {/* Logo img */}
-        <motion.div whileHover={{ scale: 1.1 }}>
-          <img
-            src={YABISHLogo}
-            alt="YABISH Logo"
-            style={{
-              width: "110px",
-              height: "auto",
-              marginBottom: "1rem",
-              marginLeft: -10,
-            }}
-            onClick={() => {
-              navigate("/home");
-            }}
-          />
-        </motion.div>
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "flex-start",
-            width: "100%",
-          }}
-        >
-          {/* Artists Router */}
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-            onClick={() => {
-              navigate("/artist");
-            }}
-          >
-            <Typography
-              sx={{
-                color: "white",
-                fontFamily: "Anton, sans-serif",
-                fontSize: "30px",
-                transition: "color 0.3s ease-in-out",
-                "&:hover": {
-                  color: "#ff0000",
-                },
-                userSelect: "none",
-              }}
-            >
-              Artists
-            </Typography>
-          </motion.div>
-          {/* Events Route */}
-          <motion.div whileHover={{ scale: 1.1 }}>
-            <Typography
-              sx={{
-                color: "white",
-                fontFamily: "Anton, sans-serif",
-                fontSize: "30px",
-                transition: "color 0.3s ease-in-out",
-                "&:hover": {
-                  color: "#ff0000",
-                },
-                userSelect: "none",
-                textDecoration: "underline",
-              }}
-            >
-              Events
-            </Typography>
-          </motion.div>
-          {/* About Route */}
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-            onClick={() => {
-              navigate("/about");
-            }}
-          >
-            <Typography
-              sx={{
-                color: "white",
-                fontFamily: "Anton, sans-serif",
-                fontSize: "30px",
-                transition: "color 0.3s ease-in-out",
-                "&:hover": {
-                  color: "#ff0000",
-                },
-                userSelect: "none",
-              }}
-            >
-              About
-            </Typography>
-          </motion.div>
-        </Box>
-      </Box>
-      <Button
-        variant="outlined"
-        sx={{
-          position: "absolute",
-          bottom: "2%",
-          left: "2%",
-          color: "white",
-          padding: "0.5rem 1rem",
-          fontFamily: "Anton, sans-serif",
-          fontSize: "20px",
-          borderRadius: "5px",
-          borderColor: "white",
-          "&:hover": {
-            backgroundColor: "transparent",
-            borderColor: "#ff0000",
-          },
-          zIndex: 200,
-        }}
-      >
-        <Typography
-          sx={{
-            color: "white",
-            fontFamily: "Anton, sans-serif",
-            fontSize: "16px",
-            transition: "color 0.2s ease-in-out",
-            "&:hover": {
-              color: "#ff0000",
-            },
-          }}
-          onClick={() =>
-            window.open("https://www.instagram.com/yabish.yabish/", "_blank")
-          }
-        >
-          INSTAGRAM
-        </Typography>
-      </Button>
-    </>
-  );
-}
-
-function TopLeftMobile() {
-  const navigate = useNavigate();
-  return (
-    <>
-      <Box
-        sx={{
-          position: "absolute",
-          top: "2%",
-          left: "2%",
-          height: "30%",
-          backgroundColor: "transparent",
-          zIndex: 2000,
-          padding: "1rem",
-        }}
-      >
-        {/* Logo img */}
-        <img
-          src={YABISHLogo}
-          alt="YABISH Logo"
-          style={{
-            width: "110px",
-            height: "auto",
-            marginBottom: "1rem",
-            marginLeft: -10,
-          }}
-          onClick={() => {
-            navigate("/home");
-          }}
-        />
-
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "flex-start",
-            width: "100%",
-          }}
-        >
-          {/* Artists Router */}
-          <Box
-            onClick={() => {
-              navigate("/artist");
-            }}
-          >
-            <Typography
-              sx={{
-                color: "white",
-                fontFamily: "Anton, sans-serif",
-                fontSize: "30px",
-                transition: "color 0.3s ease-in-out",
-                "&:hover": {
-                  color: "#ff0000",
-                },
-                userSelect: "none",
-              }}
-            >
-              Artists
-            </Typography>
-          </Box>
-          {/* Events Route */}
-          <Box
-            onClick={() => {
-              navigate("/events");
-            }}
-          >
-            <Typography
-              sx={{
-                color: "white",
-                fontFamily: "Anton, sans-serif",
-                fontSize: "30px",
-                transition: "color 0.3s ease-in-out",
-                "&:hover": {
-                  color: "#ff0000",
-                },
-                userSelect: "none",
-                textDecoration: "underline",
-              }}
-            >
-              Events
-            </Typography>
-          </Box>
-          {/* About Route */}
-          <Box
-            onClick={() => {
-              navigate("/about");
-            }}
-          >
-            <Typography
-              sx={{
-                color: "white",
-                fontFamily: "Anton, sans-serif",
-                fontSize: "30px",
-                transition: "color 0.3s ease-in-out",
-                "&:hover": {
-                  color: "#ff0000",
-                },
-                userSelect: "none",
-              }}
-            >
-              About
-            </Typography>
-          </Box>
-        </Box>
-      </Box>
-      <Button
-        variant="outlined"
-        sx={{
-          position: "absolute",
-          bottom: "2%",
-          left: "2%",
-          color: "white",
-          padding: "0.5rem 1rem",
-          fontFamily: "Anton, sans-serif",
-          fontSize: "20px",
-          borderRadius: "5px",
-          borderColor: "white",
-          "&:hover": {
-            backgroundColor: "transparent",
-            borderColor: "#ff0000",
-          },
-          zIndex: 200,
-        }}
-      >
-        <Typography
-          sx={{
-            color: "white",
-            fontFamily: "Anton, sans-serif",
-            fontSize: "16px",
-            transition: "color 0.2s ease-in-out",
-            "&:hover": {
-              color: "#ff0000",
-            },
-          }}
-          onClick={() =>
-            window.open("https://www.instagram.com/yabish.yabish/", "_blank")
-          }
-        >
-          INSTAGRAM
-        </Typography>
-      </Button>
-    </>
   );
 }
 

@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import YABISHLogo from "../..//assets/YABISHlogo.png";
 import { pageVariants } from "../../animations/pageVariants";
 import "./homePageStyle.css";
+import TopLeft from "../../utils/TopLeft";
 
 // image preload
 import bgvideo from "../../assets/bgvideo.webm";
@@ -241,104 +242,6 @@ function HoverableText({ text, route }) {
           </Typography>
         </motion.span>
       ))}
-    </Box>
-  );
-}
-
-// TopLeft component remains unchanged
-function TopLeft() {
-  const navigate = useNavigate();
-  return (
-    <Box
-      sx={{
-        position: "absolute",
-        top: "2%",
-        left: "2%",
-        zIndex: 2,
-        padding: "1rem",
-      }}
-    >
-      <img
-        src={YABISHLogo}
-        alt="YABISH Logo"
-        style={{
-          width: "110px",
-          height: "auto",
-          marginBottom: "1rem",
-          marginLeft: -10,
-        }}
-        onClick={() => {
-          navigate("/home");
-        }}
-      />
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "flex-start",
-          width: "100%",
-        }}
-      >
-        <motion.div
-          whileHover={{ scale: 1.1 }}
-          onClick={() => navigate("/artist")}
-        >
-          <Typography
-            sx={{
-              color: "white",
-              fontFamily: "Anton, sans-serif",
-              fontSize: "30px",
-              transition: "color 0.3s ease-in-out",
-              "&:hover": {
-                color: "#ff0000",
-              },
-              userSelect: "none",
-            }}
-          >
-            Artists
-          </Typography>
-        </motion.div>
-        <motion.div
-          whileHover={{ scale: 1.1 }}
-          onClick={() => {
-            navigate("/events");
-          }}
-        >
-          <Typography
-            sx={{
-              color: "white",
-              fontFamily: "Anton, sans-serif",
-              fontSize: "30px",
-              transition: "color 0.3s ease-in-out",
-              "&:hover": {
-                color: "#ff0000",
-              },
-              userSelect: "none",
-            }}
-          >
-            Events
-          </Typography>
-        </motion.div>
-        <motion.div
-          whileHover={{ scale: 1.1 }}
-          onClick={() => navigate("/about")}
-        >
-          <Typography
-            sx={{
-              color: "white",
-              fontFamily: "Anton, sans-serif",
-              fontSize: "30px",
-              transition: "color 0.3s ease-in-out",
-              "&:hover": {
-                color: "#ff0000",
-              },
-              userSelect: "none",
-            }}
-          >
-            About
-          </Typography>
-        </motion.div>
-      </Box>
     </Box>
   );
 }
