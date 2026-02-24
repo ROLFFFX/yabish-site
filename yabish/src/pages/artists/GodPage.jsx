@@ -1,7 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
 import React, { useEffect, useRef, useState } from "react";
 import TopLeft from "../../utils/TopLeft";
-import TopLeftMobile from "../../utils/TopLeftMobile";
+import TopBarMobile from "../../utils/TopBarMobile";
 import GodReleasesView from "./GodReleasesView";
 import GodVideosView from "./GodVideosView";
 
@@ -157,9 +157,7 @@ export default function GodPage() {
           position: "relative",
         }}
       >
-        <Box sx={{ zIndex: 2000 }}>
-          <TopLeftMobile />
-        </Box>
+        <TopBarMobile />
 
         {/* Scrollable content */}
         <Box

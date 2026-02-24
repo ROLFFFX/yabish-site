@@ -1,7 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
 import React, { useEffect, useRef, useState } from "react";
 import TopLeft from "../../utils/TopLeft";
-import TopLeftMobile from "../../utils/TopLeftMobile";
+import TopBarMobile from "../../utils/TopBarMobile";
 import YakaReleasesView from "./YakaReleasesView";
 import YakaVideosView from "./YakaVideosView";
 
@@ -160,9 +160,7 @@ export default function YakaPage() {
           position: "relative",
         }}
       >
-        <Box sx={{ zIndex: 2000 }}>
-          <TopLeftMobile />
-        </Box>
+        <TopBarMobile />
 
         <Box
           sx={{
