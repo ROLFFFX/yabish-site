@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import TopLeft from "../../utils/TopLeft";
+import TopBarMobile from "../../utils/TopBarMobile";
 import BGVideo from "../BGVideo";
 
 export default function AboutPage() {
@@ -22,29 +23,30 @@ export default function AboutPage() {
         style={{
           height: "100vh",
           backgroundColor: "black",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
           position: "relative",
+          overflow: "hidden",
         }}
       >
         <BGVideo />
-        <TopLeft></TopLeft>
+        <TopBarMobile />
+        {/* Scrollable content area */}
         <Box
           sx={{
-            height: "70%", // Box height
-            width: "95%", // Box width
-            backgroundColor: "transparent", // Slightly transparent background
-            overflowY: "auto", // Scrollable vertically
-            overflowX: "auto", // No horizontal scrolling
-            padding: "1rem", // Add padding inside the box
-            color: "white", // Text color
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            overflowY: "auto",
+            scrollbarWidth: "none",
+            "&::-webkit-scrollbar": { display: "none" },
             zIndex: 2,
-            marginTop: "50%",
+            padding: "5rem 1.5rem 4rem",
           }}
         >
           <Typography
             sx={{
+              color: "white",
               fontFamily: "Antonio, sans-serif",
               fontSize: "18px",
             }}
@@ -61,6 +63,7 @@ export default function AboutPage() {
           </Typography>
           <Typography
             sx={{
+              color: "white",
               fontFamily: "Glow Sans SC Compressed, sans-serif",
               fontSize: "18px",
             }}
@@ -77,6 +80,7 @@ export default function AboutPage() {
           </Typography>
           <Typography
             sx={{
+              color: "white",
               fontFamily: "Antonio, sans-serif",
               fontSize: "18px",
             }}
@@ -87,7 +91,6 @@ export default function AboutPage() {
             <br />
             FOLLOW ME
           </Typography>
-
           <Typography
             sx={{
               color: "white",
@@ -95,35 +98,21 @@ export default function AboutPage() {
               textDecoration: "underline",
               transition: "color 0.2s ease-in-out",
               fontSize: "16px",
-              "&:hover": {
-                color: "#ff0000",
-              },
-              curosr: "pointer",
+              cursor: "pointer",
+              "&:hover": { color: "#ff0000" },
             }}
             onClick={() =>
               window.open("https://www.instagram.com/yabish.yabish/", "_blank")
             }
           >
             INSTAGRAM
-            <br />
-            <br />
-            <br />
-            <br />
           </Typography>
-        </Box>
-        {/* footer text */}
-        <Box
-          sx={{
-            position: "absolute",
-            bottom: "2%",
-            textAlign: "center",
-          }}
-        >
           <Typography
             sx={{
               color: "white",
               fontFamily: "Anton, sans-serif",
               fontSize: "16px",
+              marginTop: "2rem",
             }}
           >
             © YABISH 2024
