@@ -508,7 +508,6 @@ export default function GodPage() {
         </Box>
       </Box>
 
-      <InstagramButton />
     </Box>
   );
 }

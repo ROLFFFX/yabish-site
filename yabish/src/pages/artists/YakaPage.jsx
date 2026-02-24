@@ -512,7 +512,6 @@ export default function YakaPage() {
         </Box>
       </Box>
 
-      <InstagramButton />
     </Box>
   );
 }
