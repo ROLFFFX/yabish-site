@@ -39,11 +39,168 @@ const releases = [
     ],
   },
 
+  {
+    id: 2,
+    title: "Bodega (feat.PAIN)(Remix)",
+    date: "MAR 15, 2025",
+    cover:
+      "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/7a9eb625-a63d-4b1e-6e39-e5f3b66ef200/public",
+    links: [
+      {
+        label: "SPOTIFY",
+        url: "https://open.spotify.com/artist/1fSNmkI8lKMFVMU2Y4hpgi?si=thjriNdTQfGEDfLL9y5_AA",
+      },
+      {
+        label: "APPLE MUSIC",
+        url: "https://music.apple.com/cn/artist/99-god/1530452342",
+      },
+    ],
+    tracks: ["Bodega (feat.PAIN)(Remix)"],
+  },
+
+  {
+    id: 3,
+    title: "M&M",
+    date: "DEC 06, 2024",
+    cover:
+      "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/6a27b7dd-7e26-4d00-ec9e-0c6715ae7500/public",
+    links: [
+      {
+        label: "SPOTIFY",
+        url: "https://open.spotify.com/artist/1fSNmkI8lKMFVMU2Y4hpgi?si=thjriNdTQfGEDfLL9y5_AA",
+      },
+      {
+        label: "APPLE MUSIC",
+        url: "https://music.apple.com/cn/artist/99-god/1530452342",
+      },
+      {
+        label: "NETEASE",
+        url: "https://music.163.com/#/artist?id=31511662",
+      },
+    ],
+    tracks: ["Martina", "Mind Lately"],
+  },
+
+  {
+    id: 4,
+    title: "屁话2.0",
+    date: "JUN 21, 2024",
+    cover:
+      "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/65c4f97a-261c-4a67-f0de-325de5d98700/public",
+    links: [
+      {
+        label: "SPOTIFY",
+        url: "https://open.spotify.com/artist/1fSNmkI8lKMFVMU2Y4hpgi?si=thjriNdTQfGEDfLL9y5_AA",
+      },
+      {
+        label: "APPLE MUSIC",
+        url: "https://music.apple.com/cn/artist/99-god/1530452342",
+      },
+      {
+        label: "NETEASE",
+        url: "https://music.163.com/#/artist?id=31511662",
+      },
+    ],
+    tracks: ["屁话2.0"],
+  },
+
+  {
+    id: 5,
+    title: "九十九",
+    date: "JUN 06, 2024",
+    cover:
+      "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/99f9e013-98d1-4aee-ddc7-b29c2bda9c00/public",
+    links: [
+      {
+        label: "SPOTIFY",
+        url: "https://open.spotify.com/artist/1fSNmkI8lKMFVMU2Y4hpgi?si=thjriNdTQfGEDfLL9y5_AA",
+      },
+      {
+        label: "APPLE MUSIC",
+        url: "https://music.apple.com/cn/artist/99-god/1530452342",
+      },
+      {
+        label: "NETEASE",
+        url: "https://music.163.com/#/artist?id=31511662",
+      },
+    ],
+    tracks: ["九十九"],
+  },
+
+  {
+    id: 6,
+    title: "W2MT",
+    date: "MAR 25, 2024",
+    cover:
+      "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/2b07c478-b93b-49fe-4969-300ded757f00/public",
+    links: [
+      {
+        label: "SPOTIFY",
+        url: "https://open.spotify.com/artist/1fSNmkI8lKMFVMU2Y4hpgi?si=thjriNdTQfGEDfLL9y5_AA",
+      },
+      {
+        label: "APPLE MUSIC",
+        url: "https://music.apple.com/cn/artist/99-god/1530452342",
+      },
+      {
+        label: "NETEASE",
+        url: "https://music.163.com/#/artist?id=31511662",
+      },
+    ],
+    tracks: ["W2MT"],
+  },
+
+  {
+    id: 7,
+    title: "ITS UP",
+    date: "APR 19, 2024",
+    cover:
+      "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/f381db5e-8f55-4e8b-2988-5e9a1c5d9300/public",
+    links: [
+      {
+        label: "SPOTIFY",
+        url: "https://open.spotify.com/artist/1fSNmkI8lKMFVMU2Y4hpgi?si=thjriNdTQfGEDfLL9y5_AA",
+      },
+      {
+        label: "NETEASE",
+        url: "https://music.163.com/#/artist?id=31511662",
+      },
+    ],
+    tracks: ["ITS UP"],
+  },
+
+  {
+    id: 8,
+    title: "Summer DVD",
+    date: "OCT 06, 2023",
+    cover:
+      "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/6f894e0a-d9a0-4988-0000-83444f39d400/public",
+    links: [
+      {
+        label: "SPOTIFY",
+        url: "https://open.spotify.com/artist/1fSNmkI8lKMFVMU2Y4hpgi?si=thjriNdTQfGEDfLL9y5_AA",
+      },
+      {
+        label: "APPLE MUSIC",
+        url: "https://music.apple.com/cn/artist/99-god/1530452342",
+      },
+    ],
+    tracks: [
+      "BLAST - Intro",
+      "ZZZZ",
+      "RAW",
+      "UFO",
+      "GALA",
+      "SCUM",
+      "Bodega",
+    ],
+  },
+
   // ---------------------------------------------------------------------------
   // TEMPLATE — copy/paste the block below for each new release
   // ---------------------------------------------------------------------------
   // {
-  //   id: 2,
+  //   id: 9,
   //   title: "",
   //   date: "",                          // e.g. "MAR 15, 2025"
   //   cover: "",                         // Cloudflare image URL
