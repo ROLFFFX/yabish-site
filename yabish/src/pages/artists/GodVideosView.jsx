@@ -10,15 +10,16 @@ import React, { useEffect, useRef, useState } from "react";
 import video6 from "../../assets/godvideo/compressed_godvideo6.webm";
 import video7 from "../../assets/godvideo/compressed_godvideo7.webm";
 
+// previewTime: seconds into the video to use as the still thumbnail
 const videos = [
-  { src: video6, title: "POLLEN ALLERGY" },
-  { src: video7, title: "沪(HU) SKIT" },
+  { src: video6, title: "POLLEN ALLERGY", previewTime: 4 },
+  { src: video7, title: "沪(HU) SKIT", previewTime: 3 },
 ];
 
 // =============================================================================
 // SINGLE VIDEO CARD
 // =============================================================================
-function VideoCard({ src, title, width = "100%" }) {
+function VideoCard({ src, title, previewTime = 2, width = "100%" }) {
   const videoRef = useRef(null);
   const seekingRef = useRef(false); // prevent timeupdate from fighting drag
 
@@ -27,6 +28,12 @@ function VideoCard({ src, title, width = "100%" }) {
   const [muted, setMuted] = useState(true);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [hovered, setHovered] = useState(false);
+
+  // Seek to preview frame once metadata is ready (shows a still instead of black)
+  const handleLoadedMetadata = () => {
+    const v = videoRef.current;
+    if (v) v.currentTime = previewTime;
+  };
 
   // Sync fullscreen icon with browser state
   useEffect(() => {
@@ -100,6 +107,7 @@ function VideoCard({ src, title, width = "100%" }) {
           muted={muted}
           loop
           playsInline
+          onLoadedMetadata={handleLoadedMetadata}
           onPlay={handleVideoPlay}
           onPause={handleVideoPause}
           onTimeUpdate={handleTimeUpdate}
@@ -248,6 +256,7 @@ export default function GodVideosView() {
           key={index}
           src={video.src}
           title={video.title}
+          previewTime={video.previewTime}
           width={isMobile ? "100%" : "60%"}
         />
       ))}
