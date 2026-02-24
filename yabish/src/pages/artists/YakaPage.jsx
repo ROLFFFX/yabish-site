@@ -342,7 +342,7 @@ export default function YakaPage() {
                   width: "100%",
                   height: "auto",
                   display: "block",
-                  maxHeight: "75vh",
+                  maxHeight: "60vh",
                   objectFit: "cover",
                 }}
               />
