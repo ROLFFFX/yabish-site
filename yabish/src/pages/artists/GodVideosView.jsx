@@ -163,6 +163,7 @@ export default function GodVideosView() {
       sx={{
         display: "flex",
         flexDirection: "column",
+        alignItems: "center",
         gap: "2rem",
         width: "100%",
       }}
