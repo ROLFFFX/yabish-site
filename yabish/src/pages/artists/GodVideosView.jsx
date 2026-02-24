@@ -1,8 +1,10 @@
 import FullscreenIcon from "@mui/icons-material/Fullscreen";
 import FullscreenExitIcon from "@mui/icons-material/FullscreenExit";
+import PauseIcon from "@mui/icons-material/Pause";
+import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import VolumeOffIcon from "@mui/icons-material/VolumeOff";
 import VolumeUpIcon from "@mui/icons-material/VolumeUp";
-import { Box, IconButton, Typography } from "@mui/material";
+import { Box, IconButton, Slider, Typography } from "@mui/material";
 import React, { useEffect, useRef, useState } from "react";
 
 import video6 from "../../assets/godvideo/compressed_godvideo6.webm";
@@ -18,16 +20,36 @@ const videos = [
 // =============================================================================
 function VideoCard({ src, title, width = "100%" }) {
   const videoRef = useRef(null);
+  const seekingRef = useRef(false); // prevent timeupdate from fighting drag
+
+  const [playing, setPlaying] = useState(false);
+  const [progress, setProgress] = useState(0); // 0–100
   const [muted, setMuted] = useState(true);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [hovered, setHovered] = useState(false);
 
-  // Keep fullscreen icon in sync with actual browser state
+  // Sync fullscreen icon with browser state
   useEffect(() => {
     const onFsChange = () => setIsFullscreen(!!document.fullscreenElement);
     document.addEventListener("fullscreenchange", onFsChange);
     return () => document.removeEventListener("fullscreenchange", onFsChange);
   }, []);
+
+  // Keep playing state in sync if video ends (loop is off)
+  const handleVideoPlay = () => setPlaying(true);
+  const handleVideoPause = () => setPlaying(false);
+
+  const handleTimeUpdate = () => {
+    if (seekingRef.current) return;
+    const v = videoRef.current;
+    if (v && v.duration) setProgress((v.currentTime / v.duration) * 100);
+  };
+
+  const togglePlay = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    playing ? v.pause() : v.play();
+  };
 
   const toggleSound = () => setMuted((m) => !m);
 
@@ -37,6 +59,17 @@ function VideoCard({ src, title, width = "100%" }) {
     } else {
       document.exitFullscreen();
     }
+  };
+
+  const handleSliderChange = (_, value) => {
+    seekingRef.current = true;
+    setProgress(value);
+    const v = videoRef.current;
+    if (v && v.duration) v.currentTime = (value / 100) * v.duration;
+  };
+
+  const handleSliderChangeCommitted = () => {
+    seekingRef.current = false;
   };
 
   return (
@@ -64,14 +97,16 @@ function VideoCard({ src, title, width = "100%" }) {
         <video
           ref={videoRef}
           src={src}
-          autoPlay
           muted={muted}
           loop
           playsInline
+          onPlay={handleVideoPlay}
+          onPause={handleVideoPause}
+          onTimeUpdate={handleTimeUpdate}
           style={{ width: "100%", height: "auto", display: "block" }}
         />
 
-        {/* Gradient + controls — fade in on hover */}
+        {/* Controls bar — always slightly visible, full on hover */}
         <Box
           sx={{
             position: "absolute",
@@ -79,27 +114,67 @@ function VideoCard({ src, title, width = "100%" }) {
             left: 0,
             right: 0,
             display: "flex",
-            justifyContent: "flex-end",
             alignItems: "center",
             gap: "0.1rem",
-            padding: "0.6rem 0.5rem 0.4rem",
+            padding: "1.2rem 0.5rem 0.35rem",
             background:
-              "linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 100%)",
-            opacity: hovered ? 1 : 0,
+              "linear-gradient(to top, rgba(0,0,0,0.82) 0%, transparent 100%)",
+            opacity: hovered ? 1 : 0.35,
             transition: "opacity 0.25s ease",
-            pointerEvents: hovered ? "auto" : "none",
           }}
         >
+          {/* Play / Pause */}
+          <IconButton
+            onClick={togglePlay}
+            size="small"
+            sx={{
+              color: "white",
+              padding: "3px",
+              "&:hover": { backgroundColor: "rgba(255,255,255,0.15)" },
+            }}
+          >
+            {playing ? (
+              <PauseIcon sx={{ fontSize: 17 }} />
+            ) : (
+              <PlayArrowIcon sx={{ fontSize: 17 }} />
+            )}
+          </IconButton>
+
+          {/* Progress slider */}
+          <Slider
+            size="small"
+            value={progress}
+            onChange={handleSliderChange}
+            onChangeCommitted={handleSliderChangeCommitted}
+            sx={{
+              flex: 1,
+              mx: "0.3rem",
+              color: "white",
+              height: 2,
+              padding: "10px 0",
+              "& .MuiSlider-thumb": {
+                width: 10,
+                height: 10,
+                transition: "none",
+                "&:hover, &.Mui-focusVisible": {
+                  boxShadow: "0 0 0 6px rgba(255,255,255,0.16)",
+                },
+              },
+              "& .MuiSlider-track": { border: "none", transition: "none" },
+              "& .MuiSlider-rail": { opacity: 0.35 },
+            }}
+          />
+
           {/* Muted label */}
           {muted && (
             <Typography
               sx={{
                 fontFamily: "Anton, sans-serif",
-                fontSize: "9px",
+                fontSize: "8px",
                 letterSpacing: "1.5px",
-                color: "rgba(255,255,255,0.6)",
-                marginRight: "0.25rem",
+                color: "rgba(255,255,255,0.55)",
                 userSelect: "none",
+                mr: "0.15rem",
               }}
             >
               MUTED
@@ -112,7 +187,7 @@ function VideoCard({ src, title, width = "100%" }) {
             size="small"
             sx={{
               color: "white",
-              padding: "4px",
+              padding: "3px",
               "&:hover": { backgroundColor: "rgba(255,255,255,0.15)" },
             }}
           >
@@ -129,7 +204,7 @@ function VideoCard({ src, title, width = "100%" }) {
             size="small"
             sx={{
               color: "white",
-              padding: "4px",
+              padding: "3px",
               "&:hover": { backgroundColor: "rgba(255,255,255,0.15)" },
             }}
           >
