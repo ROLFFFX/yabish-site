@@ -11,7 +11,7 @@ import TopLeftMobile from "../../../utils/TopLeftMobile";
 import video1 from "../../../assets/god_tour_video/compressed_godtourvideo1.webm";
 import video2 from "../../../assets/god_tour_video/compressed_godtourvideo2.webm";
 import video3 from "../../../assets/god_tour_video/compressed_godtourvideo3.webm";
-import BGVideo from "../../BGVideo";
+// import BGVideo from "../../BGVideo";
 
 const Image1 =
   "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/cc028117-5e85-43ee-6369-47f14b10b400/public";
@@ -59,7 +59,7 @@ export default function GodTour2024() {
           alignItems: "center",
         }}
       >
-        <BGVideo />
+        {/* <BGVideo /> */}
         <Box
           sx={{
             position: "absolute",
@@ -252,7 +252,7 @@ export default function GodTour2024() {
         alignItems: "center",
       }}
     >
-      <BGVideo />
+      {/* <BGVideo /> */}
       <Box
         sx={{
           position: "absolute",

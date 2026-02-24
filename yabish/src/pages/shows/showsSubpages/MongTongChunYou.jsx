@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import TopLeft from "../../../utils/TopLeft";
 import TopLeftMobile from "../../../utils/TopLeftMobile";
-import BGVideo from "../../BGVideo";
+// import BGVideo from "../../BGVideo";
 import mong_tong_chunyou_video from "/src/assets/mongtong_chunyou_video/mongtong_chunyou_video.webm";
 import mong_tong_chunyou_video_fallback from "/src/assets/mongtong_chunyou_video/mongtong_fallback.mp4";
 
@@ -46,7 +46,7 @@ export default function MongTongChunYou() {
           msOverflowStyle: "none",
         }}
       >
-        <BGVideo />
+        {/* <BGVideo /> */}
         <Box
           sx={{
             position: "absolute",
@@ -389,7 +389,7 @@ export default function MongTongChunYou() {
         msOverflowStyle: "none",
       }}
     >
-      <BGVideo />
+      {/* <BGVideo /> */}
       <Box
         sx={{
           position: "absolute",

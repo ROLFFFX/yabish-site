@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import TopLeft from "../../../utils/TopLeft";
 import TopLeftMobile from "../../../utils/TopLeftMobile";
-import BGVideo from "../../BGVideo";
+// import BGVideo from "../../BGVideo";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
@@ -44,7 +44,7 @@ export default function Peremotka2025Tour() {
           msOverflowStyle: "none",
         }}
       >
-        <BGVideo />
+        {/* <BGVideo /> */}
         <Box
           sx={{
             position: "absolute",
@@ -326,7 +326,7 @@ export default function Peremotka2025Tour() {
         msOverflowStyle: "none",
       }}
     >
-      <BGVideo />
+      {/* <BGVideo /> */}
       <Box
         sx={{
           position: "absolute",

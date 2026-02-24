@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import TopLeft from "../../utils/TopLeft";
-import BGVideo from "../BGVideo";
+// import BGVideo from "../BGVideo";
 
 const RainDogsPic =
   "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/91942590-319d-4e7a-debf-9b240813f100/public";
@@ -43,7 +43,7 @@ export default function ShowsPage() {
       }}
     >
       {/* Background Video */}
-      <Box
+      {/* <Box
         sx={{
           position: "absolute",
           top: 0,
@@ -54,7 +54,7 @@ export default function ShowsPage() {
         }}
       >
         <BGVideo />
-      </Box>
+      </Box> */}
 
       {/* Navigation */}
       <TopLeft />

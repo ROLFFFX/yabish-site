@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import TopLeft from "../../../utils/TopLeft";
 import TopLeftMobile from "../../../utils/TopLeftMobile";
-import BGVideo from "../../BGVideo";
+// import BGVideo from "../../BGVideo";
 
 // PLACEHOLDER IMAGE - Replace with actual 99 God Tour Poster
 const god_tour_poster =
@@ -44,7 +44,7 @@ export default function GodTour2025() {
           msOverflowStyle: "none",
         }}
       >
-        <BGVideo />
+        {/* <BGVideo /> */}
         <Box
           sx={{
             position: "absolute",
@@ -256,7 +256,7 @@ export default function GodTour2025() {
         msOverflowStyle: "none",
       }}
     >
-      <BGVideo />
+      {/* <BGVideo /> */}
       <Box
         sx={{
           position: "absolute",

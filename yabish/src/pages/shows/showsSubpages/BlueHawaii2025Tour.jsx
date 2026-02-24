@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import TopLeft from "../../../utils/TopLeft";
 import TopLeftMobile from "../../../utils/TopLeftMobile";
-import BGVideo from "../../BGVideo";
+// import BGVideo from "../../BGVideo";
 
 // PLACEHOLDER IMAGES - Replace with actual Blue Hawaii assets
 const bh_tour_poster =
@@ -41,7 +41,7 @@ export default function BlueHawaiiTour() {
           msOverflowStyle: "none",
         }}
       >
-        <BGVideo />
+        {/* <BGVideo /> */}
         <Box
           sx={{
             position: "absolute",
@@ -323,7 +323,7 @@ export default function BlueHawaiiTour() {
         msOverflowStyle: "none",
       }}
     >
-      <BGVideo />
+      {/* <BGVideo /> */}
       <Box
         sx={{
           position: "absolute",
