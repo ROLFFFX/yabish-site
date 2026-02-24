@@ -48,11 +48,11 @@ const releases = [
     links: [
       {
         label: "SPOTIFY",
-        url: "https://open.spotify.com/artist/1fSNmkI8lKMFVMU2Y4hpgi?si=thjriNdTQfGEDfLL9y5_AA",
+        url: "https://open.spotify.com/album/41dnrtKHrd4p1LIv0EbhmT?si=t0o3vwGMTbu0GizVhkd6Lw",
       },
       {
         label: "APPLE MUSIC",
-        url: "https://music.apple.com/cn/artist/99-god/1530452342",
+        url: "https://music.apple.com/cn/album/bodega-feat-pain-remix-single/1801165754?l=en-GB",
       },
     ],
     tracks: ["Bodega (feat.PAIN)(Remix)"],
@@ -67,15 +67,15 @@ const releases = [
     links: [
       {
         label: "SPOTIFY",
-        url: "https://open.spotify.com/artist/1fSNmkI8lKMFVMU2Y4hpgi?si=thjriNdTQfGEDfLL9y5_AA",
+        url: "https://open.spotify.com/album/0ltx4ZtB5vTGCplyopVd31?si=eBpu4INaTdWzF7tqqk4RuA",
       },
       {
         label: "APPLE MUSIC",
-        url: "https://music.apple.com/cn/artist/99-god/1530452342",
+        url: "https://music.apple.com/cn/album/m-m-single/1782515295?l=en-GB",
       },
       {
         label: "NETEASE",
-        url: "https://music.163.com/#/artist?id=31511662",
+        url: "https://music.163.com/album?id=255355701&userid=95505343",
       },
     ],
     tracks: ["Martina", "Mind Lately"],
@@ -90,15 +90,15 @@ const releases = [
     links: [
       {
         label: "SPOTIFY",
-        url: "https://open.spotify.com/artist/1fSNmkI8lKMFVMU2Y4hpgi?si=thjriNdTQfGEDfLL9y5_AA",
+        url: "https://open.spotify.com/album/2GEfGy2oqBGW4LSF1vFpul?si=wo7MxBp1RV2Rnee_fYT1yQ",
       },
       {
         label: "APPLE MUSIC",
-        url: "https://music.apple.com/cn/artist/99-god/1530452342",
+        url: "https://music.apple.com/cn/album/%E5%B1%81%E8%AF%9D2-0-single/1750853128?l=en-GB",
       },
       {
         label: "NETEASE",
-        url: "https://music.163.com/#/artist?id=31511662",
+        url: "https://music.163.com/album?id=197263992&userid=95505343",
       },
     ],
     tracks: ["屁话2.0"],
@@ -113,15 +113,15 @@ const releases = [
     links: [
       {
         label: "SPOTIFY",
-        url: "https://open.spotify.com/artist/1fSNmkI8lKMFVMU2Y4hpgi?si=thjriNdTQfGEDfLL9y5_AA",
+        url: "https://open.spotify.com/album/4EimksuOZtZQ1XWtiXpvKg?si=xHYnCsFtSOiiVfRDytumHQ",
       },
       {
         label: "APPLE MUSIC",
-        url: "https://music.apple.com/cn/artist/99-god/1530452342",
+        url: "https://music.apple.com/cn/album/%E4%B9%9D%E5%8D%81%E4%B9%9D/1751667289?i=1751667303&l=en-GB",
       },
       {
         label: "NETEASE",
-        url: "https://music.163.com/#/artist?id=31511662",
+        url: "https://music.163.com/album?id=198582041&userid=95505343",
       },
     ],
     tracks: ["九十九"],
@@ -136,15 +136,15 @@ const releases = [
     links: [
       {
         label: "SPOTIFY",
-        url: "https://open.spotify.com/artist/1fSNmkI8lKMFVMU2Y4hpgi?si=thjriNdTQfGEDfLL9y5_AA",
+        url: "https://open.spotify.com/album/44610Eeqw9lFfpTEWtZ1Dr?si=ZsVN07JjRaKJ3dT4-mSVmA",
       },
       {
         label: "APPLE MUSIC",
-        url: "https://music.apple.com/cn/artist/99-god/1530452342",
+        url: "https://music.apple.com/cn/album/w2mt/1740719548?i=1740719554&l=en-GB",
       },
       {
         label: "NETEASE",
-        url: "https://music.163.com/#/artist?id=31511662",
+        url: "https://music.163.com/album?id=189738577&userid=95505343",
       },
     ],
     tracks: ["W2MT"],
@@ -159,11 +159,11 @@ const releases = [
     links: [
       {
         label: "SPOTIFY",
-        url: "https://open.spotify.com/artist/1fSNmkI8lKMFVMU2Y4hpgi?si=thjriNdTQfGEDfLL9y5_AA",
+        url: "https://open.spotify.com/album/74F7ag4M0fwZXC6HZ5yN6u?si=jixid4JFRweDqf6PfIqt1Q",
       },
       {
         label: "NETEASE",
-        url: "https://music.163.com/#/artist?id=31511662",
+        url: "https://music.163.com/album?id=191928832&userid=95505343",
       },
     ],
     tracks: ["ITS UP"],
@@ -178,22 +178,14 @@ const releases = [
     links: [
       {
         label: "SPOTIFY",
-        url: "https://open.spotify.com/artist/1fSNmkI8lKMFVMU2Y4hpgi?si=thjriNdTQfGEDfLL9y5_AA",
+        url: "https://open.spotify.com/album/5KalcWqJW2RfWvjOlPKCRw?si=SWBxvAigSKOK4xgQ0ZhBEQ",
       },
       {
         label: "APPLE MUSIC",
-        url: "https://music.apple.com/cn/artist/99-god/1530452342",
+        url: "https://music.apple.com/cn/album/summer-dvd/1729311155?l=en-GB",
       },
     ],
-    tracks: [
-      "BLAST - Intro",
-      "ZZZZ",
-      "RAW",
-      "UFO",
-      "GALA",
-      "SCUM",
-      "Bodega",
-    ],
+    tracks: ["BLAST - Intro", "ZZZZ", "RAW", "UFO", "GALA", "SCUM", "Bodega"],
   },
 
   // ---------------------------------------------------------------------------
