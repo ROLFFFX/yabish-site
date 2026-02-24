@@ -6,7 +6,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import TopLeft from "../../../utils/TopLeft";
-import TopLeftMobile from "../../../utils/TopLeftMobile";
+import TopBarMobile from "../../../utils/TopBarMobile";
 
 import video1 from "../../../assets/god_tour_video/compressed_godtourvideo1.webm";
 import video2 from "../../../assets/god_tour_video/compressed_godtourvideo2.webm";
@@ -71,7 +71,7 @@ export default function GodTour2024() {
             zIndex: 1,
           }}
         />
-        <TopLeftMobile />
+        <TopBarMobile />
         <Box
           sx={{
             height: "100%",

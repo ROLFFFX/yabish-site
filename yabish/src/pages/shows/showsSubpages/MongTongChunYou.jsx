@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import TopLeft from "../../../utils/TopLeft";
-import TopLeftMobile from "../../../utils/TopLeftMobile";
+import TopBarMobile from "../../../utils/TopBarMobile";
 // import BGVideo from "../../BGVideo";
 import mong_tong_chunyou_video from "/src/assets/mongtong_chunyou_video/mongtong_chunyou_video.webm";
 import mong_tong_chunyou_video_fallback from "/src/assets/mongtong_chunyou_video/mongtong_fallback.mp4";
@@ -58,7 +58,7 @@ export default function MongTongChunYou() {
             zIndex: 1,
           }}
         />
-        <TopLeftMobile />
+        <TopBarMobile />
         <Box
           sx={{
             height: "100%",

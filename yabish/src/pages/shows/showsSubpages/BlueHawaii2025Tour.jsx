@@ -3,7 +3,7 @@ import { Box, Button, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import TopLeft from "../../../utils/TopLeft";
-import TopLeftMobile from "../../../utils/TopLeftMobile";
+import TopBarMobile from "../../../utils/TopBarMobile";
 // import BGVideo from "../../BGVideo";
 
 // PLACEHOLDER IMAGES - Replace with actual Blue Hawaii assets
@@ -53,7 +53,7 @@ export default function BlueHawaiiTour() {
             zIndex: 1,
           }}
         />
-        <TopLeftMobile />
+        <TopBarMobile />
         <Box
           sx={{
             height: "100%",
