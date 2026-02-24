@@ -7,7 +7,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import TopLeft from "../../../utils/TopLeft";
 import TopLeftMobile from "../../../utils/TopLeftMobile";
-import BGVideo from "../../BGVideo";
+// import BGVideo from "../../BGVideo";
 
 const rg_tour_poster =
   "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/eef1a360-fa7d-4701-7a32-93b5cf723400/public";
@@ -44,7 +44,7 @@ export default function RainDogsTour() {
           msOverflowStyle: "none",
         }}
       >
-        <BGVideo />
+        {/* <BGVideo /> */}
         <Box
           sx={{
             position: "absolute",
@@ -262,7 +262,7 @@ export default function RainDogsTour() {
                 onClick={() =>
                   window.open(
                     "https://open.spotify.com/artist/3Env07M1XTj7ntZxzavVq9?si=Ezx6RpsZQTOVwlW_facGSw",
-                    "_blank"
+                    "_blank",
                   )
                 }
               >
@@ -287,7 +287,7 @@ export default function RainDogsTour() {
                 onClick={() =>
                   window.open(
                     "https://music.163.com/#/artist?id=52196524",
-                    "_blank"
+                    "_blank",
                   )
                 }
               >
@@ -311,7 +311,7 @@ export default function RainDogsTour() {
                 onClick={() =>
                   window.open(
                     "https://open.spotify.com/artist/2HqXQTZQ92lpBQkFgUNRr7?si=z1uNAaARR_Secrl6aVvPSA",
-                    "_blank"
+                    "_blank",
                   )
                 }
               >
@@ -343,7 +343,7 @@ export default function RainDogsTour() {
                 onClick={() =>
                   window.open(
                     "https://mp.weixin.qq.com/s/sPEiQFej57h8OF-sh9qDqQ",
-                    "_blank"
+                    "_blank",
                   )
                 }
               >
@@ -404,7 +404,7 @@ export default function RainDogsTour() {
         msOverflowStyle: "none",
       }}
     >
-      <BGVideo />
+      {/* <BGVideo /> */}
       <Box
         sx={{
           position: "absolute",
@@ -629,7 +629,7 @@ export default function RainDogsTour() {
               onClick={() =>
                 window.open(
                   "https://open.spotify.com/artist/3Env07M1XTj7ntZxzavVq9?si=Ezx6RpsZQTOVwlW_facGSw",
-                  "_blank"
+                  "_blank",
                 )
               }
             >
@@ -654,7 +654,7 @@ export default function RainDogsTour() {
               onClick={() =>
                 window.open(
                   "https://music.163.com/#/artist?id=52196524",
-                  "_blank"
+                  "_blank",
                 )
               }
             >
@@ -678,7 +678,7 @@ export default function RainDogsTour() {
               onClick={() =>
                 window.open(
                   "https://open.spotify.com/artist/2HqXQTZQ92lpBQkFgUNRr7?si=z1uNAaARR_Secrl6aVvPSA",
-                  "_blank"
+                  "_blank",
                 )
               }
             >
@@ -711,7 +711,7 @@ export default function RainDogsTour() {
               onClick={() =>
                 window.open(
                   "https://mp.weixin.qq.com/s/sPEiQFej57h8OF-sh9qDqQ",
-                  "_blank"
+                  "_blank",
                 )
               }
             >

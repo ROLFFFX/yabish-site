@@ -62,3 +62,6 @@ pids
 *.test.jsx
 *.test.ts
 *.test.tsx
+
+*.claude
+.claude

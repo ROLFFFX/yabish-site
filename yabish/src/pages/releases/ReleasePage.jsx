@@ -3,12 +3,9 @@ import { motion } from "framer-motion";
 import { useRef } from "react";
 import TopBarMobile from "../../utils/TopBarMobile";
 import TopLeft from "../../utils/TopLeft";
-import BGVideo from "../BGVideo";
+// import BGVideo from "../BGVideo"; // Ensure this path is correct if you use it
 
 // --- Placeholder Images ---
-const PlaceholderArt =
-  "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/3c94813f-17d5-492b-9c84-183c655e7200/public";
-
 const releasesData = [
   {
     id: 1,
@@ -162,12 +159,15 @@ function ReleaseSlot({ data }) {
       sx={{
         display: "flex",
         flexDirection: isMobile ? "column" : "row",
-        alignItems: "center",
+        // CHANGED: Aligns items to the top (text aligned with top of cover)
+        alignItems: "flex-start",
         justifyContent: "center",
-        gap: isMobile ? "2rem" : "4rem",
+        // CHANGED: Reduced gap slightly for tighter feel
+        gap: isMobile ? "2rem" : "2.5rem",
         width: isMobile ? "80%" : "70%",
         maxWidth: "1300px",
-        marginBottom: "5rem",
+        // CHANGED: Reduced margin bottom to fit more on screen
+        marginBottom: "3.5rem",
       }}
     >
       {/* --- LEFT: Album Art --- */}
@@ -175,8 +175,9 @@ function ReleaseSlot({ data }) {
         component={motion.div}
         whileHover={{ scale: 1.02 }}
         sx={{
-          width: isMobile ? "100%" : "450px",
-          maxWidth: "450px",
+          // CHANGED: Reduced width from 300px to 240px for desktop
+          width: isMobile ? "100%" : "240px",
+          maxWidth: "300px",
           flexShrink: 0,
         }}
       >
@@ -200,13 +201,16 @@ function ReleaseSlot({ data }) {
           alignItems: "flex-start",
           color: "white",
           width: "100%",
+          // CHANGED: Added slight padding top if image needs offset, or keep 0 for strict top alignment
+          paddingTop: isMobile ? "0" : "0",
         }}
       >
-        {/* 1. Artist Name (Anton, Medium-Large) */}
+        {/* 1. Artist Name (Anton) */}
         <Typography
           sx={{
             fontFamily: "Anton, sans-serif",
-            fontSize: isMobile ? "1.5rem" : "2rem", // Slightly smaller than title
+            // CHANGED: Reduced font size (was 2rem)
+            fontSize: isMobile ? "1.2rem" : "1.4rem",
             lineHeight: 1,
             textTransform: "uppercase",
             marginBottom: "0.25rem",
@@ -217,16 +221,17 @@ function ReleaseSlot({ data }) {
           {data.artist}
         </Typography>
 
-        {/* 2. Album Title (Anton, Largest) */}
+        {/* 2. Album Title (Anton) */}
         <Typography
           variant="h4"
           sx={{
             fontFamily: "Anton, sans-serif",
             textTransform: "uppercase",
             color: "white",
-            fontSize: isMobile ? "2.5rem" : "3.5rem",
+            // CHANGED: Reduced font size (was 3.5rem)
+            fontSize: isMobile ? "2rem" : "2.8rem",
             lineHeight: 0.9,
-            marginBottom: "1rem",
+            marginBottom: "0.75rem",
             cursor: "default",
             letterSpacing: "1px",
           }}
@@ -242,15 +247,15 @@ function ReleaseSlot({ data }) {
             alignItems: "center",
             justifyContent: "space-between",
             width: "100%",
-            marginBottom: "1.5rem",
+            marginBottom: "1rem", // Reduced from 1.5rem
             borderBottom: "2px solid white",
-            paddingBottom: "1rem",
+            paddingBottom: "0.75rem",
           }}
         >
           <Typography
             sx={{
               fontFamily: "Anton, sans-serif",
-              fontSize: "1.2rem",
+              fontSize: "1rem", // Reduced from 1.2rem
               color: "white",
               textTransform: "uppercase",
               letterSpacing: "1px",
@@ -270,11 +275,11 @@ function ReleaseSlot({ data }) {
                   sx={{
                     borderColor: "white",
                     color: "white",
-                    fontFamily: "Anton, sans-serif", // Unified Font
-                    fontSize: "14px",
-                    padding: "4px 15px",
+                    fontFamily: "Anton, sans-serif",
+                    fontSize: "12px", // Slightly smaller
+                    padding: "2px 12px",
                     borderRadius: "0",
-                    height: "30px",
+                    height: "26px", // Reduced height
                     letterSpacing: "1px",
                     "&:hover": {
                       backgroundColor: "white",
@@ -292,10 +297,10 @@ function ReleaseSlot({ data }) {
         {/* 4. Tracklist Header */}
         <Typography
           sx={{
-            fontFamily: "Anton, sans-serif", // Unified Font
-            fontSize: "1.2rem",
+            fontFamily: "Anton, sans-serif",
+            fontSize: "1.1rem",
             textTransform: "uppercase",
-            marginBottom: "0.5rem",
+            marginBottom: "0.25rem",
             letterSpacing: "1px",
           }}
         >
@@ -308,7 +313,8 @@ function ReleaseSlot({ data }) {
             width: "100%",
             display: "flex",
             flexDirection: "column",
-            maxHeight: "220px",
+            // CHANGED: Reduced max-height to keep overall slot smaller
+            maxHeight: "180px",
             overflowY: "auto",
             "&::-webkit-scrollbar": {
               width: "4px",
@@ -327,16 +333,16 @@ function ReleaseSlot({ data }) {
               key={idx}
               sx={{
                 display: "flex",
-                paddingY: "0.5rem",
+                paddingY: "0.35rem", // Slightly tighter padding
                 borderBottom: "1px solid rgba(255,255,255,0.2)",
               }}
             >
               {/* index */}
               <Typography
                 sx={{
-                  width: "40px",
-                  fontFamily: "Anton, sans-serif", // Unified Font
-                  fontSize: "1rem",
+                  width: "35px",
+                  fontFamily: "Anton, sans-serif",
+                  fontSize: "0.9rem",
                   color: "rgba(255,255,255,0.7)",
                   letterSpacing: "1px",
                 }}
@@ -347,8 +353,7 @@ function ReleaseSlot({ data }) {
               <Typography
                 sx={{
                   fontFamily: "Anton, sans-serif",
-                  fontSize: "1rem",
-                  // textTransform: "uppercase",
+                  fontSize: "0.9rem",
                   color: "white",
                   letterSpacing: "1px",
                 }}
@@ -380,19 +385,10 @@ export default function ReleasePage() {
         overflow: "hidden",
       }}
     >
-      {/* Background Video */}
-      <Box
-        sx={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          zIndex: 0,
-        }}
-      >
-        <BGVideo />
-      </Box>
+      {/* Background Video (Commented out as per your snippet) */}
+      {/* <Box sx={{ position: "absolute", top: 0, left: 0, right: 0, bottom: 0, zIndex: 0 }}>
+         <BGVideo />
+      </Box> */}
 
       {/* Navigation */}
       {isMobile ? <TopBarMobile /> : <TopLeft />}
@@ -412,7 +408,7 @@ export default function ReleasePage() {
         }}
       >
         {/* Spacer */}
-        <Box sx={{ minHeight: isMobile ? "15vh" : "20vh" }} />
+        <Box sx={{ minHeight: isMobile ? "15vh" : "15vh" }} />
 
         {/* Content Area */}
         <Box
@@ -421,7 +417,8 @@ export default function ReleasePage() {
             flexDirection: "column",
             alignItems: "center",
             width: "100%",
-            gap: "2rem",
+            // Gap handled by margins in slots, or here if needed
+            gap: "0rem",
           }}
         >
           {releasesData.map((item) => (
