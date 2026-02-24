@@ -85,14 +85,15 @@ export default function GodTour2024() {
           {/* Title Section */}
           <Box
             sx={{
-              height: "40%",
-              width: "calc(100% - 120px)",
+              width: "100%",
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
               justifyContent: "center",
-              position: "relative",
-              left: "120px",
+              paddingTop: "5rem",
+              paddingBottom: "1rem",
+              paddingLeft: "1rem",
+              paddingRight: "1rem",
             }}
           >
             {/* Title */}
