@@ -179,6 +179,7 @@ function ReleaseSlot({ data }) {
           width: isMobile ? "100%" : "240px",
           maxWidth: "300px",
           flexShrink: 0,
+          margin: isMobile ? "0 auto" : 0,
         }}
       >
         <img
