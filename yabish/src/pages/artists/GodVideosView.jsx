@@ -16,7 +16,7 @@ const videos = [
 // =============================================================================
 // SINGLE VIDEO CARD
 // =============================================================================
-function VideoCard({ src, title }) {
+function VideoCard({ src, title, width = "100%" }) {
   const videoRef = useRef(null);
   const [muted, setMuted] = useState(true);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -40,7 +40,7 @@ function VideoCard({ src, title }) {
   };
 
   return (
-    <Box sx={{ flex: 1, display: "flex", flexDirection: "column" }}>
+    <Box sx={{ width, display: "flex", flexDirection: "column" }}>
       {/* Title */}
       <Typography
         sx={{
@@ -162,13 +162,18 @@ export default function GodVideosView() {
     <Box
       sx={{
         display: "flex",
-        flexDirection: isMobile ? "column" : "row",
-        gap: "1.5rem",
+        flexDirection: "column",
+        gap: "2rem",
         width: "100%",
       }}
     >
       {videos.map((video, index) => (
-        <VideoCard key={index} src={video.src} title={video.title} />
+        <VideoCard
+          key={index}
+          src={video.src}
+          title={video.title}
+          width={isMobile ? "100%" : "60%"}
+        />
       ))}
     </Box>
   );
