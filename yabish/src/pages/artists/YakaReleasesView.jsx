@@ -132,6 +132,7 @@ function ReleaseSlot({ data, isMobile }) {
       <Box
         sx={{
           flex: 1,
+          width: "100%",
           display: "flex",
           flexDirection: "column",
           color: "white",

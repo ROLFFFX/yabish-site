@@ -1,7 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
 import React, { useEffect, useRef, useState } from "react";
 import TopLeft from "../../utils/TopLeft";
-import TopLeftMobile from "../../utils/TopLeftMobile";
+import TopBarMobile from "../../utils/TopBarMobile";
 import YakaReleasesView from "./YakaReleasesView";
 import YakaVideosView from "./YakaVideosView";
 
@@ -48,41 +48,6 @@ const tabSx = (isActive) => ({
   "&:hover": { color: "white" },
 });
 
-// ─── Instagram button (shared) ────────────────────────────────────────────────
-function InstagramButton() {
-  return (
-    <Button
-      variant="outlined"
-      sx={{
-        position: "fixed",
-        bottom: "2%",
-        left: "2%",
-        zIndex: 2000,
-        color: "white",
-        padding: "0.5rem 1rem",
-        borderRadius: "5px",
-        borderColor: "white",
-        "&:hover": { backgroundColor: "black", borderColor: "#ff0000" },
-      }}
-      onClick={() =>
-        window.open("https://www.instagram.com/yabish.yabish/", "_blank")
-      }
-    >
-      <Typography
-        sx={{
-          color: "white",
-          fontFamily: "Anton, sans-serif",
-          fontSize: "16px",
-          transition: "color 0.2s ease-in-out",
-          "&:hover": { color: "#ff0000" },
-        }}
-      >
-        INSTAGRAM
-      </Typography>
-    </Button>
-  );
-}
-
 // ─── Booking line (shared) ────────────────────────────────────────────────────
 function BookingLine() {
   return (
@@ -114,9 +79,7 @@ function BookingLine() {
           transition: "color 0.2s ease-in-out",
           "&:hover": { color: "#ff0000" },
         }}
-        onClick={() =>
-          window.open("mailto:yabish.prod@gmail.com", "_blank")
-        }
+        onClick={() => window.open("mailto:yabish.prod@gmail.com", "_blank")}
       >
         yabish.prod@gmail.com
       </Typography>
@@ -134,7 +97,10 @@ export default function YakaPage() {
 
   useEffect(() => {
     const measure = () => {
-      if (photoRef.current) setPhotoHeight(photoRef.current.offsetHeight);
+      if (photoRef.current) {
+        const cap = Math.round(window.innerHeight * 0.55);
+        setPhotoHeight(Math.min(photoRef.current.offsetHeight, cap));
+      }
     };
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
@@ -146,7 +112,10 @@ export default function YakaPage() {
   }, []);
 
   const handlePhotoLoad = () => {
-    if (photoRef.current) setPhotoHeight(photoRef.current.offsetHeight);
+    if (photoRef.current) {
+      const cap = Math.round(window.innerHeight * 0.55);
+      setPhotoHeight(Math.min(photoRef.current.offsetHeight, cap));
+    }
   };
 
   // ─── Mobile View ────────────────────────────────────────────────────────────
@@ -160,9 +129,7 @@ export default function YakaPage() {
           position: "relative",
         }}
       >
-        <Box sx={{ zIndex: 2000 }}>
-          <TopLeftMobile />
-        </Box>
+        <TopBarMobile />
 
         <Box
           sx={{
@@ -177,7 +144,7 @@ export default function YakaPage() {
         >
           <Box sx={{ padding: "5rem 1.5rem 1rem" }}>
             {/* Portrait photo */}
-            <Box sx={{ width: "100%", marginBottom: "1.5rem" }}>
+            <Box sx={{ width: "100%", marginBottom: "1.5rem", overflow: "hidden", maxHeight: "55vh" }}>
               <img
                 ref={photoRef}
                 src={artistPhoto}
@@ -324,8 +291,6 @@ export default function YakaPage() {
             <BookingLine />
           </Box>
         </Box>
-
-        <InstagramButton />
       </Box>
     );
   }
@@ -370,13 +335,17 @@ export default function YakaPage() {
             }}
           >
             {/* Left: portrait photo */}
-            <Box sx={{ width: "38%", flexShrink: 0 }}>
+            <Box sx={{ width: "38%", flexShrink: 0, overflow: "hidden", maxHeight: "55vh" }}>
               <img
                 ref={photoRef}
                 src={artistPhoto}
                 alt="Yaka"
                 onLoad={handlePhotoLoad}
-                style={{ width: "100%", height: "auto", display: "block" }}
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  display: "block",
+                }}
               />
             </Box>
 
@@ -387,9 +356,7 @@ export default function YakaPage() {
                 display: "flex",
                 flexDirection: "column",
                 height:
-                  photoHeight > 0 && !bioExpanded
-                    ? `${photoHeight}px`
-                    : "auto",
+                  photoHeight > 0 && !bioExpanded ? `${photoHeight}px` : "auto",
                 overflow: "hidden",
               }}
             >
@@ -538,13 +505,15 @@ export default function YakaPage() {
             </Typography>
           </Box>
 
-          {activeView === "releases" ? <YakaReleasesView /> : <YakaVideosView />}
+          {activeView === "releases" ? (
+            <YakaReleasesView />
+          ) : (
+            <YakaVideosView />
+          )}
 
           <BookingLine />
         </Box>
       </Box>
-
-      <InstagramButton />
     </Box>
   );
 }

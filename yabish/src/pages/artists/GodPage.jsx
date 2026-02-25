@@ -1,7 +1,7 @@
 import { Box, Button, Typography } from "@mui/material";
 import React, { useEffect, useRef, useState } from "react";
 import TopLeft from "../../utils/TopLeft";
-import TopLeftMobile from "../../utils/TopLeftMobile";
+import TopBarMobile from "../../utils/TopBarMobile";
 import GodReleasesView from "./GodReleasesView";
 import GodVideosView from "./GodVideosView";
 
@@ -44,41 +44,6 @@ const tabSx = (isActive) => ({
   transition: "color 0.2s ease",
   "&:hover": { color: "white" },
 });
-
-// ─── Instagram button (shared) ────────────────────────────────────────────────
-function InstagramButton() {
-  return (
-    <Button
-      variant="outlined"
-      sx={{
-        position: "fixed",
-        bottom: "2%",
-        left: "2%",
-        zIndex: 2000,
-        color: "white",
-        padding: "0.5rem 1rem",
-        borderRadius: "5px",
-        borderColor: "white",
-        "&:hover": { backgroundColor: "black", borderColor: "#ff0000" },
-      }}
-      onClick={() =>
-        window.open("https://www.instagram.com/yabish.yabish/", "_blank")
-      }
-    >
-      <Typography
-        sx={{
-          color: "white",
-          fontFamily: "Anton, sans-serif",
-          fontSize: "16px",
-          transition: "color 0.2s ease-in-out",
-          "&:hover": { color: "#ff0000" },
-        }}
-      >
-        INSTAGRAM
-      </Typography>
-    </Button>
-  );
-}
 
 // ─── Booking line (shared) ────────────────────────────────────────────────────
 function BookingLine() {
@@ -157,9 +122,7 @@ export default function GodPage() {
           position: "relative",
         }}
       >
-        <Box sx={{ zIndex: 2000 }}>
-          <TopLeftMobile />
-        </Box>
+        <TopBarMobile />
 
         {/* Scrollable content */}
         <Box
@@ -324,7 +287,6 @@ export default function GodPage() {
           </Box>
         </Box>
 
-        <InstagramButton />
       </Box>
     );
   }
@@ -546,7 +508,6 @@ export default function GodPage() {
         </Box>
       </Box>
 
-      <InstagramButton />
     </Box>
   );
 }
