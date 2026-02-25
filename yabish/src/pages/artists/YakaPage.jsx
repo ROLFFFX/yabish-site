@@ -144,7 +144,7 @@ export default function YakaPage() {
         >
           <Box sx={{ padding: "5rem 1.5rem 1rem" }}>
             {/* Portrait photo */}
-            <Box sx={{ width: "100%", marginBottom: "1.5rem" }}>
+            <Box sx={{ width: "100%", marginBottom: "1.5rem", overflow: "hidden", maxHeight: "55vh" }}>
               <img
                 ref={photoRef}
                 src={artistPhoto}
