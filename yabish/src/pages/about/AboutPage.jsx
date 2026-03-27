@@ -1,8 +1,7 @@
-import { Box, Button, Typography } from "@mui/material";
-import { motion } from "framer-motion";
-import React, { useEffect, useState } from "react";
-import YABISHLogo from "../..//assets/YABISHlogo.png";
-import { useNavigate } from "react-router-dom";
+import { Box, Typography } from "@mui/material";
+import { useEffect, useState } from "react";
+import TopLeft from "../../utils/TopLeft";
+import TopBarMobile from "../../utils/TopBarMobile";
 import BGVideo from "../BGVideo";
 
 export default function AboutPage() {
@@ -24,29 +23,30 @@ export default function AboutPage() {
         style={{
           height: "100vh",
           backgroundColor: "black",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
           position: "relative",
+          overflow: "hidden",
         }}
       >
         <BGVideo />
-        <TopLeft></TopLeft>
+        <TopBarMobile />
+        {/* Scrollable content area */}
         <Box
           sx={{
-            height: "70%", // Box height
-            width: "95%", // Box width
-            backgroundColor: "transparent", // Slightly transparent background
-            overflowY: "auto", // Scrollable vertically
-            overflowX: "auto", // No horizontal scrolling
-            padding: "1rem", // Add padding inside the box
-            color: "white", // Text color
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            overflowY: "auto",
+            scrollbarWidth: "none",
+            "&::-webkit-scrollbar": { display: "none" },
             zIndex: 2,
-            marginTop: "50%",
+            padding: "5rem 1.5rem 4rem",
           }}
         >
           <Typography
             sx={{
+              color: "white",
               fontFamily: "Antonio, sans-serif",
               fontSize: "18px",
             }}
@@ -63,6 +63,7 @@ export default function AboutPage() {
           </Typography>
           <Typography
             sx={{
+              color: "white",
               fontFamily: "Glow Sans SC Compressed, sans-serif",
               fontSize: "18px",
             }}
@@ -79,17 +80,26 @@ export default function AboutPage() {
           </Typography>
           <Typography
             sx={{
+              color: "white",
               fontFamily: "Antonio, sans-serif",
               fontSize: "18px",
             }}
           >
             <br />
             CONTACT <br />
-            Artist Booking/Management: yabish.prod@gmail.com <br />
+            Artist Booking/Management:{" "}
+            <span
+              style={{ textDecoration: "underline", cursor: "pointer" }}
+              onMouseEnter={(e) => (e.target.style.color = "#ff0000")}
+              onMouseLeave={(e) => (e.target.style.color = "white")}
+              onClick={() => window.open("mailto:yabish.prod@gmail.com", "_blank")}
+            >
+              yabish.prod@gmail.com
+            </span>
+            <br />
             <br />
             FOLLOW ME
           </Typography>
-
           <Typography
             sx={{
               color: "white",
@@ -97,34 +107,21 @@ export default function AboutPage() {
               textDecoration: "underline",
               transition: "color 0.2s ease-in-out",
               fontSize: "16px",
-              "&:hover": {
-                color: "#ff0000",
-              },
+              cursor: "pointer",
+              "&:hover": { color: "#ff0000" },
             }}
             onClick={() =>
               window.open("https://www.instagram.com/yabish.yabish/", "_blank")
             }
           >
             INSTAGRAM
-            <br />
-            <br />
-            <br />
-            <br />
           </Typography>
-        </Box>
-        {/* footer text */}
-        <Box
-          sx={{
-            position: "absolute",
-            bottom: "2%",
-            textAlign: "center",
-          }}
-        >
           <Typography
             sx={{
               color: "white",
               fontFamily: "Anton, sans-serif",
               fontSize: "16px",
+              marginTop: "2rem",
             }}
           >
             © YABISH 2024
@@ -199,7 +196,16 @@ export default function AboutPage() {
         >
           <br />
           CONTACT <br />
-          Artist Booking/Management: yabish.prod@gmail.com <br />
+          Artist Booking/Management:{" "}
+          <span
+            style={{ textDecoration: "underline", cursor: "pointer" }}
+            onMouseEnter={(e) => (e.target.style.color = "#ff0000")}
+            onMouseLeave={(e) => (e.target.style.color = "white")}
+            onClick={() => window.open("mailto:yabish.prod@gmail.com", "_blank")}
+          >
+            yabish.prod@gmail.com
+          </span>
+          <br />
           <br />
           FOLLOW ME
         </Typography>
@@ -214,6 +220,7 @@ export default function AboutPage() {
             "&:hover": {
               color: "#ff0000",
             },
+            cursor: "pointer",
           }}
           onClick={() =>
             window.open("https://www.instagram.com/yabish.yabish/", "_blank")
@@ -241,112 +248,5 @@ export default function AboutPage() {
         </Typography>
       </Box>
     </Box>
-  );
-}
-
-function TopLeft() {
-  const navigate = useNavigate();
-  return (
-    <>
-      <Box
-        sx={{
-          position: "absolute",
-          top: "2%",
-          left: "2%",
-          height: "30%",
-          backgroundColor: "transparent",
-          zIndex: 2000,
-          padding: "1rem",
-        }}
-      >
-        {/* Logo img */}
-        <motion.div whileHover={{ scale: 1.1 }}>
-          <img
-            src={YABISHLogo}
-            alt="YABISH Logo"
-            style={{
-              width: "110px",
-              height: "auto",
-              marginBottom: "1rem",
-              marginLeft: -10,
-            }}
-            onClick={() => {
-              navigate("/home");
-            }}
-          />
-        </motion.div>
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "flex-start",
-            width: "100%",
-          }}
-        >
-          {/* Artists Router */}
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-            onClick={() => {
-              navigate("/artist");
-            }}
-          >
-            <Typography
-              sx={{
-                color: "white",
-                fontFamily: "Anton, sans-serif",
-                fontSize: "30px",
-                transition: "color 0.3s ease-in-out",
-                "&:hover": {
-                  color: "#ff0000",
-                },
-                userSelect: "none",
-              }}
-            >
-              Artists
-            </Typography>
-          </motion.div>
-          {/* Events Route */}
-          <motion.div
-            whileHover={{ scale: 1.1 }}
-            onClick={() => {
-              navigate("/events");
-            }}
-          >
-            <Typography
-              sx={{
-                color: "white",
-                fontFamily: "Anton, sans-serif",
-                fontSize: "30px",
-                transition: "color 0.3s ease-in-out",
-                "&:hover": {
-                  color: "#ff0000",
-                },
-                userSelect: "none",
-              }}
-            >
-              Events
-            </Typography>
-          </motion.div>
-          {/* about route */}
-          <motion.div whileHover={{ scale: 1.1 }}>
-            <Typography
-              sx={{
-                color: "white",
-                fontFamily: "Anton, sans-serif",
-                fontSize: "30px",
-                transition: "color 0.3s ease-in-out",
-                "&:hover": {
-                  color: "#ff0000",
-                  userSelect: "none",
-                },
-                textDecoration: "underline",
-              }}
-            >
-              About
-            </Typography>
-          </motion.div>
-        </Box>
-      </Box>
-    </>
   );
 }
