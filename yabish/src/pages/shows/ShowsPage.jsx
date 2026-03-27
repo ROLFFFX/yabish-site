@@ -136,7 +136,7 @@ export default function ShowsPage() {
                 paddingRight: "10%",
               }}
             >
-              <Box sx={{ minHeight: "30vh", opacity: 0 }} />
+              <Box sx={{ minHeight: "15vh", opacity: 0 }} />
               {shows
                 .filter((_, i) => i % 2 === 0)
                 .map((img, index) => (
@@ -173,7 +173,7 @@ export default function ShowsPage() {
                 paddingLeft: "10%",
               }}
             >
-              <Box sx={{ minHeight: "30vh", opacity: 0 }} />
+              <Box sx={{ minHeight: "15vh", opacity: 0 }} />
               {shows
                 .filter((_, i) => i % 2 === 1)
                 .map((img, index) => (

@@ -1,5 +1,7 @@
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import { Box, Button, Typography } from "@mui/material";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import TopLeft from "../../utils/TopLeft";
 import TopBarMobile from "../../utils/TopBarMobile";
 import GodReleasesView from "./GodReleasesView";
@@ -88,28 +90,17 @@ function BookingLine() {
 
 // ─── Main Page ────────────────────────────────────────────────────────────────
 export default function GodPage() {
+  const navigate = useNavigate();
   const [isMobile, setIsMobile] = useState(false);
   const [activeView, setActiveView] = useState("releases");
   const [bioExpanded, setBioExpanded] = useState(false);
-  const [photoHeight, setPhotoHeight] = useState(0);
-  const photoRef = useRef(null);
 
   useEffect(() => {
-    const measure = () => {
-      if (photoRef.current) setPhotoHeight(photoRef.current.offsetHeight);
-    };
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-      measure();
-    };
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
-  const handlePhotoLoad = () => {
-    if (photoRef.current) setPhotoHeight(photoRef.current.offsetHeight);
-  };
 
   // ─── Mobile View ────────────────────────────────────────────────────────────
   if (isMobile) {
@@ -140,10 +131,8 @@ export default function GodPage() {
             {/* Portrait photo */}
             <Box sx={{ width: "100%", marginBottom: "1.5rem" }}>
               <img
-                ref={photoRef}
                 src={artistPhoto}
                 alt="99 God"
-                onLoad={handlePhotoLoad}
                 style={{ width: "100%", height: "auto", display: "block" }}
               />
             </Box>
@@ -286,7 +275,6 @@ export default function GodPage() {
             <BookingLine />
           </Box>
         </Box>
-
       </Box>
     );
   }
@@ -322,6 +310,24 @@ export default function GodPage() {
             paddingTop: "6rem",
           }}
         >
+          {/* Back button row */}
+          <Button
+            onClick={() => navigate("/artist")}
+            sx={{
+              color: "white",
+              fontFamily: "Anton, sans-serif",
+              fontSize: "20px",
+              letterSpacing: "1px",
+              minWidth: 0,
+              padding: "4px 8px",
+              marginBottom: "1rem",
+              "&:hover": { color: "#ff0000" },
+            }}
+          >
+            <ArrowBackIosIcon sx={{ fontSize: "20px", mr: "2px" }} />
+            BACK
+          </Button>
+
           {/* ── Upper section: two columns ── */}
           <Box
             sx={{
@@ -333,13 +339,13 @@ export default function GodPage() {
           >
             {/* Left: portrait photo */}
             <Box sx={{ width: "38%", flexShrink: 0 }}>
-              <img
-                ref={photoRef}
-                src={artistPhoto}
-                alt="99 God"
-                onLoad={handlePhotoLoad}
-                style={{ width: "100%", height: "auto", display: "block" }}
-              />
+              <Box sx={{ overflow: "hidden", maxHeight: "55vh" }}>
+                <img
+                  src={artistPhoto}
+                  alt="99 God"
+                  style={{ width: "100%", height: "auto", display: "block" }}
+                />
+              </Box>
             </Box>
 
             {/* Right: info column */}
@@ -348,11 +354,7 @@ export default function GodPage() {
                 flex: 1,
                 display: "flex",
                 flexDirection: "column",
-                // Height matches photo when collapsed; auto when expanded
-                height:
-                  photoHeight > 0 && !bioExpanded
-                    ? `${photoHeight}px`
-                    : "auto",
+                maxHeight: "55vh",
                 overflow: "hidden",
               }}
             >
@@ -363,20 +365,56 @@ export default function GodPage() {
                   fontFamily: "Anton, sans-serif",
                   fontSize: "64px",
                   lineHeight: 0.9,
-                  marginBottom: "1.5rem",
+                  marginBottom: "0.75rem",
                   flexShrink: 0,
                 }}
               >
                 99 GOD
               </Typography>
 
-              {/* Bio — fills remaining vertical space, overflows hidden */}
+              {/* Social links — below artist name */}
+              <Box
+                sx={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  gap: "0.5rem",
+                  flexShrink: 0,
+                  marginBottom: "1rem",
+                }}
+              >
+                {socialLinks.map((item, index) => (
+                  <Button
+                    key={index}
+                    variant="outlined"
+                    onClick={() => window.open(item.url, "_blank")}
+                    sx={{
+                      color: "white",
+                      borderColor: "white",
+                      fontFamily: "Anton, sans-serif",
+                      fontSize: "13px",
+                      "&:hover": { borderColor: "red", color: "red" },
+                    }}
+                  >
+                    {item.text}
+                  </Button>
+                ))}
+              </Box>
+
+              {/* Bio — scrollable, fills remaining column height */}
               <Box
                 sx={{
                   flex: 1,
-                  overflow: "hidden",
-                  position: "relative",
                   minHeight: 0,
+                  overflowY: "auto",
+                  scrollbarWidth: "thin",
+                  scrollbarColor: "rgba(255,255,255,0.3) transparent",
+                  "&::-webkit-scrollbar": { width: "4px" },
+                  "&::-webkit-scrollbar-thumb": {
+                    backgroundColor: "rgba(255,255,255,0.3)",
+                    borderRadius: "2px",
+                  },
+                  "&::-webkit-scrollbar-track": { background: "transparent" },
+                  paddingRight: "0.5rem",
                 }}
               >
                 <Typography
@@ -400,70 +438,6 @@ export default function GodPage() {
                 >
                   {bioCN}
                 </Typography>
-
-                {/* Gradient fade at bottom when collapsed */}
-                {!bioExpanded && photoHeight > 0 && (
-                  <Box
-                    sx={{
-                      position: "absolute",
-                      bottom: 0,
-                      left: 0,
-                      right: 0,
-                      height: "80px",
-                      background:
-                        "linear-gradient(to bottom, transparent, black)",
-                      pointerEvents: "none",
-                    }}
-                  />
-                )}
-              </Box>
-
-              {/* Read More / Show Less — only after photo has loaded */}
-              {photoHeight > 0 && (
-                <Typography
-                  onClick={() => setBioExpanded((p) => !p)}
-                  sx={{
-                    color: "rgba(255,255,255,0.55)",
-                    fontFamily: "Anton, sans-serif",
-                    fontSize: "13px",
-                    letterSpacing: "1px",
-                    cursor: "pointer",
-                    flexShrink: 0,
-                    marginTop: "0.5rem",
-                    marginBottom: "1rem",
-                    "&:hover": { color: "white" },
-                  }}
-                >
-                  {bioExpanded ? "SHOW LESS \u2191" : "READ MORE \u2193"}
-                </Typography>
-              )}
-
-              {/* Social links — pinned to bottom via marginTop:auto */}
-              <Box
-                sx={{
-                  display: "flex",
-                  flexWrap: "wrap",
-                  gap: "0.75rem",
-                  flexShrink: 0,
-                  marginTop: "auto",
-                }}
-              >
-                {socialLinks.map((item, index) => (
-                  <Button
-                    key={index}
-                    variant="outlined"
-                    onClick={() => window.open(item.url, "_blank")}
-                    sx={{
-                      color: "white",
-                      borderColor: "white",
-                      fontFamily: "Anton, sans-serif",
-                      fontSize: "13px",
-                      "&:hover": { borderColor: "red", color: "red" },
-                    }}
-                  >
-                    {item.text}
-                  </Button>
-                ))}
               </Box>
             </Box>
           </Box>
@@ -507,7 +481,6 @@ export default function GodPage() {
           <BookingLine />
         </Box>
       </Box>
-
     </Box>
   );
 }

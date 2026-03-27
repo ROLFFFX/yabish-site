@@ -10,12 +10,21 @@ const releasesData = [
   {
     id: 1,
     artist: "破地獄Scattered Purgatory",
-    title: "無奈",
-    date: "DEC 08, 2025",
+    title: "破地獄",
+    date: "JAN, 30 2026",
     cover:
       "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/3c94813f-17d5-492b-9c84-183c655e7200/public",
-    links: [{ label: "NETEASE", url: "https://music.163.com/" }],
-    tracks: ["無奈"],
+    links: [{ label: "Netease Cloud Music", url: "https://music.163.com/#/album?id=359724028" }],
+    tracks: [
+      "緊牙地獄",
+      "無奈",
+      "風之腦",
+      "空笑夢",
+      "月之下",
+      "雲之上",
+      "KL20",
+      "海市蜃樓",
+    ],
   },
   {
     id: 2,
@@ -159,7 +168,6 @@ function ReleaseSlot({ data }) {
       sx={{
         display: "flex",
         flexDirection: isMobile ? "column" : "row",
-        // CHANGED: Aligns items to the top (text aligned with top of cover)
         alignItems: "flex-start",
         justifyContent: "center",
         // CHANGED: Reduced gap slightly for tighter feel
@@ -175,9 +183,8 @@ function ReleaseSlot({ data }) {
         component={motion.div}
         whileHover={{ scale: 1.02 }}
         sx={{
-          // CHANGED: Reduced width from 300px to 240px for desktop
-          width: isMobile ? "100%" : "240px",
-          maxWidth: "300px",
+          width: isMobile ? "100%" : "360px",
+          maxWidth: "360px",
           flexShrink: 0,
           margin: isMobile ? "0 auto" : 0,
         }}
@@ -186,9 +193,9 @@ function ReleaseSlot({ data }) {
           src={data.cover}
           alt={data.title}
           style={{
+            display: "block",
             width: "100%",
             height: "auto",
-            display: "block",
           }}
         />
       </Box>
@@ -202,8 +209,7 @@ function ReleaseSlot({ data }) {
           alignItems: "flex-start",
           color: "white",
           width: "100%",
-          // CHANGED: Added slight padding top if image needs offset, or keep 0 for strict top alignment
-          paddingTop: isMobile ? "0" : "0",
+          paddingTop: "0",
         }}
       >
         {/* 1. Artist Name (Anton) */}

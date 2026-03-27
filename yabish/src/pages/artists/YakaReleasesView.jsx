@@ -40,7 +40,7 @@ const releases = [
   {
     id: 2,
     title: "¡2busy4u! Jungle Rage *LP",
-    date: "FEB 2024",
+    date: "FEB 5 2024",
     cover:
       "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/8eb3ae31-5b92-430c-5a6a-e3ce37318700/public",
     links: [

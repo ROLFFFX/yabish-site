@@ -1,5 +1,7 @@
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import { Box, Button, Typography } from "@mui/material";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import TopLeft from "../../utils/TopLeft";
 import TopBarMobile from "../../utils/TopBarMobile";
 import YakaReleasesView from "./YakaReleasesView";
@@ -89,34 +91,17 @@ function BookingLine() {
 
 // ─── Main Page ────────────────────────────────────────────────────────────────
 export default function YakaPage() {
+  const navigate = useNavigate();
   const [isMobile, setIsMobile] = useState(false);
   const [activeView, setActiveView] = useState("releases");
   const [bioExpanded, setBioExpanded] = useState(false);
-  const [photoHeight, setPhotoHeight] = useState(0);
-  const photoRef = useRef(null);
 
   useEffect(() => {
-    const measure = () => {
-      if (photoRef.current) {
-        const cap = Math.round(window.innerHeight * 0.55);
-        setPhotoHeight(Math.min(photoRef.current.offsetHeight, cap));
-      }
-    };
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-      measure();
-    };
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
-  const handlePhotoLoad = () => {
-    if (photoRef.current) {
-      const cap = Math.round(window.innerHeight * 0.55);
-      setPhotoHeight(Math.min(photoRef.current.offsetHeight, cap));
-    }
-  };
 
   // ─── Mobile View ────────────────────────────────────────────────────────────
   if (isMobile) {
@@ -146,10 +131,8 @@ export default function YakaPage() {
             {/* Portrait photo */}
             <Box sx={{ width: "100%", marginBottom: "1.5rem", overflow: "hidden", maxHeight: "55vh" }}>
               <img
-                ref={photoRef}
                 src={artistPhoto}
                 alt="Yaka"
-                onLoad={handlePhotoLoad}
                 style={{ width: "100%", height: "auto", display: "block" }}
               />
             </Box>
@@ -325,6 +308,24 @@ export default function YakaPage() {
             paddingTop: "6rem",
           }}
         >
+          {/* Back button row */}
+          <Button
+            onClick={() => navigate("/artist")}
+            sx={{
+              color: "white",
+              fontFamily: "Anton, sans-serif",
+              fontSize: "20px",
+              letterSpacing: "1px",
+              minWidth: 0,
+              padding: "4px 8px",
+              marginBottom: "1rem",
+              "&:hover": { color: "#ff0000" },
+            }}
+          >
+            <ArrowBackIosIcon sx={{ fontSize: "20px", mr: "2px" }} />
+            BACK
+          </Button>
+
           {/* ── Upper section: two columns ── */}
           <Box
             sx={{
@@ -335,18 +336,18 @@ export default function YakaPage() {
             }}
           >
             {/* Left: portrait photo */}
-            <Box sx={{ width: "38%", flexShrink: 0, overflow: "hidden", maxHeight: "55vh" }}>
-              <img
-                ref={photoRef}
-                src={artistPhoto}
-                alt="Yaka"
-                onLoad={handlePhotoLoad}
-                style={{
-                  width: "100%",
-                  height: "auto",
-                  display: "block",
-                }}
-              />
+            <Box sx={{ width: "38%", flexShrink: 0 }}>
+              <Box sx={{ overflow: "hidden", maxHeight: "55vh" }}>
+                <img
+                  src={artistPhoto}
+                  alt="Yaka"
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                    display: "block",
+                  }}
+                />
+              </Box>
             </Box>
 
             {/* Right: info column */}
@@ -355,32 +356,72 @@ export default function YakaPage() {
                 flex: 1,
                 display: "flex",
                 flexDirection: "column",
-                height:
-                  photoHeight > 0 && !bioExpanded ? `${photoHeight}px` : "auto",
+                maxHeight: "55vh",
                 overflow: "hidden",
               }}
             >
-              {/* Artist name */}
-              <Typography
+              {/* Artist name + social links */}
+              <Box
                 sx={{
-                  color: "white",
-                  fontFamily: "Anton, sans-serif",
-                  fontSize: "64px",
-                  lineHeight: 0.9,
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "1.5rem",
                   marginBottom: "1.5rem",
                   flexShrink: 0,
+                  flexWrap: "wrap",
                 }}
               >
-                YAKA
-              </Typography>
+                <Typography
+                  sx={{
+                    color: "white",
+                    fontFamily: "Anton, sans-serif",
+                    fontSize: "64px",
+                    lineHeight: 0.9,
+                  }}
+                >
+                  YAKA
+                </Typography>
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexWrap: "wrap",
+                    gap: "0.5rem",
+                  }}
+                >
+                  {socialLinks.map((item, index) => (
+                    <Button
+                      key={index}
+                      variant="outlined"
+                      onClick={() => window.open(item.url, "_blank")}
+                      sx={{
+                        color: "white",
+                        borderColor: "white",
+                        fontFamily: "Anton, sans-serif",
+                        fontSize: "13px",
+                        "&:hover": { borderColor: "red", color: "red" },
+                      }}
+                    >
+                      {item.text}
+                    </Button>
+                  ))}
+                </Box>
+              </Box>
 
-              {/* Bio */}
+              {/* Bio — scrollable, fills remaining column height */}
               <Box
                 sx={{
                   flex: 1,
-                  overflow: "hidden",
-                  position: "relative",
                   minHeight: 0,
+                  overflowY: "auto",
+                  scrollbarWidth: "thin",
+                  scrollbarColor: "rgba(255,255,255,0.3) transparent",
+                  "&::-webkit-scrollbar": { width: "4px" },
+                  "&::-webkit-scrollbar-thumb": {
+                    backgroundColor: "rgba(255,255,255,0.3)",
+                    borderRadius: "2px",
+                  },
+                  "&::-webkit-scrollbar-track": { background: "transparent" },
+                  paddingRight: "0.5rem",
                 }}
               >
                 <Typography
@@ -404,71 +445,8 @@ export default function YakaPage() {
                 >
                   {bioCN}
                 </Typography>
-
-                {/* Gradient fade when collapsed */}
-                {!bioExpanded && photoHeight > 0 && (
-                  <Box
-                    sx={{
-                      position: "absolute",
-                      bottom: 0,
-                      left: 0,
-                      right: 0,
-                      height: "80px",
-                      background:
-                        "linear-gradient(to bottom, transparent, black)",
-                      pointerEvents: "none",
-                    }}
-                  />
-                )}
               </Box>
 
-              {/* Read More / Show Less */}
-              {photoHeight > 0 && (
-                <Typography
-                  onClick={() => setBioExpanded((p) => !p)}
-                  sx={{
-                    color: "rgba(255,255,255,0.55)",
-                    fontFamily: "Anton, sans-serif",
-                    fontSize: "13px",
-                    letterSpacing: "1px",
-                    cursor: "pointer",
-                    flexShrink: 0,
-                    marginTop: "0.5rem",
-                    marginBottom: "1rem",
-                    "&:hover": { color: "white" },
-                  }}
-                >
-                  {bioExpanded ? "SHOW LESS ↑" : "READ MORE ↓"}
-                </Typography>
-              )}
-
-              {/* Social links — pinned to bottom */}
-              <Box
-                sx={{
-                  display: "flex",
-                  flexWrap: "wrap",
-                  gap: "0.75rem",
-                  flexShrink: 0,
-                  marginTop: "auto",
-                }}
-              >
-                {socialLinks.map((item, index) => (
-                  <Button
-                    key={index}
-                    variant="outlined"
-                    onClick={() => window.open(item.url, "_blank")}
-                    sx={{
-                      color: "white",
-                      borderColor: "white",
-                      fontFamily: "Anton, sans-serif",
-                      fontSize: "13px",
-                      "&:hover": { borderColor: "red", color: "red" },
-                    }}
-                  >
-                    {item.text}
-                  </Button>
-                ))}
-              </Box>
             </Box>
           </Box>
 

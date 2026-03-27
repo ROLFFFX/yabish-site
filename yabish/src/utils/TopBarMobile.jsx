@@ -78,7 +78,7 @@ export default function TopBarMobile() {
         }}
       >
         <MenuItem label="Artists" path="/artist" />
-        <MenuItem label="Release" path="/release" />
+        <MenuItem label="Releases" path="/release" />
         <MenuItem label="Shows" path="/shows" />
         <MenuItem label="About" path="/about" />
       </Box>

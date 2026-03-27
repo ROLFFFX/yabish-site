@@ -13,9 +13,11 @@ export default function TopLeft() {
     // 2. Determine if this item is active
     // We use .includes() so that sub-pages (e.g., /release/vol1) keep the parent highlighted
     // Check if location matches path OR if both are root-like (to avoid false positives)
+    const artistSubRoutes = ["/99god", "/yaka"];
     const isActive =
       location.pathname === path ||
-      (path !== "/" && location.pathname.startsWith(path));
+      (path !== "/" && location.pathname.startsWith(path)) ||
+      (path === "/artist" && artistSubRoutes.some((r) => location.pathname.startsWith(r)));
 
     return (
       <motion.div
@@ -82,7 +84,7 @@ export default function TopLeft() {
         >
           {/* 4. Render Items without manually setting 'active' */}
           <MenuItem label="Artists" path="/artist" />
-          <MenuItem label="Release" path="/release" />
+          <MenuItem label="Releases" path="/release" />
           <MenuItem label="Shows" path="/shows" />
           <MenuItem label="About" path="/about" />
         </Box>

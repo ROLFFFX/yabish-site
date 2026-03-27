@@ -87,7 +87,16 @@ export default function AboutPage() {
           >
             <br />
             CONTACT <br />
-            Artist Booking/Management: yabish.prod@gmail.com <br />
+            Artist Booking/Management:{" "}
+            <span
+              style={{ textDecoration: "underline", cursor: "pointer" }}
+              onMouseEnter={(e) => (e.target.style.color = "#ff0000")}
+              onMouseLeave={(e) => (e.target.style.color = "white")}
+              onClick={() => window.open("mailto:yabish.prod@gmail.com", "_blank")}
+            >
+              yabish.prod@gmail.com
+            </span>
+            <br />
             <br />
             FOLLOW ME
           </Typography>
@@ -187,7 +196,16 @@ export default function AboutPage() {
         >
           <br />
           CONTACT <br />
-          Artist Booking/Management: yabish.prod@gmail.com <br />
+          Artist Booking/Management:{" "}
+          <span
+            style={{ textDecoration: "underline", cursor: "pointer" }}
+            onMouseEnter={(e) => (e.target.style.color = "#ff0000")}
+            onMouseLeave={(e) => (e.target.style.color = "white")}
+            onClick={() => window.open("mailto:yabish.prod@gmail.com", "_blank")}
+          >
+            yabish.prod@gmail.com
+          </span>
+          <br />
           <br />
           FOLLOW ME
         </Typography>
