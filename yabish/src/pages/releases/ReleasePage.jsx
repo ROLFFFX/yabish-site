@@ -9,12 +9,32 @@ import TopLeft from "../../utils/TopLeft";
 const releasesData = [
   {
     id: 1,
+    artist: "99 God",
+    title: "SWAG",
+    date: "MAR 24, 2026",
+    cover:
+      "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/b5bf7e49-d3fd-4cec-82e2-a4bfa82b5300/public",
+    links: [{ label: "NETEASE MUSIC", url: "https://music.163.com/#/song?id=3362411549" }],
+    tracks: ["SWAG"],
+  },
+  {
+    id: 2,
+    artist: "99 God",
+    title: "Is It Love",
+    date: "FEB 13, 2026",
+    cover:
+      "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/b81bc7f6-7eac-436f-c3f1-c86bf3aa9300/public",
+    links: [{ label: "NETEASE MUSIC", url: "https://music.163.com/#/song?id=3349475371" }],
+    tracks: ["Is It Love"],
+  },
+  {
+    id: 3,
     artist: "破地獄Scattered Purgatory",
     title: "破地獄",
     date: "JAN, 30 2026",
     cover:
       "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/3c94813f-17d5-492b-9c84-183c655e7200/public",
-    links: [{ label: "Netease Cloud Music", url: "https://music.163.com/#/album?id=359724028" }],
+    links: [{ label: "NetEase Music", url: "https://music.163.com/#/album?id=359724028" }],
     tracks: [
       "緊牙地獄",
       "無奈",
@@ -27,7 +47,7 @@ const releasesData = [
     ],
   },
   {
-    id: 2,
+    id: 4,
     artist: "Yaka",
     title: "JUNGLE +",
     date: "NOV 13, 2025",
@@ -35,7 +55,7 @@ const releasesData = [
       "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/5a345212-4151-43c9-2478-a5eaf4d78500/public",
     links: [
       { label: "SPOTIFY", url: "https://spotify.com" },
-      { label: "NETEASE", url: "https://music.163.com/" },
+      { label: "NETEASE MUSIC", url: "https://music.163.com/" },
       { label: "APPLE MUSIC", url: "https://music.apple.com" },
     ],
     tracks: [
@@ -53,17 +73,17 @@ const releasesData = [
     ],
   },
   {
-    id: 3,
+    id: 5,
     artist: "破地獄Scattered Purgatory",
     title: "DIASPORA",
     date: "NOV 11, 2025",
     cover:
       "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/82fd3277-caca-44f5-f37a-b1404cd18a00/public",
-    links: [{ label: "NETEASE", url: "https://music.163.com/" }],
+    links: [{ label: "NETEASE MUSIC", url: "https://music.163.com/" }],
     tracks: ["Diaspora"],
   },
   {
-    id: 4,
+    id: 6,
     artist: "99 God",
     title: "飞(FEY)1999",
     date: "JUL 04, 2025",
@@ -71,7 +91,7 @@ const releasesData = [
       "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/f2d2d3de-9773-4b1f-0f04-11a65d25e400/public",
     links: [
       { label: "SPOTIFY", url: "https://spotify.com" },
-      { label: "NETEASE", url: "https://music.163.com/" },
+      { label: "NETEASE MUSIC", url: "https://music.163.com/" },
       { label: "APPLE MUSIC", url: "https://music.apple.com" },
     ],
     tracks: [
@@ -87,27 +107,27 @@ const releasesData = [
     ],
   },
   {
-    id: 5,
+    id: 7,
     artist: "Rain Dogs",
     title: "HIGH SPEED",
     date: "JUN 24, 2025",
     cover:
       "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/f16a7684-0b12-4b9a-fbc0-e7644fc55f00/public",
-    links: [{ label: "NETEASE", url: "https://music.163.com/" }],
+    links: [{ label: "NETEASE MUSIC", url: "https://music.163.com/" }],
     tracks: ["High Speed"],
   },
   {
-    id: 6,
+    id: 8,
     artist: "Rain Dogs",
     title: "DISINTEGRATE",
     date: "APR 23, 2025",
     cover:
       "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/70dd2a52-6b8f-4ad4-ae19-fe23b7d1c600/public",
-    links: [{ label: "NETEASE", url: "https://music.163.com/" }],
+    links: [{ label: "NETEASE MUSIC", url: "https://music.163.com/" }],
     tracks: ["Disintegrate"],
   },
   {
-    id: 7,
+    id: 9,
     artist: "99 God",
     title: "BODEGA (feat.PAIN)(Remix)",
     date: "MAR 15, 2025",
@@ -120,33 +140,33 @@ const releasesData = [
     tracks: ["Bodega(feat.PAIN)(Remix)"],
   },
   {
-    id: 8,
+    id: 10,
     artist: "Rain Dogs",
     title: "MORE THAN DESIRE",
     date: "AUG 03, 2023",
     cover:
       "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/93422ebb-4b72-4f25-4036-53e8901d5200/public",
-    links: [{ label: "NETEASE", url: "https://music.163.com/" }],
+    links: [{ label: "NETEASE MUSIC", url: "https://music.163.com/" }],
     tracks: ["More Than Desire"],
   },
   {
-    id: 9,
+    id: 11,
     artist: "Rain Dogs",
     title: "NIGHTS ARE LONELY",
     date: "FEB 10, 2023",
     cover:
       "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/7585b422-8cc0-4727-21db-b3e5fec70100/public",
-    links: [{ label: "NETEASE", url: "https://music.163.com/" }],
+    links: [{ label: "NETEASE MUSIC", url: "https://music.163.com/" }],
     tracks: ["Nights Are Lonely"],
   },
   {
-    id: 10,
+    id: 12,
     artist: "Rain Dogs",
     title: "RAIN DOGS",
     date: "JAN 27, 2021",
     cover:
       "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/459c0c0e-ab70-4da5-80de-9b862057eb00/public",
-    links: [{ label: "NETEASE", url: "https://music.163.com/" }],
+    links: [{ label: "NETEASE MUSIC", url: "https://music.163.com/" }],
     tracks: [
       "Perilous Woman",
       "Catacomb Eyes",
@@ -161,7 +181,7 @@ const releasesData = [
 // 1. RELEASE SLOT
 // #######################################################################
 function ReleaseSlot({ data }) {
-  const isMobile = useMediaQuery("(max-width:768px)");
+  const isMobile = useMediaQuery("(max-width:1024px)");
 
   return (
     <Box
@@ -379,7 +399,7 @@ function ReleaseSlot({ data }) {
 // 2. MAIN PAGE
 // #######################################################################
 export default function ReleasePage() {
-  const isMobile = useMediaQuery("(max-width:768px)");
+  const isMobile = useMediaQuery("(max-width:1024px)");
   const contentRef = useRef();
 
   return (

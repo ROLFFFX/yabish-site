@@ -21,18 +21,32 @@ const socialLinks = [
     url: "https://music.apple.com/cn/artist/99-god/1530452342",
   },
   { text: "YouTube", url: "https://www.youtube.com/@99god19" },
-  { text: "Netease", url: "https://music.163.com/#/artist?id=31511662" },
+  { text: "NetEase Music", url: "https://music.163.com/#/artist?id=31511662" },
   {
     text: "QQMusic",
     url: "https://c6.y.qq.com/base/fcgi-bin/u?__=YAJ3eRkWzeOb",
   },
 ];
 
-const bioEN =
-  'Hailing from Shanghai and splitting time between China and New York \u2013 99 God is an anomaly in Chinese Hip-Hop. With a distinctively deep, gritty vocal style, he blends new school Trap beats with Neo-soul-infused melodic lines, reflecting his long-honed craft. Emerging as a top independent artist, his 2019 debut \u201cUFO\u201d went viral, followed by collaborations with NINEONE and Al Rocco. His 2021 track \u201cBodega\u201d blew up in Japan in 2023, and he later crafted Valorant\u2019s \u201cRenegade\u201d (Billboard-nominated), completed two solo tours (2024\u20132025), and released his debut mixtape \u201cFEY1999\u201d in 2025, solidifying his cross-border status.';
+const bioEN = `Hailing from Shanghai and splitting his time between China and New York City, 99 God is an anomaly in the Hip-Hop scene. His distinctively deep, gritty vocal delivery captivates listeners over signature new school Trap beats, while his laid-back, raspy melodic lines floating on Neo-soul–influenced production reveal the depth of an artist who has long cultivated his craft in the heart of Hip-Hop.
 
-const bioCN =
-  "\u6765\u81EA\u4E0A\u6D77\u3001\u5E38\u5E74\u5F80\u8FD4\u4E2D\u7F8E\u768499 God\uFF0C\u662F\u534E\u8BED\u55BB\u54C8\u573A\u666F\u7684\u5F02\u7C7B\u529B\u91CF\u3002\u4ED6\u4EE5\u72EC\u7279\u6DF1\u6C89\u7684\u78C1\u6027\u5D13\u97F3\uFF0C\u878D\u5408\u65B0\u6D3ETrap\u8282\u594F\u4E0ENeo-soul\u6175\u61D2\u65CB\u5F8B\uFF0C\u5C3D\u663E\u6DF1\u8015\u97F3\u4E50\u7684\u539A\u5EA6\u3002\u4F5C\u4E3A\u9876\u5C16\u72EC\u7ACB\u97F3\u4E50\u4EBA\uFF0C2019\u5E74\u9996\u5355\u300AUFO\u300B\u7206\u7EA2\uFF0C\u540E\u4E0E\u4E43\u4E07\u3001Al Rocco\u7B49\u5408\u4F5C\uFF1B2023\u5E74\u65E7\u4F5C\u300ABodega\u300B\u767B\u9876\u65E5\u672C viral \u699C\uFF0C\u4E3A\u300A\u65E0\u754F\u5951\u7EA6\u300B\u521B\u4F5C\u7684\u300ARenegade\u300B\u83B7 Billboard \u63D0\u540D\u30022024-2025\u5E74\u5B8C\u6210\u4E24\u8F6E\u4E2A\u4EBA\u5DE1\u6F14\uFF0C\u63A8\u51FA\u9996\u5F20Mixtape\u300A\u98DE1999\u300B\uFF0C\u7A33\u56FA\u8DE8\u6587\u5316\u55BB\u54C8\u529B\u91CF\u5730\u4F4D\u3002";
+As one of the most successful independent artists to emerge from China, 99 God launched his career with his debut single "UFO" in 2019. The track went viral across Chinese internet platforms, and soon after, he collaborated with artists such as NINEONE, Al Rocco, Lil Andy, and Cassian, quickly amassing over 400,000 followers on NetEase Music.
+
+2023 marked a new chapter for 99 God. His two-year-old single "Bodega" unexpectedly blew up on Japanese social media, reaching #1 on Japan's Viral Hot 100 chart and earning 2.6 million streams on Spotify while boosting his monthly listeners to over 200,000. Riding this momentum, he teamed up with Riot Games to produce "Renegade," the theme song for Valorant's first Chinese agent. The collaboration not only resonated globally but also earned a Billboard nomination for Best Music Supervision in a Trailer – Video Game & Interactive.
+
+In 2024, 99 God completed his first solo tour, "Ninety-Nine," with guest appearances from PSY.P, Melo, Mengzi, Feezy, B.C.W., Dough Boy, and AsiaBoy.
+
+In 2025, he returned with his highly anticipated debut mixtape "FEY1999" and launched his second solo tour under the same name, further cementing his place as a cross-border force in contemporary Hip-Hop.`;
+
+const bioCN = `来自上海，并常年往返于中国上海与美国纽约两地的 99 God，是华语嘻哈场景中的一股异类力量。凭借独特而深沉的磁性嗓音，他在新派Trap节奏上为听众带来催眠般的感染力；同时，融合Neo-soul影响的慵懒旋律线条，又展现出他长期深耕布鲁克林音乐氛围所积累的厚度与质感。
+
+作为中国最成功的独立音乐人之一，99 God 的职业生涯始于2019年推出的首支单曲《UFO》。这首作品迅速在国内互联网上掀起现象级热潮，此后他与乃万、Al Rocco、小安迪、卡西恩等歌手合作，仅两年时间便在网易云音乐上收获了超过40万粉丝。
+
+2023年，99 God迎来全新篇章。他在两年前发布的单曲《Bodega》突然于日本社交媒体爆红，登顶日本 Viral Hot 100 热门榜单，并在Spotify上斩获260万次播放，月度听众突破20万。随后，他与拳头游戏合作，为《无畏契约》（Valorant）国服首位中国特工打造主题曲《Renegade》，该合作不仅在全球范围内引发热议，还获得美国《Billboard》公告牌"年度最佳预告片音乐监制——游戏与交互媒体"提名。
+
+2024年，他完成了首个个人巡演「九十九」，并邀请PSY.P、Melo、孟子、Feezy、B.C.W.、Dough Boy、AsiaBoy等多位知名嘉宾助阵。
+
+2025年，99 God带着首张全新Mixtape《飞1999》重磅回归，并于当年8月开启了同名个人巡演，再次巩固了其作为跨文化嘻哈力量的独特地位。`;
 
 // ─── Tab style helper ─────────────────────────────────────────────────────────
 const tabSx = (isActive) => ({
@@ -166,6 +180,7 @@ export default function GodPage() {
                     fontSize: "16px",
                     lineHeight: 1.6,
                     marginBottom: "0.75rem",
+                    whiteSpace: "pre-line",
                   }}
                 >
                   {bioEN}
@@ -176,6 +191,7 @@ export default function GodPage() {
                     fontFamily: "Glow Sans SC Compressed, sans-serif",
                     fontSize: "16px",
                     lineHeight: 1.6,
+                    whiteSpace: "pre-line",
                   }}
                 >
                   {bioCN}
@@ -334,16 +350,23 @@ export default function GodPage() {
               display: "flex",
               flexDirection: "row",
               gap: "3rem",
-              alignItems: "flex-start",
+              alignItems: "stretch",
+              height: "55vh",
             }}
           >
             {/* Left: portrait photo */}
-            <Box sx={{ width: "38%", flexShrink: 0 }}>
-              <Box sx={{ overflow: "hidden", maxHeight: "55vh" }}>
+            <Box sx={{ width: "38%", flexShrink: 0, height: "100%" }}>
+              <Box sx={{ overflow: "hidden", height: "100%" }}>
                 <img
                   src={artistPhoto}
                   alt="99 God"
-                  style={{ width: "100%", height: "auto", display: "block" }}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    display: "block",
+                    objectFit: "cover",
+                    objectPosition: "top",
+                  }}
                 />
               </Box>
             </Box>
@@ -354,7 +377,7 @@ export default function GodPage() {
                 flex: 1,
                 display: "flex",
                 flexDirection: "column",
-                maxHeight: "55vh",
+                height: "100%",
                 overflow: "hidden",
               }}
             >
@@ -424,6 +447,7 @@ export default function GodPage() {
                     fontSize: "17px",
                     lineHeight: 1.65,
                     marginBottom: "1rem",
+                    whiteSpace: "pre-line",
                   }}
                 >
                   {bioEN}
@@ -434,6 +458,7 @@ export default function GodPage() {
                     fontFamily: "Glow Sans SC Compressed, sans-serif",
                     fontSize: "17px",
                     lineHeight: 1.65,
+                    whiteSpace: "pre-line",
                   }}
                 >
                   {bioCN}

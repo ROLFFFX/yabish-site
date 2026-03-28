@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import godbgvid from "../../assets/pics/99godbgvid.webm";
 import yakabgvid from "../../assets/pics/yakabgvid.webm";
+import yakabgvidMobile from "../../assets/pics/yakabgvid-mobile.webm";
 import TopLeft from "../../utils/TopLeft";
 import TopBarMobile from "../../utils/TopBarMobile";
 
@@ -20,7 +21,7 @@ export default function ArtistMainPage() {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
+      setIsMobile(window.innerWidth <= 1024);
     };
     handleResize();
     window.addEventListener("resize", handleResize);
@@ -83,7 +84,7 @@ export default function ArtistMainPage() {
           }}
         >
           <video
-            src={yakabgvid}
+            src={yakabgvidMobile}
             autoPlay
             muted
             loop
@@ -195,6 +196,8 @@ export default function ArtistMainPage() {
             © YABISH 2024
           </Typography>
         </Box>
+
+
       </Box>
     );
   }

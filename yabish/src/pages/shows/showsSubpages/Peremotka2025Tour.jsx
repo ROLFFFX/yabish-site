@@ -18,7 +18,7 @@ export default function Peremotka2025Tour() {
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
+      setIsMobile(window.innerWidth <= 1024);
     };
     handleResize();
     window.addEventListener("resize", handleResize);
@@ -146,7 +146,7 @@ export default function Peremotka2025Tour() {
                   url: "https://www.youtube.com/@peremotka_band",
                 },
                 {
-                  text: "NETEASE CLOUD MUSIC",
+                  text: "NETEASE MUSIC",
                   url: "https://music.163.com/#/artist?id=13021419",
                 },
                 {
@@ -440,7 +440,7 @@ export default function Peremotka2025Tour() {
                 url: "https://www.youtube.com/@peremotka_band",
               },
               {
-                text: "NETEASE CLOUD MUSIC",
+                text: "NETEASE MUSIC",
                 url: "https://music.163.com/#/artist?id=13021419",
               },
               {

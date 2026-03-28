@@ -22,7 +22,7 @@ const socialLinks = [
   },
   { text: "YouTube", url: "https://www.youtube.com/@yaka2047" },
   {
-    text: "Netease",
+    text: "NetEase Music",
     url: "https://music.163.com/#/artist?id=32992079",
   },
   {
@@ -31,11 +31,21 @@ const socialLinks = [
   },
 ];
 
-const bioEN =
-  'Shanghai-born Gen Z artist Yaka continues to define his distinct voice in China\'s underground music scene with new album "JUNGLE +". Blending Jungle, Techno, Bass Music, broken-beat percussion and classic Mandopop samples into Hip-Hop, his sound fuses Eastern hues with untamed jungle rhythms. Rooted in Atlanta\'s hip-hop scene, he honed his craft across Shanghai/Chengdu\'s mainstream and underground circuits post-2022, developing his "Jungle Rage" aesthetic. 2024 saw his debut LP earn critical acclaim (UPEE Top 7 2024), mainstream collaborations (GAI, Valorant), and global performances (Seoul, Tokyo, NYC). "JUNGLE +" deepens his sampling approach—deconstructing Mandopop classics—solidifying his cross-border appeal.';
+const bioEN = `Hailing from Shanghai, China, Yaka is an independent artist whose work operates at the margins of Electronic music, Hip-Hop, and Mandarin pop. Drawing rhythmic frameworks and textures from Jungle, Techno, Tribal, and bass music, he centers his sound around chopped-up breakbeats and re-contextualized Chinese sampling, embedding hip-hop's pulse into dense, high-energy dance structures. The result is a psychedelic, rhythm-driven sonic jungle with an East-Asian sensibility, now recognized by fans as Jungle Rage.
 
-const bioCN =
-  '来自上海的Z世代全能音乐人Yaka，携新专辑《JUNGLE +》深耕华语地下音乐场景。他将Jungle、Techno等电子元素与碎拍鼓点、经典华语采样融入Hip-Hop，打造出兼具东方色彩与迷幻丛林律动的独特风格。其音乐植根亚特兰大嘻哈文化，2022年回国后辗转沪蓉，在主流制作与地下派对中淬炼出"Jungle Rage"美学。2024年首专获UPEE年度第七，受邀为GAI、《无畏契约》制作音乐，足迹遍及首尔、东京、纽约。《JUNGLE +》舍弃Rage元素，以解构重组的采样艺术，彰显跨文化音乐魅力。';
+Since 2024, Yaka has gradually emerged across underground music scenes in China and the United States. After relocating to Brooklyn with his team, he expanded his practice through ambitious collaborative projects and dynamic live performances. His debut album, ¡2busy4u! Jungle Rage LP, was widely acclaimed by Chinese critics and subculture media as a defining underground release, celebrated for its raw energy and highly stylized collage approach.
+
+Beyond his solo work, Yaka has contributed to music production for Riot Games' VALORANT and China's leading Pop Rap artists, including GAI. He co-founded the creative collective 99 God and performed on stadium-scale stages such as Innersect Festival in Changzhou. His international appearances include a live set for @visla.fm in Seoul, performances curated by Tokyo-based subculture platform @sabukaru.online in Shanghai, and the full premiere recording of his new album at an NTS Radio-supported event in New York's Chinatown.
+
+In November 2025, Yaka surprise-released JUNGLE+. Moving away from the overt aggression of his earlier work, the album strips back the externalized "rage," focusing on emotional depth in sampling and structural tension. Within a nuanced dancefloor logic, JUNGLE+ foregrounds personal narrative and internal momentum. Since its release, the album has received widespread attention and multiple nominations, including: Best Electronic/Dance Album at NetEase Music's Indie Original Music Awards, Best Album/Best Produced Album/Best Cross-Genre Hip-Hop Album at the China Rap Music Awards, and Best Electronic Album at the 5th HOPICO Music Awards.`;
+
+const bioCN = `Yaka 是来自上海的独立音乐人，其创作游走于电子音乐、Hip-Hop 与华语流行的交接地带。他从 Jungle、Techno、Tribal 与 Bass Music 中提炼节奏与质感，以碎拍鼓点和再语境化的采样为核心，将 Hip-Hop 的脉搏注入高密度舞曲结构之中，形成一种带有东方感知的迷幻丛林声响体系——Jungle Rage。
+
+自 2024 年起，Yaka 以这一声音语言在中美地下音乐场景逐渐崭露头角。随团队迁居纽约布鲁克林，他通过跨界合作与活力十足的现场演出不断拓展创作实践。其个人专辑《¡2busy4u! Jungle Rage LP》凭借极端能量与高度风格化的拼贴手法，被多家国内乐评与亚文化媒体评为年度专辑及地下制作的重要样本。
+
+在跨界合作方面，Yaka 曾为说唱歌手 GAI 、拳头游戏《VALORANT 无畏契约》以及多位国内主流说唱歌手参与音乐制作；同时与 99 God 组建创意团队，并登上 Innersect 音乐节体育场舞台。国际演出包括首尔 visla.fm 的线上直播 live set、东京亚文化媒体 sabukaru.online 在上海策划的现场演出，以及纽约 NTS Radio 支持的大地舞厅活动中对新专辑《JUNGLE+》的完整首演录制。
+
+2025 年 11 月，Yaka 无预警发布专辑《JUNGLE+》。相较前作的直接攻击性，该作品有意抽离 "Rage" 的外放表达，将重心转向采样的情绪密度与结构张力，在更内敛的舞池逻辑中呈现个人叙事。专辑发布后获得多项关注与提名，包括网易云音乐硬地原创榜「最佳电子 / 舞曲专辑」，中文说唱音乐奖「年度专辑」「年度制作」「最佳说唱融合专辑」、第五届HOPICO音乐奖「年度最佳电子专辑」等。`;
 
 // ─── Tab style helper ─────────────────────────────────────────────────────────
 const tabSx = (isActive) => ({
@@ -166,6 +176,7 @@ export default function YakaPage() {
                     fontSize: "16px",
                     lineHeight: 1.6,
                     marginBottom: "0.75rem",
+                    whiteSpace: "pre-line",
                   }}
                 >
                   {bioEN}
@@ -176,6 +187,7 @@ export default function YakaPage() {
                     fontFamily: "Glow Sans SC Compressed, sans-serif",
                     fontSize: "16px",
                     lineHeight: 1.6,
+                    whiteSpace: "pre-line",
                   }}
                 >
                   {bioCN}
@@ -332,19 +344,22 @@ export default function YakaPage() {
               display: "flex",
               flexDirection: "row",
               gap: "3rem",
-              alignItems: "flex-start",
+              alignItems: "stretch",
+              height: "55vh",
             }}
           >
             {/* Left: portrait photo */}
-            <Box sx={{ width: "38%", flexShrink: 0 }}>
-              <Box sx={{ overflow: "hidden", maxHeight: "55vh" }}>
+            <Box sx={{ width: "38%", flexShrink: 0, height: "100%" }}>
+              <Box sx={{ overflow: "hidden", height: "100%" }}>
                 <img
                   src={artistPhoto}
                   alt="Yaka"
                   style={{
                     width: "100%",
-                    height: "auto",
+                    height: "100%",
                     display: "block",
+                    objectFit: "cover",
+                    objectPosition: "top",
                   }}
                 />
               </Box>
@@ -356,7 +371,7 @@ export default function YakaPage() {
                 flex: 1,
                 display: "flex",
                 flexDirection: "column",
-                maxHeight: "55vh",
+                height: "100%",
                 overflow: "hidden",
               }}
             >
@@ -431,6 +446,7 @@ export default function YakaPage() {
                     fontSize: "17px",
                     lineHeight: 1.65,
                     marginBottom: "1rem",
+                    whiteSpace: "pre-line",
                   }}
                 >
                   {bioEN}
@@ -441,6 +457,7 @@ export default function YakaPage() {
                     fontFamily: "Glow Sans SC Compressed, sans-serif",
                     fontSize: "17px",
                     lineHeight: 1.65,
+                    whiteSpace: "pre-line",
                   }}
                 >
                   {bioCN}
