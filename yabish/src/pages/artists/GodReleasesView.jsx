@@ -8,6 +8,36 @@ import React, { useEffect, useState } from "react";
 const releases = [
   {
     id: 1,
+    title: "SWAG",
+    date: "MAR 24, 2026",
+    cover:
+      "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/b5bf7e49-d3fd-4cec-82e2-a4bfa82b5300/public",
+    links: [
+      {
+        label: "NETEASE MUSIC",
+        url: "https://music.163.com/#/song?id=3362411549",
+      },
+    ],
+    tracks: ["SWAG"],
+  },
+
+  {
+    id: 2,
+    title: "Is It Love",
+    date: "FEB 13, 2026",
+    cover:
+      "https://imagedelivery.net/luUTa6EFyOmipDilm9a3Jw/b81bc7f6-7eac-436f-c3f1-c86bf3aa9300/public",
+    links: [
+      {
+        label: "NETEASE MUSIC",
+        url: "https://music.163.com/#/song?id=3349475371",
+      },
+    ],
+    tracks: ["Is It Love"],
+  },
+
+  {
+    id: 3,
     title: "飞(FEY)1999",
     date: "JUL 04, 2025",
     cover:
@@ -18,7 +48,7 @@ const releases = [
         url: "https://open.spotify.com/artist/1fSNmkI8lKMFVMU2Y4hpgi?si=thjriNdTQfGEDfLL9y5_AA",
       },
       {
-        label: "NETEASE",
+        label: "NETEASE MUSIC",
         url: "https://music.163.com/#/artist?id=31511662",
       },
       {
@@ -40,7 +70,7 @@ const releases = [
   },
 
   {
-    id: 2,
+    id: 4,
     title: "Bodega (feat.PAIN)(Remix)",
     date: "MAR 15, 2025",
     cover:
@@ -59,7 +89,7 @@ const releases = [
   },
 
   {
-    id: 3,
+    id: 5,
     title: "M&M",
     date: "DEC 06, 2024",
     cover:
@@ -74,7 +104,7 @@ const releases = [
         url: "https://music.apple.com/cn/album/m-m-single/1782515295?l=en-GB",
       },
       {
-        label: "NETEASE",
+        label: "NETEASE MUSIC",
         url: "https://music.163.com/album?id=255355701&userid=95505343",
       },
     ],
@@ -82,7 +112,7 @@ const releases = [
   },
 
   {
-    id: 4,
+    id: 6,
     title: "屁话2.0",
     date: "JUN 21, 2024",
     cover:
@@ -97,7 +127,7 @@ const releases = [
         url: "https://music.apple.com/cn/album/%E5%B1%81%E8%AF%9D2-0-single/1750853128?l=en-GB",
       },
       {
-        label: "NETEASE",
+        label: "NETEASE MUSIC",
         url: "https://music.163.com/album?id=197263992&userid=95505343",
       },
     ],
@@ -105,7 +135,7 @@ const releases = [
   },
 
   {
-    id: 5,
+    id: 7,
     title: "九十九",
     date: "JUN 06, 2024",
     cover:
@@ -120,7 +150,7 @@ const releases = [
         url: "https://music.apple.com/cn/album/%E4%B9%9D%E5%8D%81%E4%B9%9D/1751667289?i=1751667303&l=en-GB",
       },
       {
-        label: "NETEASE",
+        label: "NETEASE MUSIC",
         url: "https://music.163.com/album?id=198582041&userid=95505343",
       },
     ],
@@ -128,7 +158,7 @@ const releases = [
   },
 
   {
-    id: 6,
+    id: 8,
     title: "W2MT",
     date: "MAR 25, 2024",
     cover:
@@ -143,7 +173,7 @@ const releases = [
         url: "https://music.apple.com/cn/album/w2mt/1740719548?i=1740719554&l=en-GB",
       },
       {
-        label: "NETEASE",
+        label: "NETEASE MUSIC",
         url: "https://music.163.com/album?id=189738577&userid=95505343",
       },
     ],
@@ -151,7 +181,7 @@ const releases = [
   },
 
   {
-    id: 7,
+    id: 9,
     title: "ITS UP",
     date: "APR 19, 2024",
     cover:
@@ -162,7 +192,7 @@ const releases = [
         url: "https://open.spotify.com/album/74F7ag4M0fwZXC6HZ5yN6u?si=jixid4JFRweDqf6PfIqt1Q",
       },
       {
-        label: "NETEASE",
+        label: "NETEASE MUSIC",
         url: "https://music.163.com/album?id=191928832&userid=95505343",
       },
     ],
@@ -170,7 +200,7 @@ const releases = [
   },
 
   {
-    id: 8,
+    id: 10,
     title: "Summer DVD",
     date: "OCT 06, 2023",
     cover:
@@ -198,7 +228,7 @@ const releases = [
   //   cover: "",                         // Cloudflare image URL
   //   links: [
   //     { label: "SPOTIFY",     url: "" },
-  //     { label: "NETEASE",     url: "" },
+  //     { label: "NETEASE MUSIC",     url: "" },
   //     { label: "APPLE MUSIC", url: "" },
   //     { label: "YOUTUBE",     url: "" },  // add/remove as needed
   //   ],
@@ -392,7 +422,7 @@ export default function GodReleasesView() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    const handleResize = () => setIsMobile(window.innerWidth <= 1024);
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);

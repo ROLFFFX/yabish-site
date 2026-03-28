@@ -18,7 +18,7 @@ const releases = [
         url: "https://open.spotify.com/album/07Mny5tM3oXYRu2wDszOua?si=hvjroDC8QAuQ1G-s7osNvw",
       },
       {
-        label: "NETEASE",
+        label: "NETEASE MUSIC",
         url: "https://music.163.com/album?id=350275622&userid=95505343",
       },
     ],
@@ -53,7 +53,7 @@ const releases = [
         url: "https://music.apple.com/cn/album/2busy4u-jungle-rage-lp/1730415177?l=en-GB",
       },
       {
-        label: "NETEASE",
+        label: "NETEASE MUSIC",
         url: "https://music.163.com/album?id=184937854&userid=95505343",
       },
     ],
@@ -86,7 +86,7 @@ const releases = [
   //   cover: "",                         // Cloudflare image URL
   //   links: [
   //     { label: "SPOTIFY",     url: "" },
-  //     { label: "NETEASE",     url: "" },
+  //     { label: "NETEASE MUSIC",     url: "" },
   //     { label: "APPLE MUSIC", url: "" },
   //     { label: "YOUTUBE",     url: "" },  // add/remove as needed
   //   ],
@@ -280,7 +280,7 @@ export default function YakaReleasesView() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    const handleResize = () => setIsMobile(window.innerWidth <= 1024);
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);

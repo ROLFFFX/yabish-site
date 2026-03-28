@@ -15,7 +15,7 @@ export default function BlueHawaiiTour() {
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
+      setIsMobile(window.innerWidth <= 1024);
     };
     handleResize();
     window.addEventListener("resize", handleResize);
@@ -154,7 +154,7 @@ export default function BlueHawaiiTour() {
                   url: "https://open.spotify.com/artist/41y1iPh0WqB7tyGdzyeinZ?si=cV_AXW8nRp6onMLlK6nR2A",
                 },
                 {
-                  text: "NETEASE CLOUD MUSIC",
+                  text: "NETEASE MUSIC",
                   url: "https://music.163.com/#/artist?id=88974",
                 },
                 {
@@ -449,7 +449,7 @@ export default function BlueHawaiiTour() {
                 url: "https://open.spotify.com/artist/41y1iPh0WqB7tyGdzyeinZ?si=cV_AXW8nRp6onMLlK6nR2A",
               },
               {
-                text: "NETEASE CLOUD MUSIC",
+                text: "NETEASE MUSIC",
                 url: "https://music.163.com/#/artist?id=88974",
               },
               {

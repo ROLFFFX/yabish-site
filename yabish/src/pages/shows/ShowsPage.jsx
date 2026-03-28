@@ -28,7 +28,7 @@ const shows = [
 ];
 
 export default function ShowsPage() {
-  const isMobile = useMediaQuery("(max-width:768px)");
+  const isMobile = useMediaQuery("(max-width:1024px)");
   const navigate = useNavigate();
   const contentRef = useRef();
 

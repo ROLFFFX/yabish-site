@@ -19,7 +19,7 @@ export default function TopBarMobile() {
           sx={{
             color: isActive ? "#ff0000" : "white",
             fontFamily: "Anton, sans-serif",
-            fontSize: "18px", // Smaller font to fit everything in one line
+            fontSize: "18px",
             transition: "color 0.3s ease-in-out",
             "&:hover": {
               color: "#ff0000",
@@ -59,7 +59,7 @@ export default function TopBarMobile() {
         src={YABISHLogo}
         alt="YABISH Logo"
         style={{
-          width: "100px", // Compact logo
+          width: "88px",
           height: "auto",
           cursor: "pointer",
         }}
@@ -74,7 +74,7 @@ export default function TopBarMobile() {
           display: "flex",
           flexDirection: "row",
           alignItems: "center",
-          gap: "1rem", // Spacing between items
+          gap: "0.6rem",
         }}
       >
         <MenuItem label="Artists" path="/artist" />
