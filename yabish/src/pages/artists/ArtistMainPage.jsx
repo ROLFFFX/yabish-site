@@ -12,10 +12,7 @@ export default function ArtistMainPage() {
   const [isMobile, setIsMobile] = useState(false);
   const [godLoaded, setGodLoaded] = useState(false);
   const [yakaLoaded, setYakaLoaded] = useState(false);
-  const [debugLog, setDebugLog] = useState([]);
   const navigate = useNavigate();
-
-  const addLog = (msg) => setDebugLog((prev) => [...prev, msg]);
 
   useEffect(() => {
     setVideoKey((prevKey) => prevKey + 1);
@@ -67,9 +64,7 @@ export default function ArtistMainPage() {
             muted
             loop
             playsInline
-            onCanPlayThrough={() => { setGodLoaded(true); addLog("god: canplaythrough"); }}
-            onError={(e) => addLog(`god error: ${e.target.error?.code} ${e.target.error?.message}`)}
-            onStalled={() => addLog("god: stalled")}
+            onCanPlayThrough={() => setGodLoaded(true)}
             style={{ width: "100%", height: "100%", objectFit: "cover" }}
           />
         </Box>
@@ -93,9 +88,7 @@ export default function ArtistMainPage() {
             muted
             loop
             playsInline
-            onCanPlayThrough={() => { setYakaLoaded(true); addLog("yaka: canplaythrough"); }}
-            onError={(e) => addLog(`yaka error: ${e.target.error?.code} ${e.target.error?.message}`)}
-            onStalled={() => addLog("yaka: stalled")}
+            onCanPlayThrough={() => setYakaLoaded(true)}
             style={{ width: "100%", height: "100%", objectFit: "cover" }}
           />
         </Box>
@@ -203,28 +196,7 @@ export default function ArtistMainPage() {
           </Typography>
         </Box>
 
-        {/* DEBUG OVERLAY — remove after diagnosis */}
-        {debugLog.length > 0 && (
-          <Box
-            sx={{
-              position: "absolute",
-              top: "10%",
-              left: "5%",
-              right: "5%",
-              zIndex: 9999,
-              backgroundColor: "rgba(0,0,0,0.85)",
-              padding: "1rem",
-              borderRadius: "4px",
-              pointerEvents: "none",
-            }}
-          >
-            {debugLog.map((line, i) => (
-              <Typography key={i} sx={{ color: "#00ff00", fontFamily: "monospace", fontSize: "12px" }}>
-                {line}
-              </Typography>
-            ))}
-          </Box>
-        )}
+
       </Box>
     );
   }
