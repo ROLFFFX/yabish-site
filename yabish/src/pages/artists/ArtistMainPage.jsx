@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import godbgvid from "../../assets/pics/99godbgvid.webm";
 import yakabgvid from "../../assets/pics/yakabgvid.webm";
+import yakabgvidMobile from "../../assets/pics/yakabgvid-mobile.webm";
 import TopLeft from "../../utils/TopLeft";
 import TopBarMobile from "../../utils/TopBarMobile";
 
@@ -83,7 +84,7 @@ export default function ArtistMainPage() {
           }}
         >
           <video
-            src={yakabgvid}
+            src={yakabgvidMobile}
             autoPlay
             muted
             loop
